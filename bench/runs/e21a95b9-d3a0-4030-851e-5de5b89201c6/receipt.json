@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "00c6825f-b7eb-47d9-8d0d-d2998ef537dc",
+  "runner": "app",
+  "model": "auto",
+  "actualModel": "unknown",
+  "environment": "Booth macOS; app folder-backed session; coordinator observed copilotVersion 1.0.106-8.unstable.r43566476370.g869eef3 and selectedModel auto. Actual cwd matched the manifest in get_session and session.start.",
+  "configurationAudit": "Project coordinator registered the exact subject folder with no git context and delivered only the generated prompt. User-level configuration from ~/.copilot remains inherited; personal, managed, machine, plugin, and MCP configuration are not independently isolated.",
+  "permissions": ["App autopilot permission policy; exact inherited grants not independently enumerated"],
+  "isolation": "workspace-only",
+  "outcome": "completed"
+}

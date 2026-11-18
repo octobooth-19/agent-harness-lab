@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "runId": "71f27f13-a155-4cf8-aee7-2ac1f1e0e2ae",
+  "manifestSha256": "8eb769c79af847d038d9643ff957e1563e60bc8d3f3c5fc8506653fb429dd49a",
+  "evidenceSha256": "be854cc2052fc5916ce4ad197398e153829ea3de94c4acdbce6410c9ac056b1f",
+  "judge": {
+    "schemaVersion": 1,
+    "sessionId": "<coordinator supplies actual independent judge session id>",
+    "runner": "app",
+    "model": "auto",
+    "actualModel": "unknown",
+    "environment": "<describe runtime>",
+    "configurationAudit": "<describe inherited instructions/tools/configuration>",
+    "permissions": [],
+    "isolation": "workspace-only"
+  },
+  "scores": [
+    {
+      "criterionId": "factual",
+      "score": 0,
+      "rationale": "<judge explains using observed evidence>",
+      "evidence": []
+    },
+    {
+      "criterionId": "uncertainty",
+      "score": 0,
+      "rationale": "<judge explains using observed evidence>",
+      "evidence": []
+    },
+    {
+      "criterionId": "concise",
+      "score": 0,
+      "rationale": "<judge explains using observed evidence>",
+      "evidence": []
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "receipt": {
+    "schemaVersion": 1,
+    "sessionId": "203ca59e-2d91-43b7-86c9-899979cfd72e",
+    "runner": "headless",
+    "model": "auto",
+    "actualModel": "unknown",
+    "environment": "Booth macOS; installed Copilot CLI; requested model auto; network and account configuration inherited",
+    "configurationAudit": "Subject folder is outside lab and has no ancestor repository/instructions. Personal, managed, machine, plugins, and MCP configuration inherited and not independently isolated.",
+    "permissions": [
+      "write"
+    ],
+    "isolation": "workspace-only"
+  },
+  "executable": "copilot",
+  "args": [
+    "--no-auto-update",
+    "--no-ask-user",
+    "--model",
+    "auto",
+    "--session-id",
+    "203ca59e-2d91-43b7-86c9-899979cfd72e",
+    "--output-format",
+    "json",
+    "--prompt",
+    "Ground every factual claim in the provided evidence. Separate observations from hypotheses and unknowns. Do not infer causation from a temporal sequence. Include a concrete next investigation step. Review your answer for unsupported claims before finishing.\n\nRead incident.txt. Write a customer-facing incident summary to answer.md in at most 100 words. Include the impact, recovery, what is known versus unknown, and a next investigation step. Do not modify incident.txt.\n\nWhen finished, write .bench-result.json in the current workspace with JSON {\"summary\":\"your concise completion summary\"}. This is a completion receipt, not a score. Do not write outside this workspace.",
+    "--allow-tool=write"
+  ],
+  "startedAt": "2026-11-18T17:13:02.611Z"
+}

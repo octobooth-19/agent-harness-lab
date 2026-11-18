@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "203ca59e-2d91-43b7-86c9-899979cfd72e",
+  "runner": "headless",
+  "model": "auto",
+  "actualModel": "unknown",
+  "environment": "Booth macOS; installed Copilot CLI; requested model auto; network and account configuration inherited",
+  "configurationAudit": "Subject folder is outside lab and has no ancestor repository/instructions. Personal, managed, machine, plugins, and MCP configuration inherited and not independently isolated.",
+  "permissions": [
+    "write"
+  ],
+  "isolation": "workspace-only"
+}

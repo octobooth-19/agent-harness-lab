@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "runId": "1274fc47-8100-45d7-8b3b-a437afd0d285",
+  "createdAt": "2026-11-18T17:12:05.453Z",
+  "variant": "evidence-first",
+  "requestedModel": "auto",
+  "isolation": "workspace-only",
+  "workspace": "/private/tmp/harness-lab-live-PgHCGT/harness-lab-1274fc47-8100-45d7-8b3b-a437afd0d285-bO0hW4/subject",
+  "runtime": {},
+  "case": {
+    "sha256": "0a5292af4b4bd31361d03b0109dc325132cfde6e1db7210b5894c1dfd6565c01",
+    "value": {
+      "schemaVersion": 1,
+      "id": "incident-summary",
+      "version": 1,
+      "title": "Compare incident-summary prompt variants",
+      "task": "Read incident.txt. Write a customer-facing incident summary to answer.md in at most 100 words. Include the impact, recovery, what is known versus unknown, and a next investigation step. Do not modify incident.txt.",
+      "files": {
+        "incident.txt": "Incident notes\n12:00 UTC: elevated errors began after deployment D42.\n12:14 UTC: service recovered after rollback.\n120 requests failed during the interruption.\nRoot cause: not yet established.\nData loss: not yet assessed.\n"
+      },
+      "variants": [
+        {
+          "name": "baseline",
+          "components": [
+            {
+              "id": "brief-prompt",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "name": "evidence-first",
+          "components": [
+            {
+              "id": "evidence-prompt",
+              "version": 1
+            }
+          ]
+        }
+      ],
+      "rubric": {
+        "id": "incident-summary",
+        "version": 1
+      },
+      "checks": [
+        {
+          "id": "answer-present",
+          "type": "file-exists",
+          "path": "answer.md"
+        },
+        {
+          "id": "mentions-impact",
+          "type": "file-contains",
+          "path": "answer.md",
+          "text": "120"
+        },
+        {
+          "id": "source-preserved",
+          "type": "file-unchanged",
+          "path": "incident.txt"
+        }
+      ]
+    }
+  },
+  "rubric": {
+    "sha256": "d0c5c43aa56308f3dda435565fb513ad1076fcb1aba2af7332b589fa6fdb3f44",
+    "value": {
+      "schemaVersion": 1,
+      "id": "incident-summary",
+      "version": 1,
+      "title": "Evidence-grounded incident summary",
+      "passScore": 8,
+      "criteria": [
+        {
+          "id": "factual",
+          "description": "Reports the 14-minute interruption and 120 affected requests from incident.txt, without inventing a root cause or asserting that data was lost.",
+          "maxScore": 4
+        },
+        {
+          "id": "uncertainty",
+          "description": "Explicitly distinguishes the observed recovery after rollback from the still-unknown root cause and unknown data-loss status.",
+          "maxScore": 4
+        },
+        {
+          "id": "concise",
+          "description": "The answer is at most 100 words, understandable, and includes a concrete next investigation step.",
+          "maxScore": 2
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "sha256": "1870076f935687a309e2d787be92bf0ea74ab00599f924dffcf7f7ded7a7e6a8",
+      "value": {
+        "schemaVersion": 1,
+        "id": "evidence-prompt",
+        "version": 1,
+        "title": "Evidence and uncertainty prompt",
+        "kind": "prompt",
+        "prompt": "Ground every factual claim in the provided evidence. Separate observations from hypotheses and unknowns. Do not infer causation from a temporal sequence. Include a concrete next investigation step. Review your answer for unsupported claims before finishing.",
+        "files": {}
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "path": "incident.txt",
+      "sha256": "db2907862dc83d0e6242ddd2b8ce934725d502a6375ba2e31b14c4aacd2fba7e"
+    }
+  ],
+  "promptSha256": "241732b42d8a9bfc86db3b867b1248e7be459bf873de8cffe8e9402fb1aed280"
+}

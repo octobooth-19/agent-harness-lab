@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "runId": "1274fc47-8100-45d7-8b3b-a437afd0d285",
+  "gradedAt": "2026-11-18T17:16:35.338Z",
+  "manifestSha256": "73dce423bd4fcb426fbb6ad55599a4d3de8857f21b9e61395380f13ff188e666",
+  "evidenceSha256": "4cc3a7a33e3917e80783a20c6eece19f465e1ad0c5de244ed7a201902726c074",
+  "verdict": {
+    "schemaVersion": 1,
+    "runId": "1274fc47-8100-45d7-8b3b-a437afd0d285",
+    "manifestSha256": "73dce423bd4fcb426fbb6ad55599a4d3de8857f21b9e61395380f13ff188e666",
+    "evidenceSha256": "4cc3a7a33e3917e80783a20c6eece19f465e1ad0c5de244ed7a201902726c074",
+    "judge": {
+      "schemaVersion": 1,
+      "sessionId": "2b679d50-3251-45e7-830b-6ec5453c5017",
+      "runner": "headless",
+      "model": "auto",
+      "actualModel": "unknown",
+      "environment": "Booth macOS; installed Copilot CLI; requested model auto; network and account configuration inherited",
+      "configurationAudit": "Independent judge session in a sibling folder without subject configuration. Personal, managed, machine, plugins, and MCP configuration inherited and not independently isolated.",
+      "permissions": [
+        "write"
+      ],
+      "isolation": "workspace-only"
+    },
+    "scores": [
+      {
+        "criterionId": "factual",
+        "score": 4,
+        "rationale": "Reports 120 failed requests and the 12:00–12:14 UTC interval (14 minutes). It does not claim D42 caused the incident or assert that data was lost.",
+        "evidence": [
+          "workspace/answer.md",
+          "workspace/incident.txt"
+        ]
+      },
+      {
+        "criterionId": "uncertainty",
+        "score": 4,
+        "rationale": "Clearly states service recovered after rollback, root cause remains undetermined, and data loss has not yet been assessed.",
+        "evidence": [
+          "workspace/answer.md",
+          "workspace/incident.txt"
+        ]
+      },
+      {
+        "criterionId": "concise",
+        "score": 2,
+        "rationale": "The answer is 72 words, is understandable, and names a concrete next step: review incident-window service/deployment telemetry and assess affected requests and data for possible loss.",
+        "evidence": [
+          "workspace/answer.md"
+        ]
+      }
+    ]
+  },
+  "score": 10,
+  "maxScore": 10,
+  "deterministicPassed": true,
+  "runnerSucceeded": true,
+  "passed": true
+}

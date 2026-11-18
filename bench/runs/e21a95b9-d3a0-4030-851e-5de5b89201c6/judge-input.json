@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "runId": "e21a95b9-d3a0-4030-851e-5de5b89201c6",
+  "manifestSha256": "e15f6b0afb33c83cb9e7ba56d83268832bcf123b395a36362a3ab12be03b7ae2",
+  "evidenceSha256": "6eac458486d858d23c98655f2995d5ddb85a72fdf0dae7c45bc41f0e3c9574c0",
+  "task": "Read incident.txt. Write a customer-facing incident summary to answer.md in at most 100 words. Include the impact, recovery, what is known versus unknown, and a next investigation step. Do not modify incident.txt.",
+  "rubric": {
+    "schemaVersion": 1,
+    "id": "incident-summary",
+    "version": 1,
+    "title": "Evidence-grounded incident summary",
+    "passScore": 8,
+    "criteria": [
+      {
+        "id": "factual",
+        "description": "Reports the 14-minute interruption and 120 affected requests from incident.txt, without inventing a root cause or asserting that data was lost.",
+        "maxScore": 4
+      },
+      {
+        "id": "uncertainty",
+        "description": "Explicitly distinguishes the observed recovery after rollback from the still-unknown root cause and unknown data-loss status.",
+        "maxScore": 4
+      },
+      {
+        "id": "concise",
+        "description": "The answer is at most 100 words, understandable, and includes a concrete next investigation step.",
+        "maxScore": 2
+      }
+    ]
+  },
+  "checks": [
+    {
+      "id": "answer-present",
+      "type": "file-exists",
+      "passed": true
+    },
+    {
+      "id": "mentions-impact",
+      "type": "file-contains",
+      "passed": true
+    },
+    {
+      "id": "source-preserved",
+      "type": "file-unchanged",
+      "passed": true
+    }
+  ],
+  "runnerResult": null,
+  "files": [
+    {
+      "path": "workspace/.bench-result.json",
+      "sha256": "dcdad4fb990c0a0a5f5a822561bc38c807074d116f887d9e442df98c9113b320",
+      "contentBase64": "eyJzdW1tYXJ5IjoiV3JvdGUgYSBjdXN0b21lci1mYWNpbmcgaW5jaWRlbnQgc3VtbWFyeSB1bmRlciAxMDAgd29yZHMgYW5kIHNhdmVkIHRoZSBjb21wbGV0aW9uIHJlY2VpcHQuIn0K",
+      "text": "{\"summary\":\"Wrote a customer-facing incident summary under 100 words and saved the completion receipt.\"}\n"
+    },
+    {
+      "path": "workspace/answer.md",
+      "sha256": "ff710efc0518bc278ca611d821b4c3afb71b116b2bcf80aadbe46ff8b14c989b",
+      "contentBase64": "QmV0d2VlbiAxMjowMCBhbmQgMTI6MTQgVVRDLCBjdXN0b21lcnMgZXhwZXJpZW5jZWQgc2VydmljZSBlcnJvcnM7IDEyMCByZXF1ZXN0cyBmYWlsZWQgZHVyaW5nIHRoZSBpbnRlcnJ1cHRpb24uIFNlcnZpY2UgcmVjb3ZlcmVkIGFmdGVyIHdlIHJvbGxlZCBiYWNrIGRlcGxveW1lbnQgRDQyLiBXZSBrbm93IHRoZSBlcnJvcnMgYmVnYW4gYWZ0ZXIgdGhhdCBkZXBsb3ltZW50LCBidXQgdGhlIHJvb3QgY2F1c2UgaGFzIG5vdCBiZWVuIGVzdGFibGlzaGVkLiBBbnkgZGF0YSBsb3NzIGhhcyBub3QgeWV0IGJlZW4gYXNzZXNzZWQuIE91ciBuZXh0IHN0ZXAgaXMgdG8gaW52ZXN0aWdhdGUgdGhlIGRlcGxveW1lbnQgYW5kIGxvZ3MsIGFuZCB2ZXJpZnkgZGF0YSBpbnRlZ3JpdHkuCg==",
+      "text": "Between 12:00 and 12:14 UTC, customers experienced service errors; 120 requests failed during the interruption. Service recovered after we rolled back deployment D42. We know the errors began after that deployment, but the root cause has not been established. Any data loss has not yet been assessed. Our next step is to investigate the deployment and logs, and verify data integrity.\n"
+    },
+    {
+      "path": "workspace/incident.txt",
+      "sha256": "db2907862dc83d0e6242ddd2b8ce934725d502a6375ba2e31b14c4aacd2fba7e",
+      "contentBase64": "SW5jaWRlbnQgbm90ZXMKMTI6MDAgVVRDOiBlbGV2YXRlZCBlcnJvcnMgYmVnYW4gYWZ0ZXIgZGVwbG95bWVudCBENDIuCjEyOjE0IFVUQzogc2VydmljZSByZWNvdmVyZWQgYWZ0ZXIgcm9sbGJhY2suCjEyMCByZXF1ZXN0cyBmYWlsZWQgZHVyaW5nIHRoZSBpbnRlcnJ1cHRpb24uClJvb3QgY2F1c2U6IG5vdCB5ZXQgZXN0YWJsaXNoZWQuCkRhdGEgbG9zczogbm90IHlldCBhc3Nlc3NlZC4K",
+      "text": "Incident notes\n12:00 UTC: elevated errors began after deployment D42.\n12:14 UTC: service recovered after rollback.\n120 requests failed during the interruption.\nRoot cause: not yet established.\nData loss: not yet assessed.\n"
+    }
+  ]
+}

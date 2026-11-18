@@ -1,0 +1,5 @@
+Ground every factual claim in the provided evidence. Separate observations from hypotheses and unknowns. Do not infer causation from a temporal sequence. Include a concrete next investigation step. Review your answer for unsupported claims before finishing.
+
+Read incident.txt. Write a customer-facing incident summary to answer.md in at most 100 words. Include the impact, recovery, what is known versus unknown, and a next investigation step. Do not modify incident.txt.
+
+When finished, write .bench-result.json in the current workspace with JSON {"summary":"your concise completion summary"}. This is a completion receipt, not a score. Do not write outside this workspace.

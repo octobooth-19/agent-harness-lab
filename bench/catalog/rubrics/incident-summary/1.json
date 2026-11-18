@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "incident-summary",
+  "version": 1,
+  "title": "Evidence-grounded incident summary",
+  "passScore": 8,
+  "criteria": [
+    {
+      "id": "factual",
+      "description": "Reports the 14-minute interruption and 120 affected requests from incident.txt, without inventing a root cause or asserting that data was lost.",
+      "maxScore": 4
+    },
+    {
+      "id": "uncertainty",
+      "description": "Explicitly distinguishes the observed recovery after rollback from the still-unknown root cause and unknown data-loss status.",
+      "maxScore": 4
+    },
+    {
+      "id": "concise",
+      "description": "The answer is at most 100 words, understandable, and includes a concrete next investigation step.",
+      "maxScore": 2
+    }
+  ]
+}

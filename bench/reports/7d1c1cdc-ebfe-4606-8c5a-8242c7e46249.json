@@ -1,0 +1,99 @@
+{
+  "runs": [
+    {
+      "runId": "1274fc47-8100-45d7-8b3b-a437afd0d285",
+      "case": "incident-summary",
+      "version": 1,
+      "variant": "evidence-first",
+      "status": "graded",
+      "score": 10,
+      "maxScore": 10,
+      "passed": true
+    },
+    {
+      "runId": "71f27f13-a155-4cf8-aee7-2ac1f1e0e2ae",
+      "case": "incident-summary",
+      "version": 1,
+      "variant": "baseline",
+      "status": "graded",
+      "score": 10,
+      "maxScore": 10,
+      "passed": true
+    },
+    {
+      "runId": "e21a95b9-d3a0-4030-851e-5de5b89201c6",
+      "case": "incident-summary",
+      "version": 1,
+      "variant": "baseline",
+      "status": "graded",
+      "score": 10,
+      "maxScore": 10,
+      "passed": true
+    }
+  ],
+  "groups": [
+    {
+      "caseSha256": "0a5292af4b4bd31361d03b0109dc325132cfde6e1db7210b5894c1dfd6565c01",
+      "rubricSha256": "d0c5c43aa56308f3dda435565fb513ad1076fcb1aba2af7332b589fa6fdb3f44",
+      "variant": "evidence-first",
+      "components": [
+        "1870076f935687a309e2d787be92bf0ea74ab00599f924dffcf7f7ded7a7e6a8"
+      ],
+      "runner": "headless",
+      "model": "auto",
+      "actualModel": "unknown",
+      "environment": "Booth macOS; installed Copilot CLI; requested model auto; network and account configuration inherited",
+      "configurationAudit": "Subject folder is outside lab and has no ancestor repository/instructions. Personal, managed, machine, plugins, and MCP configuration inherited and not independently isolated.",
+      "permissions": [
+        "write"
+      ],
+      "collected": 1,
+      "graded": 1,
+      "passed": 1,
+      "meanScore": 10,
+      "passRate": 1
+    },
+    {
+      "caseSha256": "0a5292af4b4bd31361d03b0109dc325132cfde6e1db7210b5894c1dfd6565c01",
+      "rubricSha256": "d0c5c43aa56308f3dda435565fb513ad1076fcb1aba2af7332b589fa6fdb3f44",
+      "variant": "baseline",
+      "components": [
+        "b192321385aeff5eaa8e6481b3fb390fa4bf6bd7b031349d77f0fceefe494f40"
+      ],
+      "runner": "headless",
+      "model": "auto",
+      "actualModel": "unknown",
+      "environment": "Booth macOS; installed Copilot CLI; requested model auto; network and account configuration inherited",
+      "configurationAudit": "Subject folder is outside lab and has no ancestor repository/instructions. Personal, managed, machine, plugins, and MCP configuration inherited and not independently isolated.",
+      "permissions": [
+        "write"
+      ],
+      "collected": 1,
+      "graded": 1,
+      "passed": 1,
+      "meanScore": 10,
+      "passRate": 1
+    },
+    {
+      "caseSha256": "0a5292af4b4bd31361d03b0109dc325132cfde6e1db7210b5894c1dfd6565c01",
+      "rubricSha256": "d0c5c43aa56308f3dda435565fb513ad1076fcb1aba2af7332b589fa6fdb3f44",
+      "variant": "baseline",
+      "components": [
+        "b192321385aeff5eaa8e6481b3fb390fa4bf6bd7b031349d77f0fceefe494f40"
+      ],
+      "runner": "app",
+      "model": "auto",
+      "actualModel": "unknown",
+      "environment": "Booth macOS; app folder-backed session; coordinator observed copilotVersion 1.0.106-8.unstable.r43566476370.g869eef3 and selectedModel auto. Actual cwd matched the manifest in get_session and session.start.",
+      "configurationAudit": "Project coordinator registered the exact subject folder with no git context and delivered only the generated prompt. User-level configuration from ~/.copilot remains inherited; personal, managed, machine, plugin, and MCP configuration are not independently isolated.",
+      "permissions": [
+        "App autopilot permission policy; exact inherited grants not independently enumerated"
+      ],
+      "collected": 1,
+      "graded": 1,
+      "passed": 1,
+      "meanScore": 10,
+      "passRate": 1
+    }
+  ]
+}

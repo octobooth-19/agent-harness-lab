@@ -1,0 +1,5 @@
+{
+  "retainedEvents": 23,
+  "omittedEvents": 434,
+  "policy": "Public messages, tool interactions, and limited runtime provenance only; internal instructions/reasoning/opaque payloads are excluded. Review artifacts for secrets before committing."
+}
