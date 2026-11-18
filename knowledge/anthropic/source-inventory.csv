@@ -73,7 +73,7 @@ https://platform.claude.com/docs/en/build-with-claude/thinking-troubleshooting,T
 https://platform.claude.com/docs/en/build-with-claude/extended-thinking,Extended thinking (legacy),platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/build-with-claude/preserved-thinking,Overview,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/build-with-claude/preserved-thinking/prefix-checks,Prefix checks,platform_documentation,,,2026-11-18,indexed_only,general,
-https://platform.claude.com/docs/en/build-with-claude/preserved-thinking/change-tools-or-instructions,Change tools or instructions,platform_documentation,,,2026-11-18,indexed_only,tools,
+https://platform.claude.com/docs/en/build-with-claude/preserved-thinking/change-tools-or-instructions,Change tools or instructions,platform_documentation,,,2026-11-18,read_partial,preserved-thinking;context;conversation-replay,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/build-with-claude/preserved-thinking/fix-bound-to-a-different-conversation,Fix the 400 error,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview,Overview,platform_documentation,,,2026-11-18,read_partial,agents;tools,synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/how-tool-use-works,How tool use works,platform_documentation,,,2026-11-18,read,agents;tools;context and memory,knowledge/anthropic/synthesis.md
@@ -92,7 +92,7 @@ https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool,T
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool,Memory tool,platform_documentation,,,2026-11-18,read_partial,agents;tools;memory;context and memory,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/bash-tool,Bash tool,platform_documentation,,,2026-11-18,read_partial,agents;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/text-editor-tool,Text editor tool,platform_documentation,,,2026-11-18,read_partial,agents;tools,knowledge/anthropic/synthesis.md
-https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-sdk,Browser and computer use (SDK),platform_documentation,,,2026-11-18,indexed_only,agents;tools,
+https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-sdk,Browser and computer use (SDK),platform_documentation,,,2026-11-18,read_partial,browser-use;computer-use;SDK;permissions,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool,Computer use tool,platform_documentation,,,2026-11-18,read_partial,agents;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-tool,Browser use tool,platform_documentation,,,2026-11-18,read_partial,agents;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use,Troubleshooting tool use,platform_documentation,,,2026-11-18,read_partial,agents;tools,knowledge/anthropic/synthesis.md
@@ -685,7 +685,7 @@ https://platform.claude.com/docs/en/managed-agents/self-hosted/differences,Diffe
 https://platform.claude.com/docs/en/managed-agents/self-hosted/upgrade,Upgrade,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
 https://platform.claude.com/docs/en/managed-agents/self-hosted-data-and-access,Data and access in self-hosted Claude Managed Agents,platform_documentation,,,2026-11-18,read_partial,managed-agents;self-hosted;data-access;retention,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/self-hosted/configuration-reference,Configuration reference,platform_documentation,,,2026-11-18,read_partial,managed-agents;self-hosted;configuration;credentials,knowledge/anthropic/synthesis.md
-https://platform.claude.com/docs/en/managed-agents/self-hosted/configure,Single sign-on,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
+https://platform.claude.com/docs/en/managed-agents/self-hosted/configure,Single sign-on,platform_documentation,,,2026-11-18,read_partial,Managed Agents;self-hosted;SSO;authorization,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/self-hosted/agent-identity,Agent identity and credentials,platform_documentation,,,2026-11-18,read_partial,managed-agents;self-hosted;identity;credentials;MCP,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/self-hosted/inference-provider,Inference provider,platform_documentation,,,2026-11-18,read_partial,managed-agents;self-hosted;models;inference-provider,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/secure-deployment,Secure your Managed Agents deployment,platform_documentation,,,2026-11-18,read_partial,managed-agents;security;permissions;networking,knowledge/anthropic/synthesis.md
@@ -1257,7 +1257,7 @@ https://platform.claude.com/docs/en/manage-claude/usage-cost-analytics-api,Usage
 https://platform.claude.com/docs/en/manage-claude/usage-cost-api,Usage and Cost API (legacy),platform_documentation,,,2026-11-18,indexed_only,api,
 https://platform.claude.com/docs/en/manage-claude/rate-limits-api,Rate Limits API,platform_documentation,,,2026-11-18,indexed_only,api,
 https://platform.claude.com/docs/en/manage-claude/analytics-api,Analytics APIs,platform_documentation,,,2026-11-18,indexed_only,api,
-https://platform.claude.com/docs/en/manage-claude/claude-code-analytics-api,Claude Code Analytics API,platform_documentation,,,2026-11-18,indexed_only,claude-code;api,
+https://platform.claude.com/docs/en/manage-claude/claude-code-analytics-api,Claude Code Analytics API,platform_documentation,,,2026-11-18,read_partial,Claude Code;analytics;evaluation;admin API,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/manage-claude/spend-limits-api,Spend Limits API,platform_documentation,,,2026-11-18,indexed_only,api,
 https://platform.claude.com/docs/en/manage-claude/opentelemetry,Overview,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/manage-claude/opentelemetry/sdk,Get Anthropic SDK spans,platform_documentation,,,2026-11-18,indexed_only,general,
@@ -1428,8 +1428,8 @@ https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompti
 https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-haiku-5-5,Prompting Claude Haiku 5.5,platform_documentation,,,2026-11-18,indexed_only,prompting,
 https://platform.claude.com/docs/en/test-and-evaluate/develop-tests,Define success and build evaluations,platform_documentation,,,2026-11-18,read_partial,evaluations,synthesis.md
 https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-latency,Reducing latency,platform_documentation,,,2026-11-18,indexed_only,evaluations,
-https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations,Reduce hallucinations,platform_documentation,,,2026-11-18,indexed_only,evaluations,
-https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/increase-consistency,Increase output consistency,platform_documentation,,,2026-11-18,indexed_only,evaluations,
+https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations,Reduce hallucinations,platform_documentation,,,2026-11-18,read_partial,prompting;grounding;uncertainty;citations,knowledge/anthropic/synthesis.md
+https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/increase-consistency,Increase output consistency,platform_documentation,,,2026-11-18,read_partial,prompting;output-format;structured-outputs,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/mitigate-jailbreaks,Mitigate jailbreaks,platform_documentation,,,2026-11-18,indexed_only,evaluations,
 https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-prompt-leak,Reduce prompt leak,platform_documentation,,,2026-11-18,indexed_only,evaluations;prompting,
 https://platform.claude.com/docs/en/about-claude/glossary,Glossary,platform_documentation,,,2026-11-18,indexed_only,general,
