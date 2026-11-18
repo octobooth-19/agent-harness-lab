@@ -7,11 +7,11 @@
     "openai_news_rss": "https://openai.com/news/rss.xml"
   },
   "counts": {
-    "discovered_pages": 2836,
+    "discovered_pages": 2834,
     "read_pages": 97,
     "inaccessible_pages": 0,
     "excluded_unique_links": 26,
-    "pending_pages": 2617,
+    "pending_pages": 2611,
     "index_records": 15,
     "index_failures": [
       {
@@ -33,7 +33,7 @@
     "openai_sitemap_subindexes": 44,
     "technical_sitemap_families_opened": 5,
     "other_openai_sitemap_families_not_included": 39,
-    "read_partial_pages": 122
+    "read_partial_pages": 126
   },
   "field_notes": {
     "review_status": "read = source page opened and reviewed; read_partial = source page opened but only partly reviewed; indexed = discovered in an official index/sitemap/feed but not opened; inaccessible = attempted primary source failed.",
@@ -32128,38 +32128,25 @@
       "accessed_url": null
     },
     {
-      "canonical_url": "https://openai.com/index/inside-our-in-house-data-agent",
+      "canonical_url": "https://openai.com/index/inside-our-in-house-data-agent/",
       "title": "Inside OpenAI’s in-house data agent",
       "source_type": "OpenAI news article",
       "published_or_updated_date": "2026-01-29",
       "date_basis": "publication date",
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "agent runtime"
+        "agent runtime",
+        "memory engineering",
+        "context engineering"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
-        "https://openai.com/news/rss.xml"
-      ],
-      "accessed_url": null
-    },
-    {
-      "canonical_url": "https://openai.com/index/inside-our-in-house-data-agent/",
-      "title": null,
-      "source_type": "OpenAI article (sitemap-indexed)",
-      "published_or_updated_date": "2026-11-02",
-      "date_basis": "sitemap lastmod",
-      "accessed_date": null,
-      "review_status": "indexed",
-      "topics": [
-        "agent runtime"
-      ],
-      "synthesis_location": null,
-      "discovered_from": [
+        "https://openai.com/news/rss.xml",
         "https://openai.com/sitemap.xml/engineering/"
       ],
-      "accessed_url": null
+      "accessed_url": "https://openai.com/index/inside-our-in-house-data-agent/",
+      "sitemap_lastmod": "2026-11-02"
     },
     {
       "canonical_url": "https://openai.com/index/insights-from-global-conversations",
@@ -38474,40 +38461,25 @@
       "accessed_url": null
     },
     {
-      "canonical_url": "https://openai.com/index/open-source-codex-orchestration-symphony",
+      "canonical_url": "https://openai.com/index/open-source-codex-orchestration-symphony/",
       "title": "An open-source spec for orchestration: Symphony",
       "source_type": "OpenAI news article",
       "published_or_updated_date": "2026-04-27",
       "date_basis": "publication date",
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
         "agent runtime",
-        "coding agents"
+        "coding agents",
+        "orchestration"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
-        "https://openai.com/news/rss.xml"
-      ],
-      "accessed_url": null
-    },
-    {
-      "canonical_url": "https://openai.com/index/open-source-codex-orchestration-symphony/",
-      "title": null,
-      "source_type": "OpenAI article (sitemap-indexed)",
-      "published_or_updated_date": "2026-11-03",
-      "date_basis": "sitemap lastmod",
-      "accessed_date": null,
-      "review_status": "indexed",
-      "topics": [
-        "agent runtime",
-        "coding agents"
-      ],
-      "synthesis_location": null,
-      "discovered_from": [
+        "https://openai.com/news/rss.xml",
         "https://openai.com/sitemap.xml/engineering/"
       ],
-      "accessed_url": null
+      "accessed_url": "https://openai.com/index/open-source-codex-orchestration-symphony/",
+      "sitemap_lastmod": "2026-11-03"
     },
     {
       "canonical_url": "https://openai.com/index/openai-academy-for-news-organizations",
@@ -38850,21 +38822,23 @@
       "accessed_url": null
     },
     {
-      "canonical_url": "https://openai.com/index/openai-anthropic-safety-evaluation",
-      "title": "OpenAI and Anthropic share findings from a joint safety evaluation",
+      "canonical_url": "https://openai.com/index/openai-anthropic-safety-evaluation/",
+      "title": "Findings from a pilot Anthropic–OpenAI alignment evaluation exercise: OpenAI Safety Tests",
       "source_type": "OpenAI news article",
       "published_or_updated_date": "2025-08-27",
       "date_basis": "publication date",
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "evaluations"
+        "evaluations",
+        "safety evaluation",
+        "cross-provider"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://openai.com/news/rss.xml"
       ],
-      "accessed_url": null
+      "accessed_url": "https://openai.com/index/openai-anthropic-safety-evaluation/"
     },
     {
       "canonical_url": "https://openai.com/index/openai-api",
@@ -46486,21 +46460,23 @@
       "accessed_url": null
     },
     {
-      "canonical_url": "https://openai.com/index/trustworthy-third-party-evaluations-foundations",
+      "canonical_url": "https://openai.com/index/trustworthy-third-party-evaluations-foundations/",
       "title": "A shared playbook for trustworthy third party evaluations",
       "source_type": "OpenAI news article",
       "published_or_updated_date": "2026-05-29",
       "date_basis": "publication date",
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "evaluations"
+        "evaluations",
+        "harness evaluation",
+        "evaluation validity"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://openai.com/news/rss.xml"
       ],
-      "accessed_url": null
+      "accessed_url": "https://openai.com/index/trustworthy-third-party-evaluations-foundations/"
     },
     {
       "canonical_url": "https://openai.com/index/truthfulqa",

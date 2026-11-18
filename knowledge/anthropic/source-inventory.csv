@@ -1415,7 +1415,7 @@ https://platform.claude.com/docs/en/about-claude/use-case-guides/customer-suppor
 https://platform.claude.com/docs/en/about-claude/use-case-guides/content-moderation,Content moderation,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/about-claude/use-case-guides/legal-summarization,Legal summarization,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/about-claude/use-case-guides/commerce-agents,Commerce agent,platform_documentation,,,2026-11-18,indexed_only,agents,
-https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview,Overview,platform_documentation,,,2026-11-18,indexed_only,prompting,
+https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview,Overview,platform_documentation,,,2026-11-18,read_partial,prompt engineering;success criteria;evaluation;model selection,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices,Prompting best practices,platform_documentation,,,2026-11-18,read_partial,prompt-engineering;prompting;models,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-2,Prompting Claude Fable 5.2,platform_documentation,,,2026-11-18,indexed_only,prompting,
 https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-1,Prompting Claude Fable 5.1,platform_documentation,,,2026-11-18,indexed_only,prompting,
@@ -1461,10 +1461,10 @@ https://platform.claude.com/docs/en/models/sonnet-4-6/overview,Claude Sonnet 4.6
 https://platform.claude.com/docs/en/models/opus-4-5/overview,Claude Opus 4.5,platform_documentation,,,2026-11-18,indexed_only,models,
 https://platform.claude.com/docs/en/models/sonnet-4-5/overview,Claude Sonnet 4.5,platform_documentation,,,2026-11-18,indexed_only,models,
 https://platform.claude.com/docs/en/models/haiku-4-5/overview,Claude Haiku 4.5,platform_documentation,,,2026-11-18,indexed_only,models,
-https://platform.claude.com/docs/en/about-claude/models/choosing-a-model,Choosing a model,platform_documentation,,,2026-11-18,indexed_only,models,
-https://platform.claude.com/docs/en/about-claude/models/optimizing-for-cost-and-intelligence,Optimizing for cost and intelligence,platform_documentation,,,2026-11-18,indexed_only,models,
+https://platform.claude.com/docs/en/about-claude/models/choosing-a-model,Choosing a model,platform_documentation,,,2026-11-18,read_partial,model selection;capabilities;speed;cost;effort;evaluation,knowledge/anthropic/synthesis.md
+https://platform.claude.com/docs/en/about-claude/models/optimizing-for-cost-and-intelligence,Optimizing for cost and intelligence,platform_documentation,,,2026-11-18,read_partial,cost optimization;prompt caching;effort;model routing;budgets,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/about-claude/models/migration-guide,Upgrade between model versions,platform_documentation,,,2026-11-18,indexed_only,models,
-https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions,Model IDs and versioning,platform_documentation,,,2026-11-18,indexed_only,models,
+https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions,Model IDs and versioning,platform_documentation,,,2026-11-18,read_partial,model IDs;versioning;reproducibility;aliases,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/about-claude/model-deprecations,Model deprecations,platform_documentation,,,2026-11-18,indexed_only,models,
 https://platform.claude.com/docs/en/resources/overview,Model cards,platform_documentation,,,2026-11-18,indexed_only,models,
 https://platform.claude.com/docs/en/about-claude/pricing,Pricing,platform_documentation,,,2026-11-18,indexed_only,general,
