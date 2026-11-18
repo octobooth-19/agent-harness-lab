@@ -8,10 +8,10 @@
   },
   "counts": {
     "discovered_pages": 2836,
-    "read_pages": 76,
+    "read_pages": 87,
     "inaccessible_pages": 0,
     "excluded_unique_links": 26,
-    "pending_pages": 2712,
+    "pending_pages": 2701,
     "index_records": 15,
     "index_failures": [
       {
@@ -982,13 +982,13 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
         "API and SDK",
         "agent runtime"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
@@ -1098,13 +1098,13 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
         "API and SDK",
         "agent runtime"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
@@ -1152,14 +1152,14 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
         "API and SDK",
         "agent runtime",
         "permissions and security"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
@@ -1589,14 +1589,14 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
         "API and SDK",
         "agent runtime",
         "tools and MCP"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
@@ -1629,14 +1629,14 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
         "API and SDK",
         "agent runtime",
         "tools and MCP"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
@@ -1760,13 +1760,13 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
         "API and SDK",
         "agent runtime"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
@@ -42743,12 +42743,12 @@
       "source_type": "OpenAI news article",
       "published_or_updated_date": "2026-05-08",
       "date_basis": "publication date",
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
         "coding agents"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://openai.com/news/rss.xml"
       ],
@@ -43051,12 +43051,12 @@
       "source_type": "OpenAI news article",
       "published_or_updated_date": "2026-10-21",
       "date_basis": "publication date",
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
         "agent runtime"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://openai.com/news/rss.xml"
       ],
@@ -43681,13 +43681,13 @@
       "source_type": "OpenAI news article",
       "published_or_updated_date": "2026-07-08",
       "date_basis": "publication date",
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
         "coding agents",
         "evaluations"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://openai.com/news/rss.xml"
       ],
@@ -44381,13 +44381,13 @@
       "source_type": "OpenAI news article",
       "published_or_updated_date": "2026-04-22",
       "date_basis": "publication date",
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
         "API and SDK",
         "agent runtime"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://openai.com/news/rss.xml"
       ],
@@ -46819,12 +46819,12 @@
       "source_type": "OpenAI news article",
       "published_or_updated_date": "2026-02-04",
       "date_basis": "publication date",
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
         "coding agents"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://openai.com/news/rss.xml"
       ],
