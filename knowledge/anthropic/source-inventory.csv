@@ -78,9 +78,9 @@ https://platform.claude.com/docs/en/build-with-claude/preserved-thinking/fix-bou
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview,Overview,platform_documentation,,,2026-11-18,read_partial,agents;tools,synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/how-tool-use-works,How tool use works,platform_documentation,,,2026-11-18,indexed_only,agents;tools,
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent,Tutorial: Build a tool-using agent,platform_documentation,,,2026-11-18,indexed_only,agents;tools,
-https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools,Define tools,platform_documentation,,,2026-11-18,indexed_only,agents;tools,
+https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools,Define tools,platform_documentation,,,2026-11-18,read_partial,tool schemas;tool descriptions;tool design;context,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls,Handle tool calls,platform_documentation,,,2026-11-18,indexed_only,agents;tools,
-https://platform.claude.com/docs/en/agents-and-tools/tool-use/parallel-tool-use,Parallel tool use,platform_documentation,,,2026-11-18,indexed_only,agents;tools,
+https://platform.claude.com/docs/en/agents-and-tools/tool-use/parallel-tool-use,Parallel tool use,platform_documentation,,,2026-11-18,read_partial,tool orchestration;parallel calls;message history,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-runner,Tool runner (SDK),platform_documentation,,,2026-11-18,indexed_only,agents;tools,
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/strict-tool-use,Strict tool use,platform_documentation,,,2026-11-18,indexed_only,agents;tools,
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/server-tools,Server tools,platform_documentation,,,2026-11-18,indexed_only,agents;tools,
