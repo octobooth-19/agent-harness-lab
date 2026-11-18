@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "8733271e739d23d8a8187d62bcbb2232755203eee87c2f46846aacbfd9e732cf",
+  "scanRevision": 6,
+  "path": "skills/agent-self-evaluation/SKILL.md",
+  "revision": 1,
+  "decision": "reference-only",
+  "reason": "A self-assessed rubric may aid reflection but cannot substitute for the independent, evidence-cited judge this lab uses. Its optional Claude hooks are host-specific; no hook is being enabled.",
+  "source": {
+    "repo": "affaan-m/ecc",
+    "commit": "3f14a103a8694e51c1df9a806217a6d0b5f7a6f7"
+  },
+  "scanSha256": "cd1a3faa323ea6dbc6a2570fa0176a965d9c6a8672bf2fe1744c789e7d16e723",
+  "sourceSha256": "ae77c0c905720f86a83edbe95659e893904b2f68f1a0972d429ba344eb89618f",
+  "license": {
+    "status": "permissive",
+    "expression": "MIT",
+    "attribution": "Retain the upstream ECC MIT notice in LICENSE when copying; no selected-path nested license notice was identified.",
+    "evidence": [
+      "LICENSE"
+    ]
+  }
+}

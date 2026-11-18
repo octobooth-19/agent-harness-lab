@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "8733271e739d23d8a8187d62bcbb2232755203eee87c2f46846aacbfd9e732cf",
+  "scanRevision": 6,
+  "path": "skills/ai-regression-testing/SKILL.md",
+  "revision": 1,
+  "decision": "reference-only",
+  "reason": "The regression-on-discovered-defect principle is already covered by the existing focused-delivery instruction; Next.js/Vitest/Supabase examples and sandbox parity requirements are repository-specific.",
+  "source": {
+    "repo": "affaan-m/ecc",
+    "commit": "3f14a103a8694e51c1df9a806217a6d0b5f7a6f7"
+  },
+  "scanSha256": "cd1a3faa323ea6dbc6a2570fa0176a965d9c6a8672bf2fe1744c789e7d16e723",
+  "sourceSha256": "83f2f5c4083af5762dd658f742d4a390eb3a6f969d835f69e8f47efba296c127",
+  "license": {
+    "status": "permissive",
+    "expression": "MIT",
+    "attribution": "Retain the upstream ECC MIT notice in LICENSE when copying; no selected-path nested license notice was identified.",
+    "evidence": [
+      "LICENSE"
+    ]
+  }
+}
