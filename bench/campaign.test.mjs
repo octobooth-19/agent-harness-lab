@@ -6,6 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { Catalog, readJSON, hash } from './store.mjs';
+import { prepare } from './lifecycle.mjs';
 
 const bench = path.dirname(fileURLToPath(import.meta.url));
 
@@ -72,4 +73,11 @@ test('campaign freezes five valid cases then prepares exact independent baseline
   assert.ok(summary.runs.every(run => run.status === 'prepared' && run.passed === null));
   assert.ok(summary.cases.every(record => record.arms.every(arm => arm.graded === 0 && arm.meanScore === null)));
   assert.equal(summary.cases[0].arms[0].metrics[0].totalTokens, null);
+  const first = catalog.read('cases', freeze.cases[0].id);
+  catalog.put('cases', { ...first, version: 2, task: `${first.task}\nA later, out-of-campaign revision.` }, 'update');
+  const excluded = prepare(root, first.id, { version: 2, variant: 'baseline', workspaceRoot });
+  const later = invoke('report-campaign.mjs');
+  assert.equal(later.runs.length, 10, 'later revisions must not contaminate the frozen comparison');
+  assert.equal(later.excludedRuns.length, 1);
+  assert.equal(later.excludedRuns[0].runId, excluded.runId);
 });

@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 import { Catalog, readJSON, hash, writeJSON } from './store.mjs';
 import { inspectAppEvents } from './observations.mjs';
 import { validate } from './schema.mjs';
-import { prepare, collect, judgePacket, grade, report, executeHeadless, executeJudgeHeadless, archive, publicTranscript } from './lifecycle.mjs';
+import { prepare, registerApp, collect, judgePacket, grade, report, executeHeadless, executeJudgeHeadless, archive, publicTranscript } from './lifecycle.mjs';
 
 const source = path.dirname(fileURLToPath(import.meta.url));
 
@@ -464,6 +464,20 @@ test('app telemetry validates exact cwd/prompt and reports observable model, tok
   assert.throws(() => inspectAppEvents(events, { ...metadata, workspace: '/wrong' }), /working directory/);
   assert.throws(() => inspectAppEvents(events, { ...metadata, prompt: 'changed' }), /kickoff/);
   assert.throws(() => inspectAppEvents([...events, { type: 'user.message', data: { content: 'extra instructions' } }], metadata), /extra or changed/);
+});
+
+test('registered app launches remain observable before collection and reject reused or mismatched sessions', t => {
+  const { root, workspaceRoot, trial } = prepared(t);
+  const metadata = { ...receipt(), runner: 'app', outcome: 'unknown' };
+  const launch = { receipt: metadata, actualCwd: trial.workspace, startedAt: new Date().toISOString() };
+  assert.throws(() => registerApp(root, trial.runId, { ...launch, actualCwd: '/wrong' }), /actual app cwd/);
+  registerApp(root, trial.runId, launch);
+  assert.equal(report(root).runs[0].status, 'launched');
+  assert.throws(() => collect(root, trial.runId, { ...metadata, sessionId: 'different' }), /registered app session/);
+  const other = prepare(root, 'incident-summary', { variant: 'evidence-first', workspaceRoot });
+  assert.throws(() => registerApp(root, other.runId, { ...launch, actualCwd: other.workspace }), /already belongs/);
+  collect(root, trial.runId, { ...metadata, outcome: 'failed' });
+  assert.equal(report(root).runs.find(run => run.runId === trial.runId).runnerSucceeded, false);
 });
 
 test('CLI validates catalog, surfaces errors, and drives the lifecycle without dependencies', t => {

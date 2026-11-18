@@ -85,6 +85,12 @@ coordinator-observed subject deadline. Deliver the generated prompt verbatim.
 Confirm actual cwd and applied profile before claiming that a treatment ran.
 Never silently substitute CLI/subagent execution.
 
+Immediately preserve the app session identity using `register-app RUN --file
+ABS_LAUNCH_JSON`. The launch JSON has `actualCwd`, observed ISO `startedAt`, and
+`receipt` using the usual app receipt shape with `outcome: "unknown"`. This makes
+in-flight/blocked launches visible as launched rather than merely prepared.
+Registration rejects a wrong cwd or a session already assigned to another run.
+
 Record a provenance receipt with observed outcome and optional `metrics`:
 
 ```json
@@ -141,6 +147,10 @@ per-arm case scores and counts, and observed metrics with missing values explici
 Raw evidence, judge packets/verdicts, manifests, policy, source/license, reports,
 and provenance remain in the repository. Only isolated live execution folders
 are external. Review all outputs for secrets and private reasoning before commit.
+
+Runs with matching case IDs but different frozen case/rubric/profile/component
+hashes are retained under `excludedRuns` with an explicit reason, never combined
+with this campaign's matched-arm averages.
 
 ## Limits
 

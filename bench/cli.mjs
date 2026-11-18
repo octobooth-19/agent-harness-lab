@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { Catalog, readJSON } from './store.mjs';
 import { ensure } from './schema.mjs';
-import { prepare, executeHeadless, executeJudgeHeadless, collect, judgePacket, grade, saveReport, archive } from './lifecycle.mjs';
+import { prepare, registerApp, executeHeadless, executeJudgeHeadless, collect, judgePacket, grade, saveReport, archive } from './lifecycle.mjs';
 
 const help = `Agent Harness Lab (Node.js built-ins only)
   catalog list KIND
@@ -14,6 +14,7 @@ const help = `Agent Harness Lab (Node.js built-ins only)
   profile-variant PROFILE [--version N] [--variant NAME]
   validate
   prepare CASE --variant NAME --workspace-root ABS [--version N] [--model auto]
+  register-app RUN --file APP_LAUNCH_JSON
   headless RUN --environment TEXT --configuration-audit TEXT [--allow-tool RULE ...] [--timeout-ms N]
   collect RUN --receipt JSON [--allow-commands]
   judge-packet RUN
@@ -58,6 +59,10 @@ try {
     else if (command === 'validate') result = catalog.validateAll();
     else if (command === 'prepare') result = prepare(root, first, { variant: values.variant,
       workspaceRoot: values['workspace-root'], version, model: values.model });
+    else if (command === 'register-app') {
+      ensure(values.file, '--file is required');
+      result = registerApp(root, first, readJSON(values.file));
+    }
     else if (command === 'headless' || command === 'judge-headless') result = (command === 'headless' ? executeHeadless : executeJudgeHeadless)(root, first, { environment: values.environment,
       configurationAudit: values['configuration-audit'], permissions: values['allow-tool'],
       model: values.model,

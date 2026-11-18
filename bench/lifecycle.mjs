@@ -105,6 +105,26 @@ function loadRun(root, runId) {
   return { directory, manifest, manifestSha256 };
 }
 
+export function registerApp(root, runId, launch) {
+  const { directory, manifest } = loadRun(root, runId);
+  validateReceipt(launch.receipt);
+  ensure(launch.receipt.runner === 'app' && launch.receipt.outcome === 'unknown', 'app launch receipt must attest unknown outcome until completion');
+  ensure(path.resolve(launch.actualCwd ?? '') === path.resolve(manifest.workspace), 'actual app cwd does not match the prepared workspace');
+  ensure(launch.receipt.model === manifest.requestedModel, 'app requested model differs from frozen manifest');
+  ensure(Number.isFinite(Date.parse(launch.startedAt)), 'app launch needs an observed startedAt timestamp');
+  ensure(!fs.existsSync(path.join(directory, 'evidence.json')), 'cannot register launch after evidence was collected');
+  for (const otherId of fs.readdirSync(path.dirname(directory)).filter(id => uuid.test(id) && id !== runId)) {
+    const otherDirectory = runDirectory(root, otherId);
+    for (const name of ['app-launch.json', 'launch.json', 'evidence.json']) {
+      const file = path.join(otherDirectory, name);
+      if (fs.existsSync(file)) ensure(readJSON(file).receipt.sessionId !== launch.receipt.sessionId, 'session already belongs to another trial');
+    }
+  }
+  const file = path.join(directory, 'app-launch.json');
+  writeJSON(file, { schemaVersion: 1, runId, startedAt: launch.startedAt, actualCwd: launch.actualCwd, receipt: launch.receipt });
+  return { runId, file };
+}
+
 export function prepare(root, caseId, { variant: variantName, workspaceRoot, version, model = 'auto' }) {
   const catalog = new Catalog(root);
   text(model, 'model');
@@ -228,6 +248,11 @@ export function collect(root, runId, receipt, { allowCommands = false } = {}) {
   }
   const launchFile = path.join(directory, 'launch.json');
   if (fs.existsSync(launchFile)) ensure(canonical(receipt) === canonical(readJSON(launchFile).receipt), 'receipt does not match the recorded launch');
+  const appLaunch = path.join(directory, 'app-launch.json');
+  if (fs.existsSync(appLaunch)) {
+    const recorded = readJSON(appLaunch).receipt;
+    ensure(receipt.runner === 'app' && receipt.sessionId === recorded.sessionId, 'receipt does not match the registered app session');
+  }
   ensure(!manifest.case.value.checks.some(c => ['command', 'evaluator'].includes(c.type)) || allowCommands,
     'command checks execute trusted catalog code; inspect them and pass --allow-commands explicitly');
   snapshot(manifest.workspace);
@@ -383,8 +408,12 @@ export function report(root, caseId) {
         'stored grade does not match rubric and checks');
     }
     runs.push({ runId, case: manifest.case.value.id, version: manifest.case.value.version, variant: manifest.variant,
-      status: result ? 'graded' : evidence ? 'collected' : fs.existsSync(path.join(directory, 'launch.json')) ? 'launched' : 'prepared',
+      caseSha256: manifest.case.sha256, rubricSha256: manifest.rubric.sha256,
+      profileSha256: manifest.profile?.sha256 ?? null, componentHashes: manifest.components.map(component => component.sha256),
+      status: result ? 'graded' : evidence ? 'collected' : ['launch.json', 'app-launch.json'].some(file => fs.existsSync(path.join(directory, file))) ? 'launched' : 'prepared',
       score: result?.score ?? null, maxScore: result?.maxScore ?? null, passed: result?.passed ?? null,
+      deterministicPassed: evidence ? evidence.checks.every(check => check.passed) : null,
+      runnerSucceeded: evidence ? executionSucceeded(evidence) : null,
       metrics: evidence?.receipt.metrics ?? null });
     if (!evidence) continue;
     const context = { caseSha256: manifest.case.sha256, rubricSha256: manifest.rubric.sha256, variant: manifest.variant,
