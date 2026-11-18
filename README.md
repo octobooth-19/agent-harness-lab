@@ -21,3 +21,7 @@ pinned revisions in named profiles. Discovery, adoption, and benchmark launch
 are separate steps; source repositories are never installed by the scan.
 
 The cross-provider agent library is indexed in [`knowledge/index.md`](knowledge/index.md). For deterministic source discovery and incremental change checks, see [`knowledge/MAINTENANCE.md`](knowledge/MAINTENANCE.md); the refresh pipeline uses Node.js built-ins only.
+
+## Credit
+
+Kshitij Vaidya (kmvaidya)
