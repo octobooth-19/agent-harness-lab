@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "8733271e739d23d8a8187d62bcbb2232755203eee87c2f46846aacbfd9e732cf",
+  "scanRevision": 6,
+  "path": "skills/agentic-engineering/SKILL.md",
+  "revision": 1,
+  "decision": "reference-only",
+  "reason": "Eval-first and careful tool-result classification overlap existing benchmark and session workflows; the remaining model/session examples are host-specific and would not add a distinct enabled behavior now.",
+  "source": {
+    "repo": "affaan-m/ecc",
+    "commit": "3f14a103a8694e51c1df9a806217a6d0b5f7a6f7"
+  },
+  "scanSha256": "cd1a3faa323ea6dbc6a2570fa0176a965d9c6a8672bf2fe1744c789e7d16e723",
+  "sourceSha256": "c626eb66387447af2878a686977e3e95476fe441a46dcab82f3163d7f8e2b66d",
+  "license": {
+    "status": "permissive",
+    "expression": "MIT",
+    "attribution": "Retain the upstream ECC MIT notice in LICENSE when copying; no selected-path nested license notice was identified.",
+    "evidence": [
+      "LICENSE"
+    ]
+  }
+}
