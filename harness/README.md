@@ -38,7 +38,7 @@ call until you reconcile its reservation with the app.
 | --- | --- |
 | Reserve before creating | `"action":"reserve"` |
 | Bind actual app session | `"action":"bind"`, `sessionId` |
-| Accept reviewed results | `"action":"accept"`, `sessionId`, `scanRevision`, `resultCommit` (lab results commit SHA) |
+| Accept reviewed results | `"action":"accept"`, `sessionId`, `scanRevision`, `resultCommit` (lab results commit SHA); include `note` when accepting a newer revision after a completed scope |
 | Record a blocker | `"action":"block"`, `sessionId`, `note` |
 | Resume the same app session | `"action":"resume"`, `sessionId` |
 | Release a reservation after proving no session was created | `"action":"release"`, `note` |
@@ -47,6 +47,8 @@ call until you reconcile its reservation with the app.
 Commit ledger events at handoffs. Import only reviewed results files or
 results-only commits from each scanner's worktree; verify both provenance and
 the diff before accepting. A partial checkpoint can be accepted and resumed.
+The same session can extend a completed scope; accept its newer revision with
+an explicit reason rather than launching a new scanner or editing past events.
 Missing tool access, untrusted repository settings or app capacity can block
 dispatch. No claim is made that any particular app can run 50 sessions at once.
 

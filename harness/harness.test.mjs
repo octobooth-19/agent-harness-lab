@@ -136,6 +136,13 @@ test('batch reservations resume the same app session and deduplicate work across
   ledger.saveScan({ ...scan, revision: 2 });
   assert.equal(dispatch(4, 'accept', { sessionId, scanRevision: 2, resultCommit }).status, 'complete');
   assert.equal(ledger.status('another')[0].result.sha256, hash(ledger.scan(key, 2)));
+  ledger.saveScan({ ...scan, revision: 3, scope: 'Extended fixture scope' });
+  assert.throws(() => dispatch(5, 'accept', { sessionId, scanRevision: 3, resultCommit }), /reason for extending/);
+  assert.throws(() => dispatch(5, 'accept', { sessionId, scanRevision: 2, resultCommit, note: 'Follow-up' }), /already accepted/);
+  const followup = dispatch(5, 'accept', { sessionId, scanRevision: 3, resultCommit, note: 'Extended support coverage.' });
+  assert.equal(followup.status, 'complete');
+  assert.equal(followup.result.revision, 3);
+  assert.equal(followup.note, 'Extended support coverage.');
 });
 
 test('indexed material cannot be adopted and unclear licenses remain reference-only', t => {
