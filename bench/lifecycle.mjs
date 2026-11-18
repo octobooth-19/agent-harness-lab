@@ -305,11 +305,12 @@ export function judgePacket(root, runId) {
   const judgeWorkspace = path.join(path.dirname(manifest.workspace), 'judge');
   ensure(!fs.existsSync(judgeWorkspace), 'judge packet already exists; use its existing prompt without overwriting it');
   fs.mkdirSync(judgeWorkspace);
-  const originalFiles = Object.assign(Object.create(null), manifest.case.value.files,
-    ...manifest.components.map(component => component.value.files));
+  const componentFiles = Object.assign(Object.create(null), ...manifest.components.map(component => component.value.files));
+  const originalFiles = Object.assign(Object.create(null), manifest.case.value.files, componentFiles);
   const artifactDirectory = path.join(judgeWorkspace, 'artifacts');
   const retainedArtifacts = path.join(directory, 'judge-artifacts');
-  const packetFiles = evidence.files.map((file, index) => {
+  const packetFiles = evidence.files.filter(file =>
+    !Object.hasOwn(componentFiles, file.path) || hash(componentFiles[file.path]) !== file.sha256).map((file, index) => {
     const bytes = Buffer.from(file.content, 'base64');
     const description = { path: `workspace/${file.path}`, sha256: file.sha256, bytes: bytes.length };
     if (bytes.length <= 12000) return { ...description, contentBase64: file.content, text: bytes.toString('utf8') };
@@ -458,6 +459,10 @@ export function report(root, caseId) {
     runs.push({ runId, case: manifest.case.value.id, version: manifest.case.value.version, variant: manifest.variant,
       caseSha256: manifest.case.sha256, rubricSha256: manifest.rubric.sha256,
       profileSha256: manifest.profile?.sha256 ?? null, componentHashes: manifest.components.map(component => component.sha256),
+      policySha256: manifest.policy?.sha256 ?? null, requestedModel: manifest.requestedModel,
+      runner: evidence?.receipt.runner ?? (fs.existsSync(path.join(directory, 'app-launch.json')) ? 'app' :
+        fs.existsSync(path.join(directory, 'launch.json')) ? 'headless' : null),
+      actualModel: evidence?.receipt.actualModel ?? null,
       status: result ? 'graded' : evidence ? 'collected' : ['launch.json', 'app-launch.json'].some(file => fs.existsSync(path.join(directory, file))) ? 'launched' : 'prepared',
       score: result?.score ?? null, maxScore: result?.maxScore ?? null, passed: result?.passed ?? null,
       deterministicPassed: evidence ? evidence.checks.every(check => check.passed) : null,

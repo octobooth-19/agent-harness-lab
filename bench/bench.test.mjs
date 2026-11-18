@@ -20,7 +20,9 @@ function fixture(t) {
   const workspaceRoot = path.join(temp, 'trials');
   fs.mkdirSync(path.join(root, 'bench'), { recursive: true });
   fs.mkdirSync(workspaceRoot);
-  fs.cpSync(path.join(source, 'catalog'), path.join(root, 'bench', 'catalog'), { recursive: true });
+  for (const record of ['cases/incident-summary', 'rubrics/incident-summary', 'components/brief-prompt', 'components/evidence-prompt']) {
+    fs.cpSync(path.join(source, 'catalog', record), path.join(root, 'bench/catalog', record), { recursive: true });
+  }
   return { root, workspaceRoot, catalog: new Catalog(root) };
 }
 
@@ -217,6 +219,28 @@ test('judge packet is inert, excludes treatment prompts, and binds grading to in
   assert.deepEqual(readJSON(path.join(root, 'bench/runs', trial.runId, 'verdict.json')), verdict);
   assert.throws(() => grade(root, trial.runId, verdict), /EEXIST/);
   assert.equal(report(root).runs[0].status, 'graded');
+});
+
+test('judges do not receive unchanged installed harness configuration but can see subject edits', t => {
+  const { root, workspaceRoot, catalog } = fixture(t);
+  catalog.put('components', { schemaVersion: 1, id: 'blind-guidance', version: 1, title: 'Synthetic blinding fixture',
+    kind: 'instructions', prompt: 'Synthetic treatment prompt', files: {
+      '.github/copilot-instructions.md': 'Do not reveal this treatment configuration to the judge.',
+      '.github/skills/probe/SKILL.md': 'Original synthetic skill.',
+    } }, 'create');
+  const original = catalog.read('cases', 'incident-summary');
+  catalog.put('cases', { ...original, id: 'blinding-case',
+    variants: [{ name: 'configured', components: [{ id: 'blind-guidance', version: 1 }] }] }, 'create');
+  const trial = prepare(root, 'blinding-case', { variant: 'configured', workspaceRoot });
+  fs.writeFileSync(path.join(trial.workspace, '.github/skills/probe/SKILL.md'), 'Subject changed this configuration.');
+  const collected = collect(root, trial.runId, receipt());
+  const judge = judgePacket(root, trial.runId);
+  const packet = readJSON(path.join(judge.workspace, 'packet.json'));
+  assert.ok(readJSON(collected.evidence).files.some(file => file.path === '.github/copilot-instructions.md'), 'retain complete audit evidence');
+  assert.equal(packet.files.some(file => file.path === 'workspace/.github/copilot-instructions.md'), false);
+  assert.ok(packet.files.some(file => file.path === 'workspace/.github/skills/probe/SKILL.md'));
+  assert.equal(JSON.stringify(packet).includes('Synthetic treatment prompt'), false);
+  assert.equal(fs.existsSync(path.join(judge.workspace, '.github')), false);
 });
 
 test('grading rejects self-judging, stale evidence, missing criteria, bad ranges, and invented citations', t => {

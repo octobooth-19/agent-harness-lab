@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "campaignId": "sdlc-20261118",
+  "arm": "initial-harness",
+  "preparedAt": "2026-11-18T17:56:23.247Z",
+  "policyFile": "/Users/octodemo/repos/copilot-worktrees/agent-harness-lab/octobooth-19-friendly-guacamole/bench/campaigns/sdlc-20261118/policy.json",
+  "freezeFile": "/Users/octodemo/repos/copilot-worktrees/agent-harness-lab/octobooth-19-friendly-guacamole/bench/campaigns/sdlc-20261118/freeze.json",
+  "trials": [
+    {
+      "caseId": "sdlc-20261118-requirements",
+      "stage": "requirements",
+      "partition": "development",
+      "runId": "4321e12c-246e-4180-9737-2b4b51d064de",
+      "workspace": "/private/tmp/harness-lab-sdlc-20261118-Xyvtgn/harness-lab-4321e12c-246e-4180-9737-2b4b51d064de-1lELvI/subject",
+      "manifest": "/Users/octodemo/repos/copilot-worktrees/agent-harness-lab/octobooth-19-friendly-guacamole/bench/runs/4321e12c-246e-4180-9737-2b4b51d064de/manifest.json",
+      "promptFile": "/Users/octodemo/repos/copilot-worktrees/agent-harness-lab/octobooth-19-friendly-guacamole/bench/runs/4321e12c-246e-4180-9737-2b4b51d064de/trial-prompt.txt",
+      "launch": {
+        "owner": "Project coordinator",
+        "registerFolder": "/private/tmp/harness-lab-sdlc-20261118-Xyvtgn/harness-lab-4321e12c-246e-4180-9737-2b4b51d064de-1lELvI/subject",
+        "independentSession": true,
+        "requiredRuntime": {},
+        "profileTarget": "app",
+        "instructions": "Register this exact folder, discover the coordinator create_session schema, use its folder container, and start a fresh session with trial-prompt.txt. Verify actual cwd and configuration; never use the lab repository container."
+      }
+    },
+    {
+      "caseId": "sdlc-20261118-architecture",
+      "stage": "architecture",
+      "partition": "development",
+      "runId": "09cedac9-1c1d-43ca-8c6b-e7f05dff89c9",
+      "workspace": "/private/tmp/harness-lab-sdlc-20261118-Xyvtgn/harness-lab-09cedac9-1c1d-43ca-8c6b-e7f05dff89c9-gxOmkQ/subject",
+      "manifest": "/Users/octodemo/repos/copilot-worktrees/agent-harness-lab/octobooth-19-friendly-guacamole/bench/runs/09cedac9-1c1d-43ca-8c6b-e7f05dff89c9/manifest.json",
+      "promptFile": "/Users/octodemo/repos/copilot-worktrees/agent-harness-lab/octobooth-19-friendly-guacamole/bench/runs/09cedac9-1c1d-43ca-8c6b-e7f05dff89c9/trial-prompt.txt",
+      "launch": {
+        "owner": "Project coordinator",
+        "registerFolder": "/private/tmp/harness-lab-sdlc-20261118-Xyvtgn/harness-lab-09cedac9-1c1d-43ca-8c6b-e7f05dff89c9-gxOmkQ/subject",
+        "independentSession": true,
+        "requiredRuntime": {},
+        "profileTarget": "app",
+        "instructions": "Register this exact folder, discover the coordinator create_session schema, use its folder container, and start a fresh session with trial-prompt.txt. Verify actual cwd and configuration; never use the lab repository container."
+      }
+    },
+    {
+      "caseId": "sdlc-20261118-issue",
+      "stage": "issue",
+      "partition": "development",
+      "runId": "d8c28341-5030-4aef-a8dc-e0b8b0feb376",
+      "workspace": "/private/tmp/harness-lab-sdlc-20261118-Xyvtgn/harness-lab-d8c28341-5030-4aef-a8dc-e0b8b0feb376-oSYLui/subject",
+      "manifest": "/Users/octodemo/repos/copilot-worktrees/agent-harness-lab/octobooth-19-friendly-guacamole/bench/runs/d8c28341-5030-4aef-a8dc-e0b8b0feb376/manifest.json",
+      "promptFile": "/Users/octodemo/repos/copilot-worktrees/agent-harness-lab/octobooth-19-friendly-guacamole/bench/runs/d8c28341-5030-4aef-a8dc-e0b8b0feb376/trial-prompt.txt",
+      "launch": {
+        "owner": "Project coordinator",
+        "registerFolder": "/private/tmp/harness-lab-sdlc-20261118-Xyvtgn/harness-lab-d8c28341-5030-4aef-a8dc-e0b8b0feb376-oSYLui/subject",
+        "independentSession": true,
+        "requiredRuntime": {},
+        "profileTarget": "app",
+        "instructions": "Register this exact folder, discover the coordinator create_session schema, use its folder container, and start a fresh session with trial-prompt.txt. Verify actual cwd and configuration; never use the lab repository container."
+      }
+    },
+    {
+      "caseId": "sdlc-20261118-review",
+      "stage": "review",
+      "partition": "development",
+      "runId": "d724be67-51ca-4d2a-be5b-afe5b46ff295",
+      "workspace": "/private/tmp/harness-lab-sdlc-20261118-Xyvtgn/harness-lab-d724be67-51ca-4d2a-be5b-afe5b46ff295-tn9b5v/subject",
+      "manifest": "/Users/octodemo/repos/copilot-worktrees/agent-harness-lab/octobooth-19-friendly-guacamole/bench/runs/d724be67-51ca-4d2a-be5b-afe5b46ff295/manifest.json",
+      "promptFile": "/Users/octodemo/repos/copilot-worktrees/agent-harness-lab/octobooth-19-friendly-guacamole/bench/runs/d724be67-51ca-4d2a-be5b-afe5b46ff295/trial-prompt.txt",
+      "launch": {
+        "owner": "Project coordinator",
+        "registerFolder": "/private/tmp/harness-lab-sdlc-20261118-Xyvtgn/harness-lab-d724be67-51ca-4d2a-be5b-afe5b46ff295-tn9b5v/subject",
+        "independentSession": true,
+        "requiredRuntime": {},
+        "profileTarget": "app",
+        "instructions": "Register this exact folder, discover the coordinator create_session schema, use its folder container, and start a fresh session with trial-prompt.txt. Verify actual cwd and configuration; never use the lab repository container."
+      }
+    },
+    {
+      "caseId": "sdlc-20261118-maintenance",
+      "stage": "maintenance",
+      "partition": "held-out",
+      "runId": "02a864c7-e1f9-49bc-b1dc-f4a2c3056b81",
+      "workspace": "/private/tmp/harness-lab-sdlc-20261118-Xyvtgn/harness-lab-02a864c7-e1f9-49bc-b1dc-f4a2c3056b81-23bQiQ/subject",
+      "manifest": "/Users/octodemo/repos/copilot-worktrees/agent-harness-lab/octobooth-19-friendly-guacamole/bench/runs/02a864c7-e1f9-49bc-b1dc-f4a2c3056b81/manifest.json",
+      "promptFile": "/Users/octodemo/repos/copilot-worktrees/agent-harness-lab/octobooth-19-friendly-guacamole/bench/runs/02a864c7-e1f9-49bc-b1dc-f4a2c3056b81/trial-prompt.txt",
+      "launch": {
+        "owner": "Project coordinator",
+        "registerFolder": "/private/tmp/harness-lab-sdlc-20261118-Xyvtgn/harness-lab-02a864c7-e1f9-49bc-b1dc-f4a2c3056b81-23bQiQ/subject",
+        "independentSession": true,
+        "requiredRuntime": {},
+        "profileTarget": "app",
+        "instructions": "Register this exact folder, discover the coordinator create_session schema, use its folder container, and start a fresh session with trial-prompt.txt. Verify actual cwd and configuration; never use the lab repository container."
+      }
+    }
+  ]
+}

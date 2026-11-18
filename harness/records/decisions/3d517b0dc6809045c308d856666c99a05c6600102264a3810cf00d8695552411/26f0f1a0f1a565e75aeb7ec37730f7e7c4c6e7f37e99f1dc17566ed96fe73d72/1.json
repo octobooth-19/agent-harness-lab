@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "3d517b0dc6809045c308d856666c99a05c6600102264a3810cf00d8695552411",
+  "scanRevision": 1,
+  "path": ".agents/skills/dsh-ci-test-reliability/SKILL.md",
+  "revision": 1,
+  "decision": "adopted",
+  "reason": "Adds narrow test isolation guidance not covered by the general delivery instruction; the candidate and linked dependencies are inspected despite the partial repository checkpoint.",
+  "component": {
+    "id": "sdlc-test-isolation",
+    "version": 1
+  },
+  "adaptation": "Reauthored a native Copilot skill for arbitrary repository checks. Removed Vitest, DeepSeek CI, commands, pre-push adapters and all executable dependencies.",
+  "notices": [
+    "THIRD-PARTY-NOTICES/sdlc-test-isolation.txt"
+  ],
+  "source": {
+    "repo": "deepseek-ai/deepseek-harness",
+    "commit": "2e39e70496aa02986ca6a820c5d497e816b69d7e"
+  },
+  "scanSha256": "c8b94a1f3c20608d7db2e32d56b183be8c10e083267340b2a177c7348dbd31de",
+  "sourceSha256": "6ed04407132759698e5e5e9684178f826b4c659e15e90e8e996141e5ad7edb4c",
+  "license": {
+    "status": "permissive",
+    "expression": "MIT",
+    "attribution": "Preserve the repository MIT copyright and license notice when reusing substantial material.",
+    "evidence": [
+      "LICENSE"
+    ]
+  },
+  "componentSha256": "d17e16d6a70bd90ce5dae899a81098b6c4c89e84abc85bbf837d3f0e41a86850"
+}

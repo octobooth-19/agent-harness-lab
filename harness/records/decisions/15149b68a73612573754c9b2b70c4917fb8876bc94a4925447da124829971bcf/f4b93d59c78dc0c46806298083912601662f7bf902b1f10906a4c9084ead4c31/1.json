@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "15149b68a73612573754c9b2b70c4917fb8876bc94a4925447da124829971bcf",
+  "scanRevision": 1,
+  "path": "skills/verification-before-completion/SKILL.md",
+  "revision": 1,
+  "decision": "duplicate",
+  "reason": "The treatment already asks subjects to run the relevant checks and make completion claims from observed results; installing a second verification gate would duplicate the intervention.",
+  "component": {
+    "id": "sdlc-delivery-instructions",
+    "version": 1
+  },
+  "source": {
+    "repo": "obra/superpowers",
+    "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
+  },
+  "scanSha256": "2786ddfff1e9b5f885007211343360fd75737c0f3c5d157e6e5c1e76147154f9",
+  "sourceSha256": "2befe7fc55bcadaa3d97dd9e8efeb633d2561c0ebe74c5a8b17c4d9e7e4520b3",
+  "license": {
+    "status": "permissive",
+    "expression": "MIT",
+    "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+    "evidence": [
+      "LICENSE"
+    ]
+  },
+  "componentSha256": "d36a6bc1d3845a08c87a0717718a79597ca0fde9ecedb6aa5e4ae593afbcb5b1"
+}

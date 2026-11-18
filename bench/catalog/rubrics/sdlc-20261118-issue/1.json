@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "sdlc-20261118-issue",
+  "version": 1,
+  "title": "Resolve a real Lodash sparse-array cloneDeep issue",
+  "passScore": 8,
+  "criteria": [
+    {
+      "id": "issue-correctness",
+      "maxScore": 4,
+      "description": "Actual upstream source patch fixes the reported hole/undefined distinction, including nested and circular sparse arrays, while preserving dense-array values and deep-cloned objects. Evaluate actual artifacts and independent behavioral checks, not success claims."
+    },
+    {
+      "id": "regression-discipline",
+      "maxScore": 4,
+      "description": "Submitted node:test tests genuinely exercise the modified Lodash export and cover sparse holes, explicit undefined, deep references, and a regression guard. Handoff records the observed initial failure and subsequent commands/results, not a fictional full upstream suite."
+    },
+    {
+      "id": "scope-and-provenance",
+      "maxScore": 2,
+      "description": "Minimal comprehensible change with licenses/notices and protected inputs retained. No dependency downloads or upstream submissions. Clearly states source-slice/full-suite and runtime limitations; no collateral rewrite."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "sdlc-20261118-architecture",
+  "version": 1,
+  "title": "Plan an offline-first field-notes synchronization change",
+  "passScore": 8,
+  "criteria": [
+    {
+      "id": "sound-design",
+      "maxScore": 4,
+      "description": "Design respects the revision/409 API and team authorization. Preserves offline drafts and handles conflicts explicitly without silent overwrites, claiming unavailable batch APIs, or inventing server idempotency."
+    },
+    {
+      "id": "failure-recovery",
+      "maxScore": 4,
+      "description": "Concrete flows cover interrupted/duplicated saves, retry/backoff, storage failure, two-device edits and membership revocation. Explains what is persisted, acknowledged and retried and identifies unresolved API/product choices."
+    },
+    {
+      "id": "delivery",
+      "maxScore": 2,
+      "description": "Small sequenced plan names verification scenarios, tradeoffs, monitoring, feature gating and rollback with draft preservation. No unnecessary infrastructure; concise, actionable handoff."
+    }
+  ]
+}
