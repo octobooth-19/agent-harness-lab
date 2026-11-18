@@ -2,7 +2,7 @@ import { readdir, readFile, stat, open } from "node:fs/promises";
 import { EventEmitter } from "node:events";
 import { join } from "node:path";
 import { homedir } from "node:os";
-import { createSessionState, applyChunk, deriveStatus, waitingOn } from "./events.mjs";
+import { createSessionState, applyChunk, deriveStatus, waitingOn, openSpans } from "./events.mjs";
 import { collectGitStats } from "./git.mjs";
 
 export function defaultSessionRoot() {
@@ -265,6 +265,7 @@ export class SessionMonitor extends EventEmitter {
                 lastError: s.lastError,
                 git: g ? { ...g.stats, error: g.error, stale: g.at > 0 && now - g.at > GIT_MAX_INTERVAL_MS * 3 } : null,
                 feed: s.feed.slice(-12),
+                timeline: { spans: s.spans, open: e.alive ? openSpans(s) : [], links: s.links, marks: s.marks },
             });
         }
         // GitHub agent tasks with no session-state on this machine: cloud or another host.
@@ -302,6 +303,7 @@ export class SessionMonitor extends EventEmitter {
                 lastError: null,
                 git: null,
                 feed: [],
+                timeline: null,
             });
         }
         return {

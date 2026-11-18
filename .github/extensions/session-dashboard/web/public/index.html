@@ -3,52 +3,53 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#070b18">
-    <title>Session Mission Control</title>
+    <meta name="theme-color" content="#fbfaf7">
+    <title>Agent timeline</title>
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <header class="hud">
-        <div class="brand">
-            <span class="brand-mark" aria-hidden="true">◆</span>
-            <div>
-                <h1>Mission Control</h1>
-                <p class="sub">Copilot sessions: this machine (live) + GitHub agent tasks (polled)</p>
-            </div>
+    <header class="top">
+        <div class="title">
+            <h1>Agent timeline</h1>
+            <p class="summary" id="summary" aria-live="polite">Connecting…</p>
         </div>
-        <div class="feed-status" id="feed-status" role="status" aria-live="polite">
-            <span class="dot"></span><span class="label">Connecting…</span>
-            <span class="detail" id="feed-detail"></span>
+        <div class="sources">
+            <span class="pill" id="local-pill" title="Local sessions: events.jsonl tailed every second, streamed over SSE"><i></i><span>Local</span></span>
+            <span class="pill" id="cloud-pill" title="Cloud & other hosts: gh agent-task list (preview), polled"><i></i><span>Cloud</span></span>
         </div>
-        <div class="feed-status" id="remote-status" role="status">
-            <span class="dot"></span><span class="label">Cloud: loading</span>
-            <span class="detail" id="remote-detail"></span>
-        </div>
-        <dl class="scoreboard" id="scoreboard"></dl>
     </header>
 
-    <nav class="controls" aria-label="Filters">
-        <div class="chips" role="group" aria-label="Scope" id="scope-chips">
-            <button type="button" data-scope="online" aria-pressed="true" title="Local: live process. Remote: GitHub task not in a terminal state">Online</button>
+    <nav class="bar" aria-label="View">
+        <div class="seg" role="group" aria-label="Which sessions" id="scope">
+            <button type="button" data-scope="online" aria-pressed="true" title="Local: live process. Cloud: GitHub task not finished">Online</button>
             <button type="button" data-scope="recent" aria-pressed="false">Last 24h</button>
             <button type="button" data-scope="all" aria-pressed="false">All</button>
         </div>
-        <div class="chips" role="group" aria-label="Status" id="status-chips"></div>
-        <input type="search" id="search" placeholder="Search units, repos, branches…" aria-label="Search sessions">
+        <div class="seg" role="group" aria-label="Time window" id="window">
+            <button type="button" data-min="30" aria-pressed="false">30m</button>
+            <button type="button" data-min="120" aria-pressed="true">2h</button>
+            <button type="button" data-min="480" aria-pressed="false">8h</button>
+            <button type="button" data-min="1440" aria-pressed="false">24h</button>
+        </div>
+        <input type="search" id="search" placeholder="Find an agent" aria-label="Find an agent">
     </nav>
 
-    <main class="layout">
-        <section class="board" id="board" aria-label="Lines of work"></section>
-        <aside class="ticker" aria-label="Live activity feed">
-            <h2>Comms feed</h2>
-            <ol id="feed"></ol>
+    <main class="stage">
+        <section class="timeline" id="timeline" aria-label="Timeline, one lane per agent">
+            <div class="axis" id="axis"></div>
+            <div class="rows" id="rows">
+                <div class="labels" id="labels"></div>
+                <div class="tracks" id="tracks"><svg id="svg" role="img" aria-label="Agent activity lanes"></svg></div>
+            </div>
+            <p class="empty" id="empty" hidden>No agents in this view.</p>
+        </section>
+        <aside class="detail" id="detail" aria-live="polite">
+            <p class="hint">Select an agent to see what it's doing.</p>
         </aside>
     </main>
 
-    <footer class="legend">
-        <span>Source: <code id="source-root"></code></span>
-        <span>Status &amp; counters come from each session's <code>events.jsonl</code>; lines/commits from <code>git</code> vs. the default branch. Bars compare units against the top unit on screen. They aren't progress toward completion.</span>
-    </footer>
+    <footer class="legend" id="legend"></footer>
+    <div class="tip" id="tip" role="tooltip" hidden></div>
     <script src="/app.js" type="module"></script>
 </body>
 </html>

@@ -16,6 +16,18 @@ export function parseShortstat(text) {
     return out;
 }
 
+export function parseCommitLog(text) {
+    if (typeof text !== "string" || !text) return [];
+    return text
+        .split("\n")
+        .map((line) => {
+            const [at, parents = "", ...subject] = line.split("\t");
+            return { at, merge: parents.trim().split(/\s+/).filter(Boolean).length > 1, subject: subject.join("\t").slice(0, 100) };
+        })
+        .filter((c) => c.at)
+        .reverse();
+}
+
 function git(cwd, args, timeout = 8000) {
     return new Promise((resolve, reject) => {
         execFile("git", ["-C", cwd, ...args], { env: GIT_ENV, timeout, maxBuffer: 4 << 20 }, (err, stdout) =>
@@ -61,6 +73,9 @@ export async function collectGitStats(cwd) {
             .catch(() => null),
         git(cwd, ["log", "-1", "--format=%cI%x09%s"]).catch(() => ""),
     ]);
+    // Commits on this branch since it left the default branch; merges are commits with 2+ parents.
+    const log = mergeBase ? await git(cwd, ["log", "-n", "60", "--format=%cI%x09%P%x09%s", `${mergeBase}..HEAD`]).catch(() => "") : "";
+    const history = parseCommitLog(log);
     const [lastCommitAt, ...subject] = lastCommit.split("\t");
     return {
         branch,
@@ -69,6 +84,7 @@ export async function collectGitStats(cwd) {
         uncommitted,
         commits,
         untracked,
+        history,
         lastCommit: lastCommitAt ? { at: lastCommitAt, subject: subject.join("\t").slice(0, 120) } : null,
         collectedAt: new Date().toISOString(),
     };

@@ -5,8 +5,8 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { execFileSync } from "node:child_process";
 import http from "node:http";
-import { createSessionState, applyChunk, applyEvent, deriveStatus, waitingOn } from "../web/lib/events.mjs";
-import { parseShortstat, collectGitStats } from "../web/lib/git.mjs";
+import { createSessionState, applyChunk, applyEvent, deriveStatus, waitingOn, openSpans, toolCategory } from "../web/lib/events.mjs";
+import { parseShortstat, collectGitStats, parseCommitLog } from "../web/lib/git.mjs";
 import { SessionMonitor, parseWorkspaceYaml, lockPids } from "../web/lib/monitor.mjs";
 import { createDashboardServer } from "../web/server.mjs";
 import { mapTaskState, normalizeTasks, fetchAgentTasks, AgentTaskSource } from "../web/lib/agent-tasks.mjs";
@@ -209,4 +209,35 @@ test("monitor merges GitHub tasks: annotates local, adds remote-only, keeps loca
     } finally {
         await rm(root, { recursive: true, force: true });
     }
+});
+
+test("timeline: spans per tool category, links only from real message evidence", () => {
+    const s = createSessionState("child");
+    const T = (sec) => `2026-01-01T00:00:${String(sec).padStart(2, "0")}.000Z`;
+    const peer = COORD;
+    for (const e of [
+        { type: "session.start", data: { startTime: T(0) }, timestamp: T(0) },
+        { type: "user.message", data: { content: "go", source: `agent-${peer}` }, timestamp: T(1) },
+        { type: "assistant.turn_start", data: {}, timestamp: T(2) },
+        { type: "tool.execution_start", data: { toolName: "edit", toolCallId: "e1", arguments: { path: "/a.js" } }, timestamp: T(3) },
+        { type: "tool.execution_complete", data: { toolCallId: "e1", success: true }, timestamp: T(4) },
+        { type: "tool.execution_start", data: { toolName: "send_session_message", toolCallId: "m1", arguments: { session_id: peer, purpose: "handoff" } }, timestamp: T(10) },
+        { type: "tool.execution_complete", data: { toolCallId: "m1", success: true }, timestamp: T(11) },
+        { type: "tool.execution_start", data: { toolName: "send_session_message", toolCallId: "m2", arguments: { session_id: "not-a-session" } }, timestamp: T(12) },
+        { type: "assistant.turn_end", data: {}, timestamp: T(20) },
+        { type: "user.message", data: { content: "hi" }, timestamp: T(30) },
+        { type: "assistant.turn_start", data: {}, timestamp: T(31) },
+        { type: "tool.execution_start", data: { toolName: "bash", toolCallId: "b1", arguments: {} }, timestamp: T(32) },
+    ]) applyEvent(s, e);
+    assert.deepEqual(s.spans.map((x) => x.k), ["edit", "coord", "think"]);
+    assert.deepEqual(s.links.map((l) => [l.dir, l.k, l.peer]), [["in", "kickoff", peer], ["out", "handoff", peer]]);
+    assert.ok(s.marks.some((m) => m.k === "human" && m.at === T(30)));
+    assert.deepEqual(openSpans(s).map((x) => [x.k, x.e]).sort(), [["coord", null], ["run", null], ["think", null]]);
+    assert.equal(toolCategory("playwright-browser_click"), "web");
+});
+
+test("parseCommitLog flags merge commits by parent count, oldest first", () => {
+    const log = "2026-01-01T02:00:00Z\tp1 p2\tMerge main\n2026-01-01T01:00:00Z\tp0\tAdd thing";
+    assert.deepEqual(parseCommitLog(log).map((c) => [c.subject, c.merge]), [["Add thing", false], ["Merge main", true]]);
+    assert.deepEqual(parseCommitLog(""), []);
 });
