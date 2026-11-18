@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "aa0f2bad76590c10f961b0b84c0eabddd85ef92e48af0e945e7fb4b4304eba42",
+  "scanRevision": 3,
+  "path": "skills/mcp-builder/SKILL.md",
+  "revision": 2,
+  "decision": "reference-only",
+  "reason": "Minimum-version MIT notices do not clear the unpinned resolved/transitive Python dependency graph. Retain the entrypoint as reference-only pending exact graph and notice review.",
+  "source": {
+    "repo": "anthropics/skills",
+    "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba"
+  },
+  "scanSha256": "c77b39cf13d8e9dd29841b5b7d3a51bdb8ceb4d75ae544732d651571bc9a7a7d",
+  "sourceSha256": "b483b56d6673134497e45489c317f26ae0f1429c194db0297e43073e17e6748c",
+  "license": {
+    "status": "permissive",
+    "expression": "Apache-2.0",
+    "attribution": "Include the applicable LICENSE.txt and preserve copyright/attribution notices; mark modified files, and carry forward applicable NOTICE attributions.",
+    "evidence": [
+      "skills/mcp-builder/LICENSE.txt"
+    ]
+  }
+}
