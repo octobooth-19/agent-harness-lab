@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-11-18",
+  "max_response_bytes": 50000000,
+  "providers": [
+    {
+      "id": "openai",
+      "inventory": "knowledge/openai/source-inventory.json",
+      "discovery": [
+        {
+          "id": "developers-index",
+          "url": "https://developers.openai.com/llms.txt",
+          "format": "llms",
+          "include": "^(https://developers\\.openai\\.com/|https://learn\\.chatgpt\\.com/)"
+        },
+        {
+          "id": "api-sitemap",
+          "url": "https://openai.com/sitemap.xml/api/",
+          "format": "sitemap",
+          "include": "^https://openai\\.com/index/"
+        },
+        {
+          "id": "engineering-sitemap",
+          "url": "https://openai.com/sitemap.xml/engineering/",
+          "format": "sitemap",
+          "include": "^https://openai\\.com/index/"
+        },
+        {
+          "id": "page-sitemap",
+          "url": "https://openai.com/sitemap.xml/page/",
+          "format": "sitemap",
+          "include": "^https://openai\\.com/index/"
+        },
+        {
+          "id": "release-sitemap",
+          "url": "https://openai.com/sitemap.xml/release/",
+          "format": "sitemap",
+          "include": "^https://openai\\.com/index/"
+        },
+        {
+          "id": "research-sitemap",
+          "url": "https://openai.com/sitemap.xml/research/",
+          "format": "sitemap",
+          "include": "^https://openai\\.com/index/"
+        },
+        {
+          "id": "news-rss",
+          "url": "https://openai.com/news/rss.xml",
+          "format": "rss",
+          "include": "^https://openai\\.com/"
+        }
+      ]
+    },
+    {
+      "id": "anthropic",
+      "inventory": "knowledge/anthropic/source-inventory.csv",
+      "discovery": [
+        {
+          "id": "platform-docs-index",
+          "url": "https://platform.claude.com/llms.txt",
+          "format": "llms",
+          "include": "^https://platform\\.claude\\.com/docs/en/"
+        },
+        {
+          "id": "platform-docs-sitemap",
+          "url": "https://platform.claude.com/sitemap.xml",
+          "format": "sitemap",
+          "include": "^https://platform\\.claude\\.com/docs/en/"
+        },
+        {
+          "id": "claude-code-docs-index",
+          "url": "https://code.claude.com/docs/llms.txt",
+          "format": "llms",
+          "include": "^https://code\\.claude\\.com/docs/en/"
+        },
+        {
+          "id": "claude-code-docs-sitemap",
+          "url": "https://code.claude.com/docs/sitemap.xml",
+          "format": "sitemap",
+          "include": "^https://code\\.claude\\.com/docs/en/"
+        },
+        {
+          "id": "anthropic-news-research-sitemap",
+          "url": "https://www.anthropic.com/sitemap.xml",
+          "format": "sitemap",
+          "include": "^https://www\\.anthropic\\.com/(news|research)/"
+        },
+        {
+          "id": "claude-code-changelog",
+          "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+          "format": "document"
+        }
+      ]
+    },
+    {
+      "id": "github-copilot",
+      "inventory": "knowledge/github-copilot/sources.json",
+      "discovery": [
+        {
+          "id": "docs-copilot-index",
+          "url": "https://docs.github.com/en/copilot",
+          "format": "html",
+          "include": "^https://docs\\.github\\.com/en/copilot(?:/|$)"
+        },
+        {
+          "id": "docs-source-tree",
+          "url": "https://api.github.com/repos/github/docs/git/trees/main?recursive=1",
+          "format": "github-tree",
+          "include": "^content/copilot/.*\\.mdx?$",
+          "max_bytes": 50000000
+        },
+        {
+          "id": "copilot-blog-rss",
+          "url": "https://github.blog/ai-and-ml/github-copilot/feed/",
+          "format": "rss",
+          "include": "^https://github\\.blog/"
+        },
+        {
+          "id": "copilot-changelog-rss",
+          "url": "https://github.blog/changelog/label/copilot/feed/",
+          "format": "rss",
+          "include": "^https://github\\.blog/changelog/"
+        }
+      ]
+    }
+  ]
+}

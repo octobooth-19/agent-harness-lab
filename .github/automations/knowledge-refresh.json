@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "name": "Refresh agent knowledge library",
+  "description": "Refresh official OpenAI, Anthropic, and GitHub Copilot source metadata and prepare reviewed knowledge updates.",
+  "ownership": "repository",
+  "activation_status": "template_pending_user_cadence",
+  "schedule": null,
+  "model": null,
+  "write_scope": "repository",
+  "tools": [
+    "github/get_file_contents",
+    "report_progress",
+    "create_pull_request"
+  ],
+  "prompt": "Read knowledge/MAINTENANCE.md and follow its Copilot Automation runbook. Run the bounded source refresh, inspect and review changed official pages, update only affected provider and topic syntheses with primary citations and actual retrieval dates, preserve last-good material and pending/failed distinctions, run focused validation, and prepare a reviewable branch/pull request. Never treat index discovery as reading a page, copy source prose wholesale, or merge the result. Keep workflow logic in the repository files.",
+  "activation_notes": "This repository-owned template is not an active Automation. Select a cadence explicitly and confirm repository Automation settings/tool availability before creating or enabling a scheduler. The null model leaves selection to the platform default."
+}
