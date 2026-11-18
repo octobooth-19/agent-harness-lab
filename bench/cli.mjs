@@ -11,6 +11,7 @@ const help = `Agent Harness Lab (Node.js built-ins only)
   catalog read KIND ID [--version N]
   catalog create|update KIND --file JSON
   catalog delete KIND ID --version EXPECTED
+  profile-variant PROFILE [--version N] [--variant NAME]
   validate
   prepare CASE --variant NAME --workspace-root ABS [--version N] [--model auto]
   headless RUN --environment TEXT --configuration-audit TEXT [--allow-tool RULE ...] [--timeout-ms N]
@@ -20,7 +21,7 @@ const help = `Agent Harness Lab (Node.js built-ins only)
   grade RUN --file VERDICT_JSON
   archive RUN
   report [CASE]
-Kinds: cases, rubrics, components. Use --root ABS to select another lab checkout.
+Kinds: cases, rubrics, components, profiles. Use --root ABS to select another lab checkout.
 See bench/README.md and .github/skills/benchmark/SKILL.md for the app-native workflow.`;
 
 try {
@@ -53,7 +54,8 @@ try {
         ensure(version !== undefined, 'delete requires --version to prevent stale deletion');
         result = catalog.delete(kind, third, version);
       } else throw new Error('unknown catalog operation');
-    } else if (command === 'validate') result = catalog.validateAll();
+    } else if (command === 'profile-variant') result = catalog.profileVariant(first, version, values.variant);
+    else if (command === 'validate') result = catalog.validateAll();
     else if (command === 'prepare') result = prepare(root, first, { variant: values.variant,
       workspaceRoot: values['workspace-root'], version, model: values.model });
     else if (command === 'headless' || command === 'judge-headless') result = (command === 'headless' ? executeHeadless : executeJudgeHeadless)(root, first, { environment: values.environment,

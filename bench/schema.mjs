@@ -1,6 +1,6 @@
 import path from 'node:path';
 
-export const kinds = ['cases', 'rubrics', 'components'];
+export const kinds = ['cases', 'rubrics', 'components', 'profiles'];
 export const componentKinds = ['prompt', 'skill', 'instructions', 'agent', 'mcp', 'tool-config', 'harness'];
 export const identifier = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 export const MAX_FILE_BYTES = 1024 * 1024;
@@ -35,7 +35,7 @@ export function relativePath(value) {
   text(value, 'path');
   ensure(!path.posix.isAbsolute(value) && !value.includes('\\') && !value.includes(':') &&
     !/[\u0000-\u001f]/.test(value) &&
-    value.split('/').every(part => part && part !== '.' && part !== '..' && part !== '.git'),
+    value.split('/').every(part => part && part !== '.' && part !== '..' && part.toLowerCase() !== '.git'),
   `unsafe relative path: ${value}`);
   return value;
 }
@@ -76,7 +76,7 @@ export function validate(kind, value, { tombstone = false } = {}) {
   const common = ['schemaVersion', 'id', 'version', 'title'];
   text(value.title, 'title');
   if (kind === 'components') {
-    keys(value, [...common, 'kind', 'prompt', 'files', 'runtime'], kind);
+    keys(value, [...common, 'kind', 'prompt', 'files', 'runtime', 'requires'], kind);
     ensure(componentKinds.includes(value.kind), `unknown component kind: ${value.kind}`);
     files(value.files);
     ensure(typeof value.prompt === 'string', 'prompt must be a string (empty is allowed for file-only components)');
@@ -93,6 +93,22 @@ export function validate(kind, value, { tombstone = false } = {}) {
         object(JSON.parse(value.files[value.runtime.mcpConfig]), 'MCP configuration');
       }
     }
+    if (value.requires !== undefined) {
+      ensure(Array.isArray(value.requires), 'requires must be an array of pinned component references');
+      value.requires.forEach(reference);
+      unique(value.requires.map(ref => ref.id), 'component dependency');
+      ensure(!value.requires.some(ref => ref.id === value.id), 'component cannot depend on itself');
+    }
+  } else if (kind === 'profiles') {
+    keys(value, [...common, 'target', 'parts'], kind);
+    ensure(['app', 'headless', 'portable'].includes(value.target), 'profile target must be app, headless, or portable');
+    ensure(Array.isArray(value.parts), 'profile parts must be an array');
+    for (const part of value.parts) {
+      keys(part, ['id', 'version', 'enabled'], 'profile part');
+      reference({ id: part.id, version: part.version });
+      ensure(typeof part.enabled === 'boolean', 'profile part enabled must be boolean');
+    }
+    unique(value.parts.map(part => part.id), 'component id in profile');
   } else if (kind === 'rubrics') {
     keys(value, [...common, 'criteria', 'passScore'], kind);
     ensure(Array.isArray(value.criteria) && value.criteria.length > 0, 'criteria must be a nonempty array');
@@ -111,11 +127,12 @@ export function validate(kind, value, { tombstone = false } = {}) {
     reference(value.rubric);
     ensure(Array.isArray(value.variants) && value.variants.length > 0, 'variants must be a nonempty array');
     for (const variant of value.variants) {
-      keys(variant, ['name', 'components'], 'variant');
+      keys(variant, ['name', 'components', 'profile'], 'variant');
       id(variant.name, 'variant.name');
       ensure(Array.isArray(variant.components), 'variant.components must be an array');
       variant.components.forEach(reference);
       unique(variant.components.map(c => c.id), 'component id in variant');
+      if (variant.profile !== undefined) reference(variant.profile);
     }
     unique(value.variants.map(v => v.name), 'variant name');
     ensure(Array.isArray(value.checks), 'checks must be an array');

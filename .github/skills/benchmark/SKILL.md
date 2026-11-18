@@ -38,7 +38,9 @@ conclusion. Start with one smoke trial per variant if the request gives no count
    or an approved dedicated experiment location, never the main checkout.
 2. From the lab checkout, run `node bench/cli.mjs prepare CASE --variant NAME
    --workspace-root ABS [--version N] [--model MODEL]` once per independent
-   repeat/variant. Read its frozen manifest and generated `promptFile`.
+   repeat/variant. Read its frozen manifest and generated `promptFile`. A
+   `launch.profileTarget` of `headless` is not an app treatment; use the
+   headless adapter instead.
 3. **Project coordinator only:** discover its live app session tool schema before
    calling it. Register the returned `workspace` as an existing **folder** using
    `add_repository` with that exact path. Resolve the returned folder container

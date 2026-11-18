@@ -23,6 +23,55 @@ export function inside(parent, candidate) {
   return rel === '' || (!rel.startsWith(`..${path.sep}`) && rel !== '..' && !path.isAbsolute(rel));
 }
 
+function validateComposition(components, fixtures, label, target) {
+  const selected = new Map(components.map(component => [component.id, component.version]));
+  const paths = new Set();
+  const directories = new Map();
+  const names = new Set();
+  const runtime = new Set();
+  let bytes = 0;
+  for (const component of components) {
+    for (const ref of component.requires ?? []) {
+      ensure(selected.get(ref.id) === ref.version, `${label}: ${component.id} requires ${ref.id}@${ref.version} to be enabled`);
+    }
+    for (const key of Object.keys(component.runtime ?? {})) {
+      ensure(!runtime.has(key), `runtime configuration collision in ${label}: ${key}`);
+      runtime.add(key);
+    }
+  }
+  ensure(!['headless', 'portable'].includes(target) || !runtime.has('appSetup'), `${label}: appSetup is incompatible with ${target}`);
+  const files = [fixtures, ...components.map(c => c.files)];
+  for (const [file, content] of files.flatMap(Object.entries)) {
+    bytes += Buffer.byteLength(content);
+    ensure(bytes <= MAX_TOTAL_BYTES, 'combined trial inputs exceed total size limit');
+    const key = file.normalize('NFC').toLowerCase();
+    ensure(!paths.has(key), `file collision in ${label}: ${file}`);
+    ensure(!directories.has(key), `file/directory collision: ${file}`);
+    paths.add(key);
+    const segments = file.split('/');
+    while (segments.length > 1) {
+      segments.pop();
+      const spelling = segments.join('/');
+      const directory = spelling.normalize('NFC').toLowerCase();
+      ensure(!paths.has(directory), `file/directory collision: ${file}`);
+      ensure(!directories.has(directory) || directories.get(directory) === spelling, `directory spelling collision: ${spelling}`);
+      directories.set(directory, spelling);
+    }
+    const entry = key.match(/^\.(?:github|agents|claude)\/skills\/([^/]+)\/skill\.md$/)
+      ?? key.match(/^\.github\/agents\/([^/]+?)(?:\.agent)?\.md$/);
+    if (!entry) continue;
+    const kind = key.includes('/skills/') ? 'skill' : 'agent';
+    const header = content.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/)?.[1];
+    const display = header?.match(/^name:[ \t]+(?:'([^'\r\n]+)'|"([^"\r\n]+)"|([a-zA-Z0-9][a-zA-Z0-9 -]*))[ \t]*(?:#.*)?\r?$/m);
+    const aliases = new Set([entry[1], (display?.[1] ?? display?.[2] ?? display?.[3] ?? entry[1]).trim().normalize('NFC').toLowerCase()]);
+    for (const alias of aliases) {
+      const name = `${kind}:${alias}`;
+      ensure(!names.has(name), `entry-point name collision in ${label}: ${name}`);
+      names.add(name);
+    }
+  }
+}
+
 export class Catalog {
   constructor(root) {
     this.root = fs.realpathSync(root);
@@ -80,25 +129,47 @@ export class Catalog {
     }).filter(value => value.deleted !== true);
   }
 
+  resolveProfile(value) {
+    const label = `profile ${value.id}@${value.version}`;
+    const parts = value.parts.map(part => ({
+      ...part, record: this.read('components', part.id, part.version),
+    }));
+    const enabled = parts.filter(part => part.enabled);
+    validateComposition(enabled.map(part => part.record), {}, label, value.target);
+    return enabled.map(({ id, version }) => ({ id, version }));
+  }
+
+  profileVariant(id, version, name = id) {
+    ensure(typeof name === 'string' && identifier.test(name), 'invalid variant name');
+    const profile = this.read('profiles', id, version);
+    return { name, components: this.resolveProfile(profile), profile: { id, version: profile.version } };
+  }
+
   resolveCase(value) {
     const rubric = this.read('rubrics', value.rubric.id, value.rubric.version);
-    const variants = value.variants.map(variant => ({
-      ...variant,
-      resolved: variant.components.map(ref => this.read('components', ref.id, ref.version)),
-    }));
-    for (const variant of variants) {
-      const paths = [...Object.keys(value.files), ...variant.resolved.flatMap(c => Object.keys(c.files))];
-      ensure(new Set(paths).size === paths.length, `file collision in variant ${variant.name}`);
-      for (const file of paths) {
-        ensure(!paths.some(other => other !== file && file.startsWith(`${other}/`)), `file/directory collision: ${file}`);
+    const variants = value.variants.map(variant => {
+      const profile = variant.profile && this.read('profiles', variant.profile.id, variant.profile.version);
+      if (profile) {
+        ensure(canonical(this.resolveProfile(profile)) === canonical(variant.components),
+          `variant ${variant.name} must match enabled profile pins and order`);
       }
-      const runtimeKeys = variant.resolved.flatMap(c => Object.keys(c.runtime ?? {}));
-      ensure(new Set(runtimeKeys).size === runtimeKeys.length, `runtime configuration collision in variant ${variant.name}`);
+      const resolved = variant.components.map(ref => this.read('components', ref.id, ref.version));
+      validateComposition(resolved, value.files, `variant ${variant.name}`, profile?.target);
       for (const check of value.checks.filter(c => c.type === 'file-unchanged')) {
-        ensure(paths.includes(check.path), `file-unchanged check must reference an input: ${check.path}`);
+        ensure([value.files, ...resolved.map(c => c.files)].some(files => Object.hasOwn(files, check.path)),
+          `file-unchanged check must reference an input: ${check.path}`);
       }
-    }
+      return { ...variant, resolved, profileRecord: profile };
+    });
     return { rubric, variants };
+  }
+
+  validateReferences(kind, value) {
+    if (kind === 'cases') this.resolveCase(value);
+    if (kind === 'profiles') this.resolveProfile(value);
+    if (kind === 'components') {
+      for (const ref of value.requires ?? []) this.read('components', ref.id, ref.version);
+    }
   }
 
   put(kind, value, operation) {
@@ -110,7 +181,7 @@ export class Catalog {
       ensure(versions.length > 0 && value.version === versions.at(-1) + 1, 'update requires the next version (stale update or missing record)');
       this.read(kind, value.id);
     }
-    if (kind === 'cases') this.resolveCase(value);
+    this.validateReferences(kind, value);
     const directory = this.directory(kind, value.id);
     fs.mkdirSync(directory, { recursive: true });
     writeJSON(path.join(directory, `${value.version}.json`), value);
@@ -137,7 +208,7 @@ export class Catalog {
           ensure(!fs.lstatSync(file).isSymbolicLink(), 'catalog revision cannot be a symlink');
           const value = validate(kind, readJSON(file), { tombstone: true });
           ensure(value.id === id && value.version === version, `catalog identity mismatch: ${file}`);
-          if (kind === 'cases' && value.deleted !== true) this.resolveCase(value);
+          if (value.deleted !== true) this.validateReferences(kind, value);
           revisions++;
         }
       }

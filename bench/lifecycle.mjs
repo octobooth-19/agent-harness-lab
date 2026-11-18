@@ -97,7 +97,7 @@ function loadRun(root, runId) {
   const manifest = readJSON(path.join(directory, 'manifest.json'));
   const manifestSha256 = fs.readFileSync(path.join(directory, 'manifest.sha256'), 'utf8').trim();
   ensure(hash(manifest) === manifestSha256 && manifest.runId === runId, 'frozen manifest integrity failure');
-  for (const record of [manifest.case, manifest.rubric, ...manifest.components]) {
+  for (const record of [manifest.case, manifest.rubric, ...(manifest.profile ? [manifest.profile] : []), ...manifest.components]) {
     ensure(hash(record.value) === record.sha256, 'frozen record integrity failure');
   }
   ensure(hash(fs.readFileSync(path.join(directory, 'trial-prompt.txt'), 'utf8')) === manifest.promptSha256, 'trial prompt integrity failure');
@@ -144,6 +144,7 @@ export function prepare(root, caseId, { variant: variantName, workspaceRoot, ver
     schemaVersion: 1, runId, createdAt: new Date().toISOString(), variant: variant.name,
     requestedModel: model, isolation: 'workspace-only', workspace, runtime,
     case: frozen(testCase), rubric: frozen(resolved.rubric), components: variant.resolved.map(frozen),
+    ...(variant.profileRecord ? { profile: frozen(variant.profileRecord) } : {}),
     inputs: Object.entries(inputFiles).map(([file, content]) => ({ path: file, sha256: hash(content) })),
     promptSha256: hash(prompt),
   };
@@ -153,6 +154,7 @@ export function prepare(root, caseId, { variant: variantName, workspaceRoot, ver
   fs.writeFileSync(path.join(directory, 'trial-prompt.txt'), prompt, { flag: 'wx' });
   return { runId, workspace, manifest: path.join(directory, 'manifest.json'), promptFile: path.join(directory, 'trial-prompt.txt'),
     launch: { owner: 'Project coordinator', registerFolder: workspace, independentSession: true, requiredRuntime: runtime,
+      ...(variant.profileRecord ? { profileTarget: variant.profileRecord.target } : {}),
       instructions: 'Register this exact folder, discover the coordinator create_session schema, use its folder container, and start a fresh session with trial-prompt.txt. Verify actual cwd and configuration; never use the lab repository container.' } };
 }
 
@@ -164,6 +166,7 @@ export function executeHeadless(root, runId, { environment, configurationAudit, 
   const { directory, manifest } = loadRun(root, runId);
   ensure(!fs.existsSync(path.join(directory, 'evidence.json')), 'trial is already collected');
   ensure(!manifest.runtime.appSetup, 'this component requires app-specific setup; use the app coordinator runner');
+  ensure(manifest.profile?.value.target !== 'app', 'this profile targets the app coordinator runner');
   for (const input of manifest.inputs) {
     const file = safeFile(manifest.workspace, input.path);
     ensure(file && hash(fs.readFileSync(file)) === input.sha256, `trial input changed before launch: ${input.path}`);

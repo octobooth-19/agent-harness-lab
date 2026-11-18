@@ -3,7 +3,7 @@
 `schema.mjs` is the authoritative dependency-free validator. All catalog objects
 have `schemaVersion: 1`, kebab-case `id`, positive integer `version`, and a nonempty
 `title`. Unknown fields are errors. Revisions live at
-`bench/catalog/{cases,rubrics,components}/<id>/<version>.json` and start at 1 without
+`bench/catalog/{cases,rubrics,components,profiles}/<id>/<version>.json` and start at 1 without
 gaps. A tombstone contains only `schemaVersion`, `id`, next `version`, `deleted: true`.
 
 References are `{ "id": "kebab-case", "version": 1 }`; no floating versions.
@@ -47,6 +47,18 @@ and available settings. A variant may not specify the same runtime key in two
 components. Tool approval policy is explicit launch provenance, not automatically
 granted by a component file.
 
+Optional `requires` contains pinned component references. Every enabled
+composition must select those exact versions explicitly; they are never
+auto-enabled.
+
+## Profile
+
+Profiles add `target: app | headless | portable` and `parts: [{id, version,
+enabled}]`. Each ID appears once, including disabled pins; enabled part order
+defines prompt composition order. `portable` and `headless` disallow `appSetup`.
+Use `profile-variant` to export the enabled pins and profile reference. The
+profile is frozen by `prepare`, not looked up by latest version during launch.
+
 ## Rubric
 
 Required extra fields: nonempty `criteria` array and integer `passScore` from zero
@@ -64,7 +76,7 @@ Required extra fields:
 | `task` | Nonempty standalone prompt describing observable output, not the winner |
 | `files` | Fixture map; may be empty |
 | `rubric` | Pinned rubric reference |
-| `variants` | Nonempty array of `{ "name": "unique-kebab-case", "components": [reference] }`; empty components is a valid no-treatment baseline |
+| `variants` | Nonempty array of `{ "name": "unique-kebab-case", "components": [reference] }`; optional pinned `profile` must match exact enabled pins in order. Empty components is a valid no-treatment baseline |
 | `checks` | Array of checks; may be empty |
 
 Check IDs must be unique kebab-case identifiers. Supported checks:
