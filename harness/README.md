@@ -109,6 +109,22 @@ host-specific code, and overlapping instructions were not installed. The
 treatment changes workspace guidance, not the model or permissions. A new
 treatment version is required for subsequent curation changes.
 
+`initial-top-seven@2` is an independent treatment candidate, not an update to
+the frozen campaign. It keeps both original pins and adds one on-demand
+diagnostic skill adapted from Superpowers revision 2. That checkpoint inspected
+the linked tracing, waiting, and helper materials. The adaptation packages only
+the diagnostic workflow: reproduce the symptom, trace the first unexpected
+boundary, and use a check that distinguishes plausible causes before editing.
+It imports no scripts, adapters, or runners.
+
+The other follow-ups did not justify enabling more parts: planning and
+test-first procedures partly overlap the existing treatment; OpenCode test
+recipes depend on its stack and overlap test isolation; ECC, DeepSeek, and
+Hermes runtime integrations require separate dependency and permission review;
+Anthropic's authoring/runtime packages are out of scope and have asset-specific
+terms. Ponytail's revised support reinforces the existing instruction without
+requiring a new component. Profile 2 has not been evaluated in live trials.
+
 For approval and activation, create a named profile revision:
 
 ```json
