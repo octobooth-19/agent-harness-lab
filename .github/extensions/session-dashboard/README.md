@@ -1,4 +1,52 @@
-# Session dashboard (Copilot app canvas)
+# Session dashboard
+
+Two views of the Copilot sessions running on this machine:
+
+1. **Mission Control (primary): a live web dashboard** in `web/`. It tracks every
+   local Copilot session as a game-style unit card, with units grouped into squads
+   by coordinator, or by repository when a session has no coordinator.
+2. **Canvas (legacy)**: the in-app canvas described further below. It shows only
+   coordinator-fed snapshots and is kept for reference.
+
+## Mission Control web dashboard
+
+```bash
+node .github/extensions/session-dashboard/web/server.mjs            # http://127.0.0.1:4517/
+node .github/extensions/session-dashboard/web/server.mjs --port 0 --root /path/to/session-state
+```
+
+Requires Node 22+ (built-ins only, no install step) and binds to 127.0.0.1 only.
+Requests carrying any other `Host` header get a 421 response, which blocks DNS rebinding.
+
+### Where every value comes from (read-only)
+
+| Shown | Source |
+| --- | --- |
+| Units, name, repo, branch, app link | `$COPILOT_HOME/session-state/<id>/workspace.yaml` |
+| Process live / signal lost / offline | `inuse.<pid>.lock` whose PID is alive; `session.shutdown` event |
+| Status (In action, Needs you, Standby, Reported done, Error) | Reduced from `events.jsonl`: open turns or tool calls, pending `permission`/`user_input`/`exit_plan_mode` requests, an open `ask_user`, `session.task_complete` after the latest message, `session.error` |
+| Now / Last action, comms feed | `tool.execution_start` arguments (bash description, file name, URL…) |
+| Orders, squads | Latest `user.message`. A session's first (kickoff) message with `source: "agent-<id>"` links it to its coordinator |
+| Tools, turns, fails, tokens, reports | Counts and sums of logged events (`session.usage_record` for tokens) |
+| +/− lines, files, commits, dirty, new files | `git diff --shortstat <merge-base>`, `rev-list --count`, `diff HEAD`, `ls-files --others` against `origin/main` (or `main`), run with `GIT_OPTIONAL_LOCKS=0` so nothing is written |
+
+`events.jsonl` is tailed from a byte offset every second. Git stats refresh when a
+session changes, with a 5 s floor and a 30 s ceiling. Updates reach the browser
+over Server-Sent Events (`/events`), and `/api/state` returns the same JSON.
+
+Honesty rules:
+- **Activity is separate from freshness.** Each card shows *last signal*, the time since the session last wrote an event. The header shows the feed as Live, Stale (no heartbeat for more than 15 s) or Disconnected.
+- **Idle never means done.** "Reported done" requires the session's own `task_complete`.
+- **There are no progress percentages.** Bars compare units with the top unit currently on screen. Lines of work are output, not completion.
+- **Gaps are shown as gaps.** Untracked files are counted but not line-diffed, and sessions without a git worktree show "n/a".
+- **Read-only.** The dashboard never writes to session-state or to any worktree. `session.db` (SQL todos) is not opened, because SQLite may create `-shm` files.
+
+Limitation: the dashboard sees only sessions whose state lives in this machine's
+`$COPILOT_HOME`, which covers Copilot app and CLI sessions. Cloud or remote sessions
+aren't included. A future harness can appear here by writing the same
+`events.jsonl` + `workspace.yaml` layout, or through the snapshot format below.
+
+## Canvas (legacy)
 
 A read-only canvas that lists the Copilot app sessions working in this Project,
 with **activity** (busy / idle / blocked / error / unknown) shown separately from
@@ -13,7 +61,7 @@ open_canvas({ canvasId: "session-dashboard", instanceId: "sessions", input: { vi
 
 `view` is `project` (default) or `all` (also shows local/other-scope sources).
 
-## Data sources and limits
+### Data sources and limits
 
 What a canvas extension can actually see, checked against the bundled Copilot SDK
 (`canvas.d.ts`, `session.d.ts`, `generated/rpc.d.ts`):
@@ -31,7 +79,7 @@ only updates other sessions when someone sends a snapshot, so it can't monitor
 them live by itself. The dashboard does not read private app databases or other
 sessions' `events.jsonl`.
 
-## Snapshot shape (Copilot app or future harness)
+### Snapshot shape (Copilot app or future harness)
 
 ```json
 {
@@ -56,14 +104,14 @@ sessions' `events.jsonl`.
 
 Other actions: `get_state`, `refresh_peers`, and `remove_snapshot_source`.
 
-## Storage
+### Storage
 
 Snapshots persist as a session-scoped artifact at
 `<session workspace>/session-dashboard/snapshots.json`, so they survive reloads
 with their original timestamps. Nothing is written into the repository, and no
 state is tied to a canvas `instanceId`.
 
-## Development
+### Development
 
 ```sh
 node --test .github/extensions/session-dashboard/test/

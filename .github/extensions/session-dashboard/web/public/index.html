@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#070b18">
+    <title>Session Mission Control</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header class="hud">
+        <div class="brand">
+            <span class="brand-mark" aria-hidden="true">◆</span>
+            <div>
+                <h1>Mission Control</h1>
+                <p class="sub">Live Copilot sessions on this machine</p>
+            </div>
+        </div>
+        <div class="feed-status" id="feed-status" role="status" aria-live="polite">
+            <span class="dot"></span><span class="label">Connecting…</span>
+            <span class="detail" id="feed-detail"></span>
+        </div>
+        <dl class="scoreboard" id="scoreboard"></dl>
+    </header>
+
+    <nav class="controls" aria-label="Filters">
+        <div class="chips" role="group" aria-label="Scope" id="scope-chips">
+            <button type="button" data-scope="online" aria-pressed="true">Online</button>
+            <button type="button" data-scope="recent" aria-pressed="false">Last 24h</button>
+            <button type="button" data-scope="all" aria-pressed="false">All</button>
+        </div>
+        <div class="chips" role="group" aria-label="Status" id="status-chips"></div>
+        <input type="search" id="search" placeholder="Search units, repos, branches…" aria-label="Search sessions">
+    </nav>
+
+    <main class="layout">
+        <section class="board" id="board" aria-label="Lines of work"></section>
+        <aside class="ticker" aria-label="Live activity feed">
+            <h2>Comms feed</h2>
+            <ol id="feed"></ol>
+        </aside>
+    </main>
+
+    <footer class="legend">
+        <span>Source: <code id="source-root"></code></span>
+        <span>Status &amp; counters come from each session's <code>events.jsonl</code>; lines/commits from <code>git</code> vs. the default branch. Bars compare units against the top unit on screen. They aren't progress toward completion.</span>
+    </footer>
+    <script src="/app.js" type="module"></script>
+</body>
+</html>
