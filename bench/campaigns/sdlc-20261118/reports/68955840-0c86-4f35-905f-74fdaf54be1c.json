@@ -1,0 +1,502 @@
+{
+  "schemaVersion": 1,
+  "campaignId": "sdlc-20261118",
+  "reportedAt": "2026-11-18T17:58:34.747Z",
+  "interpretation": "Descriptive smoke results only. Tiny sample, Auto routing and inherited runtime configuration confound comparisons. Missing/blocked/ungraded is not a pass. Held-out maintenance may not inform this profile.",
+  "cases": [
+    {
+      "caseId": "sdlc-20261118-requirements",
+      "stage": "requirements",
+      "partition": "development",
+      "arms": [
+        {
+          "arm": "baseline",
+          "prepared": 1,
+          "graded": 0,
+          "passed": 0,
+          "meanScore": null,
+          "ungraded": [
+            {
+              "runId": "6384b6f4-ce0a-472d-a3ed-4deadf9a4a30",
+              "status": "prepared"
+            }
+          ],
+          "metrics": [
+            {
+              "runId": "6384b6f4-ce0a-472d-a3ed-4deadf9a4a30",
+              "wallMs": null,
+              "inputTokens": null,
+              "outputTokens": null,
+              "totalTokens": null,
+              "observedFrom": "not collected or not observable"
+            }
+          ]
+        },
+        {
+          "arm": "initial-harness",
+          "prepared": 1,
+          "graded": 0,
+          "passed": 0,
+          "meanScore": null,
+          "ungraded": [
+            {
+              "runId": "4321e12c-246e-4180-9737-2b4b51d064de",
+              "status": "prepared"
+            }
+          ],
+          "metrics": [
+            {
+              "runId": "4321e12c-246e-4180-9737-2b4b51d064de",
+              "wallMs": null,
+              "inputTokens": null,
+              "outputTokens": null,
+              "totalTokens": null,
+              "observedFrom": "not collected or not observable"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "sdlc-20261118-architecture",
+      "stage": "architecture",
+      "partition": "development",
+      "arms": [
+        {
+          "arm": "baseline",
+          "prepared": 1,
+          "graded": 0,
+          "passed": 0,
+          "meanScore": null,
+          "ungraded": [
+            {
+              "runId": "065ed504-d9a0-4026-99d9-21498be60cf8",
+              "status": "prepared"
+            }
+          ],
+          "metrics": [
+            {
+              "runId": "065ed504-d9a0-4026-99d9-21498be60cf8",
+              "wallMs": null,
+              "inputTokens": null,
+              "outputTokens": null,
+              "totalTokens": null,
+              "observedFrom": "not collected or not observable"
+            }
+          ]
+        },
+        {
+          "arm": "initial-harness",
+          "prepared": 1,
+          "graded": 0,
+          "passed": 0,
+          "meanScore": null,
+          "ungraded": [
+            {
+              "runId": "09cedac9-1c1d-43ca-8c6b-e7f05dff89c9",
+              "status": "prepared"
+            }
+          ],
+          "metrics": [
+            {
+              "runId": "09cedac9-1c1d-43ca-8c6b-e7f05dff89c9",
+              "wallMs": null,
+              "inputTokens": null,
+              "outputTokens": null,
+              "totalTokens": null,
+              "observedFrom": "not collected or not observable"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "sdlc-20261118-issue",
+      "stage": "issue",
+      "partition": "development",
+      "arms": [
+        {
+          "arm": "baseline",
+          "prepared": 1,
+          "graded": 0,
+          "passed": 0,
+          "meanScore": null,
+          "ungraded": [
+            {
+              "runId": "a0da8e6c-cb6c-478c-8f9a-c1a2c520fb0e",
+              "status": "prepared"
+            }
+          ],
+          "metrics": [
+            {
+              "runId": "a0da8e6c-cb6c-478c-8f9a-c1a2c520fb0e",
+              "wallMs": null,
+              "inputTokens": null,
+              "outputTokens": null,
+              "totalTokens": null,
+              "observedFrom": "not collected or not observable"
+            }
+          ]
+        },
+        {
+          "arm": "initial-harness",
+          "prepared": 1,
+          "graded": 0,
+          "passed": 0,
+          "meanScore": null,
+          "ungraded": [
+            {
+              "runId": "d8c28341-5030-4aef-a8dc-e0b8b0feb376",
+              "status": "prepared"
+            }
+          ],
+          "metrics": [
+            {
+              "runId": "d8c28341-5030-4aef-a8dc-e0b8b0feb376",
+              "wallMs": null,
+              "inputTokens": null,
+              "outputTokens": null,
+              "totalTokens": null,
+              "observedFrom": "not collected or not observable"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "sdlc-20261118-review",
+      "stage": "review",
+      "partition": "development",
+      "arms": [
+        {
+          "arm": "baseline",
+          "prepared": 1,
+          "graded": 0,
+          "passed": 0,
+          "meanScore": null,
+          "ungraded": [
+            {
+              "runId": "38a6feaf-fec6-47ec-9dd6-5ffd539a80ba",
+              "status": "prepared"
+            }
+          ],
+          "metrics": [
+            {
+              "runId": "38a6feaf-fec6-47ec-9dd6-5ffd539a80ba",
+              "wallMs": null,
+              "inputTokens": null,
+              "outputTokens": null,
+              "totalTokens": null,
+              "observedFrom": "not collected or not observable"
+            }
+          ]
+        },
+        {
+          "arm": "initial-harness",
+          "prepared": 1,
+          "graded": 0,
+          "passed": 0,
+          "meanScore": null,
+          "ungraded": [
+            {
+              "runId": "d724be67-51ca-4d2a-be5b-afe5b46ff295",
+              "status": "prepared"
+            }
+          ],
+          "metrics": [
+            {
+              "runId": "d724be67-51ca-4d2a-be5b-afe5b46ff295",
+              "wallMs": null,
+              "inputTokens": null,
+              "outputTokens": null,
+              "totalTokens": null,
+              "observedFrom": "not collected or not observable"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "sdlc-20261118-maintenance",
+      "stage": "maintenance",
+      "partition": "held-out",
+      "arms": [
+        {
+          "arm": "baseline",
+          "prepared": 1,
+          "graded": 0,
+          "passed": 0,
+          "meanScore": null,
+          "ungraded": [
+            {
+              "runId": "14f5cf81-af19-424e-80aa-01fa3618070a",
+              "status": "prepared"
+            }
+          ],
+          "metrics": [
+            {
+              "runId": "14f5cf81-af19-424e-80aa-01fa3618070a",
+              "wallMs": null,
+              "inputTokens": null,
+              "outputTokens": null,
+              "totalTokens": null,
+              "observedFrom": "not collected or not observable"
+            }
+          ]
+        },
+        {
+          "arm": "initial-harness",
+          "prepared": 1,
+          "graded": 0,
+          "passed": 0,
+          "meanScore": null,
+          "ungraded": [
+            {
+              "runId": "02a864c7-e1f9-49bc-b1dc-f4a2c3056b81",
+              "status": "prepared"
+            }
+          ],
+          "metrics": [
+            {
+              "runId": "02a864c7-e1f9-49bc-b1dc-f4a2c3056b81",
+              "wallMs": null,
+              "inputTokens": null,
+              "outputTokens": null,
+              "totalTokens": null,
+              "observedFrom": "not collected or not observable"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "runId": "02a864c7-e1f9-49bc-b1dc-f4a2c3056b81",
+      "case": "sdlc-20261118-maintenance",
+      "version": 1,
+      "variant": "initial-harness",
+      "caseSha256": "65c0993ddfe9282426fcd3011e7048c72c5819b9c16f18573f57b0d0a8db5ede",
+      "rubricSha256": "badbb0f825972b3a5f1690ad7a6b0f4af9db60376b8d752eb747ae203027ab9d",
+      "profileSha256": "d66d4879a59471c8ecb38ac4754752cf440cee934ee5118da8b70fa12eb81e9e",
+      "componentHashes": [
+        "d36a6bc1d3845a08c87a0717718a79597ca0fde9ecedb6aa5e4ae593afbcb5b1",
+        "d17e16d6a70bd90ce5dae899a81098b6c4c89e84abc85bbf837d3f0e41a86850"
+      ],
+      "policySha256": "d50c134bf0bbc4e5383a75b48fc77c75bc6f9d579f36c406025149e4a3f82dfb",
+      "requestedModel": "auto",
+      "runner": null,
+      "actualModel": null,
+      "status": "prepared",
+      "score": null,
+      "maxScore": null,
+      "passed": null,
+      "deterministicPassed": null,
+      "runnerSucceeded": null,
+      "metrics": null
+    },
+    {
+      "runId": "065ed504-d9a0-4026-99d9-21498be60cf8",
+      "case": "sdlc-20261118-architecture",
+      "version": 1,
+      "variant": "baseline",
+      "caseSha256": "389fccbbcb8119d36728b4b29c9fd9e8d83b4119e27bc5c7e990082c3ba32b2e",
+      "rubricSha256": "e12e748c56799e132587976d3611dad0f0ebd1803133c213be748975b4e19a53",
+      "profileSha256": null,
+      "componentHashes": [],
+      "policySha256": "d50c134bf0bbc4e5383a75b48fc77c75bc6f9d579f36c406025149e4a3f82dfb",
+      "requestedModel": "auto",
+      "runner": null,
+      "actualModel": null,
+      "status": "prepared",
+      "score": null,
+      "maxScore": null,
+      "passed": null,
+      "deterministicPassed": null,
+      "runnerSucceeded": null,
+      "metrics": null
+    },
+    {
+      "runId": "09cedac9-1c1d-43ca-8c6b-e7f05dff89c9",
+      "case": "sdlc-20261118-architecture",
+      "version": 1,
+      "variant": "initial-harness",
+      "caseSha256": "389fccbbcb8119d36728b4b29c9fd9e8d83b4119e27bc5c7e990082c3ba32b2e",
+      "rubricSha256": "e12e748c56799e132587976d3611dad0f0ebd1803133c213be748975b4e19a53",
+      "profileSha256": "d66d4879a59471c8ecb38ac4754752cf440cee934ee5118da8b70fa12eb81e9e",
+      "componentHashes": [
+        "d36a6bc1d3845a08c87a0717718a79597ca0fde9ecedb6aa5e4ae593afbcb5b1",
+        "d17e16d6a70bd90ce5dae899a81098b6c4c89e84abc85bbf837d3f0e41a86850"
+      ],
+      "policySha256": "d50c134bf0bbc4e5383a75b48fc77c75bc6f9d579f36c406025149e4a3f82dfb",
+      "requestedModel": "auto",
+      "runner": null,
+      "actualModel": null,
+      "status": "prepared",
+      "score": null,
+      "maxScore": null,
+      "passed": null,
+      "deterministicPassed": null,
+      "runnerSucceeded": null,
+      "metrics": null
+    },
+    {
+      "runId": "14f5cf81-af19-424e-80aa-01fa3618070a",
+      "case": "sdlc-20261118-maintenance",
+      "version": 1,
+      "variant": "baseline",
+      "caseSha256": "65c0993ddfe9282426fcd3011e7048c72c5819b9c16f18573f57b0d0a8db5ede",
+      "rubricSha256": "badbb0f825972b3a5f1690ad7a6b0f4af9db60376b8d752eb747ae203027ab9d",
+      "profileSha256": null,
+      "componentHashes": [],
+      "policySha256": "d50c134bf0bbc4e5383a75b48fc77c75bc6f9d579f36c406025149e4a3f82dfb",
+      "requestedModel": "auto",
+      "runner": null,
+      "actualModel": null,
+      "status": "prepared",
+      "score": null,
+      "maxScore": null,
+      "passed": null,
+      "deterministicPassed": null,
+      "runnerSucceeded": null,
+      "metrics": null
+    },
+    {
+      "runId": "38a6feaf-fec6-47ec-9dd6-5ffd539a80ba",
+      "case": "sdlc-20261118-review",
+      "version": 1,
+      "variant": "baseline",
+      "caseSha256": "c00c322d81af32c1016466068c951139325c75290e66ebb4938988a0bafdb3e3",
+      "rubricSha256": "3afeb329a138b9be8a78be991e5c41c03df1432eb2603bf5f95231c724d90efe",
+      "profileSha256": null,
+      "componentHashes": [],
+      "policySha256": "d50c134bf0bbc4e5383a75b48fc77c75bc6f9d579f36c406025149e4a3f82dfb",
+      "requestedModel": "auto",
+      "runner": null,
+      "actualModel": null,
+      "status": "prepared",
+      "score": null,
+      "maxScore": null,
+      "passed": null,
+      "deterministicPassed": null,
+      "runnerSucceeded": null,
+      "metrics": null
+    },
+    {
+      "runId": "4321e12c-246e-4180-9737-2b4b51d064de",
+      "case": "sdlc-20261118-requirements",
+      "version": 1,
+      "variant": "initial-harness",
+      "caseSha256": "fdde3335bb384b3395493a6436a992a3fe204a64892c4f18c4e75dcdade6a8a3",
+      "rubricSha256": "13e31f517f866ff992f0e7cbea28a6cfda5c6cec4294ce570f91e75e97c0d746",
+      "profileSha256": "d66d4879a59471c8ecb38ac4754752cf440cee934ee5118da8b70fa12eb81e9e",
+      "componentHashes": [
+        "d36a6bc1d3845a08c87a0717718a79597ca0fde9ecedb6aa5e4ae593afbcb5b1",
+        "d17e16d6a70bd90ce5dae899a81098b6c4c89e84abc85bbf837d3f0e41a86850"
+      ],
+      "policySha256": "d50c134bf0bbc4e5383a75b48fc77c75bc6f9d579f36c406025149e4a3f82dfb",
+      "requestedModel": "auto",
+      "runner": null,
+      "actualModel": null,
+      "status": "prepared",
+      "score": null,
+      "maxScore": null,
+      "passed": null,
+      "deterministicPassed": null,
+      "runnerSucceeded": null,
+      "metrics": null
+    },
+    {
+      "runId": "6384b6f4-ce0a-472d-a3ed-4deadf9a4a30",
+      "case": "sdlc-20261118-requirements",
+      "version": 1,
+      "variant": "baseline",
+      "caseSha256": "fdde3335bb384b3395493a6436a992a3fe204a64892c4f18c4e75dcdade6a8a3",
+      "rubricSha256": "13e31f517f866ff992f0e7cbea28a6cfda5c6cec4294ce570f91e75e97c0d746",
+      "profileSha256": null,
+      "componentHashes": [],
+      "policySha256": "d50c134bf0bbc4e5383a75b48fc77c75bc6f9d579f36c406025149e4a3f82dfb",
+      "requestedModel": "auto",
+      "runner": null,
+      "actualModel": null,
+      "status": "prepared",
+      "score": null,
+      "maxScore": null,
+      "passed": null,
+      "deterministicPassed": null,
+      "runnerSucceeded": null,
+      "metrics": null
+    },
+    {
+      "runId": "a0da8e6c-cb6c-478c-8f9a-c1a2c520fb0e",
+      "case": "sdlc-20261118-issue",
+      "version": 1,
+      "variant": "baseline",
+      "caseSha256": "3dbedcf768115e5f98cfbe4eb145910ca83b0131a2c4bbf95b6daab89152f84d",
+      "rubricSha256": "07fb51775738a2510695b311e87638aad08bb9f0e7775cd116d832a940e05496",
+      "profileSha256": null,
+      "componentHashes": [],
+      "policySha256": "d50c134bf0bbc4e5383a75b48fc77c75bc6f9d579f36c406025149e4a3f82dfb",
+      "requestedModel": "auto",
+      "runner": null,
+      "actualModel": null,
+      "status": "prepared",
+      "score": null,
+      "maxScore": null,
+      "passed": null,
+      "deterministicPassed": null,
+      "runnerSucceeded": null,
+      "metrics": null
+    },
+    {
+      "runId": "d724be67-51ca-4d2a-be5b-afe5b46ff295",
+      "case": "sdlc-20261118-review",
+      "version": 1,
+      "variant": "initial-harness",
+      "caseSha256": "c00c322d81af32c1016466068c951139325c75290e66ebb4938988a0bafdb3e3",
+      "rubricSha256": "3afeb329a138b9be8a78be991e5c41c03df1432eb2603bf5f95231c724d90efe",
+      "profileSha256": "d66d4879a59471c8ecb38ac4754752cf440cee934ee5118da8b70fa12eb81e9e",
+      "componentHashes": [
+        "d36a6bc1d3845a08c87a0717718a79597ca0fde9ecedb6aa5e4ae593afbcb5b1",
+        "d17e16d6a70bd90ce5dae899a81098b6c4c89e84abc85bbf837d3f0e41a86850"
+      ],
+      "policySha256": "d50c134bf0bbc4e5383a75b48fc77c75bc6f9d579f36c406025149e4a3f82dfb",
+      "requestedModel": "auto",
+      "runner": null,
+      "actualModel": null,
+      "status": "prepared",
+      "score": null,
+      "maxScore": null,
+      "passed": null,
+      "deterministicPassed": null,
+      "runnerSucceeded": null,
+      "metrics": null
+    },
+    {
+      "runId": "d8c28341-5030-4aef-a8dc-e0b8b0feb376",
+      "case": "sdlc-20261118-issue",
+      "version": 1,
+      "variant": "initial-harness",
+      "caseSha256": "3dbedcf768115e5f98cfbe4eb145910ca83b0131a2c4bbf95b6daab89152f84d",
+      "rubricSha256": "07fb51775738a2510695b311e87638aad08bb9f0e7775cd116d832a940e05496",
+      "profileSha256": "d66d4879a59471c8ecb38ac4754752cf440cee934ee5118da8b70fa12eb81e9e",
+      "componentHashes": [
+        "d36a6bc1d3845a08c87a0717718a79597ca0fde9ecedb6aa5e4ae593afbcb5b1",
+        "d17e16d6a70bd90ce5dae899a81098b6c4c89e84abc85bbf837d3f0e41a86850"
+      ],
+      "policySha256": "d50c134bf0bbc4e5383a75b48fc77c75bc6f9d579f36c406025149e4a3f82dfb",
+      "requestedModel": "auto",
+      "runner": null,
+      "actualModel": null,
+      "status": "prepared",
+      "score": null,
+      "maxScore": null,
+      "passed": null,
+      "deterministicPassed": null,
+      "runnerSucceeded": null,
+      "metrics": null
+    }
+  ],
+  "excludedRuns": [],
+  "groups": []
+}

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "sdlc-20261118-maintenance",
+  "version": 1,
+  "title": "Held-out backward-compatible log parser extension",
+  "passScore": 8,
+  "criteria": [
+    {
+      "id": "compatibility",
+      "maxScore": 4,
+      "description": "Actual parser preserves legacy timestamps, uppercase level restrictions and verbatim message remainder while accepting the specified JSON object format, normalizing JSON level only and returning only required fields."
+    },
+    {
+      "id": "robustness",
+      "maxScore": 4,
+      "description": "Rejects malformed JSON, arrays, unknown levels, missing/nonstring fields and nonstring input with null, without throwing or broadening accepted data by coercion. Tests cover new and old behavior, including empty messages and extra pipes."
+    },
+    {
+      "id": "maintenance-handoff",
+      "maxScore": 2,
+      "description": "Small readable dependency-free change, meaningful changelog and actual focused test evidence. Documents compatibility assumptions and remaining limits without claiming unsupported validation."
+    }
+  ]
+}

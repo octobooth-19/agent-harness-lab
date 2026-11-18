@@ -23,7 +23,10 @@ test('campaign freezes five valid cases then prepares exact independent baseline
   });
   const catalog = new Catalog(root);
   catalog.put('components', { schemaVersion: 1, id: 'fixture-guidance', version: 1, title: 'Test fixture only',
-    kind: 'instructions', prompt: '', files: { '.github/copilot-instructions.md': 'Synthetic test configuration; no model executed.\n' } }, 'create');
+    kind: 'instructions', prompt: '', files: {
+      '.github/copilot-instructions.md': 'Synthetic test configuration; no model executed.\n',
+      '.github/skills/fixture/SKILL.md': 'Synthetic skill; no model executed.\n',
+    } }, 'create');
   catalog.put('profiles', { schemaVersion: 1, id: 'fixture-profile', version: 1, title: 'Fixture profile', target: 'app',
     parts: [{ id: 'fixture-guidance', version: 1, enabled: true }] }, 'create');
   const invoke = (script, ...args) => {
@@ -41,6 +44,10 @@ test('campaign freezes five valid cases then prepares exact independent baseline
   fs.mkdirSync(workspaceRoot);
   const baseline = invoke('prepare-campaign.mjs', '--arm', 'baseline', '--workspace-root', workspaceRoot);
   const treatment = invoke('prepare-campaign.mjs', '--arm', 'initial-harness', '--workspace-root', workspaceRoot);
+  const audit = invoke('verify-prepared.mjs');
+  assert.equal(audit.independentWorkspaces, 10);
+  assert.equal(audit.identicalArmPrompts, true);
+  assert.equal(audit.actualAppLoadingVerified, false, 'materialization is not proof of actual app loading');
   assert.equal(new Set([...baseline.trials, ...treatment.trials].map(trial => trial.workspace)).size, 10);
   for (const trial of baseline.trials) {
     const manifest = readJSON(trial.manifest);
@@ -94,4 +101,8 @@ test('campaign freezes five valid cases then prepares exact independent baseline
   assert.equal(runnerReport.runs.length, 10, 'a manual run must not count as an app campaign trial');
   assert.ok(runnerReport.excludedRuns.some(run => run.runId === mismatchedRunner.runId));
   assert.deepEqual(runnerReport.groups, [], 'excluded execution contexts must not leak into aggregate groups');
+  fs.writeFileSync(path.join(baseline.trials[0].workspace, 'unintended-rubric.json'), '{}');
+  const badAudit = spawnSync(process.execPath, [path.join(campaign, 'verify-prepared.mjs')], { cwd: root, encoding: 'utf8' });
+  assert.notEqual(badAudit.status, 0);
+  assert.match(badAudit.stderr, /unexpected subject file/);
 });

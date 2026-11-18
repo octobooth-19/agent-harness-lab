@@ -5,6 +5,14 @@ components/profile) with one **pinned initial harness profile**. The Project
 coordinator launches every subject and independent judge. This is not a request
 to the operator to simulate an arm, run it headlessly, or fix the flagship issue.
 
+The pinned treatment is `initial-top-seven@1`, assembled at
+`26e2c63dacbfc88281fc0f9e22521cad2be06b05`. Its two enabled adapted components
+are `sdlc-delivery-instructions@1` and `sdlc-test-isolation@1`. The seven-source
+review used bounded discovery/scans, not exhaustive upstream coverage; this
+profile does not execute seven complete upstream harnesses. The treatment has
+native instruction/skill files, empty prompt additions, and no extra runtime
+settings.
+
 ## Frozen design
 
 | Case | SDLC activity | Output | Partition |
@@ -71,12 +79,18 @@ node bench/cli.mjs validate
 mkdir -p /tmp/sdlc-20261118-trials
 node bench/campaigns/sdlc-20261118/prepare-campaign.mjs --arm baseline --workspace-root /tmp/sdlc-20261118-trials
 node bench/campaigns/sdlc-20261118/prepare-campaign.mjs --arm initial-harness --workspace-root /tmp/sdlc-20261118-trials
+node bench/campaigns/sdlc-20261118/verify-prepared.mjs
 ```
 
 Arm launch indexes under `launches/` contain **exact workspace, manifest, and
 prompt-file paths per run**. Each run's manifest freezes the case, rubric, source
 input hashes, component/profile records, policy content, and hidden evaluator
 pins. Do not overwrite or re-prepare an existing launch index.
+The verifier checks all ten pristine workspaces, exact component/input bytes,
+matching arm prompts/policy, and no extra subject files. Its preparation audit
+does **not** prove that an app session loaded instructions or invoked a skill:
+that requires actual coordinator launch observations. A skill being present
+does not imply it was invoked.
 
 Use the benchmark skill's folder registration/session creation procedure. Match
 `policy.json` across arms: same requested Auto model, same app tools and approval

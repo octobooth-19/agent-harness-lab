@@ -20,7 +20,9 @@ function fixture(t) {
   const workspaceRoot = path.join(temp, 'trials');
   fs.mkdirSync(path.join(root, 'bench'), { recursive: true });
   fs.mkdirSync(workspaceRoot);
-  fs.cpSync(path.join(source, 'catalog'), path.join(root, 'bench', 'catalog'), { recursive: true });
+  for (const record of ['cases/incident-summary', 'rubrics/incident-summary', 'components/brief-prompt', 'components/evidence-prompt']) {
+    fs.cpSync(path.join(source, 'catalog', record), path.join(root, 'bench/catalog', record), { recursive: true });
+  }
   return { root, workspaceRoot, catalog: new Catalog(root) };
 }
 
