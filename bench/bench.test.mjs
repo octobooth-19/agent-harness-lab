@@ -466,6 +466,23 @@ test('app telemetry validates exact cwd/prompt and reports observable model, tok
   assert.throws(() => inspectAppEvents([...events, { type: 'user.message', data: { content: 'extra instructions' } }], metadata), /extra or changed/);
 });
 
+test('CLI catalog list requires exactly one kind and prints JSON on success', t => {
+  const { root, catalog } = fixture(t);
+  const invoke = (...args) => spawnSync(process.execPath, [path.join(source, 'cli.mjs'), '--root', root, 'catalog', 'list', ...args], { encoding: 'utf8' });
+
+  const valid = invoke('cases');
+  assert.equal(valid.status, 0, valid.stderr);
+  assert.equal(valid.stderr, '');
+  assert.deepEqual(JSON.parse(valid.stdout), catalog.list('cases'));
+
+  for (const args of [['cases', 'unexpected'], []]) {
+    const invalid = invoke(...args);
+    assert.equal(invalid.status, 1, `catalog list ${args.join(' ')} should fail`);
+    assert.match(invalid.stderr, /^bench: Usage: catalog list KIND\b/);
+    assert.equal(invalid.stdout, '');
+  }
+});
+
 test('CLI validates catalog, surfaces errors, and drives the lifecycle without dependencies', t => {
   const { root, workspaceRoot } = fixture(t);
   const invoke = (...args) => spawnSync(process.execPath, [path.join(source, 'cli.mjs'), '--root', root, ...args], { encoding: 'utf8' });

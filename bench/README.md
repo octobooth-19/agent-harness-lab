@@ -47,6 +47,7 @@ node bench/cli.mjs catalog update components --file /absolute/next-component-rev
 node bench/cli.mjs catalog delete components temporary-prompt --version 2
 ```
 
+`catalog list` requires exactly one kind and rejects extra positional arguments.
 Create starts at version 1. Update appends exactly the next version. Delete appends
 a tombstone and requires the current version; IDs cannot be silently recreated.
 Pinned historical revisions remain readable after deletion. Editing existing JSON
