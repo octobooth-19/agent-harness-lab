@@ -50,26 +50,26 @@ https://platform.claude.com/docs/en/get-started,Quickstart,platform_documentatio
 https://platform.claude.com/docs/en/manage-claude/authentication,Authentication,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/build-with-claude/overview,Features overview,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/build-with-claude/working-with-messages,Using the Messages API,platform_documentation,,,2026-11-18,indexed_only,api,
-https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons,Stop reasons and fallback,platform_documentation,,,2026-11-18,indexed_only,general,
-https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback,Refusals and fallback,platform_documentation,,,2026-11-18,indexed_only,general,
+https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons,Stop reasons and fallback,platform_documentation,,,2026-11-18,read_partial,agents;api,knowledge/anthropic/synthesis.md
+https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback,Refusals and fallback,platform_documentation,,,2026-11-18,read_partial,safety;api,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/build-with-claude/fallback-credit,Fallback credit,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/build-with-claude/text-watermark,Text watermark,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/build-with-claude/task-budgets,Task budgets (beta),platform_documentation,,,2026-11-18,read_partial,general,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/build-with-claude/fast-mode,Fast mode,platform_documentation,,,2026-11-18,indexed_only,general,
-https://platform.claude.com/docs/en/build-with-claude/structured-outputs,Structured outputs,platform_documentation,,,2026-11-18,indexed_only,general,
-https://platform.claude.com/docs/en/build-with-claude/citations,Citations,platform_documentation,,,2026-11-18,indexed_only,general,
-https://platform.claude.com/docs/en/build-with-claude/streaming,Streaming Messages,platform_documentation,,,2026-11-18,indexed_only,general,
+https://platform.claude.com/docs/en/build-with-claude/structured-outputs,Structured outputs,platform_documentation,,,2026-11-18,read_partial,api;tools,knowledge/anthropic/synthesis.md
+https://platform.claude.com/docs/en/build-with-claude/citations,Citations,platform_documentation,,,2026-11-18,read_partial,context;retrieval,knowledge/anthropic/synthesis.md
+https://platform.claude.com/docs/en/build-with-claude/streaming,Streaming Messages,platform_documentation,,,2026-11-18,read_partial,api;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/build-with-claude/batch-processing,Batch processing,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/build-with-claude/search-results,Search results,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/handle-streaming-refusals,Handle streaming refusals,platform_documentation,,,2026-11-18,read_partial,evaluations,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/build-with-claude/multilingual-support,Multilingual support,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/build-with-claude/embeddings,Embeddings,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/build-with-claude/effort,Overview,platform_documentation,,,2026-11-18,indexed_only,general,
-https://platform.claude.com/docs/en/build-with-claude/effort-per-message,Per-message effort (beta),platform_documentation,,,2026-11-18,indexed_only,general,
+https://platform.claude.com/docs/en/build-with-claude/effort-per-message,Per-message effort,platform_documentation,,,2026-11-18,read_partial,api;prompting,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/build-with-claude/thinking,Overview,platform_documentation,,,2026-11-18,indexed_only,general,
-https://platform.claude.com/docs/en/build-with-claude/thinking-steering-and-cost,Steering and cost control,platform_documentation,,,2026-11-18,indexed_only,general,
+https://platform.claude.com/docs/en/build-with-claude/thinking-steering-and-cost,Steering thinking,platform_documentation,,,2026-11-18,read_partial,models;prompting,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/build-with-claude/thinking-tool-workflows,Thinking in tool and multi-turn workflows,platform_documentation,,,2026-11-18,read_partial,tools,knowledge/anthropic/synthesis.md
-https://platform.claude.com/docs/en/build-with-claude/thinking-troubleshooting,Troubleshooting,platform_documentation,,,2026-11-18,indexed_only,general,
+https://platform.claude.com/docs/en/build-with-claude/thinking-troubleshooting,Troubleshooting thinking,platform_documentation,,,2026-11-18,read_partial,models;agents,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/build-with-claude/extended-thinking,Extended thinking (legacy),platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/build-with-claude/preserved-thinking,Overview,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/build-with-claude/preserved-thinking/prefix-checks,Prefix checks,platform_documentation,,,2026-11-18,indexed_only,general,
