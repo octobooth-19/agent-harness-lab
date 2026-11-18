@@ -8,10 +8,10 @@
   },
   "counts": {
     "discovered_pages": 2836,
-    "read_pages": 95,
+    "read_pages": 97,
     "inaccessible_pages": 0,
     "excluded_unique_links": 26,
-    "pending_pages": 2654,
+    "pending_pages": 2631,
     "index_records": 15,
     "index_failures": [
       {
@@ -33,7 +33,7 @@
     "openai_sitemap_subindexes": 44,
     "technical_sitemap_families_opened": 5,
     "other_openai_sitemap_families_not_included": 39,
-    "read_partial_pages": 87
+    "read_partial_pages": 108
   },
   "field_notes": {
     "review_status": "read = source page opened and reviewed; read_partial = source page opened but only partly reviewed; indexed = discovered in an official index/sitemap/feed but not opened; inaccessible = attempted primary source failed.",
@@ -2900,13 +2900,16 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
         "API and SDK",
+        "agent workflows",
+        "evaluation",
+        "model guidance",
         "models"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
@@ -2954,13 +2957,16 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
         "API and SDK",
+        "agent workflows",
+        "evaluation",
+        "model guidance",
         "models"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
@@ -2972,13 +2978,16 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
         "API and SDK",
+        "agent workflows",
+        "evaluation",
+        "model guidance",
         "models"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
@@ -2990,15 +2999,18 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
         "API and SDK",
         "agent runtime",
+        "agent workflows",
         "context and memory",
+        "evaluation",
+        "model guidance",
         "models"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
@@ -3010,14 +3022,17 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
         "API and SDK",
+        "agent workflows",
+        "evaluation",
+        "model guidance",
         "models",
         "tools and MCP"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
@@ -3029,13 +3044,16 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
         "API and SDK",
+        "agent workflows",
+        "evaluation",
+        "model guidance",
         "models"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
@@ -3680,13 +3698,14 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "API and SDK",
-        "agent runtime"
+        "agent runtime",
+        "multi-agent orchestration",
+        "context"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
@@ -3698,13 +3717,14 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "API and SDK",
-        "evaluations"
+        "retrieval",
+        "vector stores",
+        "context"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
@@ -4348,13 +4368,13 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
-        "API and SDK",
-        "evaluations"
+        "trace grading",
+        "agent evaluation"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
@@ -4662,13 +4682,14 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "API and SDK",
-        "coding agents"
+        "identity federation",
+        "service accounts",
+        "permissions"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
@@ -6285,13 +6306,13 @@
       "source_type": "API reference",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "API and SDK",
-        "evaluations"
+        "graders",
+        "evaluation API"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/reference/llms.txt"
       ],
@@ -8673,13 +8694,16 @@
       "source_type": "OpenAI developer blog",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
+        "agent workflows",
         "coding agents",
+        "evaluation",
+        "model guidance",
         "models"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/blog/llms.txt"
       ],
@@ -8834,12 +8858,15 @@
       "source_type": "OpenAI developer blog",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
+        "agent workflows",
+        "evaluation",
+        "model guidance",
         "models"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/blog/llms.txt"
       ],
@@ -8992,13 +9019,16 @@
       "source_type": "OpenAI developer blog",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
         "agent runtime",
+        "agent workflows",
+        "evaluation",
+        "model guidance",
         "models"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/blog/llms.txt"
       ],
@@ -10381,13 +10411,13 @@
       "source_type": "OpenAI Cookbook",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "API and SDK",
-        "evaluations"
+        "evaluation",
+        "archived Cookbook"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/learn/llms.txt"
       ],
@@ -10822,13 +10852,14 @@
       "source_type": "OpenAI Cookbook",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "agent runtime",
-        "evaluations"
+        "agent evaluation",
+        "multi-agent systems",
+        "macro evals"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/cookbook/llms.txt"
       ],
@@ -14268,12 +14299,14 @@
       "source_type": "Codex / ChatGPT product documentation",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
-        "coding agents"
+        "coding agents",
+        "cloud environments",
+        "context"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/codex/llms.txt",
         "https://learn.chatgpt.com/llms.txt"
@@ -14775,12 +14808,14 @@
       "source_type": "Codex / ChatGPT product documentation",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "context and memory"
+        "tasks and memory",
+        "scheduling",
+        "context"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/codex/llms.txt",
         "https://learn.chatgpt.com/llms.txt"
@@ -34527,16 +34562,18 @@
     },
     {
       "canonical_url": "https://openai.com/index/introducing-the-model-spec/",
-      "title": null,
-      "source_type": "OpenAI article (sitemap-indexed)",
-      "published_or_updated_date": "2026-11-13",
-      "date_basis": "sitemap lastmod",
-      "accessed_date": null,
-      "review_status": "indexed",
+      "title": "Introducing the Model Spec",
+      "source_type": "OpenAI research article",
+      "published_or_updated_date": "2025-02-12",
+      "date_basis": "updated date shown on page",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "models"
+        "model behavior",
+        "policy",
+        "safety"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://openai.com/sitemap.xml/research/"
       ],
@@ -36075,16 +36112,18 @@
     },
     {
       "canonical_url": "https://openai.com/index/lifeval/",
-      "title": null,
-      "source_type": "OpenAI article (sitemap-indexed)",
-      "published_or_updated_date": "2026-11-18",
-      "date_basis": "sitemap lastmod",
-      "accessed_date": null,
-      "review_status": "indexed",
+      "title": "LifeVal",
+      "source_type": "OpenAI research article",
+      "published_or_updated_date": "2026-11-02",
+      "date_basis": "publication date shown on page",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "evaluations"
+        "evaluations",
+        "benchmarks",
+        "personal assistant"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://openai.com/sitemap.xml/research/"
       ],
@@ -36926,16 +36965,18 @@
     },
     {
       "canonical_url": "https://openai.com/index/model-misalignment-reporting-framework/",
-      "title": null,
-      "source_type": "OpenAI article (sitemap-indexed)",
-      "published_or_updated_date": "2026-11-14",
-      "date_basis": "sitemap lastmod",
-      "accessed_date": null,
-      "review_status": "indexed",
+      "title": "Our framework for reporting model misalignment",
+      "source_type": "OpenAI research article",
+      "published_or_updated_date": "2026-09-16",
+      "date_basis": "publication date shown on page",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "models"
+        "model behavior",
+        "evaluation",
+        "safety reporting"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://openai.com/sitemap.xml/research/"
       ],
@@ -43729,13 +43770,14 @@
       "source_type": "OpenAI article (sitemap-indexed)",
       "published_or_updated_date": "2026-11-08",
       "date_basis": "sitemap lastmod",
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "coding agents",
-        "evaluations"
+        "coding evaluations",
+        "benchmark quality",
+        "dated research"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://openai.com/sitemap.xml/research/"
       ],
@@ -47908,12 +47950,14 @@
       "source_type": "OpenAI news article",
       "published_or_updated_date": "2026-02-23",
       "date_basis": "publication date",
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "evaluations"
+        "coding evaluations",
+        "benchmark contamination",
+        "dated research"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://openai.com/news/rss.xml"
       ],
