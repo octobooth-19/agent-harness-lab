@@ -68,7 +68,7 @@ https://platform.claude.com/docs/en/build-with-claude/effort,Overview,platform_d
 https://platform.claude.com/docs/en/build-with-claude/effort-per-message,Per-message effort (beta),platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/build-with-claude/thinking,Overview,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/build-with-claude/thinking-steering-and-cost,Steering and cost control,platform_documentation,,,2026-11-18,indexed_only,general,
-https://platform.claude.com/docs/en/build-with-claude/thinking-tool-workflows,Tool and multi-turn workflows,platform_documentation,,,2026-11-18,indexed_only,tools,
+https://platform.claude.com/docs/en/build-with-claude/thinking-tool-workflows,Thinking in tool and multi-turn workflows,platform_documentation,,,2026-11-18,read_partial,tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/build-with-claude/thinking-troubleshooting,Troubleshooting,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/build-with-claude/extended-thinking,Extended thinking (legacy),platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/build-with-claude/preserved-thinking,Overview,platform_documentation,,,2026-11-18,indexed_only,general,
@@ -93,15 +93,15 @@ https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool,Memory
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/bash-tool,Bash tool,platform_documentation,,,2026-11-18,read_partial,agents;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/text-editor-tool,Text editor tool,platform_documentation,,,2026-11-18,read_partial,agents;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-sdk,Browser and computer use (SDK),platform_documentation,,,2026-11-18,indexed_only,agents;tools,
-https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool,Computer use tool,platform_documentation,,,2026-11-18,indexed_only,agents;tools,
+https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool,Computer use tool,platform_documentation,,,2026-11-18,read_partial,agents;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-tool,Browser use tool,platform_documentation,,,2026-11-18,read_partial,agents;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use,Troubleshooting,platform_documentation,,,2026-11-18,indexed_only,agents;tools,
-https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-reference,Tool reference,platform_documentation,,,2026-11-18,indexed_only,agents;tools,
+https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-reference,Tool reference,platform_documentation,,,2026-11-18,read_partial,agents;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/manage-tool-context,Manage tool context,platform_documentation,,,2026-11-18,read,agents;tools;context,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-combinations,Tool combinations,platform_documentation,,,2026-11-18,read,agents;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-use-with-prompt-caching,Tool use with prompt caching,platform_documentation,,,2026-11-18,read,agents;tools;prompting,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/programmatic-tool-calling,Programmatic tool calling,platform_documentation,,,2026-11-18,read_partial,agents;tools,knowledge/anthropic/synthesis.md
-https://platform.claude.com/docs/en/agents-and-tools/tool-use/fine-grained-tool-streaming,Fine-grained tool streaming,platform_documentation,,,2026-11-18,indexed_only,agents;tools,
+https://platform.claude.com/docs/en/agents-and-tools/tool-use/fine-grained-tool-streaming,Fine-grained tool streaming,platform_documentation,,,2026-11-18,read_partial,agents;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/build-with-claude/context-windows,Context windows,platform_documentation,,,2026-11-18,read_partial,context,synthesis.md
 https://platform.claude.com/docs/en/build-with-claude/context-editing,Context editing,platform_documentation,,,2026-11-18,read_partial,context,synthesis.md
 https://platform.claude.com/docs/en/build-with-claude/prompt-caching,Prompt caching,platform_documentation,,,2026-11-18,read_partial,prompting,knowledge/anthropic/synthesis.md
@@ -135,7 +135,7 @@ https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/deploy-helm,Dep
 https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/deploy-compose,Deploy with Docker Compose,platform_documentation,,,2026-11-18,indexed_only,agents;mcp;tools,
 https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/security,MCP tunnels security,platform_documentation,,,2026-11-18,read,agents;mcp;tools;security,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/troubleshooting,Troubleshooting,platform_documentation,,,2026-11-18,indexed_only,agents;mcp;tools,
-https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/reference,Reference,platform_documentation,,,2026-11-18,indexed_only,agents;mcp;tools,
+https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/reference,MCP tunnels reference,platform_documentation,,,2026-11-18,read_partial,agents;mcp;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/build-with-claude/claude-in-amazon-bedrock,Amazon Bedrock (mantle),platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/build-with-claude/claude-on-amazon-bedrock-legacy,Amazon Bedrock (runtime),platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws,Claude Platform on AWS,platform_documentation,,,2026-11-18,indexed_only,general,
@@ -644,7 +644,7 @@ https://platform.claude.com/docs/en/managed-agents/onboarding,Build in Console,p
 https://platform.claude.com/docs/en/managed-agents/migration,Migration,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
 https://platform.claude.com/docs/en/managed-agents/agent-setup,Agent setup,platform_documentation,,,2026-11-18,read_partial,managed-agents;agents,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/tools,Tools,platform_documentation,,,2026-11-18,read_partial,managed-agents;agents;tools,knowledge/anthropic/synthesis.md
-https://platform.claude.com/docs/en/managed-agents/tools-web-restrictions,Web tool restrictions,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents;tools,
+https://platform.claude.com/docs/en/managed-agents/tools-web-restrictions,Restrict web search and web fetch domains,platform_documentation,,,2026-11-18,read_partial,managed-agents;agents;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/mcp-connector,MCP connector,platform_documentation,,,2026-11-18,read_partial,managed-agents;agents;mcp,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/permission-policies,Permission policies,platform_documentation,,,2026-11-18,read_partial,managed-agents;agents;permissions,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/skills,Agent Skills,platform_documentation,,,2026-11-18,read_partial,managed-agents;agents;skills,knowledge/anthropic/synthesis.md
@@ -652,7 +652,7 @@ https://platform.claude.com/docs/en/managed-agents/choosing-an-environment,Choos
 https://platform.claude.com/docs/en/managed-agents/environments,Cloud environment setup,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
 https://platform.claude.com/docs/en/managed-agents/cloud-sandboxes-reference,Cloud sandbox reference,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
 https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes,Overview and quickstart,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
-https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-workers,Deploy workers,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
+https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-workers,Deploy self-hosted workers,platform_documentation,,,2026-11-18,read_partial,managed-agents;agents,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-per-session,Sandbox per session,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
 https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-memory,Memory stores,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents;memory,
 https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-custom-tools,Custom tools in self-hosted sandboxes,platform_documentation,,,2026-11-18,read_partial,managed-agents;agents;mcp;tools,knowledge/anthropic/synthesis.md
@@ -4950,7 +4950,7 @@ https://code.claude.com/docs/en/agent-sdk/streaming-vs-single-mode,Send messages
 https://code.claude.com/docs/en/agent-sdk/structured-outputs,Get structured output from agents,claude_code_documentation,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,agent-sdk;agents,
 https://code.claude.com/docs/en/agent-sdk/subagents,Subagents in the SDK,claude_code_documentation,2026-11-16,sitemap_lastmod,2026-11-18,indexed_only,agent-sdk;agents,
 https://code.claude.com/docs/en/agent-sdk/todo-tracking,Track todos,claude_code_documentation,2026-11-16,sitemap_lastmod,2026-11-18,indexed_only,agent-sdk;agents,
-https://code.claude.com/docs/en/agent-sdk/tool-search,Scale to many tools with tool search,claude_code_documentation,2026-11-12,sitemap_lastmod,2026-11-18,indexed_only,agent-sdk;agents;tools,
+https://code.claude.com/docs/en/agent-sdk/tool-search,Scale to many tools with tool search,claude_code_documentation,2026-11-12,sitemap_lastmod,2026-11-18,read_partial,agent-sdk;agents;tools,knowledge/anthropic/synthesis.md
 https://code.claude.com/docs/en/agent-sdk/troubleshooting,Troubleshoot the Agent SDK,claude_code_documentation,2026-11-16,sitemap_lastmod,2026-11-18,indexed_only,agent-sdk;agents,
 https://code.claude.com/docs/en/agent-sdk/typescript,Agent SDK reference - TypeScript,claude_code_documentation,2026-11-17,sitemap_lastmod,2026-11-18,indexed_only,agent-sdk;agents,
 https://code.claude.com/docs/en/agent-sdk/typescript-v2-preview,TypeScript SDK V2 session API (removed),claude_code_documentation,2026-09-15,sitemap_lastmod,2026-11-18,indexed_only,agent-sdk;agents;api,

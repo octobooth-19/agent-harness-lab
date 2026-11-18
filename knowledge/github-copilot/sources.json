@@ -2589,13 +2589,13 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "CLI",
       "MCP and tools",
       "skills and customization"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -3352,14 +3352,14 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "IDE and app surfaces",
       "MCP and tools",
       "skills and customization",
       "context and memory"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -3369,14 +3369,14 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
       "IDE and app surfaces",
       "MCP and tools",
       "skills and customization",
       "context and memory"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -5877,13 +5877,13 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
       "coding agents",
       "MCP and tools",
       "cloud agent"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -7814,12 +7814,12 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "coding agents",
       "MCP and tools"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -8521,12 +8521,12 @@
     "published_date": "2025-07-02",
     "updated_date": "2025-07-02",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "MCP and tools",
       "orchestration and automation"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Blog category REST index (GitHub Copilot category, paginated)"
   },
   {
@@ -8914,12 +8914,12 @@
     "published_date": "2025-07-22",
     "updated_date": "2025-07-22",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "coding agents",
       "MCP and tools"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Blog category REST index (GitHub Copilot category, paginated)"
   },
   {
@@ -20451,14 +20451,14 @@
     "published_date": "2026-07-29",
     "updated_date": "2026-08-04",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
       "coding agents",
       "MCP and tools",
       "skills and customization",
       "code review"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Changelog Copilot-label REST index, paginated"
   },
   {
