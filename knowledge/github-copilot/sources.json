@@ -1148,11 +1148,14 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
-      "context and memory"
+      "context",
+      "retrieval",
+      "sharing",
+      "access control"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -2511,12 +2514,13 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
-      "CLI",
-      "context and memory"
+      "automation",
+      "scheduling",
+      "CLI"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -2636,13 +2640,14 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
-      "coding agents",
-      "CLI",
-      "skills and customization"
+      "agents",
+      "delegation",
+      "permissions",
+      "model selection"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -9614,12 +9619,13 @@
     "published_date": "2026-08-14",
     "updated_date": "2026-08-14",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
-      "coding agents",
-      "orchestration and automation"
+      "agent apps",
+      "workflow integration",
+      "MCP"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Blog category REST index (GitHub Copilot category, paginated)"
   },
   {
@@ -9915,12 +9921,14 @@
     "published_date": "2026-05-07",
     "updated_date": "2026-05-13",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
-      "coding agents",
-      "orchestration and automation"
+      "token efficiency",
+      "evaluations",
+      "observability",
+      "MCP"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Blog category REST index (GitHub Copilot category, paginated)"
   },
   {
@@ -10119,13 +10127,13 @@
     "published_date": "2026-04-01",
     "updated_date": "2026-04-14",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
-      "coding agents",
-      "CLI",
-      "orchestration and automation"
+      "orchestration",
+      "parallel agents",
+      "prompting"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Blog category REST index (GitHub Copilot category, paginated)"
   },
   {
@@ -22163,11 +22171,13 @@
     "published_date": "2026-10-28",
     "updated_date": "2026-10-28",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
-      "orchestration and automation"
+      "automation",
+      "evaluation",
+      "human review"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Changelog Copilot-label REST index, paginated"
   },
   {
@@ -22347,12 +22357,14 @@
     "published_date": "2026-10-28",
     "updated_date": "2026-10-28",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
-      "MCP and tools",
-      "orchestration and automation"
+      "automation",
+      "triggers",
+      "tools",
+      "cost controls"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Changelog Copilot-label REST index, paginated"
   },
   {
@@ -22664,11 +22676,13 @@
     "published_date": "2026-11-16",
     "updated_date": "2026-11-16",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
-      "models"
+      "models",
+      "deprecations",
+      "dated changes"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Changelog Copilot-label REST index, paginated"
   },
   {
