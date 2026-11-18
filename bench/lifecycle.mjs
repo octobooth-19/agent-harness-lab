@@ -455,6 +455,10 @@ export function report(root, caseId) {
     runs.push({ runId, case: manifest.case.value.id, version: manifest.case.value.version, variant: manifest.variant,
       caseSha256: manifest.case.sha256, rubricSha256: manifest.rubric.sha256,
       profileSha256: manifest.profile?.sha256 ?? null, componentHashes: manifest.components.map(component => component.sha256),
+      policySha256: manifest.policy?.sha256 ?? null, requestedModel: manifest.requestedModel,
+      runner: evidence?.receipt.runner ?? (fs.existsSync(path.join(directory, 'app-launch.json')) ? 'app' :
+        fs.existsSync(path.join(directory, 'launch.json')) ? 'headless' : null),
+      actualModel: evidence?.receipt.actualModel ?? null,
       status: result ? 'graded' : evidence ? 'collected' : ['launch.json', 'app-launch.json'].some(file => fs.existsSync(path.join(directory, file))) ? 'launched' : 'prepared',
       score: result?.score ?? null, maxScore: result?.maxScore ?? null, passed: result?.passed ?? null,
       deterministicPassed: evidence ? evidence.checks.every(check => check.passed) : null,

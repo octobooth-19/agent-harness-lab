@@ -154,8 +154,9 @@ and provenance remain in the repository. Only isolated live execution folders
 are external. Review all outputs for secrets and private reasoning before commit.
 
 Runs with matching case IDs but different frozen case/rubric/profile/component
-hashes are retained under `excludedRuns` with an explicit reason, never combined
-with this campaign's matched-arm averages.
+or policy hashes, requested models, or observed runner types are retained under
+`excludedRuns` with an explicit reason, never combined with this campaign's
+matched-arm averages.
 
 ## Limits
 
