@@ -678,16 +678,16 @@ https://platform.claude.com/docs/en/managed-agents/workflow-runs,Workflow runs,p
 https://platform.claude.com/docs/en/managed-agents/scheduled-deployments,Scheduled deployments,platform_documentation,,,2026-11-18,read_partial,agents;scheduling;automation;outcomes,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/self-hosted,Overview,platform_documentation,,,2026-11-18,read_partial,agents;self-hosting;environment;inference,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/self-hosted/quickstart,Get started with self-hosted Claude Managed Agents,platform_documentation,,,2026-11-18,read_partial,managed-agents;self-hosted;sandbox;deployment,knowledge/anthropic/synthesis.md
-https://platform.claude.com/docs/en/managed-agents/self-hosted/call-the-api,Call the API,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents;api,
+https://platform.claude.com/docs/en/managed-agents/self-hosted/call-the-api,Call the API,platform_documentation,,,2026-11-18,read_partial,managed-agents;self-hosted;API;session,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/self-hosted/console,Console,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
-https://platform.claude.com/docs/en/managed-agents/self-hosted/kubernetes,Deploy on Kubernetes,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
-https://platform.claude.com/docs/en/managed-agents/self-hosted/differences,Differences from hosted,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
+https://platform.claude.com/docs/en/managed-agents/self-hosted/kubernetes,Deploy on Kubernetes,platform_documentation,,,2026-11-18,read_partial,managed-agents;self-hosted;Kubernetes;sandbox,knowledge/anthropic/synthesis.md
+https://platform.claude.com/docs/en/managed-agents/self-hosted/differences,Differences from hosted,platform_documentation,,,2026-11-18,read_partial,managed-agents;self-hosted;hosting;feature-boundaries,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/self-hosted/upgrade,Upgrade,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
 https://platform.claude.com/docs/en/managed-agents/self-hosted-data-and-access,Data and access in self-hosted Claude Managed Agents,platform_documentation,,,2026-11-18,read_partial,managed-agents;self-hosted;data-access;retention,knowledge/anthropic/synthesis.md
-https://platform.claude.com/docs/en/managed-agents/self-hosted/configuration-reference,Configuration reference,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
+https://platform.claude.com/docs/en/managed-agents/self-hosted/configuration-reference,Configuration reference,platform_documentation,,,2026-11-18,read_partial,managed-agents;self-hosted;configuration;credentials,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/self-hosted/configure,Single sign-on,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
-https://platform.claude.com/docs/en/managed-agents/self-hosted/agent-identity,Agent identity and credentials,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
-https://platform.claude.com/docs/en/managed-agents/self-hosted/inference-provider,Inference provider,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
+https://platform.claude.com/docs/en/managed-agents/self-hosted/agent-identity,Agent identity and credentials,platform_documentation,,,2026-11-18,read_partial,managed-agents;self-hosted;identity;credentials;MCP,knowledge/anthropic/synthesis.md
+https://platform.claude.com/docs/en/managed-agents/self-hosted/inference-provider,Inference provider,platform_documentation,,,2026-11-18,read_partial,managed-agents;self-hosted;models;inference-provider,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/secure-deployment,Secure your Managed Agents deployment,platform_documentation,,,2026-11-18,read_partial,managed-agents;security;permissions;networking,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/secure-deployment-monitoring,Review and monitor sessions,platform_documentation,,,2026-11-18,read_partial,managed-agents;monitoring;retention;webhooks,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/secure-deployment-risks,Security risks and sandbox boundaries,platform_documentation,,,2026-11-18,read_partial,managed-agents;security;prompt-injection;sandbox,knowledge/anthropic/synthesis.md
@@ -7239,7 +7239,7 @@ https://www.anthropic.com/news/2028-ai-leadership,,anthropic_news,2026-10-14,sit
 https://www.anthropic.com/news/3-5-models-and-computer-use,,anthropic_news,2026-10-13,sitemap_lastmod,2026-11-18,indexed_only,models,
 https://www.anthropic.com/news/a-new-initiative-for-developing-third-party-model-evaluations,,anthropic_news,2026-11-13,sitemap_lastmod,2026-11-18,read_partial,evaluation;third-party assessment;capabilities;safety,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/news/accenture-aws-anthropic,,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,indexed_only,general,
-https://www.anthropic.com/news/accenture-embedded-evaluation,,anthropic_news,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,evaluations,
+https://www.anthropic.com/news/accenture-embedded-evaluation,,anthropic_news,2026-11-13,sitemap_lastmod,2026-11-18,read,evaluation;governance;dated announcement,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/news/acquires-vercept,,anthropic_news,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/activating-asl3-protections,,anthropic_news,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/advancing-claude-for-education,,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,indexed_only,general,
@@ -7524,11 +7524,11 @@ https://www.anthropic.com/research/a-postmortem-of-three-recent-issues,,anthropi
 https://www.anthropic.com/research/accelerating-scientific-research,,anthropic_research,2026-11-06,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/advanced-tool-use,Introducing advanced tool use on the Claude Developer Platform,anthropic_research,2026-10-18,sitemap_lastmod,2026-11-18,read_partial,tools,synthesis.md
 https://www.anthropic.com/research/agentic-misalignment,,anthropic_research,2026-10-08,sitemap_lastmod,2026-11-18,read_partial,agents,knowledge/anthropic/synthesis.md
-https://www.anthropic.com/research/agents-in-biology,,anthropic_research,2026-10-09,sitemap_lastmod,2026-11-18,indexed_only,agents,
+https://www.anthropic.com/research/agents-in-biology,,anthropic_research,2026-10-09,sitemap_lastmod,2026-11-18,read_partial,agents;retrieval;deterministic tools;dated research,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/agents-judgment-calls,Agents' judgment calls,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,read,agents,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/AI-assistance-coding-skills,AI assistance and coding skills,anthropic_research,2026-10-20,sitemap_lastmod,2026-11-18,read,skills,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/ai-expectations-gap,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
-https://www.anthropic.com/research/AI-resistant-technical-evaluations,,anthropic_research,2026-10-18,sitemap_lastmod,2026-11-18,indexed_only,evaluations,
+https://www.anthropic.com/research/AI-resistant-technical-evaluations,,anthropic_research,2026-10-18,sitemap_lastmod,2026-11-18,read_partial,evaluation;model capability;dated research,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,security,
 https://www.anthropic.com/research/alignment-assessment-ukaisi,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/alignment-faking,,anthropic_research,2026-10-09,sitemap_lastmod,2026-11-18,indexed_only,general,
