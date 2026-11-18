@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "15149b68a73612573754c9b2b70c4917fb8876bc94a4925447da124829971bcf",
+  "scanRevision": 3,
+  "path": "skills/brainstorming/visual-companion.md",
+  "revision": 2,
+  "decision": "reference-only",
+  "reason": "The visual companion has unresolved transport, browser isolation, host access, data retention and logo-rights boundaries. Do not enable it or run upstream helpers pending independent review.",
+  "source": {
+    "repo": "obra/superpowers",
+    "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
+  },
+  "scanSha256": "588241b29fde24abd6218ff47f1bfdffc10a7163d747e9c486a121d40b5f763c",
+  "sourceSha256": "6ffcb038b53254bd31debaa15e12dcd4ff24bd63d690e0b644ac6396701cf2e2",
+  "license": {
+    "status": "permissive",
+    "expression": "MIT",
+    "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+    "evidence": [
+      "LICENSE"
+    ]
+  }
+}
