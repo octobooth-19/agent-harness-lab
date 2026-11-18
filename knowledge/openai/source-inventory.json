@@ -8,10 +8,10 @@
   },
   "counts": {
     "discovered_pages": 2836,
-    "read_pages": 45,
+    "read_pages": 47,
     "inaccessible_pages": 0,
     "excluded_unique_links": 26,
-    "pending_pages": 2791,
+    "pending_pages": 2789,
     "index_records": 15,
     "index_failures": [
       {
@@ -869,17 +869,18 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
-        "API and SDK",
-        "agent runtime"
+        "agent workflow",
+        "visual builder",
+        "deprecation"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/api/docs/guides/agent-builder"
     },
     {
       "canonical_url": "https://developers.openai.com/api/docs/guides/agent-builder-safety",
@@ -887,17 +888,19 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
-        "API and SDK",
-        "agent runtime"
+        "prompt injection",
+        "structured outputs",
+        "tool approvals",
+        "guardrails"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/api/docs/guides/agent-builder-safety"
     },
     {
       "canonical_url": "https://developers.openai.com/api/docs/guides/agent-builder/migrate-from-agent-builder",
