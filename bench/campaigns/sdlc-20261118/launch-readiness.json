@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "campaignId": "sdlc-20261118",
+  "reportedAt": "2026-11-18T18:01:26.887Z",
+  "stage": "pre-launch",
+  "status": "blocked-awaiting-user-approval",
+  "benchmarkResult": false,
+  "benchmarkOutcome": null,
+  "recordedSubjectLaunches": 0,
+  "blocker": {
+    "kind": "app-folder-registration-confirmation",
+    "reportedBySession": "0ac2c58e-46b8-4830-9c57-8434c2714e76",
+    "assignmentId": "assignment:0ac2c58e-46b8-4830-9c57-8434c2714e76:call_K1mpRxWhWSnnVYzIXHZ9GNgV",
+    "reason": "The Project coordinator reports that registering the prepared independent trial folders requires user confirmation. The user is unavailable and that confirmation has not been granted.",
+    "scope": "All ten prepared subject runs and their future independent app judges",
+    "isSubjectFailure": false
+  },
+  "supportedAlternativeCheck": {
+    "configuredContainersObserved": 2,
+    "preparedFolderContainersFound": 0,
+    "createSessionSchemaVisibleInChild": false,
+    "supportedExactFolderAlternativeFound": false,
+    "evidence": "The live configured-container listing contains only repository containers, not any prepared subject folder. The installed coordinator runbook requires a folder container and actual cwd verification. This child has no create_session tool to inspect or invoke.",
+    "limits": "No alternative is confirmed through the available tools. This is not a claim about undocumented app APIs or coordinator-only options that are not exposed here.",
+    "notAttempted": [
+      "Bypassing registration or approval",
+      "Changing a configured container or remapping its filesystem path",
+      "Reusing an existing subject session or its history",
+      "Substituting a headless, runtime subagent or cloud trial"
+    ]
+  },
+  "preserved": {
+    "preparationCommit": "08eccf1d182fbc28f2c2bc86f339ece4f7aa35fc",
+    "freezeFile": "bench/campaigns/sdlc-20261118/freeze.json",
+    "freezeFileSha256": "e62ec89b773e10aacd50da7bfeb405db261dd20a12b9212b582ec32c09379423",
+    "launchIndexes": [
+      "bench/campaigns/sdlc-20261118/launches/baseline.json",
+      "bench/campaigns/sdlc-20261118/launches/initial-harness.json"
+    ],
+    "workspaceRoot": "/private/tmp/harness-lab-sdlc-20261118-Xyvtgn",
+    "frozenInputsChanged": false,
+    "liveWorkspaceRetention": "Left untouched. Temporary storage is not a durable backup; retained manifests, fixtures, source pins, prompts and evaluators remain in the repository."
+  },
+  "nextAction": "Obtain the user's folder-registration confirmation through the app. The Project coordinator can then register each exact folder, create a fresh independent app session, verify cwd and actual configuration loading, and deliver its unchanged generated prompt. Revalidate workspaces before launch. Record a resolved readiness state when approval is actually observed; do not infer it from elapsed time or this file."
+}
