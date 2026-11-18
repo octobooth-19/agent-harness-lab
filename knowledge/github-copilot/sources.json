@@ -104,12 +104,14 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
+      "agents and harnesses",
       "coding agents",
-      "orchestration and automation"
+      "orchestration and automation",
+      "tools and governance"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -119,13 +121,15 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
-      "coding agents",
       "IDE and app surfaces",
-      "orchestration and automation"
+      "agents and harnesses",
+      "coding agents",
+      "orchestration and automation",
+      "tools and governance"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -135,12 +139,14 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
+      "agents and harnesses",
       "coding agents",
-      "orchestration and automation"
+      "orchestration and automation",
+      "tools and governance"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -150,12 +156,14 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
+      "agents and harnesses",
       "coding agents",
-      "orchestration and automation"
+      "orchestration and automation",
+      "tools and governance"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -165,13 +173,15 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
-      "coding agents",
       "CLI",
-      "orchestration and automation"
+      "agents and harnesses",
+      "coding agents",
+      "orchestration and automation",
+      "tools and governance"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -307,11 +317,13 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
-      "coding agents"
+      "agents and harnesses",
+      "coding agents",
+      "tools and governance"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -865,12 +877,15 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
       "MCP and tools",
-      "billing and usage"
+      "agents and harnesses",
+      "billing and usage",
+      "coding agents",
+      "tools and governance"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -1727,12 +1742,14 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
+      "agents and harnesses",
       "coding agents",
-      "skills and customization"
+      "skills and customization",
+      "tools and governance"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -2538,12 +2555,15 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
       "CLI",
-      "skills and customization"
+      "agents and harnesses",
+      "coding agents",
+      "skills and customization",
+      "tools and governance"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -3081,11 +3101,14 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
-      "CLI"
+      "CLI",
+      "agents and harnesses",
+      "coding agents",
+      "tools and governance"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -4586,14 +4609,17 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
       "CLI",
       "MCP and tools",
+      "SDK and integration",
+      "agents and harnesses",
+      "coding agents",
       "context and memory",
-      "SDK and integration"
+      "tools and governance"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -5867,12 +5893,14 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
+      "agents and harnesses",
       "coding agents",
-      "context and memory"
+      "context and memory",
+      "tools and governance"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -8683,12 +8711,14 @@
     "published_date": "2026-11-06",
     "updated_date": "2026-11-06",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
+      "IDE and app surfaces",
+      "agents and harnesses",
       "coding agents",
-      "IDE and app surfaces"
+      "tools and governance"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Blog category REST index (GitHub Copilot category, paginated)"
   },
   {
@@ -9110,11 +9140,14 @@
     "published_date": "2026-10-12",
     "updated_date": "2026-10-12",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
-      "IDE and app surfaces"
+      "IDE and app surfaces",
+      "agents and harnesses",
+      "coding agents",
+      "tools and governance"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Blog category REST index (GitHub Copilot category, paginated)"
   },
   {
@@ -9640,11 +9673,14 @@
     "published_date": "2026-10-19",
     "updated_date": "2026-10-19",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
-      "IDE and app surfaces"
+      "IDE and app surfaces",
+      "agents and harnesses",
+      "coding agents",
+      "tools and governance"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Blog category REST index (GitHub Copilot category, paginated)"
   },
   {
@@ -10036,12 +10072,15 @@
     "published_date": "2026-09-04",
     "updated_date": "2026-09-04",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
+      "agents and harnesses",
+      "coding agents",
+      "models",
       "orchestration and automation",
-      "models"
+      "tools and governance"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Blog category REST index (GitHub Copilot category, paginated)"
   },
   {
@@ -22681,11 +22720,14 @@
     "published_date": "2026-11-17",
     "updated_date": "2026-11-17",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
-      "IDE and app surfaces"
+      "IDE and app surfaces",
+      "agents and harnesses",
+      "coding agents",
+      "tools and governance"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Changelog Copilot-label REST index, paginated"
   },
   {
@@ -22739,12 +22781,15 @@
     "published_date": "2026-11-17",
     "updated_date": "2026-11-17",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
+      "agents and harnesses",
+      "coding agents",
       "evaluation and benchmarks",
-      "models"
+      "models",
+      "tools and governance"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Changelog Copilot-label REST index, paginated"
   },
   {
@@ -22796,11 +22841,13 @@
     "published_date": "2026-11-17",
     "updated_date": "2026-11-17",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
-      "coding agents"
+      "agents and harnesses",
+      "coding agents",
+      "tools and governance"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Changelog Copilot-label REST index, paginated"
   },
   {
@@ -22824,11 +22871,13 @@
     "published_date": "2026-11-17",
     "updated_date": "2026-11-17",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
-      "coding agents"
+      "agents and harnesses",
+      "coding agents",
+      "tools and governance"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Changelog Copilot-label REST index, paginated"
   },
   {

@@ -23,15 +23,15 @@ The docs portal sitemap probe at `https://docs.github.com/sitemap.xml` returned 
 
 | Status | Count | Meaning |
 |---|---:|---|
-| `read` | 11 | Page content was fetched and the relevant article was reviewed without a truncation notice. |
+| `read` | 31 | Page content was fetched and the relevant article was reviewed sufficiently for synthesis. |
 | `read_partial` | 23 | Page content was fetched, but the page response was truncated or only the relevant portion was reviewed. |
-| `indexed_only` / pending | 1,548 | The URL and metadata were discovered and entered in the inventory; the article content was not substantively reviewed. |
+| `indexed_only` / pending | 1,528 | The URL and metadata were discovered and entered in the inventory; the article content was not substantively reviewed. |
 | Inaccessible pages | 0 verified | No individual content page was confirmed inaccessible. Most pending pages were not individually opened, so this is not a claim that every URL is reachable. |
 | Excluded URLs within the three enumerated indexes | 0 | All records returned by the selected indexes are included. |
 
 The `review_status` field in [`sources.json`](sources.json) distinguishes pages read from pages merely indexed. A non-null `synthesis_location` points to the synthesis for the reviewed pages. The 1,548 indexed-only entries remain pending; index discovery is not equivalent to reading or validating their contents.
 
-The read sample is intentionally focused rather than random. It covers the docs landing page and material about agent surfaces, CLI, SDK loop, app, cloud and local sandboxes, permissions and security, instructions, skills, custom agents, MCP, memory, context, delegation, workflows, environment setup, Autopilot autonomy/permission separation, deferred tool search, and code review. Blog/changelog reading prioritized coding-agent setup, skill portability, harness evaluation, review evaluation, Copilot Evals, harness comparisons, customization governance, and the November 2026 code-review release. See `review_status` for the exact URLs.
+The read sample is intentionally focused rather than random. It covers the docs landing page and material about agent surfaces, CLI, SDK loop, app, cloud and local sandboxes, permissions and security, instructions, skills, custom agents, MCP, memory, context, delegation, workflows, environment setup, Autopilot autonomy/permission separation, deferred tool search, and code review. The latest 20-page batch adds automation and Agentic Workflows, Autopilot flags, SDK context clearing, enterprise custom-agent governance, CLI instruction loading, MCP policy, remote control, rationale/approval limits, and two section indexes; linked topics on those indexes remain unreviewed. Blog/changelog reading now also covers agentic-engineering practices, app-session continuation, layered codebase context, the HydraFusion research preview, Azure DevOps and browser changes, Fusion availability, Agent 365 audit streaming, and agent secret scanning. All 20 newly reviewed pages are marked `read`; the memory, agent-capability, and delegation landing pages are indices, so their linked articles are still pending. See `review_status` for the exact URLs.
 
 ## Coverage limits and pending areas
 
@@ -40,7 +40,7 @@ This is a broad, machine-indexed snapshot with a focused read, **not an exhausti
 * **Documentation boundary:** the 577 pages are Markdown under `content/copilot/` in the observed `github/docs` `main` tree. Related material outside that directory—such as general GitHub Actions, security, billing, IDE-vendor, or GitHub CLI documentation—is not counted as Copilot documentation here, even when Copilot pages link to it. The docs repository can change after the recorded commit.
 * **Blog boundary:** the 147 items are posts in the dedicated GitHub Copilot blog category. Other official GitHub Blog categories can contain Copilot-related engineering, product, research, or case-study posts; those were not enumerated, so their number is not measured.
 * **Changelog boundary:** 858 entries carry the `copilot` label. Copilot-related changes published only under other labels are not included. In particular, `client apps`, account management, application security, and other labels may include relevant releases.
-* **Read depth:** 34 pages (11 full and 23 partial) were reviewed at article level. Most of the source inventory remains pending. `read_partial` records prevent truncated fetches from being represented as full reads.
+* **Read depth:** 54 pages (31 full and 23 partial) have been reviewed at page level. Most of the source inventory remains pending. `read_partial` records prevent truncated fetches from being represented as full reads.
 * **Linked follow-up:** the November 17 Evals changelog links to the official `github/evals` project and Evals documentation. Those materials were noted but not separately indexed or reviewed in this provider slice. Third-party MCP server catalogs and external standards are likewise outside these three corpora.
 * **Historical claims:** dated blog/changelog statements, availability, pricing, preview labels, and benchmark figures can be superseded. Current behavior should be checked against the current documentation page linked in `sources.json`; historical posts are retained as chronology, not merged into current specification.
 
