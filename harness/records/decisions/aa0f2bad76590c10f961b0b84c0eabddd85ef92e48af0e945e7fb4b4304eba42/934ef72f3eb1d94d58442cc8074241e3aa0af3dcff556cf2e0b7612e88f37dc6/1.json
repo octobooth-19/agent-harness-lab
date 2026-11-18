@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "aa0f2bad76590c10f961b0b84c0eabddd85ef92e48af0e945e7fb4b4304eba42",
+  "scanRevision": 4,
+  "path": "skills/discernment-nudge/SKILL.md",
+  "revision": 1,
+  "decision": "reference-only",
+  "reason": "The entrypoint has an inspected per-skill Apache-2.0 license, but its once-per-conversation behavior requires reliable conversation-scoped state and the trigger policy can add noisy unsolicited questions. No compatible state gate or appropriate harness role is established. Keep reference-only; any future text adaptation must retain this skill's notice and must not imply the external state behavior.",
+  "source": {
+    "repo": "anthropics/skills",
+    "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba"
+  },
+  "scanSha256": "d5563ba74f6120845bead9efac8e3bc6644804baf761e6fa383e68d54686003b",
+  "sourceSha256": "9191177c4a8ef11a20dace786d708506b22d43e748c71287bb823de0dc812dad",
+  "license": {
+    "status": "permissive",
+    "expression": "Apache-2.0",
+    "attribution": "Include the applicable skill LICENSE.txt and preserve copyright/attribution notices; mark modified files and carry forward applicable notices.",
+    "evidence": [
+      "skills/discernment-nudge/LICENSE.txt"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "aa0f2bad76590c10f961b0b84c0eabddd85ef92e48af0e945e7fb4b4304eba42",
+  "scanRevision": 4,
+  "path": "skills/pptx/SKILL.md",
+  "revision": 1,
+  "decision": "reference-only",
+  "reason": "The entrypoint has an inspected per-skill Apache-2.0 license and describes layered QA, but its presentation-specific runtime dependencies are not resolved here, while linked helper implementations and their licenses are indexed-only. It is not a general harness workflow. Do not copy or execute the helpers; retain the QA pattern as reference pending their inspection and dependency/license review.",
+  "source": {
+    "repo": "anthropics/skills",
+    "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba"
+  },
+  "scanSha256": "d5563ba74f6120845bead9efac8e3bc6644804baf761e6fa383e68d54686003b",
+  "sourceSha256": "598c981d93f2173b251f86a4bc94e9fb4e4f5ddaa314ba2dd4eca24b7a07808e",
+  "license": {
+    "status": "permissive",
+    "expression": "Apache-2.0",
+    "attribution": "Include the applicable skill LICENSE.txt and preserve copyright/attribution notices; mark modified files and carry forward applicable notices.",
+    "evidence": [
+      "skills/pptx/LICENSE.txt"
+    ]
+  }
+}
