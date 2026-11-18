@@ -502,6 +502,11 @@ test('large-source judge packets stay bounded and expose inert source plus indep
   const verdict = readJSON(path.join(judge.workspace, 'verdict-template.json'));
   verdict.judge = receipt();
   verdict.scores = verdict.scores.map(score => ({ ...score, rationale: 'Synthetic verdict', evidence: ['workspace/large.mjs'] }));
+  const liveDiff = path.join(judge.workspace, entry.diffFile);
+  const diffContent = fs.readFileSync(liveDiff, 'utf8');
+  fs.unlinkSync(liveDiff);
+  assert.throws(() => grade(root, trial.runId, verdict), /judge artifact is missing/);
+  fs.writeFileSync(liveDiff, diffContent);
   fs.writeFileSync(path.join(judge.workspace, entry.diffFile), 'tampered');
   assert.throws(() => grade(root, trial.runId, verdict), /judge artifact was modified/);
 });

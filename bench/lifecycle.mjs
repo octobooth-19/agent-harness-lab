@@ -376,6 +376,7 @@ function verifyJudgePacket(directory, record) {
     const retained = path.join(directory, 'judge-artifacts', artifact.name);
     ensure(!fs.lstatSync(retained).isSymbolicLink() && hash(fs.readFileSync(retained)) === artifact.sha256, 'retained judge artifact was modified');
     const live = path.join(record.workspace, 'artifacts', artifact.name);
+    ensure(!fs.existsSync(record.workspace) || fs.existsSync(live), 'judge artifact is missing from the live judge workspace');
     if (fs.existsSync(live)) ensure(!fs.lstatSync(live).isSymbolicLink() && hash(fs.readFileSync(live)) === artifact.sha256, 'judge artifact was modified');
   }
 }
