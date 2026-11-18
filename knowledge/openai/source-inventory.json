@@ -11,7 +11,7 @@
     "read_pages": 95,
     "inaccessible_pages": 0,
     "excluded_unique_links": 26,
-    "pending_pages": 2662,
+    "pending_pages": 2658,
     "index_records": 15,
     "index_failures": [
       {
@@ -33,7 +33,7 @@
     "openai_sitemap_subindexes": 44,
     "technical_sitemap_families_opened": 5,
     "other_openai_sitemap_families_not_included": 39,
-    "read_partial_pages": 79
+    "read_partial_pages": 83
   },
   "field_notes": {
     "review_status": "read = source page opened and reviewed; read_partial = source page opened but only partly reviewed; indexed = discovered in an official index/sitemap/feed but not opened; inaccessible = attempted primary source failed.",
@@ -2578,17 +2578,18 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "API and SDK",
-        "instructions and skills"
+        "prompting",
+        "frontend",
+        "design"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/api/docs/guides/frontend-prompt"
     },
     {
       "canonical_url": "https://developers.openai.com/api/docs/guides/function-calling",
@@ -2861,18 +2862,19 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "API and SDK",
+        "models",
         "coding agents",
-        "models"
+        "prompting",
+        "harness"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/api/docs/guides/latest-model/gpt-5.3-codex"
     },
     {
       "canonical_url": "https://developers.openai.com/api/docs/guides/latest-model/gpt-5.4",
@@ -10144,18 +10146,19 @@
       "source_type": "OpenAI Cookbook",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "agent runtime",
-        "evaluations",
-        "models"
+        "evaluation",
+        "agent harness",
+        "multi-turn",
+        "tools"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/cookbook/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/cookbook/examples/audio/voice_agent_evaluation"
     },
     {
       "canonical_url": "https://developers.openai.com/cookbook/examples/chatgpt/chatgpt_prompt_guide/chatgpt_prompt_guide",
@@ -10214,17 +10217,20 @@
       "source_type": "OpenAI Cookbook",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "API and SDK",
-        "agent runtime"
+        "agents",
+        "asynchronous runs",
+        "API triggers",
+        "tools",
+        "approvals"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/cookbook/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/cookbook/examples/chatgpt/workspace_agents/workspace-agents-api-trigger"
     },
     {
       "canonical_url": "https://developers.openai.com/cookbook/examples/codex/build_iterative_repair_loops_with_codex",

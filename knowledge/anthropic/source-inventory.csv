@@ -656,10 +656,10 @@ https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-workers
 https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-per-session,Run one sandbox per session,platform_documentation,,,2026-11-18,read_partial,managed-agents;agents,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-memory,Memory stores,platform_documentation,,,2026-11-18,read_partial,memory;environment;sync,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-custom-tools,Custom tools in self-hosted sandboxes,platform_documentation,,,2026-11-18,read_partial,managed-agents;agents;mcp;tools,knowledge/anthropic/synthesis.md
-https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-operations,Monitor and troubleshoot,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
-https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-reference,Worker reference,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
+https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-operations,Monitor and troubleshoot,platform_documentation,,,2026-11-18,read_partial,environment;operations;monitoring;security,knowledge/anthropic/synthesis.md
+https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-reference,Worker reference,platform_documentation,,,2026-11-18,read_partial,environment;worker;configuration,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-security,Security model,platform_documentation,,,2026-11-18,read_partial,security;permissions;environment;memory,knowledge/anthropic/synthesis.md
-https://platform.claude.com/docs/en/managed-agents/sessions,Start a session,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
+https://platform.claude.com/docs/en/managed-agents/sessions,Start a session,platform_documentation,,,2026-11-18,read_partial,agents;session lifecycle;versioning,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/session-operations,Session operations,platform_documentation,,,2026-11-18,read_partial,agents;session lifecycle;configuration,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/events-and-streaming,Session event stream,platform_documentation,,,2026-11-18,read_partial,agents;events;streaming,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/event-deltas,Event deltas,platform_documentation,,,2026-11-18,read_partial,streaming;events;context,knowledge/anthropic/synthesis.md
@@ -675,8 +675,8 @@ https://platform.claude.com/docs/en/managed-agents/dreams,Dreams,platform_docume
 https://platform.claude.com/docs/en/managed-agents/multiagent-orchestration,Multiagent orchestration,platform_documentation,,,2026-11-18,read_partial,managed-agents;agents,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/session-threads,Session threads,platform_documentation,,,2026-11-18,read_partial,managed-agents;agents,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/workflow-runs,Workflow runs,platform_documentation,,,2026-11-18,read_partial,managed-agents;agents,knowledge/anthropic/synthesis.md
-https://platform.claude.com/docs/en/managed-agents/scheduled-deployments,Scheduled deployments,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
-https://platform.claude.com/docs/en/managed-agents/self-hosted,Overview,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
+https://platform.claude.com/docs/en/managed-agents/scheduled-deployments,Scheduled deployments,platform_documentation,,,2026-11-18,read_partial,agents;scheduling;automation;outcomes,knowledge/anthropic/synthesis.md
+https://platform.claude.com/docs/en/managed-agents/self-hosted,Overview,platform_documentation,,,2026-11-18,read_partial,agents;self-hosting;environment;inference,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/self-hosted/quickstart,Quickstart,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
 https://platform.claude.com/docs/en/managed-agents/self-hosted/call-the-api,Call the API,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents;api,
 https://platform.claude.com/docs/en/managed-agents/self-hosted/console,Console,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
