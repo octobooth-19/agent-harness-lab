@@ -6,6 +6,8 @@ const STATUS = {
     done: { label: "Reported done", glyph: "★", rank: 4, hint: "Session logged task_complete after its latest request" },
     disconnected: { label: "Signal lost", glyph: "?", rank: 5, hint: "No live process holds this session and no shutdown was logged" },
     offline: { label: "Offline", glyph: "○", rank: 6, hint: "Session shut down cleanly" },
+    cancelled: { label: "Cancelled", glyph: "⊘", rank: 7, hint: "GitHub agent task state: cancelled" },
+    unknown: { label: "Unknown", glyph: "?", rank: 8, hint: "Source reported a state this dashboard doesn't recognise" },
 };
 const FEED_ICON = { tool: "⚙", order: "📨", complete: "🏆", wait: "⏳", fail: "💥", start: "🚀", stop: "⏹" };
 
@@ -60,7 +62,7 @@ function initials(s) {
 }
 
 function inScope(s) {
-    if (ui.scope === "online") return s.alive;
+    if (ui.scope === "online") return s.online;
     if (ui.scope === "recent") return s.inScope;
     return true;
 }
@@ -95,8 +97,16 @@ function squadsFor(sessions, all) {
             const cmd = root;
             key = `cmd:${cmd.id}`;
             title = displayName(cmd);
-            kind = "Squad";
+            kind = "Squad · coordinated";
         } else {
+            if (s.origin === "github") {
+                key = "remote";
+                title = "Cloud & other hosts";
+                kind = "GitHub agent tasks";
+                if (!squads.has(key)) squads.set(key, { key, title, kind, commanderId: null, units: [] });
+                squads.get(key).units.push(s);
+                continue;
+            }
             key = `repo:${s.repository || "-"}`;
             title = s.repository || "No repository";
             kind = s.repository ? "Repository" : "Unaffiliated";
@@ -162,6 +172,12 @@ function card(s, maxes, isCommander, reportsTo) {
     head.append(avatar, titles, badge);
     c.append(head);
 
+    if (s.origin === "github") return remoteCard(c, s);
+    if (s.githubTask) {
+        const gt = el("p", "gh-task", `GitHub task state: ${s.githubTask.state}`);
+        gt.title = `As reported by gh agent-task list (updated ${ago(s.githubTask.updatedAt)}); may differ from the local event log`;
+        c.append(gt);
+    }
     if (s.status === "waiting" && s.waitingOn.length) c.append(el("p", "alert", `Waiting on ${s.waitingOn.join(", ")}`));
 
     const action = el("p", "action");
@@ -231,6 +247,28 @@ function card(s, maxes, isCommander, reportsTo) {
     return c;
 }
 
+function remoteCard(c, s) {
+    c.classList.add("remote");
+    const gt = el("p", "gh-task", `GitHub task state: ${s.githubTask.state}`);
+    c.append(gt);
+    if (s.githubTask.pullRequestUrl) {
+        const a = el("a", "pr", `Pull request (${s.githubTask.pullRequestState || "open"})`);
+        a.href = s.githubTask.pullRequestUrl;
+        a.target = "_blank";
+        a.rel = "noopener";
+        c.append(a);
+    }
+    c.append(el("p", "na", "Activity, lines of work and tokens: not exposed by this source."));
+    const foot = el("footer", "unit-foot");
+    const sig = el("span", "signal");
+    sig.dataset.ago = s.lastEventAt || "";
+    sig.textContent = `last signal ${ago(s.lastEventAt)}`;
+    sig.title = "updatedAt from GitHub's agent-task list";
+    foot.append(sig, el("span", "proc", "☁ not on this machine · polled"));
+    c.append(foot);
+    return c;
+}
+
 function renderScoreboard(visible) {
     const sb = $("#scoreboard");
     sb.replaceChildren();
@@ -243,8 +281,8 @@ function renderScoreboard(visible) {
         ["+Lines", num(sum((s) => s.git?.total?.added))],
         ["−Lines", num(sum((s) => s.git?.total?.removed))],
         ["Commits", num(sum((s) => s.git?.commits))],
-        ["Tool calls", num(sum((s) => s.metrics.toolCalls))],
-        ["Tokens", num(sum((s) => s.metrics.tokensIn + s.metrics.tokensOut))],
+        ["Tool calls", num(sum((s) => s.metrics?.toolCalls || 0))],
+        ["Tokens", num(sum((s) => (s.metrics ? s.metrics.tokensIn + s.metrics.tokensOut : 0)))],
     ];
     for (const [k, v] of items) {
         const d = el("div", "score");
@@ -304,8 +342,8 @@ function render() {
     const maxes = {
         added: Math.max(0, ...visible.map((s) => s.git?.total?.added || 0)),
         removed: Math.max(0, ...visible.map((s) => s.git?.total?.removed || 0)),
-        tools: Math.max(0, ...visible.map((s) => s.metrics.toolCalls)),
-        tokens: Math.max(0, ...visible.map((s) => s.metrics.tokensIn + s.metrics.tokensOut)),
+        tools: Math.max(0, ...visible.map((s) => s.metrics?.toolCalls || 0)),
+        tokens: Math.max(0, ...visible.map((s) => (s.metrics ? s.metrics.tokensIn + s.metrics.tokensOut : 0))),
     };
     const board = $("#board");
     board.replaceChildren();
@@ -351,8 +389,25 @@ function tickTimes() {
         const age = (Date.now() - ui.lastBeat) / 1000;
         if (age > 15) setFeedStatus("stale", "Feed stale");
         else setFeedStatus("live", "Live");
-        $("#feed-detail").textContent = `scan ${ago(ui.data?.source.lastScanAt)} · every ${(ui.data?.source.pollMs || 1000) / 1000}s`;
+        $("#feed-detail").textContent = `local scan ${ago(ui.data?.source.lastScanAt)} · every ${(ui.data?.source.pollMs || 1000) / 1000}s`;
+        renderRemoteStatus();
     }
+}
+
+function renderRemoteStatus() {
+    const r = ui.data?.remote;
+    const box = $("#remote-status");
+    if (!r || r.disabled) {
+        box.className = "feed-status down";
+        box.querySelector(".label").textContent = "Cloud: off";
+        $("#remote-detail").textContent = "started with --no-remote";
+        return;
+    }
+    const kind = r.error ? "down" : r.stale || !r.lastOkAt ? "stale" : "live";
+    box.className = `feed-status ${kind}`;
+    box.querySelector(".label").textContent = r.error ? "Cloud: error" : r.lastOkAt ? (r.stale ? "Cloud: stale" : "Cloud") : "Cloud: loading";
+    $("#remote-detail").textContent = r.error ? r.error.slice(0, 80) : r.lastOkAt ? `${r.count} tasks · ${ago(r.lastOkAt)} · every ${r.pollMs / 1000}s` : "";
+    box.title = "GitHub agent tasks via `gh agent-task list` (preview). Polled, not streamed.";
 }
 
 function connect() {

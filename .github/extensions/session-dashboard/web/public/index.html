@@ -13,19 +13,23 @@
             <span class="brand-mark" aria-hidden="true">◆</span>
             <div>
                 <h1>Mission Control</h1>
-                <p class="sub">Live Copilot sessions on this machine</p>
+                <p class="sub">Copilot sessions: this machine (live) + GitHub agent tasks (polled)</p>
             </div>
         </div>
         <div class="feed-status" id="feed-status" role="status" aria-live="polite">
             <span class="dot"></span><span class="label">Connecting…</span>
             <span class="detail" id="feed-detail"></span>
         </div>
+        <div class="feed-status" id="remote-status" role="status">
+            <span class="dot"></span><span class="label">Cloud: loading</span>
+            <span class="detail" id="remote-detail"></span>
+        </div>
         <dl class="scoreboard" id="scoreboard"></dl>
     </header>
 
     <nav class="controls" aria-label="Filters">
         <div class="chips" role="group" aria-label="Scope" id="scope-chips">
-            <button type="button" data-scope="online" aria-pressed="true">Online</button>
+            <button type="button" data-scope="online" aria-pressed="true" title="Local: live process. Remote: GitHub task not in a terminal state">Online</button>
             <button type="button" data-scope="recent" aria-pressed="false">Last 24h</button>
             <button type="button" data-scope="all" aria-pressed="false">All</button>
         </div>

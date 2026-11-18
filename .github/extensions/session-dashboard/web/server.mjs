@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 // Live mission-control dashboard for Copilot sessions on this machine.
-// Usage: node .github/extensions/session-dashboard/web/server.mjs [--port 4517] [--root <session-state dir>]
+// Usage: node .github/extensions/session-dashboard/web/server.mjs [--port 4517] [--root <session-state dir>] [--no-remote]
 import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
 import { join, dirname, extname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
 import { SessionMonitor, defaultSessionRoot } from "./lib/monitor.mjs";
+import { AgentTaskSource } from "./lib/agent-tasks.mjs";
 
 const PUBLIC_DIR = join(dirname(fileURLToPath(import.meta.url)), "public");
 const TYPES = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8" };
@@ -84,9 +85,15 @@ export function createDashboardServer({ monitor, port = 4517, host = "127.0.0.1"
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
     const { values } = parseArgs({
-        options: { port: { type: "string", default: "4517" }, root: { type: "string", default: defaultSessionRoot() } },
+        options: {
+            port: { type: "string", default: "4517" },
+            root: { type: "string", default: defaultSessionRoot() },
+            "no-remote": { type: "boolean", default: false },
+        },
     });
-    const monitor = new SessionMonitor({ root: values.root });
+    const tasks = values["no-remote"] ? null : new AgentTaskSource();
+    tasks?.start();
+    const monitor = new SessionMonitor({ root: values.root, tasks });
     await monitor.scan();
     monitor.start();
     const { listen } = createDashboardServer({ monitor, port: Number(values.port) });

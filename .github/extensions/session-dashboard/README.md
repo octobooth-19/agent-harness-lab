@@ -4,7 +4,8 @@ Two views of the Copilot sessions running on this machine:
 
 1. **Mission Control (primary): a live web dashboard** in `web/`. It tracks every
    local Copilot session as a game-style unit card, with units grouped into squads
-   by coordinator, or by repository when a session has no coordinator.
+   by coordinator, or by repository when a session has no coordinator. It also
+   polls GitHub's agent-task list for cloud sessions and sessions on other hosts.
 2. **Canvas (legacy)**: the in-app canvas described further below. It shows only
    coordinator-fed snapshots and is kept for reference.
 
@@ -13,6 +14,7 @@ Two views of the Copilot sessions running on this machine:
 ```bash
 node .github/extensions/session-dashboard/web/server.mjs            # http://127.0.0.1:4517/
 node .github/extensions/session-dashboard/web/server.mjs --port 0 --root /path/to/session-state
+node .github/extensions/session-dashboard/web/server.mjs --no-remote   # local only, skip GitHub
 ```
 
 Requires Node 22+ (built-ins only, no install step) and binds to 127.0.0.1 only.
@@ -23,6 +25,7 @@ Requests carrying any other `Host` header get a 421 response, which blocks DNS r
 | Shown | Source |
 | --- | --- |
 | Units, name, repo, branch, app link | `$COPILOT_HOME/session-state/<id>/workspace.yaml` |
+| GitHub task state, cloud/other-host units, PR link | `gh agent-task list` (see below) |
 | Process live / signal lost / offline | `inuse.<pid>.lock` whose PID is alive; `session.shutdown` event |
 | Status (In action, Needs you, Standby, Reported done, Error) | Reduced from `events.jsonl`: open turns or tool calls, pending `permission`/`user_input`/`exit_plan_mode` requests, an open `ask_user`, `session.task_complete` after the latest message, `session.error` |
 | Now / Last action, comms feed | `tool.execution_start` arguments (bash description, file name, URL…) |
@@ -45,6 +48,47 @@ Limitation: the dashboard sees only sessions whose state lives in this machine's
 `$COPILOT_HOME`, which covers Copilot app and CLI sessions. Cloud or remote sessions
 aren't included. A future harness can appear here by writing the same
 `events.jsonl` + `workspace.yaml` layout, or through the snapshot format below.
+
+### Cloud and other hosts: GitHub agent tasks (polled)
+
+`web/lib/agent-tasks.mjs` runs `gh agent-task list --json …` every 20 s. This is
+the only supported source found for sessions that aren't on this machine. The
+Copilot app's session tools are agent-only, so a Node server can't call them,
+and the canvas SDK has no session-discovery API.
+
+- **Auth:** the command needs an OAuth `gh auth login` with the Copilot scope. If
+  a `GH_TOKEN`/`GITHUB_TOKEN` env PAT shadows it, the source retries once
+  without the env token. Failures appear in the header's **Cloud** chip; they
+  never show up as statuses.
+- **Matching:** a task whose `id` equals a local session id is the same session.
+  Its card keeps the local, event-derived status and shows *GitHub task state*
+  beside it. The two can disagree; for example, a live local session may be
+  listed as `cancelled` remotely. Neither state overrides the other.
+- **Remote-only tasks** go in the *Cloud & other hosts* lane, with the raw state
+  passed through (`in_progress`, `queued`, `waiting_for_user`, `idle`,
+  `completed`, `failed`, `timed_out`, `cancelled`). Unrecognised states show as
+  **Unknown**. *Online* means a state that isn't terminal; an `idle` task also
+  has to have been updated in the last 24 h.
+
+Coverage limits (verified with gh 2.103, Nov 2026):
+- `gh agent-task` is a **preview** command, so its output may change.
+- It lists only the **signed-in user's** tasks (up to 100).
+- It is **polled**, not streamed. Remote state can be up to about 20 s old, and the Cloud chip turns stale after 60 s.
+- `repository` was null for every task, and there is no parent or coordinator field. Remote tasks therefore can't be placed in a squad or repository lane.
+- The source exposes no activity, tool calls, tokens or lines of work. Remote cards say so rather than showing zeros. `gh agent-task view --log` exists but isn't used yet.
+
+### Workstreams: what grouping is authoritative
+
+- **Squads** come from the coordinator → child link that the app records in each
+  child's kickoff `user.message.source` (`agent-<coordinatorId>`). Chains resolve
+  to the root coordinator. This is authoritative but local only.
+- **Repository lanes** come from `workspace.yaml` `repository`. Sessions with no
+  repository fall back to a lane named "-".
+- A squad's *objective* is only the kickoff **Orders** text. No source provides
+  milestones, goals or completion criteria.
+- Squad totals for +/− lines sum git output. They are **not** progress toward
+  finishing a workstream, and the UI shows no percentages. A squad is "done"
+  only per unit, when that session reports `task_complete`.
 
 ## Canvas (legacy)
 

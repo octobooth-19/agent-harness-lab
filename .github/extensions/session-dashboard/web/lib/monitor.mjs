@@ -56,8 +56,10 @@ const RECENT_MS = 24 * 60 * 60 * 1000;
  * collects git line stats for each worktree. Emits "change" when anything moves.
  */
 export class SessionMonitor extends EventEmitter {
-    constructor({ root = defaultSessionRoot(), pollMs = 1000, git = collectGitStats, now = () => Date.now() } = {}) {
+    constructor({ root = defaultSessionRoot(), pollMs = 1000, git = collectGitStats, now = () => Date.now(), tasks = null } = {}) {
         super();
+        this.tasks = tasks;
+        tasks?.on("change", () => this.emit("change"));
         this.root = root;
         this.pollMs = pollMs;
         this.git = git;
@@ -217,12 +219,19 @@ export class SessionMonitor extends EventEmitter {
     view() {
         const now = this.now();
         const sessions = [];
+        const taskById = new Map((this.tasks?.tasks || []).map((t) => [t.id, t]));
+        const ghTask = (t) => (t ? { state: t.state, status: t.status, updatedAt: t.updatedAt, pullRequestUrl: t.pullRequestUrl, pullRequestState: t.pullRequestState } : null);
         for (const e of this.sessions.values()) {
             const s = e.state;
             const ws = e.workspace;
             const g = ws.cwd ? this.gitByCwd.get(ws.cwd) : null;
+            const task = taskById.get(e.id) || taskById.get(ws.mc_session_id);
+            if (task) taskById.delete(task.id);
             sessions.push({
                 id: e.id,
+                origin: "local",
+                online: e.alive,
+                githubTask: ghTask(task),
                 name: typeof ws.name === "string" && ws.name.trim() ? ws.name.trim() : null,
                 repository: ws.repository || null,
                 branch: g?.stats?.branch || ws.branch || null,
@@ -258,9 +267,47 @@ export class SessionMonitor extends EventEmitter {
                 feed: s.feed.slice(-12),
             });
         }
+        // GitHub agent tasks with no session-state on this machine: cloud or another host.
+        for (const t of taskById.values()) {
+            const updated = Date.parse(t.updatedAt || "");
+            const recent = Number.isFinite(updated) && now - updated < RECENT_MS;
+            sessions.push({
+                id: t.id,
+                origin: "github",
+                // "Online" for a remote task: not terminal, and idle ones only if touched in the last 24h.
+                online: !t.terminal && (t.state !== "idle" || recent),
+                githubTask: ghTask(t),
+                name: t.name,
+                repository: t.repository,
+                branch: null,
+                cwd: null,
+                hasGitRoot: false,
+                client: "GitHub agent task",
+                appLink: null,
+                alive: null,
+                inScope: recent,
+                status: t.status,
+                waitingOn: t.state === "waiting_for_user" ? ["user"] : [],
+                coordinatorId: null,
+                startedAt: t.createdAt,
+                lastEventAt: t.updatedAt,
+                model: null,
+                mode: null,
+                metrics: null,
+                current: [],
+                lastActivity: null,
+                latestRequest: null,
+                latestRequestAt: null,
+                lastCompletion: null,
+                lastError: null,
+                git: null,
+                feed: [],
+            });
+        }
         return {
             generatedAt: new Date(now).toISOString(),
             source: { kind: "session-state", root: this.root, lastScanAt: this.lastScanAt, error: this.scanError, pollMs: this.pollMs },
+            remote: this.tasks ? this.tasks.info() : { kind: "github-agent-tasks", disabled: true },
             sessions,
         };
     }

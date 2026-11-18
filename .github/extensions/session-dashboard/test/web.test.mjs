@@ -9,6 +9,7 @@ import { createSessionState, applyChunk, applyEvent, deriveStatus, waitingOn } f
 import { parseShortstat, collectGitStats } from "../web/lib/git.mjs";
 import { SessionMonitor, parseWorkspaceYaml, lockPids } from "../web/lib/monitor.mjs";
 import { createDashboardServer } from "../web/server.mjs";
+import { mapTaskState, normalizeTasks, fetchAgentTasks, AgentTaskSource } from "../web/lib/agent-tasks.mjs";
 
 const ev = (type, data = {}, timestamp = "2026-01-01T00:00:00.000Z") => JSON.stringify({ type, data, timestamp, id: Math.random().toString(36) });
 const COORD = "11111111-2222-3333-4444-555555555555";
@@ -141,6 +142,71 @@ test("monitor tails appended events and server streams them over SSE", async () 
         assert.equal(rejected, 421);
     } finally {
         await close();
+        await rm(root, { recursive: true, force: true });
+    }
+});
+
+test("agent-task states pass through; unknown and cancelled are not coerced", () => {
+    assert.equal(mapTaskState("waiting_for_user"), "waiting");
+    assert.equal(mapTaskState("cancelled"), "cancelled");
+    assert.equal(mapTaskState("something_new"), "unknown");
+    const [t] = normalizeTasks([{ id: "x", name: " N ", state: "idle", repository: null, pullRequestUrl: "javascript:alert(1)" }, { nope: 1 }]);
+    assert.deepEqual([t.name, t.status, t.terminal, t.repository, t.pullRequestUrl], ["N", "idle", false, null, null]);
+});
+
+test("fetchAgentTasks retries without an env token on OAuth errors", async () => {
+    const saved = process.env.GH_TOKEN;
+    process.env.GH_TOKEN = "env-token";
+    const envs = [];
+    try {
+        const tasks = await fetchAgentTasks({
+            run: async (_args, env) => {
+                envs.push(env.GH_TOKEN);
+                if (env.GH_TOKEN) throw new Error("this command requires an OAuth token");
+                return JSON.stringify([{ id: "t1", state: "in_progress" }]);
+            },
+        });
+        assert.deepEqual(envs, ["env-token", undefined]);
+        assert.equal(tasks[0].status, "busy");
+    } finally {
+        if (saved === undefined) delete process.env.GH_TOKEN;
+        else process.env.GH_TOKEN = saved;
+    }
+});
+
+test("monitor merges GitHub tasks: annotates local, adds remote-only, keeps local status", async () => {
+    const root = await mkdtemp(join(tmpdir(), "mc-remote-"));
+    const local = "aaaaaaaa-0000-0000-0000-000000000001";
+    try {
+        await mkdir(join(root, local));
+        await writeFile(join(root, local, "workspace.yaml"), `id: ${local}\nname: Local\n`);
+        await writeFile(join(root, local, "events.jsonl"), ev("session.start") + "\n");
+        await writeFile(join(root, local, `inuse.${process.pid}.lock`), "");
+        const now = Date.parse("2026-01-02T00:00:00.000Z");
+        const tasks = new AgentTaskSource({
+            now: () => now,
+            fetch: async () =>
+                normalizeTasks([
+                    { id: local, state: "cancelled", updatedAt: "2026-01-01T23:00:00.000Z" },
+                    { id: "cloud-1", name: "Cloud", state: "idle", updatedAt: "2026-01-01T23:00:00.000Z" },
+                    { id: "cloud-2", name: "Old", state: "idle", updatedAt: "2025-12-01T00:00:00.000Z" },
+                    { id: "cloud-3", name: "Gone", state: "completed", updatedAt: "2026-01-01T23:00:00.000Z" },
+                ]),
+        });
+        await tasks.poll();
+        const monitor = new SessionMonitor({ root, git: async () => null, tasks, now: () => now });
+        await monitor.scan();
+        const v = monitor.view();
+        const byId = Object.fromEntries(v.sessions.map((s) => [s.id, s]));
+        assert.equal(byId[local].origin, "local");
+        assert.notEqual(byId[local].status, "cancelled");
+        assert.equal(byId[local].githubTask.state, "cancelled");
+        assert.equal(byId["cloud-1"].origin, "github");
+        assert.equal(byId["cloud-1"].metrics, null);
+        assert.deepEqual([byId["cloud-1"].online, byId["cloud-2"].online, byId["cloud-3"].online], [true, false, false]);
+        assert.equal(v.remote.count, 4);
+        assert.equal(v.remote.stale, false);
+    } finally {
         await rm(root, { recursive: true, force: true });
     }
 });
