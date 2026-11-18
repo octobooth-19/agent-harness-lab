@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "aa0f2bad76590c10f961b0b84c0eabddd85ef92e48af0e945e7fb4b4304eba42",
+  "scanRevision": 4,
+  "path": "skills/web-artifacts-builder/SKILL.md",
+  "revision": 1,
+  "decision": "reference-only",
+  "reason": "The entrypoint has an inspected per-skill Apache-2.0 license; the linked setup and bundling scripts were inspected but install mutable React/Vite/Tailwind/shadcn/Parcel packages, have no pinned source lock, require network package resolution, and reference an absent shadcn archive. Visual QA is optional and may occur after sharing. Dependency and asset licenses are not cleared by the skill notice. Do not copy or run this workflow.",
+  "source": {
+    "repo": "anthropics/skills",
+    "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba"
+  },
+  "scanSha256": "d5563ba74f6120845bead9efac8e3bc6644804baf761e6fa383e68d54686003b",
+  "sourceSha256": "81c5002c6643b0de7b8710b00e7a9038daa6fb9b68d59870ee6adb12da8d10f8",
+  "license": {
+    "status": "permissive",
+    "expression": "Apache-2.0",
+    "attribution": "Include the applicable skill LICENSE.txt and preserve copyright/attribution notices; mark modified files and carry forward applicable notices.",
+    "evidence": [
+      "skills/web-artifacts-builder/LICENSE.txt"
+    ]
+  }
+}

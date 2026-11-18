@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "aa0f2bad76590c10f961b0b84c0eabddd85ef92e48af0e945e7fb4b4304eba42",
+  "scanRevision": 4,
+  "path": "skills/internal-comms/SKILL.md",
+  "revision": 1,
+  "decision": "reference-only",
+  "reason": "The entrypoint's per-skill Apache-2.0 license is inspected, as are its local writing examples, but the skill supplies no connectors or authorization, provenance, privacy, or source-conflict policy for communications data. It overlaps existing evidence-based progress reporting and depends on separately authorized user-provided sources. Keep reference-only; the license does not grant access to data or integrations.",
+  "source": {
+    "repo": "anthropics/skills",
+    "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba"
+  },
+  "scanSha256": "d5563ba74f6120845bead9efac8e3bc6644804baf761e6fa383e68d54686003b",
+  "sourceSha256": "067b7587a344a928fc6534ef66b1bcd591fc7c26d207ea7ca3334aeb678d6475",
+  "license": {
+    "status": "permissive",
+    "expression": "Apache-2.0",
+    "attribution": "Include the applicable skill LICENSE.txt and preserve copyright/attribution notices; mark modified files and carry forward applicable notices.",
+    "evidence": [
+      "skills/internal-comms/LICENSE.txt"
+    ]
+  }
+}
