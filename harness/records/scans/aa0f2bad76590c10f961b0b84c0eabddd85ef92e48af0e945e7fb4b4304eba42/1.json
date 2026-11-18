@@ -1,0 +1,1349 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "repo": "anthropics/skills",
+    "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba"
+  },
+  "revision": 1,
+  "scope": "Complete pinned-tree and skills/license inventory with deep review of the skill-creator evaluation loop, MCP-builder guidance, webapp-testing workflow/support, frontend-design, doc-coauthoring, repository skill metadata, and representative Apache/OFL terms.",
+  "coverage": {
+    "tree": "complete",
+    "state": "complete",
+    "limits": [
+      "The pinned Git tree is complete (544 entries; not truncated). Deep reading is limited to five skill entrypoints and the listed direct support; the other 14 skill entrypoints and unrelated support trees are indexed-only.",
+      "The MCP-builder local guides/scripts and most skill-creator agents, schemas, viewers, report/aggregation/package helpers are inventoried but not inspected; do not adopt them without a follow-up audit.",
+      "All 18 per-skill LICENSE.txt paths and 27 canvas font OFL notices are inventoried; distinct Apache license variants and one OFL-1.1 notice were inspected. The full THIRD_PARTY_NOTICES.md was not audited; it declares BSD-2-Clause imageio/imageio-ffmpeg and GPL-3.0 FFmpeg.",
+      "No source instructions, scripts, installers, dependencies, plugins, or external URLs were executed or enabled; repository-level license metadata was null."
+    ],
+    "next": []
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "status": "inspected",
+      "sha256": "1fca448ca17ccf901bd068c661209b15300bc5be3f039ba1a616c3a13a374ccb"
+    },
+    {
+      "path": ".claude-plugin/marketplace.json",
+      "status": "inspected",
+      "sha256": "9bafecba8a8fd0a4d73670cc442504fcb27394d3f8960a5171f570d443b81936"
+    },
+    {
+      "path": "spec/agent-skills-spec.md",
+      "status": "inspected",
+      "sha256": "ff22f2be775f4b757c9a7a2df0421de4c94021d34d9382cea5dd567ff0cdad2c"
+    },
+    {
+      "path": "template/SKILL.md",
+      "status": "inspected",
+      "sha256": "eb685d91de039ed864fbd790cddf31684b017fd4a34ee1a55760d8d7cdbadefa"
+    },
+    {
+      "path": "skills/skill-creator/SKILL.md",
+      "status": "inspected",
+      "sha256": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf"
+    },
+    {
+      "path": "skills/mcp-builder/SKILL.md",
+      "status": "inspected",
+      "sha256": "b483b56d6673134497e45489c317f26ae0f1429c194db0297e43073e17e6748c"
+    },
+    {
+      "path": "skills/webapp-testing/SKILL.md",
+      "status": "inspected",
+      "sha256": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2"
+    },
+    {
+      "path": "skills/frontend-design/SKILL.md",
+      "status": "inspected",
+      "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3"
+    },
+    {
+      "path": "skills/doc-coauthoring/SKILL.md",
+      "status": "inspected",
+      "sha256": "2e47d78846faeea4a56e9809c52700087a15a2155a3f293a3efbaded81398ef4"
+    },
+    {
+      "path": "skills/skill-creator/scripts/run_loop.py",
+      "status": "inspected",
+      "sha256": "7bd6f674203168520517eec94c55f493c0d154339b061b4d7c0f0dad187d0f21"
+    },
+    {
+      "path": "skills/skill-creator/scripts/run_eval.py",
+      "status": "inspected",
+      "sha256": "43e3b8f80dbf69c343967ba77e268fae991d9fa3ed68b32a0ff02532cd48657f"
+    },
+    {
+      "path": "skills/skill-creator/scripts/improve_description.py",
+      "status": "inspected",
+      "sha256": "87d864570220b699fac52da309d2d6efdb060647bfebc74f768128e646accf80"
+    },
+    {
+      "path": "skills/webapp-testing/scripts/with_server.py",
+      "status": "inspected",
+      "sha256": "b0dcf4918935b795f4eda9821579b9902119235ff4447f687a30286e7d0925fd"
+    },
+    {
+      "path": "skills/webapp-testing/examples/console_logging.py",
+      "status": "inspected",
+      "sha256": "ea46877289acb82da7e7ce59d0bc37c8977cd57e2a006d0c88d7a1c625bf95da"
+    },
+    {
+      "path": "skills/webapp-testing/examples/element_discovery.py",
+      "status": "inspected",
+      "sha256": "d63c89604a22f8845d724e95dda45db49b1bf57c25ce0a83afbb7b8da3d402f0"
+    },
+    {
+      "path": "skills/webapp-testing/examples/static_html_automation.py",
+      "status": "inspected",
+      "sha256": "9d533aafb875ee3ab8b8ebf8f5b9003ac8d999da3d09b285cce252e623140064"
+    },
+    {
+      "path": "skills/skill-creator/LICENSE.txt",
+      "status": "inspected",
+      "sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+    },
+    {
+      "path": "skills/mcp-builder/LICENSE.txt",
+      "status": "inspected",
+      "sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+    },
+    {
+      "path": "skills/webapp-testing/LICENSE.txt",
+      "status": "inspected",
+      "sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+    },
+    {
+      "path": "skills/frontend-design/LICENSE.txt",
+      "status": "inspected",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "path": "skills/docx/LICENSE.txt",
+      "status": "inspected",
+      "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/ArsenalSC-OFL.txt",
+      "status": "inspected",
+      "sha256": "8ddd61b18ba2c0d0dbe4a691cf5f1a0673f473d02fa0546e67ee88c006aeff6e"
+    },
+    {
+      "path": "skills/academy-guide/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint indexed only; its instructions and linked resources were not deeply inspected."
+    },
+    {
+      "path": "skills/algorithmic-art/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint indexed only; its instructions and linked resources were not deeply inspected."
+    },
+    {
+      "path": "skills/brand-guidelines/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint indexed only; its instructions and linked resources were not deeply inspected."
+    },
+    {
+      "path": "skills/canvas-design/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint indexed only; its instructions and linked resources were not deeply inspected."
+    },
+    {
+      "path": "skills/claude-api/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint indexed only; its instructions and linked resources were not deeply inspected."
+    },
+    {
+      "path": "skills/discernment-nudge/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint indexed only; its instructions and linked resources were not deeply inspected."
+    },
+    {
+      "path": "skills/docx/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint indexed only; its instructions and linked resources were not deeply inspected."
+    },
+    {
+      "path": "skills/internal-comms/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint indexed only; its instructions and linked resources were not deeply inspected."
+    },
+    {
+      "path": "skills/pdf/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint indexed only; its instructions and linked resources were not deeply inspected."
+    },
+    {
+      "path": "skills/pptx/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint indexed only; its instructions and linked resources were not deeply inspected."
+    },
+    {
+      "path": "skills/slack-gif-creator/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint indexed only; its instructions and linked resources were not deeply inspected."
+    },
+    {
+      "path": "skills/theme-factory/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint indexed only; its instructions and linked resources were not deeply inspected."
+    },
+    {
+      "path": "skills/web-artifacts-builder/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint indexed only; its instructions and linked resources were not deeply inspected."
+    },
+    {
+      "path": "skills/xlsx/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint indexed only; its instructions and linked resources were not deeply inspected."
+    },
+    {
+      "path": "skills/academy-guide/LICENSE.txt",
+      "status": "indexed",
+      "reason": "File-level license indexed; this specific license file was not inspected in this scan."
+    },
+    {
+      "path": "skills/algorithmic-art/LICENSE.txt",
+      "status": "indexed",
+      "reason": "File-level license indexed; this specific license file was not inspected in this scan."
+    },
+    {
+      "path": "skills/brand-guidelines/LICENSE.txt",
+      "status": "indexed",
+      "reason": "File-level license indexed; this specific license file was not inspected in this scan."
+    },
+    {
+      "path": "skills/canvas-design/LICENSE.txt",
+      "status": "indexed",
+      "reason": "File-level license indexed; this specific license file was not inspected in this scan."
+    },
+    {
+      "path": "skills/claude-api/LICENSE.txt",
+      "status": "indexed",
+      "reason": "File-level license indexed; this specific license file was not inspected in this scan."
+    },
+    {
+      "path": "skills/discernment-nudge/LICENSE.txt",
+      "status": "indexed",
+      "reason": "File-level license indexed; this specific license file was not inspected in this scan."
+    },
+    {
+      "path": "skills/internal-comms/LICENSE.txt",
+      "status": "indexed",
+      "reason": "File-level license indexed; this specific license file was not inspected in this scan."
+    },
+    {
+      "path": "skills/pdf/LICENSE.txt",
+      "status": "indexed",
+      "reason": "File-level license indexed; this specific license file was not inspected in this scan."
+    },
+    {
+      "path": "skills/pptx/LICENSE.txt",
+      "status": "indexed",
+      "reason": "File-level license indexed; this specific license file was not inspected in this scan."
+    },
+    {
+      "path": "skills/slack-gif-creator/LICENSE.txt",
+      "status": "indexed",
+      "reason": "File-level license indexed; this specific license file was not inspected in this scan."
+    },
+    {
+      "path": "skills/theme-factory/LICENSE.txt",
+      "status": "indexed",
+      "reason": "File-level license indexed; this specific license file was not inspected in this scan."
+    },
+    {
+      "path": "skills/web-artifacts-builder/LICENSE.txt",
+      "status": "indexed",
+      "reason": "File-level license indexed; this specific license file was not inspected in this scan."
+    },
+    {
+      "path": "skills/xlsx/LICENSE.txt",
+      "status": "indexed",
+      "reason": "File-level license indexed; this specific license file was not inspected in this scan."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/BigShoulders-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Boldonse-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/BricolageGrotesque-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/CrimsonPro-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/DMMono-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/EricaOne-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/GeistMono-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Gloock-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/IBMPlexMono-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/InstrumentSans-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Italiana-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/JetBrainsMono-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Jura-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/LibreBaskerville-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Lora-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/NationalPark-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/NothingYouCouldDo-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Outfit-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/PixelifySans-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/PoiretOne-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/RedHatMono-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Silkscreen-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/SmoochSans-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/Tektur-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/WorkSans-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/YoungSerif-OFL.txt",
+      "status": "indexed",
+      "reason": "Individual font license indexed; font assets and this notice were not adopted or deeply audited."
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "status": "indexed",
+      "reason": "Third-party notice indexed; package/license declarations for imageio, imageio-ffmpeg and FFmpeg were sampled, but the full notice was not audited."
+    },
+    {
+      "path": "skills/skill-creator/agents/analyzer.md",
+      "status": "indexed",
+      "reason": "Local support link indexed; not inspected in this bounded scan and must be reviewed before adoption."
+    },
+    {
+      "path": "skills/skill-creator/agents/comparator.md",
+      "status": "indexed",
+      "reason": "Local support link indexed; not inspected in this bounded scan and must be reviewed before adoption."
+    },
+    {
+      "path": "skills/skill-creator/agents/grader.md",
+      "status": "indexed",
+      "reason": "Local support link indexed; not inspected in this bounded scan and must be reviewed before adoption."
+    },
+    {
+      "path": "skills/skill-creator/assets/eval_review.html",
+      "status": "indexed",
+      "reason": "Local support link indexed; not inspected in this bounded scan and must be reviewed before adoption."
+    },
+    {
+      "path": "skills/skill-creator/eval-viewer/generate_review.py",
+      "status": "indexed",
+      "reason": "Local support link indexed; not inspected in this bounded scan and must be reviewed before adoption."
+    },
+    {
+      "path": "skills/skill-creator/eval-viewer/viewer.html",
+      "status": "indexed",
+      "reason": "Local support link indexed; not inspected in this bounded scan and must be reviewed before adoption."
+    },
+    {
+      "path": "skills/skill-creator/references/schemas.md",
+      "status": "indexed",
+      "reason": "Local support link indexed; not inspected in this bounded scan and must be reviewed before adoption."
+    },
+    {
+      "path": "skills/skill-creator/scripts/__init__.py",
+      "status": "indexed",
+      "reason": "Local support link indexed; not inspected in this bounded scan and must be reviewed before adoption."
+    },
+    {
+      "path": "skills/skill-creator/scripts/aggregate_benchmark.py",
+      "status": "indexed",
+      "reason": "Local support link indexed; not inspected in this bounded scan and must be reviewed before adoption."
+    },
+    {
+      "path": "skills/skill-creator/scripts/generate_report.py",
+      "status": "indexed",
+      "reason": "Local support link indexed; not inspected in this bounded scan and must be reviewed before adoption."
+    },
+    {
+      "path": "skills/skill-creator/scripts/package_skill.py",
+      "status": "indexed",
+      "reason": "Local support link indexed; not inspected in this bounded scan and must be reviewed before adoption."
+    },
+    {
+      "path": "skills/skill-creator/scripts/quick_validate.py",
+      "status": "indexed",
+      "reason": "Local support link indexed; not inspected in this bounded scan and must be reviewed before adoption."
+    },
+    {
+      "path": "skills/skill-creator/scripts/utils.py",
+      "status": "indexed",
+      "reason": "Local support link indexed; not inspected in this bounded scan and must be reviewed before adoption."
+    },
+    {
+      "path": "skills/mcp-builder/reference/evaluation.md",
+      "status": "indexed",
+      "reason": "Local support link indexed; not inspected in this bounded scan and must be reviewed before adoption."
+    },
+    {
+      "path": "skills/mcp-builder/reference/mcp_best_practices.md",
+      "status": "indexed",
+      "reason": "Local support link indexed; not inspected in this bounded scan and must be reviewed before adoption."
+    },
+    {
+      "path": "skills/mcp-builder/reference/node_mcp_server.md",
+      "status": "indexed",
+      "reason": "Local support link indexed; not inspected in this bounded scan and must be reviewed before adoption."
+    },
+    {
+      "path": "skills/mcp-builder/reference/node_mcp_server_v2.md",
+      "status": "indexed",
+      "reason": "Local support link indexed; not inspected in this bounded scan and must be reviewed before adoption."
+    },
+    {
+      "path": "skills/mcp-builder/reference/python_mcp_server.md",
+      "status": "indexed",
+      "reason": "Local support link indexed; not inspected in this bounded scan and must be reviewed before adoption."
+    },
+    {
+      "path": "skills/mcp-builder/scripts/connections.py",
+      "status": "indexed",
+      "reason": "Local support link indexed; not inspected in this bounded scan and must be reviewed before adoption."
+    },
+    {
+      "path": "skills/mcp-builder/scripts/evaluation.py",
+      "status": "indexed",
+      "reason": "Local support link indexed; not inspected in this bounded scan and must be reviewed before adoption."
+    },
+    {
+      "path": "skills/mcp-builder/scripts/example_evaluation.xml",
+      "status": "indexed",
+      "reason": "Local support link indexed; not inspected in this bounded scan and must be reviewed before adoption."
+    },
+    {
+      "path": "skills/mcp-builder/scripts/requirements.txt",
+      "status": "indexed",
+      "reason": "Local support link indexed; not inspected in this bounded scan and must be reviewed before adoption."
+    }
+  ],
+  "candidates": [
+    {
+      "path": "skills/skill-creator/SKILL.md",
+      "kind": "skill",
+      "purpose": "Workflow for authoring a skill, constructing realistic evals, comparing baseline and skill-enabled runs, iterating from feedback, and measuring description-trigger precision/recall with a held-out set.",
+      "requirements": [
+        "Compatible skill package/frontmatter",
+        "Independent baseline and with-skill trials or an adapted trigger evaluator",
+        "Human review and durable eval/result artifacts",
+        "The bundled trigger scripts require Python and the Claude Code claude CLI; full package also references agent/viewer scripts"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "Apache-2.0",
+        "attribution": "Include the applicable LICENSE.txt and preserve copyright/attribution notices; mark modified files, and carry forward applicable NOTICE attributions.",
+        "evidence": [
+          "skills/skill-creator/LICENSE.txt"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Best harness-oriented candidate. Retain the general eval design and held-out selection ideas; replace Claude-specific subagent, claude -p, .claude/commands, and viewer workflows with the lab benchmark/trial lifecycle. Local support beyond run_eval/run_loop/improve_description is indexed only and requires audit before adoption."
+      },
+      "overlaps": [
+        "Overlaps the lab benchmark skill, versioned rubrics, and lifecycle runner; reuse evaluation principles rather than duplicate infrastructure."
+      ],
+      "evidence": [
+        {
+          "path": "skills/skill-creator/SKILL.md",
+          "note": "Lines 45-99 define skill intent, metadata, progressive disclosure and writing principles; lines 141-245 define prompts, baseline/with-skill evals, grading and results; lines 292-322 describe iterative generalization; lines 333-404 cover trigger evals and held-out optimization."
+        },
+        {
+          "path": "skills/skill-creator/scripts/run_loop.py",
+          "note": "Lines 24-44 create a seeded stratified train/test split; lines 86-105 run evaluations and partition results; lines 189-223 hide test scores from improvement and select the best test score."
+        },
+        {
+          "path": "skills/skill-creator/scripts/run_eval.py",
+          "note": "Lines 22-33 locate a Claude project; lines 45-91 create a temporary .claude/commands entry and launch claude -p; lines 128-181 classify Claude tool-trigger events and clean up."
+        },
+        {
+          "path": "skills/skill-creator/scripts/improve_description.py",
+          "note": "Lines 20-47 call claude -p; lines 79-142 build improvement prompts that generalize failures and constrain description size."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/skill-creator/agents/analyzer.md",
+          "reason": "Declared local workflow support; inspect before adopting any part of the full skill package."
+        },
+        {
+          "path": "skills/skill-creator/agents/comparator.md",
+          "reason": "Declared local workflow support; inspect before adopting any part of the full skill package."
+        },
+        {
+          "path": "skills/skill-creator/agents/grader.md",
+          "reason": "Declared local workflow support; inspect before adopting any part of the full skill package."
+        },
+        {
+          "path": "skills/skill-creator/assets/eval_review.html",
+          "reason": "Declared local workflow support; inspect before adopting any part of the full skill package."
+        },
+        {
+          "path": "skills/skill-creator/eval-viewer/generate_review.py",
+          "reason": "Declared local workflow support; inspect before adopting any part of the full skill package."
+        },
+        {
+          "path": "skills/skill-creator/eval-viewer/viewer.html",
+          "reason": "Declared local workflow support; inspect before adopting any part of the full skill package."
+        },
+        {
+          "path": "skills/skill-creator/references/schemas.md",
+          "reason": "Declared local workflow support; inspect before adopting any part of the full skill package."
+        },
+        {
+          "path": "skills/skill-creator/scripts/__init__.py",
+          "reason": "Declared local workflow support; inspect before adopting any part of the full skill package."
+        },
+        {
+          "path": "skills/skill-creator/scripts/aggregate_benchmark.py",
+          "reason": "Declared local workflow support; inspect before adopting any part of the full skill package."
+        },
+        {
+          "path": "skills/skill-creator/scripts/generate_report.py",
+          "reason": "Declared local workflow support; inspect before adopting any part of the full skill package."
+        },
+        {
+          "path": "skills/skill-creator/scripts/improve_description.py",
+          "reason": "Declared local workflow support; inspect before adopting any part of the full skill package."
+        },
+        {
+          "path": "skills/skill-creator/scripts/package_skill.py",
+          "reason": "Declared local workflow support; inspect before adopting any part of the full skill package."
+        },
+        {
+          "path": "skills/skill-creator/scripts/quick_validate.py",
+          "reason": "Declared local workflow support; inspect before adopting any part of the full skill package."
+        },
+        {
+          "path": "skills/skill-creator/scripts/run_eval.py",
+          "reason": "Declared local workflow support; inspect before adopting any part of the full skill package."
+        },
+        {
+          "path": "skills/skill-creator/scripts/run_loop.py",
+          "reason": "Declared local workflow support; inspect before adopting any part of the full skill package."
+        },
+        {
+          "path": "skills/skill-creator/scripts/utils.py",
+          "reason": "Declared local workflow support; inspect before adopting any part of the full skill package."
+        }
+      ]
+    },
+    {
+      "path": "skills/frontend-design/SKILL.md",
+      "kind": "skill",
+      "purpose": "Design-planning and self-critique guidance that pushes UI work toward brief-specific visual choices, accessible responsive implementation, and clear user-facing copy.",
+      "requirements": [
+        "A concrete product/audience/design brief",
+        "A UI code-writing environment; screenshot review is optional"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "Apache-2.0",
+        "attribution": "Include the applicable LICENSE.txt and preserve copyright/attribution notices; mark modified files, and carry forward applicable NOTICE attributions.",
+        "evidence": [
+          "skills/frontend-design/LICENSE.txt"
+        ]
+      },
+      "compatibility": {
+        "status": "native",
+        "notes": "Standalone SKILL.md with name/description metadata and no linked local resources; the lab supports skill components. Preserve the brief-first and accessibility constraints when adapting."
+      },
+      "overlaps": [
+        "Potential overlap with existing frontend design prompts or instructions; compare before adoption."
+      ],
+      "evidence": [
+        {
+          "path": "skills/frontend-design/SKILL.md",
+          "note": "Lines 11-34 ground visual choices in subject matter; lines 36-59 specify plan/review/build/critique and accessibility; lines 61-71 define user-centered interface writing."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/webapp-testing/SKILL.md",
+      "kind": "skill",
+      "purpose": "Guidance for local web UI testing using reconnaissance before interaction, rendered-DOM selectors, screenshots, browser logs, and server lifecycle management.",
+      "requirements": [
+        "Python Playwright package and browser runtime, or a native Playwright MCP adaptation",
+        "Local application/server access; scripts invoke commands in a working directory"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "Apache-2.0",
+        "attribution": "Include the applicable LICENSE.txt and preserve copyright/attribution notices; mark modified files, and carry forward applicable NOTICE attributions.",
+        "evidence": [
+          "skills/webapp-testing/LICENSE.txt"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "The browser-reconnaissance workflow is reusable, but examples require Python Playwright and hard-code environment paths. The server helper launches caller-provided shell commands with shell=True and captures pipes; require a trusted workspace and adapt/replace the helper before use. The app already has Playwright tools, so avoid duplicating them."
+      },
+      "overlaps": [
+        "Overlaps the app Playwright MCP and any UI testing component; adapt principles to existing browser tools."
+      ],
+      "evidence": [
+        {
+          "path": "skills/webapp-testing/SKILL.md",
+          "note": "Lines 9-14 state Python Playwright/helper requirements; lines 16-63 give the decision tree and server usage; lines 65-96 describe recon and examples."
+        },
+        {
+          "path": "skills/webapp-testing/scripts/with_server.py",
+          "note": "Lines 23-32 poll localhost readiness; lines 61-89 start servers and run a command; lines 68-74 use shell=True and stdout/stderr pipes; lines 91-102 terminate subprocesses."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/webapp-testing/scripts/with_server.py",
+          "reason": "Server helper inspected; do not invoke without verifying the command and workspace."
+        },
+        {
+          "path": "skills/webapp-testing/examples/console_logging.py",
+          "reason": "Playwright console capture example inspected."
+        },
+        {
+          "path": "skills/webapp-testing/examples/element_discovery.py",
+          "reason": "DOM/selector discovery example inspected."
+        },
+        {
+          "path": "skills/webapp-testing/examples/static_html_automation.py",
+          "reason": "Static-file automation example inspected."
+        }
+      ]
+    },
+    {
+      "path": "skills/mcp-builder/SKILL.md",
+      "kind": "skill",
+      "purpose": "Checklist/workflow for researching, designing, implementing, evaluating, and testing MCP servers and tool schemas.",
+      "requirements": [
+        "MCP protocol and current framework knowledge",
+        "Web research and service API documentation",
+        "TypeScript or Python SDK, schema libraries, and project package setup",
+        "Bundled reference guides and evaluation scripts (indexed only here)"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "Apache-2.0",
+        "attribution": "Include the applicable LICENSE.txt and preserve copyright/attribution notices; mark modified files, and carry forward applicable NOTICE attributions.",
+        "evidence": [
+          "skills/mcp-builder/LICENSE.txt"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Useful tool-schema, pagination, actionable-error, annotation, and eval principles. SDK versions and linked external docs are time-sensitive; local reference guides/scripts were indexed but not inspected. Do not copy or execute support until those are reviewed and dependencies are approved."
+      },
+      "overlaps": [
+        "Adjacent to the lab MCP/tool integration surface; not itself an MCP server or configuration."
+      ],
+      "evidence": [
+        {
+          "path": "skills/mcp-builder/SKILL.md",
+          "note": "Lines 19-48 discuss workflow planning and MCP protocol docs; lines 50-76 cite SDK versions and local guides; lines 104-116 cover schemas and structured responses."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/mcp-builder/reference/evaluation.md",
+          "reason": "Referenced MCP implementation/evaluation support; indexed only, not adopted."
+        },
+        {
+          "path": "skills/mcp-builder/reference/mcp_best_practices.md",
+          "reason": "Referenced MCP implementation/evaluation support; indexed only, not adopted."
+        },
+        {
+          "path": "skills/mcp-builder/reference/node_mcp_server.md",
+          "reason": "Referenced MCP implementation/evaluation support; indexed only, not adopted."
+        },
+        {
+          "path": "skills/mcp-builder/reference/node_mcp_server_v2.md",
+          "reason": "Referenced MCP implementation/evaluation support; indexed only, not adopted."
+        },
+        {
+          "path": "skills/mcp-builder/reference/python_mcp_server.md",
+          "reason": "Referenced MCP implementation/evaluation support; indexed only, not adopted."
+        },
+        {
+          "path": "skills/mcp-builder/scripts/connections.py",
+          "reason": "Referenced MCP implementation/evaluation support; indexed only, not adopted."
+        },
+        {
+          "path": "skills/mcp-builder/scripts/evaluation.py",
+          "reason": "Referenced MCP implementation/evaluation support; indexed only, not adopted."
+        },
+        {
+          "path": "skills/mcp-builder/scripts/example_evaluation.xml",
+          "reason": "Referenced MCP implementation/evaluation support; indexed only, not adopted."
+        },
+        {
+          "path": "skills/mcp-builder/scripts/requirements.txt",
+          "reason": "Referenced MCP implementation/evaluation support; indexed only, not adopted."
+        },
+        {
+          "url": "https://modelcontextprotocol.io/sitemap.xml",
+          "reason": "External protocol documentation reference; not followed."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/README.md",
+          "reason": "External SDK documentation reference; not followed."
+        },
+        {
+          "url": "https://ts.sdk.modelcontextprotocol.io/v2/llms.txt",
+          "reason": "External SDK documentation index; not followed."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/v1.x/README.md",
+          "reason": "External legacy SDK documentation reference; not followed."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md",
+          "reason": "External Python SDK documentation reference; not followed."
+        }
+      ]
+    },
+    {
+      "path": "skills/doc-coauthoring/SKILL.md",
+      "kind": "skill",
+      "purpose": "Three-stage documentation co-authoring flow: gather context, iteratively structure/refine sections, then test with fresh readers.",
+      "requirements": [
+        "Interactive clarification and user review",
+        "Artifact/file editing tools",
+        "Optional connected integrations or independent reader agents"
+      ],
+      "license": {
+        "status": "unclear",
+        "expression": "NOASSERTION",
+        "attribution": "No applicable file-level license was found or confirmed for this path; obtain/verify permission before copying.",
+        "evidence": []
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Many steps assume Claude artifacts, str_replace, Claude sub-agents, or Claude connectors. No skill-local LICENSE.txt or license frontmatter exists and repository metadata is null; keep reference-only unless permission is confirmed."
+      },
+      "overlaps": [
+        "Overlaps document-authoring and review workflows."
+      ],
+      "evidence": [
+        {
+          "path": "skills/doc-coauthoring/SKILL.md",
+          "note": "Lines 17-26 offer the staged process; lines 104-150 require section-by-section editing and artifacts/files; lines 242-342 assume fresh Claude readers; frontmatter lines 1-4 has no license declaration."
+        }
+      ],
+      "links": [
+        {
+          "url": "https://claude.ai",
+          "reason": "Referenced for manual reader testing; not followed."
+        }
+      ]
+    },
+    {
+      "path": "skills/skill-creator/scripts/run_loop.py",
+      "kind": "support",
+      "purpose": "Runs repeated trigger-evaluation and description-improvement iterations, splitting train/test data and selecting the best held-out score.",
+      "requirements": [
+        "Python runtime and local sibling scripts",
+        "Claude Code CLI/model access through run_eval and improve_description"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "Apache-2.0",
+        "attribution": "Include the applicable LICENSE.txt and preserve copyright/attribution notices; mark modified files, and carry forward applicable NOTICE attributions.",
+        "evidence": [
+          "skills/skill-creator/LICENSE.txt"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Direct execution is tied to Claude CLI and sibling scripts; treat as design reference and use the lab runner instead."
+      },
+      "overlaps": [
+        "Overlaps the lab benchmark runner and rubric/evaluation lifecycle."
+      ],
+      "evidence": [
+        {
+          "path": "skills/skill-creator/scripts/run_loop.py",
+          "note": "Lines 24-44 split data; lines 189-223 conceal test results and select a held-out winner."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/skill-creator/scripts/run_eval.py",
+          "reason": "Direct runner dependency."
+        },
+        {
+          "path": "skills/skill-creator/scripts/improve_description.py",
+          "reason": "Direct improvement dependency."
+        },
+        {
+          "path": "skills/skill-creator/scripts/generate_report.py",
+          "reason": "Direct report dependency; indexed only."
+        },
+        {
+          "path": "skills/skill-creator/scripts/utils.py",
+          "reason": "Direct parsing dependency; indexed only."
+        }
+      ]
+    },
+    {
+      "path": "skills/skill-creator/scripts/run_eval.py",
+      "kind": "support",
+      "purpose": "Measures whether skill descriptions trigger expected tool use across repeated positive and negative queries.",
+      "requirements": [
+        "Python standard library",
+        "Claude Code CLI, .claude project directory and skill/tool event stream"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "Apache-2.0",
+        "attribution": "Include the applicable LICENSE.txt and preserve copyright/attribution notices; mark modified files, and carry forward applicable NOTICE attributions.",
+        "evidence": [
+          "skills/skill-creator/LICENSE.txt"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Creates a .claude/commands file and runs claude -p; this trigger mechanism is vendor-specific and modifies project state. Do not execute or enable; replace with a runtime-specific evaluator."
+      },
+      "overlaps": [
+        "Overlaps existing benchmark trigger/evaluation facilities."
+      ],
+      "evidence": [
+        {
+          "path": "skills/skill-creator/scripts/run_eval.py",
+          "note": "Lines 45-91 write a temporary Claude command and invoke the CLI; lines 128-181 inspect tool events and remove the temporary command."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/skill-creator/scripts/utils.py",
+          "reason": "Direct parsing helper dependency; indexed only."
+        }
+      ]
+    },
+    {
+      "path": "skills/skill-creator/scripts/improve_description.py",
+      "kind": "support",
+      "purpose": "Asks a model to revise a skill description based on trigger failures and records improvement transcripts.",
+      "requirements": [
+        "Python standard library",
+        "Claude Code CLI and authenticated model access"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "Apache-2.0",
+        "attribution": "Include the applicable LICENSE.txt and preserve copyright/attribution notices; mark modified files, and carry forward applicable NOTICE attributions.",
+        "evidence": [
+          "skills/skill-creator/LICENSE.txt"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Direct call path uses claude -p and Claude-specific skill semantics; adapt the prompt and runner to the target platform."
+      },
+      "overlaps": [
+        "Overlaps harness rubric/prompt iteration."
+      ],
+      "evidence": [
+        {
+          "path": "skills/skill-creator/scripts/improve_description.py",
+          "note": "Lines 20-47 invoke claude -p; lines 79-142 construct the iterative trigger-optimization prompt; lines 186-190 write transcripts."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/webapp-testing/scripts/with_server.py",
+      "kind": "support",
+      "purpose": "Starts one or more local servers, waits for port readiness, runs a command, and terminates the child processes.",
+      "requirements": [
+        "Python standard library",
+        "Trusted explicit server commands and local ports"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "Apache-2.0",
+        "attribution": "Include the applicable LICENSE.txt and preserve copyright/attribution notices; mark modified files, and carry forward applicable NOTICE attributions.",
+        "evidence": [
+          "skills/webapp-testing/LICENSE.txt"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Uses shell=True and PIPEs server stdout/stderr without consuming them; use only with trusted commands and consider replacing with a safer process/logging wrapper."
+      },
+      "overlaps": [
+        "Can underpin local browser-based benchmark cases."
+      ],
+      "evidence": [
+        {
+          "path": "skills/webapp-testing/scripts/with_server.py",
+          "note": "Lines 23-32 probe readiness; lines 61-89 launch and run; lines 68-74 use shell=True and pipes; lines 91-102 clean up."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/webapp-testing/examples/console_logging.py",
+      "kind": "support",
+      "purpose": "Example Playwright script capturing console messages while exercising a local page.",
+      "requirements": [
+        "Python Playwright and Chromium",
+        "Example assumes localhost:5173 and /mnt/user-data/outputs"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "Apache-2.0",
+        "attribution": "Include the applicable LICENSE.txt and preserve copyright/attribution notices; mark modified files, and carry forward applicable NOTICE attributions.",
+        "evidence": [
+          "skills/webapp-testing/LICENSE.txt"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Hard-coded local URL and output path; requires Playwright package/runtime not provisioned here."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "skills/webapp-testing/examples/console_logging.py",
+          "note": "Lines 1-28 launch headless Chromium and capture console events; lines 30-35 write to a fixed output path."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/webapp-testing/examples/element_discovery.py",
+      "kind": "support",
+      "purpose": "Example Playwright script listing rendered controls, links and form fields and saving a screenshot.",
+      "requirements": [
+        "Python Playwright and Chromium",
+        "Local application running at localhost:5173"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "Apache-2.0",
+        "attribution": "Include the applicable LICENSE.txt and preserve copyright/attribution notices; mark modified files, and carry forward applicable NOTICE attributions.",
+        "evidence": [
+          "skills/webapp-testing/LICENSE.txt"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Requires Python Playwright and a local app; screenshot path is /tmp/page_discovery.png."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "skills/webapp-testing/examples/element_discovery.py",
+          "note": "Lines 9-38 wait for networkidle, inspect controls, and save a screenshot."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/webapp-testing/examples/static_html_automation.py",
+      "kind": "support",
+      "purpose": "Example Playwright script opening local static HTML, filling controls, and capturing before/after screenshots.",
+      "requirements": [
+        "Python Playwright and Chromium",
+        "A local HTML path and writable output directory"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "Apache-2.0",
+        "attribution": "Include the applicable LICENSE.txt and preserve copyright/attribution notices; mark modified files, and carry forward applicable NOTICE attributions.",
+        "evidence": [
+          "skills/webapp-testing/LICENSE.txt"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Example uses placeholder file/selector values and a fixed /mnt/user-data/outputs path."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "skills/webapp-testing/examples/static_html_automation.py",
+          "note": "Lines 4-29 open file:// content, interact with fields, and save screenshots."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "README.md",
+      "kind": "support",
+      "purpose": "Repository overview for its Claude-specific skills, plugin installation, the Agent Skills spec pointer, and Apache-licensed skill groups.",
+      "requirements": [
+        "Claude Code/Claude.ai/API-specific installation or use",
+        "Review the per-skill license file rather than infer a repository-wide license"
+      ],
+      "license": {
+        "status": "unclear",
+        "expression": "NOASSERTION",
+        "attribution": "No applicable file-level license was found or confirmed for this path; obtain/verify permission before copying.",
+        "evidence": []
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Useful index only; repo license metadata is null and README says many (not all) skills are Apache-2.0."
+      },
+      "overlaps": [
+        "Provides source-repository and skill-format context."
+      ],
+      "evidence": [
+        {
+          "path": "README.md",
+          "note": "Lines 14-29 describe skill directory structure, groups, the spec pointer and template; lines 33-61 are Claude-specific install/use paths."
+        }
+      ],
+      "links": [
+        {
+          "path": "spec/agent-skills-spec.md",
+          "reason": "Local spec pointer."
+        },
+        {
+          "path": "template/SKILL.md",
+          "reason": "Local minimal skill template."
+        }
+      ]
+    },
+    {
+      "path": ".claude-plugin/marketplace.json",
+      "kind": "support",
+      "purpose": "Claude Code plugin marketplace manifest grouping document skills, examples, and standalone skills.",
+      "requirements": [
+        "Claude Code plugin marketplace support",
+        "Skill paths listed in this manifest"
+      ],
+      "license": {
+        "status": "unclear",
+        "expression": "NOASSERTION",
+        "attribution": "No applicable file-level license was found or confirmed for this path; obtain/verify permission before copying.",
+        "evidence": []
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Vendor-specific plugin manifest; does not itself install or configure a Copilot skill."
+      },
+      "overlaps": [
+        "Plugin grouping overlaps native skill catalog packaging only at a conceptual level."
+      ],
+      "evidence": [
+        {
+          "path": ".claude-plugin/marketplace.json",
+          "note": "Lines 11-71 declare Claude plugin groupings and skill directory paths."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "spec/agent-skills-spec.md",
+      "kind": "support",
+      "purpose": "Pointer to the external Agent Skills specification.",
+      "requirements": [
+        "External specification access for a later review"
+      ],
+      "license": {
+        "status": "unclear",
+        "expression": "NOASSERTION",
+        "attribution": "No applicable file-level license was found or confirmed for this path; obtain/verify permission before copying.",
+        "evidence": []
+      },
+      "compatibility": {
+        "status": "unknown",
+        "notes": "The source file only redirects to the external spec; content and current compatibility were not fetched."
+      },
+      "overlaps": [
+        "May inform cross-runtime SKILL.md structure."
+      ],
+      "evidence": [
+        {
+          "path": "spec/agent-skills-spec.md",
+          "note": "The 87-byte file points to agentskills.io/specification."
+        }
+      ],
+      "links": [
+        {
+          "url": "https://agentskills.io/specification",
+          "reason": "External spec pointer; not followed."
+        }
+      ]
+    },
+    {
+      "path": "template/SKILL.md",
+      "kind": "support",
+      "purpose": "Minimal name/description frontmatter and instruction-body template for a skill.",
+      "requirements": [
+        "A target runtime supporting SKILL.md metadata"
+      ],
+      "license": {
+        "status": "unclear",
+        "expression": "NOASSERTION",
+        "attribution": "No applicable file-level license was found or confirmed for this path; obtain/verify permission before copying.",
+        "evidence": []
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Template text says Claude and carries no file-level license; use only as a format reference pending rights review."
+      },
+      "overlaps": [
+        "Overlaps native skill scaffolding."
+      ],
+      "evidence": [
+        {
+          "path": "template/SKILL.md",
+          "note": "Lines 1-6 contain minimal frontmatter and body placeholder."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/skill-creator/LICENSE.txt",
+      "kind": "license",
+      "purpose": "File-level copyright and distribution terms for the skill-creator materials.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "Apache-2.0",
+        "attribution": "Include the applicable LICENSE.txt and preserve copyright/attribution notices; mark modified files, and carry forward applicable NOTICE attributions.",
+        "evidence": [
+          "skills/skill-creator/LICENSE.txt"
+        ]
+      },
+      "compatibility": {
+        "status": "native",
+        "notes": "Apache License 2.0 permits redistribution/derivatives subject to the license conditions."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "skills/skill-creator/LICENSE.txt",
+          "note": "Full Apache-2.0 terms; includes Anthropic PBC 2026 copyright notice."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/mcp-builder/LICENSE.txt",
+      "kind": "license",
+      "purpose": "File-level copyright and distribution terms for MCP-builder materials.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "Apache-2.0",
+        "attribution": "Include the applicable LICENSE.txt and preserve copyright/attribution notices; mark modified files, and carry forward applicable NOTICE attributions.",
+        "evidence": [
+          "skills/mcp-builder/LICENSE.txt"
+        ]
+      },
+      "compatibility": {
+        "status": "native",
+        "notes": "Same exact Git blob as the shared skill Apache-2.0 license."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "skills/mcp-builder/LICENSE.txt",
+          "note": "Complete Apache-2.0 terms; SHA matches the shared license blob."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/webapp-testing/LICENSE.txt",
+      "kind": "license",
+      "purpose": "File-level copyright and distribution terms for webapp-testing materials.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "Apache-2.0",
+        "attribution": "Include the applicable LICENSE.txt and preserve copyright/attribution notices; mark modified files, and carry forward applicable NOTICE attributions.",
+        "evidence": [
+          "skills/webapp-testing/LICENSE.txt"
+        ]
+      },
+      "compatibility": {
+        "status": "native",
+        "notes": "Same exact Git blob as the shared skill Apache-2.0 license."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "skills/webapp-testing/LICENSE.txt",
+          "note": "Complete Apache-2.0 terms; SHA matches the shared license blob."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/frontend-design/LICENSE.txt",
+      "kind": "license",
+      "purpose": "File-level copyright and distribution terms for frontend-design materials.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "Apache-2.0",
+        "attribution": "Include the applicable LICENSE.txt and preserve copyright/attribution notices; mark modified files, and carry forward applicable NOTICE attributions.",
+        "evidence": [
+          "skills/frontend-design/LICENSE.txt"
+        ]
+      },
+      "compatibility": {
+        "status": "native",
+        "notes": "Apache-2.0 license text; no separate skill-local resource license was indexed."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "skills/frontend-design/LICENSE.txt",
+          "note": "Full Apache-2.0 terms inspected."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/docx/LICENSE.txt",
+      "kind": "license",
+      "purpose": "File-level copyright and distribution terms used by document skills.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "Apache-2.0",
+        "attribution": "The file is the standard Apache-2.0 text but its appendix contains an unfilled copyright-owner placeholder; verify applicable attribution and include the license before redistribution.",
+        "evidence": [
+          "skills/docx/LICENSE.txt"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "The Apache license is permissive, but the placeholder copyright owner means attribution should be confirmed before copying related document skills."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "skills/docx/LICENSE.txt",
+          "note": "Full Apache-2.0 license inspected; appendix retains the generic [yyyy] [name of copyright owner] placeholder."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/canvas-design/canvas-fonts/ArsenalSC-OFL.txt",
+      "kind": "license",
+      "purpose": "SIL Open Font License for the Arsenal SC bundled font.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "OFL-1.1",
+        "attribution": "Keep copyright and license with redistributed font software; do not sell the font by itself, preserve the OFL for font derivatives, and respect reserved font names.",
+        "evidence": [
+          "skills/canvas-design/canvas-fonts/ArsenalSC-OFL.txt"
+        ]
+      },
+      "compatibility": {
+        "status": "native",
+        "notes": "OFL-1.1 terms permit font redistribution subject to font-specific attribution, reserved-name, and same-license restrictions."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "skills/canvas-design/canvas-fonts/ArsenalSC-OFL.txt",
+          "note": "Lines 19-26 explain redistribution and reserved-name constraints; lines 47-78 set OFL conditions."
+        }
+      ],
+      "links": []
+    }
+  ]
+}
