@@ -490,6 +490,39 @@ test('app telemetry validates exact cwd/prompt and reports observable model, tok
   assert.throws(() => inspectAppEvents([...events, { type: 'user.message', data: { content: 'extra instructions' } }], metadata), /extra or changed/);
 });
 
+test('app configuration evidence distinguishes pinned skill invocation from unverified instruction loading', () => {
+  const workspace = '/fixture/subject';
+  const relative = '.github/skills/probe/SKILL.md';
+  const asset = path.join(workspace, relative);
+  const metadata = { sessionId: 'fixture', workspace, prompt: 'frozen task',
+    components: [{ id: 'guidance', version: 1, files: {
+      '.github/copilot-instructions.md': 'Private instruction text.',
+      [relative]: '---\nname: probe\n---\n\nPinned skill body.\n',
+    } }] };
+  const event = (file, content) => ({ type: 'skill.invoked', data: { name: 'probe', path: file, content } });
+  const events = [
+    { type: 'session.start', data: { sessionId: 'fixture', context: { cwd: workspace } } },
+    event(asset, 'Pinned skill body.'),
+    { type: 'user.message', data: { content: 'frozen task' } },
+    { type: 'instruction.update', data: { content: 'Private instruction text.' } },
+    event('/fixture/inherited/probe/SKILL.md', 'Pinned skill body.'),
+    event(relative, 'Pinned skill body.'),
+  ];
+  const absent = inspectAppEvents(events, metadata).configurationEvidence;
+  assert.equal(absent[0].status, 'not-verifiable-from-trace');
+  assert.deepEqual(absent[1], { component: 'guidance', version: 1, kind: 'skill', path: relative,
+    status: 'invocation-not-observed', matchingEvents: 0, pinnedBodyMatched: null });
+  const changed = inspectAppEvents([...events, event(asset, 'Changed content.')], metadata).configurationEvidence;
+  assert.equal(changed[1].status, 'invocation-observed');
+  assert.equal(changed[1].pinnedBodyMatched, false);
+  const positive = [...events, event(asset, 'Pinned skill body.\n')];
+  const observed = inspectAppEvents(positive, metadata).configurationEvidence;
+  assert.equal(observed[1].matchingEvents, 1);
+  assert.equal(observed[1].pinnedBodyMatched, true);
+  assert.doesNotMatch(JSON.stringify(observed), /Private instruction text|Pinned skill body/);
+  assert.doesNotMatch(publicTranscript(positive.map(e => JSON.stringify(e)).join('\n')).transcript, /Private instruction text|Pinned skill body/);
+});
+
 test('registered app launches remain observable before collection and reject reused or mismatched sessions', t => {
   const { root, workspaceRoot, trial } = prepared(t);
   const metadata = { ...receipt(), runner: 'app', outcome: 'unknown' };

@@ -24,7 +24,8 @@ const prompt = fs.readFileSync(path.join(directory, 'trial-prompt.txt'), 'utf8')
 ensure(hash(prompt) === manifest.promptSha256, 'prompt integrity failure');
 const raw = fs.readFileSync(values.events, 'utf8');
 const events = raw.split('\n').filter(line => line.trim()).map(line => JSON.parse(line));
-const observations = inspectAppEvents(events, { sessionId: receipt.sessionId, workspace: manifest.workspace, prompt });
+const observations = inspectAppEvents(events, { sessionId: receipt.sessionId, workspace: manifest.workspace, prompt,
+  components: manifest.components.map(component => component.value) });
 const trace = publicTranscript(raw);
 const enriched = validateReceipt({ ...receipt, actualModel: observations.actualModel, metrics: observations.metrics });
 writeJSON(path.join(directory, 'app-observation.json'), observations);
@@ -35,4 +36,5 @@ writeJSON(path.join(directory, 'app-trace-summary.json'), {
   policy: 'Public messages/tools and selected runtime metadata only; internal instructions, hidden reasoning and opaque payloads excluded.',
 });
 console.log(JSON.stringify({ runId, observations: path.join(directory, 'app-observation.json'),
-  receipt: path.join(directory, 'receipt-observed.json'), metrics: observations.metrics }, null, 2));
+  receipt: path.join(directory, 'receipt-observed.json'), metrics: observations.metrics,
+  configurationEvidence: observations.configurationEvidence }, null, 2));

@@ -155,6 +155,20 @@ steered session as fresh. Observed last-checkpoint input/output counters retain
 their documented accounting caveat; missing counters stay null. Completion
 timestamps are not success evidence, and later app shutdown time is excluded.
 
+`app-observation.json` also records `configurationEvidence` for the pinned native
+instruction and skill entries. GitHub documents
+[`skill.invoked`](https://docs.github.com/en/copilot/how-tos/copilot-sdk/features/streaming-events#skillinvoked);
+capture counts post-kickoff events whose absolute source path matches the
+materialized skill and compares the injected body to the pin when present
+(the runtime may omit YAML frontmatter). `invocation-not-observed` means the
+trace did not establish invocation, not that the skill was unavailable or
+unused. A match does not establish that the agent followed the skill or
+verify its frontmatter. For `.github/copilot-instructions.md`, capture reports
+`not-verifiable-from-trace`: an `instruction.update` without a source path
+cannot establish that this file loaded. Capture retains only derived facts,
+not instruction updates or skill event contents. These facts are provenance,
+not scoring inputs or proof of model adherence.
+
 Collect with `node bench/cli.mjs collect RUN --receipt ABS --allow-commands` only
 after inspecting the frozen evaluators and subject completion. Held-out evaluator
 code is stored outside the subject and verified by hash before execution. It
