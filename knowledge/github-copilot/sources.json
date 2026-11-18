@@ -392,11 +392,11 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "coding agents"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -2210,12 +2210,12 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
       "MCP and tools",
       "billing and usage"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -2697,12 +2697,12 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "CLI",
       "skills and customization"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -3634,12 +3634,12 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "coding agents",
       "IDE and app surfaces"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -4122,13 +4122,13 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
       "coding agents",
       "skills and customization",
       "cloud agent"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -5910,12 +5910,12 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "coding agents",
       "context and memory"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -6502,12 +6502,12 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "coding agents",
       "skills and customization"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -6940,12 +6940,12 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "coding agents",
       "cloud agent"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -8393,12 +8393,12 @@
     "published_date": "2026-05-07",
     "updated_date": "2026-05-07",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "coding agents",
       "code review"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Blog category REST index (GitHub Copilot category, paginated)"
   },
   {
@@ -8638,12 +8638,12 @@
     "published_date": "2026-03-31",
     "updated_date": "2026-03-30",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "coding agents",
       "IDE and app surfaces"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Blog category REST index (GitHub Copilot category, paginated)"
   },
   {
@@ -8829,11 +8829,11 @@
     "published_date": "2025-09-04",
     "updated_date": "2025-09-03",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "MCP and tools"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Blog category REST index (GitHub Copilot category, paginated)"
   },
   {
@@ -9171,12 +9171,12 @@
     "published_date": "2026-09-03",
     "updated_date": "2026-09-02",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
       "coding agents",
       "IDE and app surfaces"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Blog category REST index (GitHub Copilot category, paginated)"
   },
   {
@@ -9831,11 +9831,11 @@
     "published_date": "2025-11-19",
     "updated_date": "2025-11-25",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "coding agents"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Blog category REST index (GitHub Copilot category, paginated)"
   },
   {
@@ -9873,11 +9873,11 @@
     "published_date": "2026-06-19",
     "updated_date": "2026-06-18",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "coding agents"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Blog category REST index (GitHub Copilot category, paginated)"
   },
   {
@@ -15621,13 +15621,13 @@
     "published_date": "2025-11-12",
     "updated_date": "2025-11-14",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
       "coding agents",
       "skills and customization",
       "code review"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Changelog Copilot-label REST index, paginated"
   },
   {
@@ -17032,11 +17032,11 @@
     "published_date": "2026-02-26",
     "updated_date": "2026-02-26",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "coding agents"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Changelog Copilot-label REST index, paginated"
   },
   {
@@ -17203,12 +17203,12 @@
     "published_date": "2026-03-05",
     "updated_date": "2026-03-05",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
       "coding agents",
       "code review"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Changelog Copilot-label REST index, paginated"
   },
   {
@@ -17378,12 +17378,12 @@
     "published_date": "2026-03-13",
     "updated_date": "2026-03-13",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
       "coding agents",
       "orchestration and automation"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Changelog Copilot-label REST index, paginated"
   },
   {
@@ -18897,12 +18897,12 @@
     "published_date": "2026-05-26",
     "updated_date": "2026-05-26",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
       "CLI",
       "context and memory"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Changelog Copilot-label REST index, paginated"
   },
   {
@@ -20813,14 +20813,14 @@
     "published_date": "2026-08-12",
     "updated_date": "2026-08-12",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "coding agents",
       "CLI",
       "IDE and app surfaces",
       "skills and customization"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Changelog Copilot-label REST index, paginated"
   },
   {
@@ -22121,11 +22121,11 @@
     "published_date": "2026-10-28",
     "updated_date": "2026-10-28",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
       "coding agents"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Changelog Copilot-label REST index, paginated"
   },
   {
