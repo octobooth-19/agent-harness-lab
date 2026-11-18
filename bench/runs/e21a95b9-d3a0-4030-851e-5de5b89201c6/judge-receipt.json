@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "6a81a325-1825-4fd4-955d-395f97551eaf",
+  "runner": "headless",
+  "model": "auto",
+  "actualModel": "unknown",
+  "environment": "Booth macOS; headless Copilot CLI 1.0.114; model auto",
+  "configurationAudit": "Independent headless judge for app trial. Sibling judge folder without subject configuration; inherited account/machine configuration remains.",
+  "permissions": [
+    "write"
+  ],
+  "isolation": "workspace-only"
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "runId": "e21a95b9-d3a0-4030-851e-5de5b89201c6",
+  "manifestSha256": "e15f6b0afb33c83cb9e7ba56d83268832bcf123b395a36362a3ab12be03b7ae2",
+  "evidenceSha256": "6eac458486d858d23c98655f2995d5ddb85a72fdf0dae7c45bc41f0e3c9574c0",
+  "judge": {
+    "schemaVersion": 1,
+    "sessionId": "6a81a325-1825-4fd4-955d-395f97551eaf",
+    "runner": "headless",
+    "model": "auto",
+    "actualModel": "unknown",
+    "environment": "Booth macOS; headless Copilot CLI 1.0.114; model auto",
+    "configurationAudit": "Independent headless judge for app trial. Sibling judge folder without subject configuration; inherited account/machine configuration remains.",
+    "permissions": [
+      "write"
+    ],
+    "isolation": "workspace-only"
+  },
+  "scores": [
+    {
+      "criterionId": "factual",
+      "score": 4,
+      "rationale": "Reports the 14-minute interruption and 120 failed requests. It states the errors began after deployment D42 without claiming that the deployment caused them, and does not assert data loss.",
+      "evidence": [
+        "workspace/answer.md",
+        "workspace/incident.txt"
+      ]
+    },
+    {
+      "criterionId": "uncertainty",
+      "score": 4,
+      "rationale": "Clearly states service recovery followed rollback, while the root cause remains unestablished and data loss has not yet been assessed.",
+      "evidence": [
+        "workspace/answer.md",
+        "workspace/incident.txt"
+      ]
+    },
+    {
+      "criterionId": "concise",
+      "score": 2,
+      "rationale": "The answer is 70 words, is understandable, and proposes investigating the deployment and logs and verifying data integrity.",
+      "evidence": [
+        "workspace/answer.md"
+      ]
+    }
+  ]
+}

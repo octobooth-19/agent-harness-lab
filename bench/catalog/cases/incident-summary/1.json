@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "incident-summary",
+  "version": 1,
+  "title": "Compare incident-summary prompt variants",
+  "task": "Read incident.txt. Write a customer-facing incident summary to answer.md in at most 100 words. Include the impact, recovery, what is known versus unknown, and a next investigation step. Do not modify incident.txt.",
+  "files": {
+    "incident.txt": "Incident notes\n12:00 UTC: elevated errors began after deployment D42.\n12:14 UTC: service recovered after rollback.\n120 requests failed during the interruption.\nRoot cause: not yet established.\nData loss: not yet assessed.\n"
+  },
+  "variants": [
+    {
+      "name": "baseline",
+      "components": [{ "id": "brief-prompt", "version": 1 }]
+    },
+    {
+      "name": "evidence-first",
+      "components": [{ "id": "evidence-prompt", "version": 1 }]
+    }
+  ],
+  "rubric": { "id": "incident-summary", "version": 1 },
+  "checks": [
+    { "id": "answer-present", "type": "file-exists", "path": "answer.md" },
+    { "id": "mentions-impact", "type": "file-contains", "path": "answer.md", "text": "120" },
+    { "id": "source-preserved", "type": "file-unchanged", "path": "incident.txt" }
+  ]
+}

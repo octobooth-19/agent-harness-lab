@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "runId": "e21a95b9-d3a0-4030-851e-5de5b89201c6",
+  "createdAt": "2026-11-18T17:15:46.972Z",
+  "variant": "baseline",
+  "requestedModel": "auto",
+  "isolation": "workspace-only",
+  "workspace": "/private/tmp/harness-lab-live-PgHCGT/harness-lab-e21a95b9-d3a0-4030-851e-5de5b89201c6-70k5YB/subject",
+  "runtime": {},
+  "case": {
+    "sha256": "0a5292af4b4bd31361d03b0109dc325132cfde6e1db7210b5894c1dfd6565c01",
+    "value": {
+      "schemaVersion": 1,
+      "id": "incident-summary",
+      "version": 1,
+      "title": "Compare incident-summary prompt variants",
+      "task": "Read incident.txt. Write a customer-facing incident summary to answer.md in at most 100 words. Include the impact, recovery, what is known versus unknown, and a next investigation step. Do not modify incident.txt.",
+      "files": {
+        "incident.txt": "Incident notes\n12:00 UTC: elevated errors began after deployment D42.\n12:14 UTC: service recovered after rollback.\n120 requests failed during the interruption.\nRoot cause: not yet established.\nData loss: not yet assessed.\n"
+      },
+      "variants": [
+        {
+          "name": "baseline",
+          "components": [
+            {
+              "id": "brief-prompt",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "name": "evidence-first",
+          "components": [
+            {
+              "id": "evidence-prompt",
+              "version": 1
+            }
+          ]
+        }
+      ],
+      "rubric": {
+        "id": "incident-summary",
+        "version": 1
+      },
+      "checks": [
+        {
+          "id": "answer-present",
+          "type": "file-exists",
+          "path": "answer.md"
+        },
+        {
+          "id": "mentions-impact",
+          "type": "file-contains",
+          "path": "answer.md",
+          "text": "120"
+        },
+        {
+          "id": "source-preserved",
+          "type": "file-unchanged",
+          "path": "incident.txt"
+        }
+      ]
+    }
+  },
+  "rubric": {
+    "sha256": "d0c5c43aa56308f3dda435565fb513ad1076fcb1aba2af7332b589fa6fdb3f44",
+    "value": {
+      "schemaVersion": 1,
+      "id": "incident-summary",
+      "version": 1,
+      "title": "Evidence-grounded incident summary",
+      "passScore": 8,
+      "criteria": [
+        {
+          "id": "factual",
+          "description": "Reports the 14-minute interruption and 120 affected requests from incident.txt, without inventing a root cause or asserting that data was lost.",
+          "maxScore": 4
+        },
+        {
+          "id": "uncertainty",
+          "description": "Explicitly distinguishes the observed recovery after rollback from the still-unknown root cause and unknown data-loss status.",
+          "maxScore": 4
+        },
+        {
+          "id": "concise",
+          "description": "The answer is at most 100 words, understandable, and includes a concrete next investigation step.",
+          "maxScore": 2
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "sha256": "b192321385aeff5eaa8e6481b3fb390fa4bf6bd7b031349d77f0fceefe494f40",
+      "value": {
+        "schemaVersion": 1,
+        "id": "brief-prompt",
+        "version": 1,
+        "title": "Minimal prompt baseline",
+        "kind": "prompt",
+        "prompt": "Be brief and helpful.",
+        "files": {}
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "path": "incident.txt",
+      "sha256": "db2907862dc83d0e6242ddd2b8ce934725d502a6375ba2e31b14c4aacd2fba7e"
+    }
+  ],
+  "promptSha256": "8abf1abbafb53a75264e8ecaa2c8d6911f2e646886ae9c772abd05ba2101f2f8"
+}

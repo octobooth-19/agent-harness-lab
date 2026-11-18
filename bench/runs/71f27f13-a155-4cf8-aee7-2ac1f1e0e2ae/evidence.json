@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "runId": "71f27f13-a155-4cf8-aee7-2ac1f1e0e2ae",
+  "manifestSha256": "8eb769c79af847d038d9643ff957e1563e60bc8d3f3c5fc8506653fb429dd49a",
+  "collectedAt": "2026-11-18T17:12:05.354Z",
+  "receipt": {
+    "schemaVersion": 1,
+    "sessionId": "830508c2-4076-421e-a1b4-d9027233a2bc",
+    "runner": "headless",
+    "model": "auto",
+    "actualModel": "unknown",
+    "environment": "Booth macOS; installed Copilot CLI; requested model auto; network and account configuration inherited",
+    "configurationAudit": "Subject folder is outside lab and has no ancestor repository/instructions. Personal, managed, machine, plugins, and MCP configuration inherited and not independently isolated.",
+    "permissions": [
+      "write"
+    ],
+    "isolation": "workspace-only"
+  },
+  "runnerResult": {
+    "status": 0,
+    "signal": null,
+    "error": null,
+    "endedAt": "2026-11-18T17:11:27.166Z"
+  },
+  "checks": [
+    {
+      "id": "answer-present",
+      "type": "file-exists",
+      "passed": true
+    },
+    {
+      "id": "mentions-impact",
+      "type": "file-contains",
+      "passed": true
+    },
+    {
+      "id": "source-preserved",
+      "type": "file-unchanged",
+      "passed": true
+    }
+  ],
+  "files": [
+    {
+      "path": ".bench-result.json",
+      "sha256": "f0d987b7a29f79a5b7e2f2fbb2324950000ff9bdc22c64c9ac7ccb279bd99faa",
+      "bytes": 157,
+      "encoding": "base64",
+      "content": "eyJzdW1tYXJ5IjoiUmVhZCB0aGUgaW5jaWRlbnQgbm90ZXMgYW5kIHdyb3RlIGEgY3VzdG9tZXItZmFjaW5nIHN1bW1hcnkgd2l0aCBpbXBhY3QsIHJlY292ZXJ5LCBrbm93biBhbmQgdW5rbm93biBkZXRhaWxzLCBhbmQgdGhlIG5leHQgaW52ZXN0aWdhdGlvbiBzdGVwLiJ9Cg=="
+    },
+    {
+      "path": "answer.md",
+      "sha256": "54d898608c8fa0212b2a84187160eb7f68ea840c5d3ca75064334658300da12c",
+      "bytes": 383,
+      "encoding": "base64",
+      "content": "U3RhcnRpbmcgYXQgMTI6MDAgVVRDLCBlbGV2YXRlZCBlcnJvcnMgY2F1c2VkIDEyMCByZXF1ZXN0cyB0byBmYWlsLiBTZXJ2aWNlIHJlY292ZXJlZCBhdCAxMjoxNCBVVEMgYWZ0ZXIgd2Ugcm9sbGVkIGJhY2sgZGVwbG95bWVudCBENDIuIFdlIGtub3cgdGhlIGlzc3VlIGJlZ2FuIGFmdGVyIHRoYXQgZGVwbG95bWVudCwgYnV0IGl0cyByb290IGNhdXNlIGhhcyBub3QgYmVlbiBlc3RhYmxpc2hlZCwgYW5kIHBvdGVudGlhbCBkYXRhIGxvc3MgaGFzIG5vdCB5ZXQgYmVlbiBhc3Nlc3NlZC4gT3VyIG5leHQgc3RlcCBpcyB0byByZXZpZXcgZGVwbG95bWVudCBhbmQgc2VydmljZSBsb2dzIHRvIGlkZW50aWZ5IHRoZSBjYXVzZSBhbmQgdmVyaWZ5IGRhdGEgaW50ZWdyaXR5Lgo="
+    },
+    {
+      "path": "incident.txt",
+      "sha256": "db2907862dc83d0e6242ddd2b8ce934725d502a6375ba2e31b14c4aacd2fba7e",
+      "bytes": 222,
+      "encoding": "base64",
+      "content": "SW5jaWRlbnQgbm90ZXMKMTI6MDAgVVRDOiBlbGV2YXRlZCBlcnJvcnMgYmVnYW4gYWZ0ZXIgZGVwbG95bWVudCBENDIuCjEyOjE0IFVUQzogc2VydmljZSByZWNvdmVyZWQgYWZ0ZXIgcm9sbGJhY2suCjEyMCByZXF1ZXN0cyBmYWlsZWQgZHVyaW5nIHRoZSBpbnRlcnJ1cHRpb24uClJvb3QgY2F1c2U6IG5vdCB5ZXQgZXN0YWJsaXNoZWQuCkRhdGEgbG9zczogbm90IHlldCBhc3Nlc3NlZC4K"
+    }
+  ]
+}

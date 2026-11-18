@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "runId": "1274fc47-8100-45d7-8b3b-a437afd0d285",
+  "manifestSha256": "73dce423bd4fcb426fbb6ad55599a4d3de8857f21b9e61395380f13ff188e666",
+  "evidenceSha256": "4cc3a7a33e3917e80783a20c6eece19f465e1ad0c5de244ed7a201902726c074",
+  "task": "Read incident.txt. Write a customer-facing incident summary to answer.md in at most 100 words. Include the impact, recovery, what is known versus unknown, and a next investigation step. Do not modify incident.txt.",
+  "rubric": {
+    "schemaVersion": 1,
+    "id": "incident-summary",
+    "version": 1,
+    "title": "Evidence-grounded incident summary",
+    "passScore": 8,
+    "criteria": [
+      {
+        "id": "factual",
+        "description": "Reports the 14-minute interruption and 120 affected requests from incident.txt, without inventing a root cause or asserting that data was lost.",
+        "maxScore": 4
+      },
+      {
+        "id": "uncertainty",
+        "description": "Explicitly distinguishes the observed recovery after rollback from the still-unknown root cause and unknown data-loss status.",
+        "maxScore": 4
+      },
+      {
+        "id": "concise",
+        "description": "The answer is at most 100 words, understandable, and includes a concrete next investigation step.",
+        "maxScore": 2
+      }
+    ]
+  },
+  "checks": [
+    {
+      "id": "answer-present",
+      "type": "file-exists",
+      "passed": true
+    },
+    {
+      "id": "mentions-impact",
+      "type": "file-contains",
+      "passed": true
+    },
+    {
+      "id": "source-preserved",
+      "type": "file-unchanged",
+      "passed": true
+    }
+  ],
+  "runnerResult": {
+    "status": 0,
+    "signal": null,
+    "error": null,
+    "endedAt": "2026-11-18T17:13:21.456Z"
+  },
+  "files": [
+    {
+      "path": "workspace/.bench-result.json",
+      "sha256": "764bf5ca8ab123c5952abe8f4b99939faad823432754b5493a19887b3e277f84",
+      "contentBase64": "eyJzdW1tYXJ5IjoiV3JvdGUgYSBjdXN0b21lci1mYWNpbmcgaW5jaWRlbnQgc3VtbWFyeSB3aXRoIHRoZSBrbm93biBpbXBhY3QsIHJlY292ZXJ5LCB1bmNlcnRhaW50aWVzLCBhbmQgbmV4dCBpbnZlc3RpZ2F0aW9uIHN0ZXAuIn0K",
+      "text": "{\"summary\":\"Wrote a customer-facing incident summary with the known impact, recovery, uncertainties, and next investigation step.\"}\n"
+    },
+    {
+      "path": "workspace/answer.md",
+      "sha256": "553c178507d373f6077b65cf1fcc9929bd17ecf1c53fd586581f57e2e6de660a",
+      "contentBase64": "QXQgMTI6MDAgVVRDLCBlbGV2YXRlZCBlcnJvcnMgd2VyZSBvYnNlcnZlZCwgYW5kIDEyMCByZXF1ZXN0cyBmYWlsZWQgZHVyaW5nIHRoZSBpbnRlcnJ1cHRpb24uIFNlcnZpY2UgcmVjb3ZlcmVkIGF0IDEyOjE0IFVUQyBhZnRlciBhIHJvbGxiYWNrLiBEZXBsb3ltZW50IEQ0MiBwcmVjZWRlZCB0aGUgZXJyb3JzLCBidXQgdGhlIGF2YWlsYWJsZSBpbmZvcm1hdGlvbiBkb2VzIG5vdCBlc3RhYmxpc2ggdGhhdCBpdCBjYXVzZWQgdGhlbS4gVGhlIHJvb3QgY2F1c2UgcmVtYWlucyB1bmRldGVybWluZWQsIGFuZCBkYXRhIGxvc3MgaGFzIG5vdCB5ZXQgYmVlbiBhc3Nlc3NlZC4gTmV4dCBpbnZlc3RpZ2F0aW9uIHN0ZXA6IHJldmlldyBzZXJ2aWNlIGFuZCBkZXBsb3ltZW50IHRlbGVtZXRyeSBmcm9tIHRoZSBpbmNpZGVudCB3aW5kb3cgYW5kIGFzc2VzcyBhZmZlY3RlZCByZXF1ZXN0cyBhbmQgZGF0YSBmb3IgcG9zc2libGUgbG9zcy4K",
+      "text": "At 12:00 UTC, elevated errors were observed, and 120 requests failed during the interruption. Service recovered at 12:14 UTC after a rollback. Deployment D42 preceded the errors, but the available information does not establish that it caused them. The root cause remains undetermined, and data loss has not yet been assessed. Next investigation step: review service and deployment telemetry from the incident window and assess affected requests and data for possible loss.\n"
+    },
+    {
+      "path": "workspace/incident.txt",
+      "sha256": "db2907862dc83d0e6242ddd2b8ce934725d502a6375ba2e31b14c4aacd2fba7e",
+      "contentBase64": "SW5jaWRlbnQgbm90ZXMKMTI6MDAgVVRDOiBlbGV2YXRlZCBlcnJvcnMgYmVnYW4gYWZ0ZXIgZGVwbG95bWVudCBENDIuCjEyOjE0IFVUQzogc2VydmljZSByZWNvdmVyZWQgYWZ0ZXIgcm9sbGJhY2suCjEyMCByZXF1ZXN0cyBmYWlsZWQgZHVyaW5nIHRoZSBpbnRlcnJ1cHRpb24uClJvb3QgY2F1c2U6IG5vdCB5ZXQgZXN0YWJsaXNoZWQuCkRhdGEgbG9zczogbm90IHlldCBhc3Nlc3NlZC4K",
+      "text": "Incident notes\n12:00 UTC: elevated errors began after deployment D42.\n12:14 UTC: service recovered after rollback.\n120 requests failed during the interruption.\nRoot cause: not yet established.\nData loss: not yet assessed.\n"
+    }
+  ]
+}

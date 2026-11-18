@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "45d1b787-1ad1-4d1c-a125-10e53031af60",
+  "runner": "headless",
+  "model": "auto",
+  "actualModel": "unknown",
+  "environment": "Booth macOS; installed Copilot CLI; requested model auto; network and account configuration inherited",
+  "configurationAudit": "Independent judge session in a sibling folder without subject configuration. Personal, managed, machine, plugins, and MCP configuration inherited and not independently isolated.",
+  "permissions": [
+    "write"
+  ],
+  "isolation": "workspace-only"
+}

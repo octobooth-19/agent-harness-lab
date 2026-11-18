@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "brief-prompt",
+  "version": 1,
+  "title": "Minimal prompt baseline",
+  "kind": "prompt",
+  "prompt": "Be brief and helpful.",
+  "files": {}
+}

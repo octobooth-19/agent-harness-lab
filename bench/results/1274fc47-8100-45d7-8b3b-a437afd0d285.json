@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "runId": "1274fc47-8100-45d7-8b3b-a437afd0d285",
+  "createdAt": "2026-11-18T17:12:05.453Z",
+  "gradedAt": "2026-11-18T17:16:35.338Z",
+  "case": {
+    "id": "incident-summary",
+    "version": 1,
+    "sha256": "0a5292af4b4bd31361d03b0109dc325132cfde6e1db7210b5894c1dfd6565c01"
+  },
+  "rubric": {
+    "id": "incident-summary",
+    "version": 1,
+    "sha256": "d0c5c43aa56308f3dda435565fb513ad1076fcb1aba2af7332b589fa6fdb3f44"
+  },
+  "components": [
+    {
+      "id": "evidence-prompt",
+      "version": 1,
+      "sha256": "1870076f935687a309e2d787be92bf0ea74ab00599f924dffcf7f7ded7a7e6a8"
+    }
+  ],
+  "variant": "evidence-first",
+  "manifestSha256": "73dce423bd4fcb426fbb6ad55599a4d3de8857f21b9e61395380f13ff188e666",
+  "evidenceSha256": "4cc3a7a33e3917e80783a20c6eece19f465e1ad0c5de244ed7a201902726c074",
+  "runner": "headless",
+  "requestedModel": "auto",
+  "actualModel": "unknown",
+  "contextSha256": "9df6407bc63086c0e5640d66ed9c3e0ba7b9212aa4aa1da6d9e4807de94e2eed",
+  "score": 10,
+  "maxScore": 10,
+  "passed": true,
+  "deterministicPassed": true,
+  "runnerSucceeded": true,
+  "criterionScores": [
+    {
+      "criterionId": "factual",
+      "score": 4
+    },
+    {
+      "criterionId": "uncertainty",
+      "score": 4
+    },
+    {
+      "criterionId": "concise",
+      "score": 2
+    }
+  ]
+}
