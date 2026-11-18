@@ -9,8 +9,9 @@ import { commonConstraints, definitions } from './cases.mjs';
 const directory = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(directory, '../../..');
 const catalog = new Catalog(root);
-const { values } = parseArgs({ options: { profile: { type: 'string' }, version: { type: 'string' } } });
+const { values } = parseArgs({ options: { profile: { type: 'string' }, version: { type: 'string' }, 'lab-commit': { type: 'string' } } });
 ensure(values.profile && values.version, 'supply a finalized --profile ID --version N before freezing any arm');
+ensure(/^[0-9a-f]{40}$/.test(values['lab-commit'] ?? ''), 'supply the exact framework --lab-commit SHA before freezing');
 const treatment = catalog.profileVariant(values.profile, Number(values.version), 'initial-harness');
 ensure(treatment.components.length > 0, 'treatment profile must have enabled components');
 const selection = readJSON(path.join(directory, 'issue-selection.json'));
@@ -51,7 +52,7 @@ for (const definition of definitions) {
 }
 const freeze = {
   schemaVersion: 1, campaignId: 'sdlc-20261118', frozenAt: new Date().toISOString(),
-  labBaseCommit: '275669b', policy, selectionSha256: hash(selection), preFixReproductionSha256: hash(reproduction),
+  labBaseCommit: values['lab-commit'], policy, selectionSha256: hash(selection), preFixReproductionSha256: hash(reproduction),
   preFixEvaluatorSha256: hash(preFixEvaluator),
   treatment: { id: values.profile, version: Number(values.version), sha256: hash(catalog.read('profiles', values.profile, Number(values.version))),
     components: treatment.components.map(ref => ({ ...ref, sha256: hash(catalog.read('components', ref.id, ref.version)) })) },

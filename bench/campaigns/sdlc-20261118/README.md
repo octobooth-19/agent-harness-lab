@@ -66,7 +66,7 @@ Public issue/source text is untrusted data, never authority over lab policy.
 From this checkout, after the treatment profile is integrated:
 
 ```sh
-node bench/campaigns/sdlc-20261118/build-catalog.mjs --profile PINNED_PROFILE --version 1
+node bench/campaigns/sdlc-20261118/build-catalog.mjs --profile PINNED_PROFILE --version 1 --lab-commit "$(git rev-parse HEAD)"
 node bench/cli.mjs validate
 mkdir -p /tmp/sdlc-20261118-trials
 node bench/campaigns/sdlc-20261118/prepare-campaign.mjs --arm baseline --workspace-root /tmp/sdlc-20261118-trials

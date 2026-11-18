@@ -30,8 +30,9 @@ test('campaign freezes five valid cases then prepares exact independent baseline
     assert.equal(result.status, 0, result.stderr);
     return JSON.parse(result.stdout);
   };
-  invoke('build-catalog.mjs', '--profile', 'fixture-profile', '--version', '1');
+  invoke('build-catalog.mjs', '--profile', 'fixture-profile', '--version', '1', '--lab-commit', 'a'.repeat(40));
   const freeze = readJSON(path.join(campaign, 'freeze.json'));
+  assert.equal(freeze.labBaseCommit, 'a'.repeat(40));
   assert.equal(freeze.cases.length, 5);
   assert.equal(freeze.cases.filter(record => record.partition === 'held-out').length, 1);
   assert.equal(catalog.validateAll().valid, true);
