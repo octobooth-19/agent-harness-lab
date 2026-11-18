@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "run_at": "2026-11-18T17:28:15.394Z",
+  "snapshot_date": "2026-11-18",
+  "mode": "bounded",
+  "providers": {
+    "openai": {
+      "indexed_candidates": 1833,
+      "newly_discovered": 0,
+      "tracked_sources": 2870,
+      "selected": 1,
+      "changed": [],
+      "initialized": [
+        "https://developers.openai.com/api/docs/guides/agents-api/configuration"
+      ],
+      "unchanged": [],
+      "deleted": [],
+      "removed_from_indexes": [],
+      "failures": [],
+      "indexes": [
+        {
+          "id": "developers-index",
+          "url": "https://developers.openai.com/llms.txt",
+          "status": "unchanged",
+          "discovered": 40
+        },
+        {
+          "id": "api-sitemap",
+          "url": "https://openai.com/sitemap.xml/api/",
+          "status": "unchanged",
+          "discovered": 13,
+          "new_members": 0
+        },
+        {
+          "id": "engineering-sitemap",
+          "url": "https://openai.com/sitemap.xml/engineering/",
+          "status": "unchanged",
+          "discovered": 23,
+          "new_members": 0
+        },
+        {
+          "id": "page-sitemap",
+          "url": "https://openai.com/sitemap.xml/page/",
+          "status": "unchanged",
+          "discovered": 217,
+          "new_members": 0
+        },
+        {
+          "id": "release-sitemap",
+          "url": "https://openai.com/sitemap.xml/release/",
+          "status": "unchanged",
+          "discovered": 85,
+          "new_members": 0
+        },
+        {
+          "id": "research-sitemap",
+          "url": "https://openai.com/sitemap.xml/research/",
+          "status": "unchanged",
+          "discovered": 62,
+          "new_members": 0
+        },
+        {
+          "id": "news-rss",
+          "url": "https://openai.com/news/rss.xml",
+          "status": "unchanged",
+          "discovered": 1406,
+          "new_members": 0
+        }
+      ]
+    },
+    "anthropic": {
+      "indexed_candidates": 2754,
+      "newly_discovered": 0,
+      "tracked_sources": 2767,
+      "selected": 1,
+      "changed": [],
+      "initialized": [
+        "https://code.claude.com/docs/en/best-practices"
+      ],
+      "unchanged": [],
+      "deleted": [],
+      "removed_from_indexes": [],
+      "failures": [],
+      "indexes": [
+        {
+          "id": "platform-docs-index",
+          "url": "https://platform.claude.com/llms.txt",
+          "status": "unchanged",
+          "discovered": 923
+        },
+        {
+          "id": "platform-docs-sitemap",
+          "url": "https://platform.claude.com/sitemap.xml",
+          "status": "unchanged",
+          "discovered": 923,
+          "new_members": 0
+        },
+        {
+          "id": "claude-code-docs-index",
+          "url": "https://code.claude.com/docs/llms.txt",
+          "status": "unchanged",
+          "discovered": 205
+        },
+        {
+          "id": "claude-code-docs-sitemap",
+          "url": "https://code.claude.com/docs/sitemap.xml",
+          "status": "unchanged",
+          "discovered": 204
+        },
+        {
+          "id": "anthropic-news-research-sitemap",
+          "url": "https://www.anthropic.com/sitemap.xml",
+          "status": "unchanged",
+          "discovered": 499,
+          "new_members": 0
+        },
+        {
+          "id": "claude-code-changelog",
+          "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+          "status": "unchanged",
+          "discovered": 0
+        }
+      ]
+    },
+    "github-copilot": {
+      "indexed_candidates": 597,
+      "newly_discovered": 0,
+      "tracked_sources": 1582,
+      "selected": 1,
+      "changed": [],
+      "initialized": [
+        "https://docs.github.com/en/copilot/concepts/agent-capabilities/choosing-and-delegating-agent-work/delegating-and-parallelizing-work-with-agents"
+      ],
+      "unchanged": [],
+      "deleted": [],
+      "removed_from_indexes": [],
+      "failures": [],
+      "indexes": [
+        {
+          "id": "docs-copilot-index",
+          "url": "https://docs.github.com/en/copilot",
+          "status": "unchanged",
+          "discovered": 480,
+          "new_members": 0
+        },
+        {
+          "id": "docs-source-tree",
+          "url": "https://api.github.com/repos/github/docs/git/trees/main?recursive=1",
+          "status": "changed",
+          "discovered": 577,
+          "new_members": 0
+        },
+        {
+          "id": "copilot-blog-rss",
+          "url": "https://github.blog/ai-and-ml/github-copilot/feed/",
+          "status": "unchanged",
+          "discovered": 10
+        },
+        {
+          "id": "copilot-changelog-rss",
+          "url": "https://github.blog/changelog/label/copilot/feed/",
+          "status": "unchanged",
+          "discovered": 10
+        }
+      ]
+    }
+  },
+  "summary": {
+    "openai": {
+      "indexed_candidates": 1833,
+      "newly_discovered": 0,
+      "tracked_sources": 2870,
+      "selected": 1,
+      "initialized": 1,
+      "changed": 0,
+      "unchanged": 0,
+      "deleted": 0,
+      "failures": 0,
+      "removed_from_indexes": 0
+    },
+    "anthropic": {
+      "indexed_candidates": 2754,
+      "newly_discovered": 0,
+      "tracked_sources": 2767,
+      "selected": 1,
+      "initialized": 1,
+      "changed": 0,
+      "unchanged": 0,
+      "deleted": 0,
+      "failures": 0,
+      "removed_from_indexes": 0
+    },
+    "github-copilot": {
+      "indexed_candidates": 597,
+      "newly_discovered": 0,
+      "tracked_sources": 1582,
+      "selected": 1,
+      "initialized": 1,
+      "changed": 0,
+      "unchanged": 0,
+      "deleted": 0,
+      "failures": 0,
+      "removed_from_indexes": 0
+    }
+  }
+}

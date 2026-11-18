@@ -1,0 +1,70 @@
+# Anthropic / Claude: coding-agent knowledge snapshot
+
+**Snapshot date:** 2026-11-18
+**Scope:** Official Anthropic documentation, Claude Code documentation, product/API release notes, and Anthropic research/news relevant to coding agents and the broader agent platform. This is a useful partial snapshot, not an exhaustive reading of the indexed corpus. See [coverage and limitations](coverage.md) and the [source inventory](source-inventory.csv).
+
+## Executive synthesis
+
+Anthropic’s materials describe several distinct ways to build an agent, rather than one interchangeable “Claude agent” product:
+
+- **Claude Code** is an interactive coding-agent harness with a built-in agent loop, filesystem and shell tools, configurable permissions, hooks, skills, subagents, MCP, and multiple front ends. Its current documentation is at [code.claude.com/docs](https://code.claude.com/docs/en/overview).
+- **Claude Agent SDK** embeds the Claude Code loop and tools in a Python or TypeScript application that the developer operates. It exposes the loop’s messages, tools, permissions, sessions, hooks, subagents, MCP, skills, plugins, and related configuration ([SDK overview](https://code.claude.com/docs/en/agent-sdk/overview), [agent-loop guide](https://code.claude.com/docs/en/agent-sdk/agent-loop)).
+- **Messages API with client tools** leaves the application to implement the tool loop and execution. Claude emits `tool_use`; the client runs the operation and sends back `tool_result`. Anthropic also provides server-side tools and a tool runner ([tool-use overview](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview)).
+- **Claude Managed Agents** is a hosted, configurable harness with sessions, environments, event streaming, built-in tools, persistence, and optional self-hosted deployment. The API docs mark it beta in this snapshot ([overview](https://platform.claude.com/docs/en/managed-agents/overview)).
+
+These are different control and hosting boundaries. Product capabilities, lifecycle semantics, API beta status, data retention and supported models should be checked against the relevant current product documentation—not inferred from another surface’s documentation or an older blog post.
+
+## Agent-loop and harness design
+
+The Agent SDK documentation describes the basic loop as: provide a prompt plus system context, tools, and history; have the model respond with text and/or tool requests; execute requested tools and feed results back; repeat until there are no tool calls; then return the result and usage/session metadata. The SDK can cap turns and budget, and its result stream distinguishes successful completion from limit/error outcomes ([agent loop](https://code.claude.com/docs/en/agent-sdk/agent-loop)).
+
+Anthropic’s architecture guidance recommends starting with the simplest adequate system. Its [Building effective agents](https://www.anthropic.com/research/building-effective-agents) post distinguishes fixed-path workflows from agents that dynamically choose their steps and tool use. It outlines composable patterns—prompt chaining, routing, parallelization, orchestrator-workers, and evaluator-optimizer—and notes the cost/latency trade-off of agentic complexity. The post itself warns that much of its tooling landscape has changed since its 2024 publication; treat the design patterns as historical guidance, not current product instructions.
+
+For long-running coding work across context windows, Anthropic’s [long-running harness article](https://www.anthropic.com/research/effective-harnesses-for-long-running-agents) reports a two-role pattern: an initializer creates a runnable environment and structured feature list; later coding sessions select one incomplete feature, inspect progress and version history, test the baseline, implement incrementally, verify end-to-end, and leave the workspace and progress notes in a clean handoff state. The article is a particular research approach, not a requirement of the current Claude Code or Agent SDK.
+
+The older [Claude Code best-practices post](https://www.anthropic.com/research/claude-code-best-practices) says it moved to the living docs on Jan. 26, 2026. Its repository, permissions, and command examples should be treated as historical; the current [best-practices guide](https://code.claude.com/docs/en/best-practices) is the maintained source.
+
+## Instructions, skills, and memory
+
+Current Claude Code guidance separates model-followed instructions from harness-enforced controls. Prompts, `CLAUDE.md`, and skills influence the model but do not guarantee compliance; hooks, deny rules, managed policy, tests, and CI can enforce deterministic behavior ([best practices](https://code.claude.com/docs/en/best-practices)). Use repository/user/org-scoped `CLAUDE.md` for concise, durable project knowledge; the current memory documentation also describes `AGENTS.md`, path-scoped rules, imports, and auto memory. These are context, not permission enforcement ([memory](https://code.claude.com/docs/en/memory)).
+
+Skills package a name and description for discovery, on-demand instructions, and optional reference files/scripts. Anthropic’s API Skills documentation describes progressive disclosure: metadata is available up front, `SKILL.md` is read when a skill is relevant, and supplementary resources are loaded or executed only when needed ([Claude Code skills](https://code.claude.com/docs/en/skills), [API Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)). A separate 2025 [engineering article](https://www.anthropic.com/research/equipping-agents-for-the-real-world-with-agent-skills) describes the same pattern and recommends deriving skills from observed task gaps, iterating on descriptions and content, and auditing trusted code/resources before installation. It notes Agent Skills became an open standard for portability; that historical announcement does not mean every Claude Code-specific frontmatter feature is portable.
+
+## Tools, MCP, and context management
+
+The Messages API tool protocol puts execution on one of two sides: client tools are executed by the application, while Anthropic server tools run on Anthropic infrastructure. Client tool results are returned in a subsequent request; server tools generally return results without requiring the application to run them ([tool-use overview](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview)). Claude Code can use local stdio or remote MCP servers; the current MCP reference recommends HTTP for remote servers, calls out deprecated SSE, and warns that external servers are a trust boundary ([MCP](https://code.claude.com/docs/en/mcp), [security](https://code.claude.com/docs/en/security)).
+
+Anthropic introduced MCP as an open protocol for clients to connect to servers that expose data and tools ([announcement](https://www.anthropic.com/news/model-context-protocol)). The [code-execution-with-MCP article](https://www.anthropic.com/research/code-execution-with-mcp) and [advanced-tool-use article](https://www.anthropic.com/research/advanced-tool-use) explore progressive discovery and orchestration in code: load only relevant tool definitions, process large/intermediate results outside model context, and return a focused result. The articles include reported token savings from particular experiments; these are not universal guarantees.
+
+Context is not just the prompt. It includes instructions, tools, messages, tool results, and—depending on model and settings—thinking/output tokens. Anthropic’s current [context-window guide](https://platform.claude.com/docs/en/build-with-claude/context-windows) explicitly cautions that a larger window does not automatically make context more useful. The [context engineering article](https://www.anthropic.com/research/effective-context-engineering-for-ai-agents) recommends optimizing for the smallest high-signal context, using tools for just-in-time retrieval, and keeping tools distinct and well described. The API provides server-side context management features; the docs call compaction the primary strategy for most long-running conversations, with context editing for more specific clearing needs ([context editing](https://platform.claude.com/docs/en/build-with-claude/context-editing)).
+
+## Permissions, hooks, and safety boundaries
+
+Claude Code’s permission rules are enforced by the harness. Its current docs distinguish permission modes, allow/ask/deny rules, working-directory boundaries, sandboxing, managed settings, and PreToolUse hooks; prompts and `CLAUDE.md` do not override those controls ([permissions](https://code.claude.com/docs/en/permissions), [security](https://code.claude.com/docs/en/security)). Hooks execute at defined lifecycle points and can inspect or block tool calls, react to results, and run at session/turn boundaries ([hooks reference](https://code.claude.com/docs/en/hooks)).
+
+The current site documents auto mode as a permission mode using a classifier to evaluate some actions and reduce routine prompts; it is not equivalent to disabling permissions. Its boundaries and default behavior have changed over time, so consult the live [permission-mode](https://code.claude.com/docs/en/permission-modes) and [auto-mode configuration](https://code.claude.com/docs/en/auto-mode-config) docs. Anthropic’s [auto-mode engineering post](https://www.anthropic.com/research/claude-code-auto-mode) describes a layered design (input screening and action classification) and threat examples such as overreach, mistaken scope, prompt injection, and data exfiltration. Those implementation details are a dated product-engineering account, not a substitute for the current configuration reference.
+
+## Delegation and multi-agent work
+
+Claude Code distinguishes focused **subagents**, which work in their own context and return findings to a parent session, from experimental **agent teams**, which are separate Claude Code instances coordinating through messages and shared tasks. The current agent-teams guide warns teams are experimental, disabled by default, cost more tokens, and work best when tasks are independent; it recommends subagents for simpler focused delegation ([subagents](https://code.claude.com/docs/en/sub-agents), [agent teams](https://code.claude.com/docs/en/agent-teams)).
+
+Anthropic’s [multi-agent Research post](https://www.anthropic.com/research/multi-agent-research-system) describes an orchestrator/worker design for broad, parallelizable research: delegate bounded searches, use independent context windows as filters/compression, synthesize, and use a citation-focused pass. It also reports high token cost and warns that tightly coupled tasks are a poor fit. This is an example of a product architecture, not a general guarantee that multi-agent coding improves performance.
+
+## Evaluation and quality loops
+
+Anthropic’s agent-evaluation article defines task, trial, grader, transcript/trace, outcome, evaluation harness, agent harness, and evaluation suite. It stresses that the evaluated system is the model **and** harness together, and that an agent’s final message is not enough to establish success: verify the resulting environment state. It recommends combining code-based graders, calibrated model graders, and human review, using multiple trials for stochastic behavior, and distinguishing capability evals from regression evals ([Demystifying evals for AI agents](https://www.anthropic.com/research/demystifying-evals-for-ai-agents)).
+
+The API documentation similarly recommends explicit, measurable success criteria; representative tasks and edge cases; and automated grading where possible ([develop tests](https://platform.claude.com/docs/en/test-and-evaluate/develop-tests)). For coding agents, this points toward isolated and repeatable repositories/environments, end-state checks and tests, transcript/tool-use diagnostics, and tracking latency, cost, and reliability—not only whether the final prose sounds correct.
+
+## Models and dated product changes
+
+The current [models overview](https://platform.claude.com/docs/en/models/overview) and [context-window reference](https://platform.claude.com/docs/en/build-with-claude/context-windows) are the sources to use for model selection and supported limits. At this snapshot, those pages list Opus 5.5, Sonnet 5.5, Haiku 5.5, and Fable 5.2 among the current models; the overview positions them differently by reasoning/latency and recommends evaluating the workload rather than assuming a single model is best. These identifiers and properties are time-sensitive.
+
+The [Claude Platform release notes](https://platform.claude.com/docs/en/release-notes/overview) are dated and newest-first. In this snapshot they record self-hosted Claude Managed Agents launching on Nov. 12, 2026, and Fable 5.2/Mythos 5.2 on Nov. 9; the release notes give the availability and migration details. The [Claude Code changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) is a separate moving source; its top entry when accessed was `2.1.327`. Both should be checked again before relying on exact API headers, beta status, model IDs, permissions defaults, or CLI behavior.
+
+## Source handling notes
+
+- The synthesis uses primary-source links and paraphrases; it does not reproduce source prose wholesale.
+- Product docs describe current documented behavior; dated research/news posts describe what was announced or observed at their publication/update time.
+- “Read” in the inventory means the page was opened and its available content reviewed. A page truncated by the fetch limit is marked `read_partial`; search-result snippets and index entries do not count as page reads.
+- The source inventory records all sitemap URLs (including non-English pages) and the indexes needed to reproduce discovery. Most pages remain `indexed_only`; see the coverage report before treating this snapshot as exhaustive.
