@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "aa0f2bad76590c10f961b0b84c0eabddd85ef92e48af0e945e7fb4b4304eba42",
+  "scanRevision": 2,
+  "path": "skills/claude-api/SKILL.md",
+  "revision": 1,
+  "decision": "reference-only",
+  "reason": "The entrypoint has an inspected Apache-2.0 license. Linked support and external terms remain incompletely reviewed and the guidance is specific to a different API runtime.",
+  "source": {
+    "repo": "anthropics/skills",
+    "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba"
+  },
+  "scanSha256": "48726d6bf7dbf489ecec304d5d6791b58bdf3b78e94628886473df23b7704703",
+  "sourceSha256": "40537cca17c4aa86e4ce83ced39efcbfb1204905e3cf4c4ff98f2eab011e4b7f",
+  "license": {
+    "status": "permissive",
+    "expression": "Apache-2.0",
+    "attribution": "Include the applicable skill LICENSE.txt and preserve copyright/attribution notices; mark modified files and carry forward applicable notices.",
+    "evidence": [
+      "skills/claude-api/LICENSE.txt"
+    ]
+  }
+}
