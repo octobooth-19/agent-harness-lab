@@ -9765,11 +9765,14 @@
     "published_date": "2026-02-02",
     "updated_date": "2026-04-21",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
-      "coding agents"
+      "agentic coding",
+      "multi-step work",
+      "architecture-aware tasks",
+      "review"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Blog category REST index (GitHub Copilot category, paginated)"
   },
   {
@@ -10077,13 +10080,14 @@
     "published_date": "2026-01-26",
     "updated_date": "2026-01-29",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
-      "coding agents",
-      "CLI",
-      "orchestration and automation"
+      "Copilot CLI",
+      "terminal agents",
+      "tool access",
+      "dated product overview"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Blog category REST index (GitHub Copilot category, paginated)"
   },
   {
@@ -10312,11 +10316,15 @@
     "published_date": "2026-02-26",
     "updated_date": "2026-02-26",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
-      "coding agents"
+      "coding agent",
+      "model selection",
+      "self-review",
+      "security scanning",
+      "CLI handoff"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Blog category REST index (GitHub Copilot category, paginated)"
   },
   {
@@ -10483,12 +10491,16 @@
     "published_date": "2026-01-22",
     "updated_date": "2026-01-23",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
-      "coding agents",
-      "SDK and integration"
+      "Copilot SDK",
+      "agent loop",
+      "model routing",
+      "tools",
+      "MCP",
+      "technical preview"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Blog category REST index (GitHub Copilot category, paginated)"
   },
   {

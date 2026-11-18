@@ -7595,7 +7595,7 @@ https://www.anthropic.com/research/designing-efficient-quantum-circuits,,anthrop
 https://www.anthropic.com/research/desktop-extensions,,anthropic_research,2026-10-13,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/diff-tool,,anthropic_research,2026-10-09,sitemap_lastmod,2026-11-18,indexed_only,tools,
 https://www.anthropic.com/research/discovering-cryptographic-weaknesses,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,general,
-https://www.anthropic.com/research/discovering-language-model-behaviors-with-model-written-evaluations,,anthropic_research,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,evaluations;models,
+https://www.anthropic.com/research/discovering-language-model-behaviors-with-model-written-evaluations,,anthropic_research,2026-09-28,sitemap_lastmod,2026-11-18,read_partial,model-written evaluations;behavior discovery;human validation;historical research,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/discovering-vulnerabilities-with-claude,,anthropic_research,2026-10-30,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/disempowerment-patterns,,anthropic_research,2026-10-18,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/distributed-representations-composition-superposition,,anthropic_research,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,general,
@@ -7620,7 +7620,7 @@ https://www.anthropic.com/research/equipping-agents-for-the-real-world-with-agen
 https://www.anthropic.com/research/estimating-productivity-gains,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/eval-awareness-browsecomp,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,read_partial,evaluations,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/evaluating-ai-systems,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,read_partial,evaluation;benchmark methodology;measurement,knowledge/anthropic/synthesis.md
-https://www.anthropic.com/research/evaluating-and-mitigating-discrimination-in-language-model-decisions,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,evaluations;models,
+https://www.anthropic.com/research/evaluating-and-mitigating-discrimination-in-language-model-decisions,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,read_partial,fairness evaluation;demographic variation;historical research;high-stakes decisions,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench,,anthropic_research,2026-10-09,sitemap_lastmod,2026-11-18,indexed_only,evaluations,
 https://www.anthropic.com/research/evaluating-feature-steering,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,evaluations,
 https://www.anthropic.com/research/expectations-for-the-future,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,general,
@@ -7663,7 +7663,7 @@ https://www.anthropic.com/research/mapping-mind-language-model,,anthropic_resear
 https://www.anthropic.com/research/measuring-agent-autonomy,Measuring agent autonomy,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,read,agents,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/measuring-faithfulness-in-chain-of-thought-reasoning,,anthropic_research,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/measuring-model-persuasiveness,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,models,
-https://www.anthropic.com/research/measuring-progress-on-scalable-oversight-for-large-language-models,,anthropic_research,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,models,
+https://www.anthropic.com/research/measuring-progress-on-scalable-oversight-for-large-language-models,,anthropic_research,2026-09-28,sitemap_lastmod,2026-11-18,read_partial,scalable oversight;evaluation design;human-AI collaboration;historical research,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/multi-agent-research-system,How we built our multi-agent research system,anthropic_research,2026-10-09,sitemap_lastmod,2026-11-18,read_partial,agents;orchestration,synthesis.md
 https://www.anthropic.com/research/multiagent-systems,Multi-agent systems,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,read,agents,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/mythos-preview,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,general,
@@ -7706,7 +7706,7 @@ https://www.anthropic.com/research/small-samples-poison,,anthropic_research,2026
 https://www.anthropic.com/research/smart-contracts,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/softmax-linear-units,,anthropic_research,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/specific-versus-general-principles-for-constitutional-ai,,anthropic_research,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,general,
-https://www.anthropic.com/research/statistical-approach-to-model-evals,,anthropic_research,2026-10-13,sitemap_lastmod,2026-11-18,indexed_only,evaluations;models,
+https://www.anthropic.com/research/statistical-approach-to-model-evals,,anthropic_research,2026-10-13,sitemap_lastmod,2026-11-18,read_partial,evaluation methodology;sampling uncertainty;confidence;benchmark interpretation,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/strategic-warning-for-ai-risk-progress-and-insights-from-our-frontier-red-team,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,orchestration,
 https://www.anthropic.com/research/studying-large-language-model-generalization-with-influence-functions,,anthropic_research,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,models,
 https://www.anthropic.com/research/superposition-memorization-and-double-descent,,anthropic_research,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,general,
