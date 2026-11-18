@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "batch": "initial-top-seven",
+  "date": "2026-11-18T17:52:49.104Z",
+  "reservation": "866febbc-ee12-48fa-a3de-e848ee9b173c",
+  "sessionId": "42bb3e04-13b8-462c-8ebd-8549f1baca91",
+  "status": "partial",
+  "result": {
+    "revision": 1,
+    "sha256": "c8b94a1f3c20608d7db2e32d56b183be8c10e083267340b2a177c7348dbd31de",
+    "commit": "af5ac24a466ef2cd6d07e3a92b3618a826ac7712"
+  }
+}

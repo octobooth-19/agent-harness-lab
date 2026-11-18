@@ -1,0 +1,2327 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "repo": "anomalyco/opencode",
+    "commit": "ae88eb6a7a239d1220612a6331afc3b00487638b"
+  },
+  "revision": 1,
+  "scope": "Complete deep review of the pinned repository’s root instructions/license, all project-local OpenCode agents, commands, skills, tool and TUI configuration, the linked operator documentation for agents/commands/skills/tools/MCP, and selected core configuration, skill, instruction, command, tool, and MCP loader/context files. Adjacent repository-specific support paths and unrelated customization files are indexed only.",
+  "coverage": {
+    "tree": "complete",
+    "state": "complete",
+    "limits": [
+      "The recursive pinned tree contained 12,658 entries and was not truncated; general provider/business implementation and most tests were indexed only.",
+      "No active MCP server was configured. No project-local evaluation suite or OpenCode hook definition was found; the repo Git pre-push hook and core hook/context/memory implementation were indexed but not behavior-reviewed.",
+      "The custom GitHub PR tool was inspected but is disabled in project config; its registration/discovery path was not confirmed, so it is recorded as an inactive, unknown-compatibility example rather than an adoptable component.",
+      "Source-tree review did not execute, clone, install, or enable any source content."
+    ],
+    "next": []
+  },
+  "files": [
+    {
+      "path": ".opencode/agent/translator.md",
+      "status": "inspected",
+      "sha256": "43d46e1984c6aaf52068b4d1279bfc4d2689b04109a3b41afc923b6bb2f413d2"
+    },
+    {
+      "path": ".opencode/command/ai-deps.md",
+      "status": "inspected",
+      "sha256": "bfa6b27ae7d46a8a307c2b1251bf2f521775423687397d46ed7f47ba7571951f"
+    },
+    {
+      "path": ".opencode/command/commit.md",
+      "status": "inspected",
+      "sha256": "ad6f47aa5b38b2f50e7f0564ecdda1b14fbf1c4f884e35eda83d916159713aa1"
+    },
+    {
+      "path": ".opencode/command/issues.md",
+      "status": "inspected",
+      "sha256": "cc8fd1121ba237c0c76f45ec91913c91c26b1e46a52faeed40e4ca58a0718f43"
+    },
+    {
+      "path": ".opencode/command/learn.md",
+      "status": "inspected",
+      "sha256": "891675a8519c637290b675f6671c451e30e14ac3a50e6759bd513c414e50cd22"
+    },
+    {
+      "path": ".opencode/command/rmslop.md",
+      "status": "inspected",
+      "sha256": "5fd9332ca2f88d6f1ec90232f78cdd93978ba0841df4a377eb2827792c271c8b"
+    },
+    {
+      "path": ".opencode/command/spellcheck.md",
+      "status": "inspected",
+      "sha256": "680b0616829f8710065c23cb089b042ef51691bfdb664028f718dfeff783a372"
+    },
+    {
+      "path": ".opencode/command/translate.md",
+      "status": "inspected",
+      "sha256": "88cc12811fb4ae7ec8a69b7252e681d0367bbed3346e9b437fb66cb85a8277f2"
+    },
+    {
+      "path": ".opencode/opencode.jsonc",
+      "status": "inspected",
+      "sha256": "47f6172561896739c0271c1d3c5b7e5f0ceed7c80d6f43e0645b69a30964a781"
+    },
+    {
+      "path": ".opencode/skills/app-e2e-tests/SKILL.md",
+      "status": "inspected",
+      "sha256": "6320c6a02b31b0aabb0a154c77c175390bc784584bc3a9074a3dfd7eec97881d"
+    },
+    {
+      "path": ".opencode/skills/component-tests/SKILL.md",
+      "status": "inspected",
+      "sha256": "5a46e71c7cc5ead8647dec9ad17b85a2c6adb2862032da37ca7431088f7fa254"
+    },
+    {
+      "path": ".opencode/skills/effect/SKILL.md",
+      "status": "inspected",
+      "sha256": "02ea7104fa70f67a00161610e1ce62e43bfaa7f8ec5e2af489a46ae617399cf7"
+    },
+    {
+      "path": ".opencode/skills/opencode-dev/SKILL.md",
+      "status": "inspected",
+      "sha256": "06f76585cbfb37ab21090f0d2fdeb0fd4c0b9acdc101c4b7e8e9f4a2d7a297e4"
+    },
+    {
+      "path": ".opencode/skills/rtl-aware-development/SKILL.md",
+      "status": "inspected",
+      "sha256": "456d9a1c7fdb120b9256a6c3bc81b49defea84ca87ab3b395ddc4b870d740cea"
+    },
+    {
+      "path": ".opencode/skills/sample-skill/SKILL.md",
+      "status": "inspected",
+      "sha256": "3b7caeedd3528987e35e030314400f4fa536ec061936d7434615656ae5e7248a"
+    },
+    {
+      "path": ".opencode/skills/tui-tests/SKILL.md",
+      "status": "inspected",
+      "sha256": "db566da22798300d5e357f661b4abc63883a6a3627d4678058ee502d740924fc"
+    },
+    {
+      "path": ".opencode/skills/unit-tests/SKILL.md",
+      "status": "inspected",
+      "sha256": "31fb5d19b3bc0268de9e445db4a0b75d746b1d9598ccfe46edbda3b2da797ee5"
+    },
+    {
+      "path": ".opencode/tool/github-pr-search.ts",
+      "status": "inspected",
+      "sha256": "52ca2867e17054658eabc7af0bea569d9b7d9811004ac18c8b3afedc43982cac"
+    },
+    {
+      "path": ".opencode/tui.json",
+      "status": "inspected",
+      "sha256": "6c10ea89aa68b58889724b72d384e9a430f8efd99ee85212ea83d85b8ad6d912"
+    },
+    {
+      "path": "AGENTS.md",
+      "status": "inspected",
+      "sha256": "3f84f74aac46dde883359d9363b5c050a2e91888ec30cfd6a54cf17134aeb579"
+    },
+    {
+      "path": "LICENSE",
+      "status": "inspected",
+      "sha256": "625f0f619133f89bbbb2abe37369613dfa1885eba1e50d02170deb62bb42cb6b"
+    },
+    {
+      "path": "package.json",
+      "status": "inspected",
+      "sha256": "95e5573ec8ace3a12cfb64f6a0d1ade92defef74ef41482cf2da4fa3bed7452a"
+    },
+    {
+      "path": "packages/core/package.json",
+      "status": "inspected",
+      "sha256": "08cf2c1cbc21f4d8a06f078642b3f417cb64809b9e37afcc9aebb37426a445e3"
+    },
+    {
+      "path": "packages/core/src/config/discovery.ts",
+      "status": "inspected",
+      "sha256": "19c392bfe3ef7e15301071cc5210ee849aabf7bd2cdda29d14e27b7e6bad297b"
+    },
+    {
+      "path": "packages/core/src/config/plugin/agent.ts",
+      "status": "inspected",
+      "sha256": "4b153a6f18c81ec8c6899ffc032b88f193c558be235b94a68e836e4fd2b67edd"
+    },
+    {
+      "path": "packages/core/src/config/plugin/command.ts",
+      "status": "inspected",
+      "sha256": "733fe531af844e9c5e2072b85f08d4cf762dd8e160e04a7866d16b449407eeee"
+    },
+    {
+      "path": "packages/core/src/config/plugin/instruction.ts",
+      "status": "inspected",
+      "sha256": "497b9f266c4f95ee44b6b879b10f3b653f427c3ebb9d53908899f08c68e417ff"
+    },
+    {
+      "path": "packages/core/src/config/plugin/mcp.ts",
+      "status": "inspected",
+      "sha256": "b582fbbb99e98d9e5fd4df48598da12ca128f57021e038c32bf3dcc16a561330"
+    },
+    {
+      "path": "packages/core/src/mcp/index.ts",
+      "status": "inspected",
+      "sha256": "263a70c9bc1d374a83830fca79601c7016dac2090909ddbca87a84ba17fd4ab2"
+    },
+    {
+      "path": "packages/core/src/mcp/instructions.ts",
+      "status": "inspected",
+      "sha256": "bc142009b96dd15450414708e06273eacba9da9c2505d715eb445dbc806de3a6"
+    },
+    {
+      "path": "packages/core/src/plugin/agent.ts",
+      "status": "inspected",
+      "sha256": "7581c231cf4d9436a348390daa9022b029ad3b5ab231a9c513a704fbd51c253a"
+    },
+    {
+      "path": "packages/core/src/plugin/command.ts",
+      "status": "inspected",
+      "sha256": "a8efe5fb2fd28ec14d3286ed72beda982adad8ca76dddf26278475abf5ad3aa2"
+    },
+    {
+      "path": "packages/core/src/session/runner/prompt/system.txt",
+      "status": "inspected",
+      "sha256": "ab9749036fe5a6b96c74c302900f67a9b249589b4fc4b8a8d18f3c6879dc506d"
+    },
+    {
+      "path": "packages/core/src/skill/discovery.ts",
+      "status": "inspected",
+      "sha256": "af2ab2812dcefa131d3d6986d17a3e302892792d1d9a979578eaf72f31e1d115"
+    },
+    {
+      "path": "packages/core/src/skill/instructions.ts",
+      "status": "inspected",
+      "sha256": "4d5dadfec1b830fbc0e3142647de8efb0d203b68d24bf88f144341d886117e6c"
+    },
+    {
+      "path": "packages/core/src/tool/AGENTS.md",
+      "status": "inspected",
+      "sha256": "cad4ab15e524d2b6a2a1e2886136064ef3cc1a91541bfa64247bc7b9cf7db027"
+    },
+    {
+      "path": "packages/core/src/tool/mcp.ts",
+      "status": "inspected",
+      "sha256": "eead09dddf29082187cc293e63510b578b568d0cc489fd5a6f366cac51e3ca34"
+    },
+    {
+      "path": "packages/core/src/agent.ts",
+      "status": "inspected",
+      "sha256": "cae29f26087f32183b9a7bc62b7738daf8f48df36703ec60064c3bd7a0968024"
+    },
+    {
+      "path": "packages/core/src/skill.ts",
+      "status": "inspected",
+      "sha256": "5c39b93c2d92a5cff0c58062c01c3a6406b9337084d500c6bb76e27a8b621bfc"
+    },
+    {
+      "path": "packages/core/src/config.ts",
+      "status": "inspected",
+      "sha256": "617d0012b6a8defc71c29805c53f8b92354100fa6cf83eb26003f1b08bccc70d"
+    },
+    {
+      "path": "packages/core/src/config/plugin/skill.ts",
+      "status": "inspected",
+      "sha256": "114c3ac6be02289b6736159a5e80a9bb3abff39eca763b3f47106bb651c27023"
+    },
+    {
+      "path": "packages/core/src/config/plugin/skill-file.ts",
+      "status": "inspected",
+      "sha256": "21046ab5318eab36f9c35dbe56fa4391db78cd6c385d25d424cc0411d168a0e1"
+    },
+    {
+      "path": "packages/core/src/config/plugin/skill-scan.ts",
+      "status": "inspected",
+      "sha256": "5b995867c4082c55f0319623273ff1ec9d4b30cdd48872ff3288e280ea9b4aae"
+    },
+    {
+      "path": "packages/core/src/config/plugin/source.ts",
+      "status": "inspected",
+      "sha256": "d0babd1da99593f83d121f91efc8e177641e72ca154ab5eab0e8ef0c3c85059f"
+    },
+    {
+      "path": "packages/core/src/instruction-discovery.ts",
+      "status": "inspected",
+      "sha256": "ada6248033059c99ced484095661de9ad5020a2bf4937aa9437315702dd8c230"
+    },
+    {
+      "path": "packages/core/src/instructions/index.ts",
+      "status": "inspected",
+      "sha256": "5a378775cd447fbafd2f6746c8ab048877c7d099ac53ffb7b8400b078d457cba"
+    },
+    {
+      "path": "packages/core/src/plugin/skill.ts",
+      "status": "inspected",
+      "sha256": "99341d2effb1142e6997c4101574b8a27fb519606359c5d2a1c56f05fd0e1af7"
+    },
+    {
+      "path": "packages/core/src/plugin/module.ts",
+      "status": "inspected",
+      "sha256": "b86b6f84b06ba89796618ee36db1bcb7364200107fa80e0f31296645804a1bb2"
+    },
+    {
+      "path": "packages/core/src/plugin.ts",
+      "status": "inspected",
+      "sha256": "4a4608df439bfd3fd1f548b283282e3fc2994ffe1c09c54aaadde61208cb0b08"
+    },
+    {
+      "path": "packages/core/src/tool.ts",
+      "status": "inspected",
+      "sha256": "43964e93ed0c73f57de7fbe265ecb6f56da3d6536c8be995f2ed785565c7c1ba"
+    },
+    {
+      "path": "packages/core/src/tool/plugin/skill.ts",
+      "status": "inspected",
+      "sha256": "a6d7ca2f1a57b9d6be02586f4ffa6ff23678a33b2f891065a04d7da2a004ec35"
+    },
+    {
+      "path": "packages/plugin/package.json",
+      "status": "inspected",
+      "sha256": "8a262d04de52d82c19f3f006635b1a157640d2db5cfcd6a97c51c9caee7154d5"
+    },
+    {
+      "path": "packages/plugin/src/effect/tool.ts",
+      "status": "inspected",
+      "sha256": "71f46b38d2c48c27e0eafaab34c9f9ca03c95b007ec340d49f27a25faaf20c6d"
+    },
+    {
+      "path": "packages/plugin/src/source.bun.ts",
+      "status": "inspected",
+      "sha256": "9505b6522b623d233568f8813dca6f64f62d4e2b24f5fb3cd25f12f06c1db887"
+    },
+    {
+      "path": "packages/plugin/src/source.node.ts",
+      "status": "inspected",
+      "sha256": "9659fd02613073927701e0481ecdcc3c85d332481f06911442b574f8f970abab"
+    },
+    {
+      "path": "packages/plugin/src/source.ts",
+      "status": "inspected",
+      "sha256": "e66e051e49e3144f3b13979b9651c88280b30a8bc59c365aca6dac72327ec198"
+    },
+    {
+      "path": "services/site/src/docs/content/tools.mdx",
+      "status": "inspected",
+      "sha256": "68aa83692fa1a9c5a677662a2d2eee39f08a7441fd689a0dbecc470d51fe23af"
+    },
+    {
+      "path": "services/site/src/docs/content/agents.mdx",
+      "status": "inspected",
+      "sha256": "e147a9361f85bc8f7a311d03257bc167a61d6ba320c38d549f4014a306ceb2e5"
+    },
+    {
+      "path": "services/site/src/docs/content/commands.mdx",
+      "status": "inspected",
+      "sha256": "737c28df6bfcf787518611c0d2d1d9ce6c862fb37b9f5570e05568d556b17fa4"
+    },
+    {
+      "path": "services/site/src/docs/content/skills.mdx",
+      "status": "inspected",
+      "sha256": "9f63f6e8f19906dffd77ee338d45531767a42a6c64a538bd2898b48047622878"
+    },
+    {
+      "path": "services/site/src/docs/content/mcp-servers.mdx",
+      "status": "inspected",
+      "sha256": "1b66e4c806dcece8145d65a0e1b776117fe6fe22cab5723104ef9db716eccdde"
+    },
+    {
+      "path": ".opencode/.gitignore",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".opencode/env.d.ts",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".opencode/glossary/README.md",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".opencode/glossary/ar.md",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".opencode/glossary/br.md",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".opencode/glossary/bs.md",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".opencode/glossary/da.md",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".opencode/glossary/de.md",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".opencode/glossary/es.md",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".opencode/glossary/fr.md",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".opencode/glossary/he.md",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".opencode/glossary/ja.md",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".opencode/glossary/ko.md",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".opencode/glossary/no.md",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".opencode/glossary/pl.md",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".opencode/glossary/ru.md",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".opencode/glossary/th.md",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".opencode/glossary/tr.md",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".opencode/glossary/zh-cn.md",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".opencode/glossary/zh-tw.md",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".opencode/plugins/smoke-theme.json",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".opencode/themes/.gitignore",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".opencode/themes/mytheme.json",
+      "status": "indexed",
+      "reason": "Present in the complete pinned tree; not deep-inspected because it is not an active harness definition or required loader input in this scan."
+    },
+    {
+      "path": ".github/workflows/check-test.yml",
+      "status": "indexed",
+      "reason": "Linked or adjacent local support path indexed at the pinned tree; content was not deep-inspected."
+    },
+    {
+      "path": ".husky/pre-push",
+      "status": "indexed",
+      "reason": "Linked or adjacent local support path indexed at the pinned tree; content was not deep-inspected."
+    },
+    {
+      "path": "packages/app/AGENTS.md",
+      "status": "indexed",
+      "reason": "Linked or adjacent local support path indexed at the pinned tree; content was not deep-inspected."
+    },
+    {
+      "path": "packages/app/e2e/AGENTS.md",
+      "status": "indexed",
+      "reason": "Linked or adjacent local support path indexed at the pinned tree; content was not deep-inspected."
+    },
+    {
+      "path": "packages/app/e2e/utils/mock-server.ts",
+      "status": "indexed",
+      "reason": "Linked or adjacent local support path indexed at the pinned tree; content was not deep-inspected."
+    },
+    {
+      "path": "packages/stories/playwright/README.md",
+      "status": "indexed",
+      "reason": "Linked or adjacent local support path indexed at the pinned tree; content was not deep-inspected."
+    },
+    {
+      "path": "packages/stories/playwright/config.ts",
+      "status": "indexed",
+      "reason": "Linked or adjacent local support path indexed at the pinned tree; content was not deep-inspected."
+    },
+    {
+      "path": "packages/stories/vite.config.ts",
+      "status": "indexed",
+      "reason": "Linked or adjacent local support path indexed at the pinned tree; content was not deep-inspected."
+    },
+    {
+      "path": "packages/core/test/lib/effect.ts",
+      "status": "indexed",
+      "reason": "Linked or adjacent local support path indexed at the pinned tree; content was not deep-inspected."
+    },
+    {
+      "path": "packages/core/test/lib/clock.ts",
+      "status": "indexed",
+      "reason": "Linked or adjacent local support path indexed at the pinned tree; content was not deep-inspected."
+    },
+    {
+      "path": "packages/tui/test/fixture/app.ts",
+      "status": "indexed",
+      "reason": "Linked or adjacent local support path indexed at the pinned tree; content was not deep-inspected."
+    },
+    {
+      "path": "packages/cli/src/index.ts",
+      "status": "indexed",
+      "reason": "Linked or adjacent local support path indexed at the pinned tree; content was not deep-inspected."
+    },
+    {
+      "path": "packages/cli/src/commands/handlers/serve.ts",
+      "status": "indexed",
+      "reason": "Linked or adjacent local support path indexed at the pinned tree; content was not deep-inspected."
+    },
+    {
+      "path": "packages/cli/src/heap.ts",
+      "status": "indexed",
+      "reason": "Linked or adjacent local support path indexed at the pinned tree; content was not deep-inspected."
+    },
+    {
+      "path": "packages/util/src/heap-snapshot.ts",
+      "status": "indexed",
+      "reason": "Linked or adjacent local support path indexed at the pinned tree; content was not deep-inspected."
+    },
+    {
+      "path": "packages/core/src/session/context.ts",
+      "status": "indexed",
+      "reason": "Linked or adjacent local support path indexed at the pinned tree; content was not deep-inspected."
+    },
+    {
+      "path": "packages/core/src/environment/memory.ts",
+      "status": "indexed",
+      "reason": "Linked or adjacent local support path indexed at the pinned tree; content was not deep-inspected."
+    },
+    {
+      "path": "packages/core/src/plugin/hooks.ts",
+      "status": "indexed",
+      "reason": "Linked or adjacent local support path indexed at the pinned tree; content was not deep-inspected."
+    },
+    {
+      "path": "packages/core/test/fixture/tmpdir.ts",
+      "status": "indexed",
+      "reason": "Linked or adjacent local support path indexed at the pinned tree; content was not deep-inspected."
+    },
+    {
+      "path": "packages/core/test/fixture/git.ts",
+      "status": "indexed",
+      "reason": "Linked or adjacent local support path indexed at the pinned tree; content was not deep-inspected."
+    }
+  ],
+  "candidates": [
+    {
+      "path": ".opencode/agent/translator.md",
+      "kind": "agent",
+      "purpose": "Translator agent applies project glossary and localization conventions to translation work.",
+      "requirements": [
+        "OpenCode agent schema",
+        "Project-local glossary; only the index and one glossary example were inspected."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "OpenCode-specific file format, paths, and runtime conventions require adaptation before use in another harness; nothing was enabled."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": ".opencode/agent/translator.md",
+          "note": "Translator agent applies project glossary and localization conventions to translation work."
+        }
+      ],
+      "links": [
+        {
+          "path": ".opencode/glossary/README.md",
+          "reason": "Local glossary usage guide referenced by the agent."
+        },
+        {
+          "path": ".opencode/glossary/zh-cn.md",
+          "reason": "Representative project glossary file; indexed, not reviewed for adoption."
+        }
+      ]
+    },
+    {
+      "path": ".opencode/command/ai-deps.md",
+      "kind": "prompt",
+      "purpose": "Prompt for analyzing dependency/API usage in the OpenCode workspace.",
+      "requirements": [
+        "OpenCode command parser and project package layout"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "OpenCode-specific file format, paths, and runtime conventions require adaptation before use in another harness; nothing was enabled."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": ".opencode/command/ai-deps.md",
+          "note": "Prompt for analyzing dependency/API usage in the OpenCode workspace."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": ".opencode/command/commit.md",
+      "kind": "prompt",
+      "purpose": "Prompt for repository-aware commit preparation.",
+      "requirements": [
+        "OpenCode command parser; repository workflow"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "OpenCode-specific file format, paths, and runtime conventions require adaptation before use in another harness; nothing was enabled."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": ".opencode/command/commit.md",
+          "note": "Prompt for repository-aware commit preparation."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": ".opencode/command/issues.md",
+      "kind": "prompt",
+      "purpose": "Prompt for GitHub issue-oriented repository work.",
+      "requirements": [
+        "GitHub CLI/authentication and OpenCode command behavior"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "OpenCode-specific file format, paths, and runtime conventions require adaptation before use in another harness; nothing was enabled."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": ".opencode/command/issues.md",
+          "note": "Prompt for GitHub issue-oriented repository work."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": ".opencode/command/learn.md",
+      "kind": "prompt",
+      "purpose": "Prompt for guided codebase learning and retention.",
+      "requirements": [
+        "OpenCode command parser; source repository conventions"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "OpenCode-specific file format, paths, and runtime conventions require adaptation before use in another harness; nothing was enabled."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": ".opencode/command/learn.md",
+          "note": "Prompt for guided codebase learning and retention."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": ".opencode/command/rmslop.md",
+      "kind": "prompt",
+      "purpose": "Prompt for reviewing and tightening an implementation.",
+      "requirements": [
+        "OpenCode command parser and repository context"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "OpenCode-specific file format, paths, and runtime conventions require adaptation before use in another harness; nothing was enabled."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": ".opencode/command/rmslop.md",
+          "note": "Prompt for reviewing and tightening an implementation."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": ".opencode/command/spellcheck.md",
+      "kind": "prompt",
+      "purpose": "Prompt for spelling review of repository changes.",
+      "requirements": [
+        "OpenCode command parser; diff access"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "OpenCode-specific file format, paths, and runtime conventions require adaptation before use in another harness; nothing was enabled."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": ".opencode/command/spellcheck.md",
+          "note": "Prompt for spelling review of repository changes."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": ".opencode/command/translate.md",
+      "kind": "prompt",
+      "purpose": "Prompt for project localization using the glossary.",
+      "requirements": [
+        "OpenCode command parser; local glossary files"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "OpenCode-specific file format, paths, and runtime conventions require adaptation before use in another harness; nothing was enabled."
+      },
+      "overlaps": [
+        ".opencode/agent/translator.md"
+      ],
+      "evidence": [
+        {
+          "path": ".opencode/command/translate.md",
+          "note": "Prompt for project localization using the glossary."
+        }
+      ],
+      "links": [
+        {
+          "path": ".opencode/glossary/README.md",
+          "reason": "Local terminology support referenced by the translation workflow."
+        }
+      ]
+    },
+    {
+      "path": ".opencode/opencode.jsonc",
+      "kind": "tool-config",
+      "purpose": "Project configuration shows an empty MCP/provider/permission setup and explicitly disables the local GitHub PR search tool.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unknown",
+        "notes": "No active MCP server is configured; the custom tool is disabled, and its auto-discovery path was not independently confirmed."
+      },
+      "overlaps": [
+        ".opencode/tool/github-pr-search.ts"
+      ],
+      "evidence": [
+        {
+          "path": ".opencode/opencode.jsonc",
+          "note": "Project configuration shows an empty MCP/provider/permission setup and explicitly disables the local GitHub PR search tool."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": ".opencode/skills/app-e2e-tests/SKILL.md",
+      "kind": "skill",
+      "purpose": "Repository-specific end-to-end testing workflow with app launch, mocked services, and Playwright guidance.",
+      "requirements": [
+        "Bun",
+        "Playwright",
+        "App-specific fixtures and test environment"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "OpenCode-specific file format, paths, and runtime conventions require adaptation before use in another harness; nothing was enabled."
+      },
+      "overlaps": [
+        ".opencode/skills/unit-tests/SKILL.md"
+      ],
+      "evidence": [
+        {
+          "path": ".opencode/skills/app-e2e-tests/SKILL.md",
+          "note": "Repository-specific end-to-end testing workflow with app launch, mocked services, and Playwright guidance."
+        }
+      ],
+      "links": [
+        {
+          "path": "packages/app/AGENTS.md",
+          "reason": "Local app testing context referenced by this skill."
+        },
+        {
+          "path": "packages/app/e2e/AGENTS.md",
+          "reason": "Local E2E instructions referenced by this skill."
+        },
+        {
+          "path": "packages/app/e2e/utils/mock-server.ts",
+          "reason": "Mock-server support used by the E2E workflow."
+        },
+        {
+          "path": ".github/workflows/check-test.yml",
+          "reason": "CI test workflow context referenced by the skill."
+        }
+      ]
+    },
+    {
+      "path": ".opencode/skills/component-tests/SKILL.md",
+      "kind": "skill",
+      "purpose": "Component-testing workflow using the project Storybook/Playwright setup.",
+      "requirements": [
+        "Bun",
+        "Playwright",
+        "Storybook",
+        "React/UI project context"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "OpenCode-specific file format, paths, and runtime conventions require adaptation before use in another harness; nothing was enabled."
+      },
+      "overlaps": [
+        ".opencode/skills/app-e2e-tests/SKILL.md"
+      ],
+      "evidence": [
+        {
+          "path": ".opencode/skills/component-tests/SKILL.md",
+          "note": "Component-testing workflow using the project Storybook/Playwright setup."
+        }
+      ],
+      "links": [
+        {
+          "path": "packages/stories/playwright/README.md",
+          "reason": "Local Storybook test runner documentation."
+        },
+        {
+          "path": "packages/stories/playwright/config.ts",
+          "reason": "Local Playwright setup referenced by the skill."
+        },
+        {
+          "path": "packages/stories/vite.config.ts",
+          "reason": "Local story development configuration."
+        }
+      ]
+    },
+    {
+      "path": ".opencode/skills/effect/SKILL.md",
+      "kind": "skill",
+      "purpose": "Effect-specific coding and testing conventions for this repository.",
+      "requirements": [
+        "Effect TypeScript library",
+        "Repository-local references; the skill directs users to acquire an upstream reference repository if missing"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "OpenCode-specific file format, paths, and runtime conventions require adaptation before use in another harness; nothing was enabled."
+      },
+      "overlaps": [
+        ".opencode/skills/unit-tests/SKILL.md"
+      ],
+      "evidence": [
+        {
+          "path": ".opencode/skills/effect/SKILL.md",
+          "note": "Effect-specific coding and testing conventions for this repository."
+        }
+      ],
+      "links": [
+        {
+          "path": "packages/core/test/lib/effect.ts",
+          "reason": "Local Effect test helper referenced by this skill."
+        },
+        {
+          "path": "packages/core/test/lib/clock.ts",
+          "reason": "Local test clock helper referenced by this skill."
+        },
+        {
+          "url": "https://github.com/Effect-TS/effect",
+          "reason": "Upstream Effect source referenced by the skill; not fetched or executed."
+        }
+      ]
+    },
+    {
+      "path": ".opencode/skills/opencode-dev/SKILL.md",
+      "kind": "skill",
+      "purpose": "OpenCode repository development workflow and operational command guidance.",
+      "requirements": [
+        "Bun",
+        "OpenCode package scripts and server/runtime internals"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "OpenCode-specific file format, paths, and runtime conventions require adaptation before use in another harness; nothing was enabled."
+      },
+      "overlaps": [
+        ".opencode/skills/unit-tests/SKILL.md"
+      ],
+      "evidence": [
+        {
+          "path": ".opencode/skills/opencode-dev/SKILL.md",
+          "note": "OpenCode repository development workflow and operational command guidance."
+        }
+      ],
+      "links": [
+        {
+          "path": "packages/cli/src/index.ts",
+          "reason": "CLI entry point referenced by local development guidance."
+        },
+        {
+          "path": "packages/cli/src/commands/handlers/serve.ts",
+          "reason": "Server command implementation referenced by the skill."
+        },
+        {
+          "path": "packages/cli/src/heap.ts",
+          "reason": "CLI runtime utility referenced by the skill."
+        },
+        {
+          "path": "packages/util/src/heap-snapshot.ts",
+          "reason": "Supporting runtime utility referenced by the skill."
+        }
+      ]
+    },
+    {
+      "path": ".opencode/skills/rtl-aware-development/SKILL.md",
+      "kind": "skill",
+      "purpose": "Right-to-left UI development checklist with layout, directionality, and bidirectional text considerations.",
+      "requirements": [
+        "RTL-aware UI implementation",
+        "External accessibility and browser documentation"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "OpenCode-specific file format, paths, and runtime conventions require adaptation before use in another harness; nothing was enabled."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": ".opencode/skills/rtl-aware-development/SKILL.md",
+          "note": "Right-to-left UI development checklist with layout, directionality, and bidirectional text considerations."
+        }
+      ],
+      "links": [
+        {
+          "url": "https://www.w3.org/International/questions/qa-html-dir",
+          "reason": "W3C directionality reference listed by the skill."
+        },
+        {
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Logical_properties_and_values",
+          "reason": "CSS logical properties reference listed by the skill."
+        },
+        {
+          "url": "https://www.w3.org/International/articles/inline-bidi-markup/",
+          "reason": "W3C bidirectional text reference listed by the skill."
+        }
+      ]
+    },
+    {
+      "path": ".opencode/skills/sample-skill/SKILL.md",
+      "kind": "skill",
+      "purpose": "Minimal example of an OpenCode skill definition and its metadata.",
+      "requirements": [
+        "OpenCode skill frontmatter/runtime format"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "The structure is a useful format example, but OpenCode-specific metadata and discovery paths must be translated."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": ".opencode/skills/sample-skill/SKILL.md",
+          "note": "Minimal example of an OpenCode skill definition and its metadata."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": ".opencode/skills/tui-tests/SKILL.md",
+      "kind": "skill",
+      "purpose": "Terminal UI testing workflow using project TUI fixtures and snapshots.",
+      "requirements": [
+        "Bun",
+        "Terminal rendering/test fixtures"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "OpenCode-specific file format, paths, and runtime conventions require adaptation before use in another harness; nothing was enabled."
+      },
+      "overlaps": [
+        ".opencode/skills/unit-tests/SKILL.md"
+      ],
+      "evidence": [
+        {
+          "path": ".opencode/skills/tui-tests/SKILL.md",
+          "note": "Terminal UI testing workflow using project TUI fixtures and snapshots."
+        }
+      ],
+      "links": [
+        {
+          "path": "packages/tui/test/fixture/app.ts",
+          "reason": "TUI test fixture referenced by the skill."
+        }
+      ]
+    },
+    {
+      "path": ".opencode/skills/unit-tests/SKILL.md",
+      "kind": "skill",
+      "purpose": "Unit-test workflow with staged verification and repository-specific quality expectations.",
+      "requirements": [
+        "Bun",
+        "TypeScript/Vitest",
+        "Effect and repository test helpers"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "OpenCode-specific file format, paths, and runtime conventions require adaptation before use in another harness; nothing was enabled."
+      },
+      "overlaps": [
+        ".opencode/skills/effect/SKILL.md"
+      ],
+      "evidence": [
+        {
+          "path": ".opencode/skills/unit-tests/SKILL.md",
+          "note": "Unit-test workflow with staged verification and repository-specific quality expectations."
+        }
+      ],
+      "links": [
+        {
+          "path": "packages/core/test/lib/effect.ts",
+          "reason": "Local test helper referenced by the skill."
+        },
+        {
+          "path": "packages/core/test/lib/clock.ts",
+          "reason": "Local test helper referenced by the skill."
+        },
+        {
+          "path": ".github/workflows/check-test.yml",
+          "reason": "CI test configuration linked to local test conventions."
+        }
+      ]
+    },
+    {
+      "path": ".opencode/tool/github-pr-search.ts",
+      "kind": "tool-config",
+      "purpose": "Custom GitHub PR search tool implementation; it reads the GITHUB_TOKEN environment-variable name and calls the GitHub REST API, while project configuration disables it.",
+      "requirements": [
+        "OpenCode tool factory/runtime",
+        "GITHUB_TOKEN (name only)",
+        "GitHub REST API"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unknown",
+        "notes": "The code is a repository-specific example, but it is disabled and the source scan did not confirm its registration/discovery path."
+      },
+      "overlaps": [
+        ".opencode/opencode.jsonc"
+      ],
+      "evidence": [
+        {
+          "path": ".opencode/tool/github-pr-search.ts",
+          "note": "Custom GitHub PR search tool implementation; it reads the GITHUB_TOKEN environment-variable name and calls the GitHub REST API, while project configuration disables it."
+        },
+        {
+          "path": ".opencode/opencode.jsonc",
+          "note": "Project config disables this named tool."
+        }
+      ],
+      "links": [
+        {
+          "url": "https://api.github.com",
+          "reason": "GitHub REST API endpoint used by the implementation."
+        }
+      ]
+    },
+    {
+      "path": ".opencode/tui.json",
+      "kind": "support",
+      "purpose": "TUI-specific configuration; useful as a bounded runtime-specific settings example.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": ".opencode/tui.json",
+          "note": "TUI-specific configuration; useful as a bounded runtime-specific settings example."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "AGENTS.md",
+      "kind": "instructions",
+      "purpose": "Repository contributor instructions; useful as evidence for repository-specific task routing and local conventions.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "AGENTS.md",
+          "note": "Repository contributor instructions; useful as evidence for repository-specific task routing and local conventions."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "LICENSE",
+      "kind": "license",
+      "purpose": "Establishes the repository-wide MIT license and required notice preservation.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "LICENSE",
+          "note": "Establishes the repository-wide MIT license and required notice preservation."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "package.json",
+      "kind": "support",
+      "purpose": "Root workspace manifest identifies the project runtime and automation scripts relevant to its local instructions.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "package.json",
+          "note": "Root workspace manifest identifies the project runtime and automation scripts relevant to its local instructions."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/package.json",
+      "kind": "support",
+      "purpose": "Supporting implementation evidence for packages/core/package.json.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/package.json",
+          "note": "Supporting implementation evidence for packages/core/package.json."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/config/discovery.ts",
+      "kind": "support",
+      "purpose": "Evidence for configuration discovery and source precedence across local/global OpenCode configuration.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/config/discovery.ts",
+          "note": "Evidence for configuration discovery and source precedence across local/global OpenCode configuration."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/config/plugin/agent.ts",
+      "kind": "support",
+      "purpose": "Agent configuration parser and metadata mapping for OpenCode agent definitions.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/config/plugin/agent.ts",
+          "note": "Agent configuration parser and metadata mapping for OpenCode agent definitions."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/config/plugin/command.ts",
+      "kind": "support",
+      "purpose": "Command parser and frontmatter mapping for OpenCode command prompts.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/config/plugin/command.ts",
+          "note": "Command parser and frontmatter mapping for OpenCode command prompts."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/config/plugin/instruction.ts",
+      "kind": "instructions",
+      "purpose": "Instruction-source parsing and injection behavior for repository context.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/config/plugin/instruction.ts",
+          "note": "Instruction-source parsing and injection behavior for repository context."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/config/plugin/mcp.ts",
+      "kind": "mcp",
+      "purpose": "MCP server configuration schema and defaults.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/config/plugin/mcp.ts",
+          "note": "MCP server configuration schema and defaults."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/mcp/index.ts",
+      "kind": "mcp",
+      "purpose": "MCP connection and server lifecycle implementation evidence.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/mcp/index.ts",
+          "note": "MCP connection and server lifecycle implementation evidence."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/mcp/instructions.ts",
+      "kind": "mcp",
+      "purpose": "MCP server instructions are incorporated into model context under defined conditions.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/mcp/instructions.ts",
+          "note": "MCP server instructions are incorporated into model context under defined conditions."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/plugin/agent.ts",
+      "kind": "support",
+      "purpose": "Agent file discovery and assembly implementation evidence.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/plugin/agent.ts",
+          "note": "Agent file discovery and assembly implementation evidence."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/plugin/command.ts",
+      "kind": "support",
+      "purpose": "Command discovery, interpolation, and prompt assembly implementation evidence.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/plugin/command.ts",
+          "note": "Command discovery, interpolation, and prompt assembly implementation evidence."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/session/runner/prompt/system.txt",
+      "kind": "context",
+      "purpose": "System prompt structure and context assembly evidence for the OpenCode runtime.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/session/runner/prompt/system.txt",
+          "note": "System prompt structure and context assembly evidence for the OpenCode runtime."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/skill/discovery.ts",
+      "kind": "support",
+      "purpose": "Skill discovery constraints and filesystem lookup behavior.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/skill/discovery.ts",
+          "note": "Skill discovery constraints and filesystem lookup behavior."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/skill/instructions.ts",
+      "kind": "instructions",
+      "purpose": "Skill activation instructions and supporting-file exposure behavior.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/skill/instructions.ts",
+          "note": "Skill activation instructions and supporting-file exposure behavior."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/tool/AGENTS.md",
+      "kind": "support",
+      "purpose": "Supporting implementation evidence for packages/core/src/tool/AGENTS.md.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/tool/AGENTS.md",
+          "note": "Supporting implementation evidence for packages/core/src/tool/AGENTS.md."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/tool/mcp.ts",
+      "kind": "mcp",
+      "purpose": "MCP tool adapter and tool execution context behavior.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/tool/mcp.ts",
+          "note": "MCP tool adapter and tool execution context behavior."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/agent.ts",
+      "kind": "support",
+      "purpose": "Core agent behavior supporting the repository agent definitions.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/agent.ts",
+          "note": "Core agent behavior supporting the repository agent definitions."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/skill.ts",
+      "kind": "support",
+      "purpose": "Core skill metadata and loading model.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/skill.ts",
+          "note": "Core skill metadata and loading model."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/config.ts",
+      "kind": "support",
+      "purpose": "Configuration aggregation and runtime defaults supporting local customization behavior.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/config.ts",
+          "note": "Configuration aggregation and runtime defaults supporting local customization behavior."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/config/plugin/skill.ts",
+      "kind": "support",
+      "purpose": "Skill configuration composition and source selection.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/config/plugin/skill.ts",
+          "note": "Skill configuration composition and source selection."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/config/plugin/skill-file.ts",
+      "kind": "support",
+      "purpose": "Skill file parsing and metadata schema evidence.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/config/plugin/skill-file.ts",
+          "note": "Skill file parsing and metadata schema evidence."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/config/plugin/skill-scan.ts",
+      "kind": "support",
+      "purpose": "Skill directory scanning and traversal constraints.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/config/plugin/skill-scan.ts",
+          "note": "Skill directory scanning and traversal constraints."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/config/plugin/source.ts",
+      "kind": "support",
+      "purpose": "Plugin source resolution and loading support.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/config/plugin/source.ts",
+          "note": "Plugin source resolution and loading support."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/instruction-discovery.ts",
+      "kind": "support",
+      "purpose": "Instruction discovery and path-resolution behavior.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/instruction-discovery.ts",
+          "note": "Instruction discovery and path-resolution behavior."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/instructions/index.ts",
+      "kind": "instructions",
+      "purpose": "Instruction/context text assembly implementation.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/instructions/index.ts",
+          "note": "Instruction/context text assembly implementation."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/plugin/skill.ts",
+      "kind": "support",
+      "purpose": "Runtime skill tool behavior and support-file access.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/plugin/skill.ts",
+          "note": "Runtime skill tool behavior and support-file access."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/plugin/module.ts",
+      "kind": "support",
+      "purpose": "Plugin runtime module loading and permission context implementation evidence.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/plugin/module.ts",
+          "note": "Plugin runtime module loading and permission context implementation evidence."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/plugin.ts",
+      "kind": "support",
+      "purpose": "Plugin loading lifecycle and extension entry-point implementation evidence.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/plugin.ts",
+          "note": "Plugin loading lifecycle and extension entry-point implementation evidence."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/tool.ts",
+      "kind": "support",
+      "purpose": "Tool registration and permission enforcement implementation evidence.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/tool.ts",
+          "note": "Tool registration and permission enforcement implementation evidence."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/core/src/tool/plugin/skill.ts",
+      "kind": "support",
+      "purpose": "Built-in skill tool interface for loading named skills.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/core/src/tool/plugin/skill.ts",
+          "note": "Built-in skill tool interface for loading named skills."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/plugin/package.json",
+      "kind": "support",
+      "purpose": "Plugin SDK package metadata and runtime requirements.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/plugin/package.json",
+          "note": "Plugin SDK package metadata and runtime requirements."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/plugin/src/effect/tool.ts",
+      "kind": "support",
+      "purpose": "Plugin SDK tool factory definition used by the custom tool example.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/plugin/src/effect/tool.ts",
+          "note": "Plugin SDK tool factory definition used by the custom tool example."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/plugin/src/source.bun.ts",
+      "kind": "support",
+      "purpose": "Bun-specific plugin module resolution.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/plugin/src/source.bun.ts",
+          "note": "Bun-specific plugin module resolution."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/plugin/src/source.node.ts",
+      "kind": "support",
+      "purpose": "Node-specific plugin module resolution.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/plugin/src/source.node.ts",
+          "note": "Node-specific plugin module resolution."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "packages/plugin/src/source.ts",
+      "kind": "support",
+      "purpose": "Shared plugin module source abstraction.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "packages/plugin/src/source.ts",
+          "note": "Shared plugin module source abstraction."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "services/site/src/docs/content/tools.mdx",
+      "kind": "support",
+      "purpose": "Operator documentation for built-in tools and permission-related behavior.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "services/site/src/docs/content/tools.mdx",
+          "note": "Operator documentation for built-in tools and permission-related behavior."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "services/site/src/docs/content/agents.mdx",
+      "kind": "support",
+      "purpose": "Operator documentation for configuring and using agents.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "services/site/src/docs/content/agents.mdx",
+          "note": "Operator documentation for configuring and using agents."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "services/site/src/docs/content/commands.mdx",
+      "kind": "support",
+      "purpose": "Operator documentation for command prompt definitions and interpolation.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "services/site/src/docs/content/commands.mdx",
+          "note": "Operator documentation for command prompt definitions and interpolation."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "services/site/src/docs/content/skills.mdx",
+      "kind": "support",
+      "purpose": "Operator documentation for skill definition, discovery, and activation.",
+      "requirements": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Implementation or operator-documentation evidence, not a directly portable component; translate only reviewed behavior."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "services/site/src/docs/content/skills.mdx",
+          "note": "Operator documentation for skill definition, discovery, and activation."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "services/site/src/docs/content/mcp-servers.mdx",
+      "kind": "mcp",
+      "purpose": "Operator documentation for MCP setup, OAuth, permissions, timeouts, shared connections, and session-context metadata.",
+      "requirements": [
+        "MCP protocol",
+        "Remote server trust and credentials",
+        "OAuth configuration"
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Useful risk and configuration evidence, but OpenCode-specific setup and runtime semantics do not directly transfer."
+      },
+      "overlaps": [],
+      "evidence": [
+        {
+          "path": "services/site/src/docs/content/mcp-servers.mdx",
+          "note": "Operator documentation for MCP setup, OAuth, permissions, timeouts, shared connections, and session-context metadata."
+        }
+      ],
+      "links": [
+        {
+          "url": "https://modelcontextprotocol.io/",
+          "reason": "MCP protocol reference linked by operator documentation."
+        },
+        {
+          "url": "https://datatracker.ietf.org/doc/html/rfc7591",
+          "reason": "Dynamic client registration reference linked by operator documentation."
+        },
+        {
+          "url": "https://datatracker.ietf.org/doc/html/rfc8252",
+          "reason": "Native-app OAuth redirect reference linked by operator documentation."
+        }
+      ]
+    }
+  ]
+}
