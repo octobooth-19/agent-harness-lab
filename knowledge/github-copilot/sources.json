@@ -22700,11 +22700,15 @@
     "published_date": "2026-11-16",
     "updated_date": "2026-11-16",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
-      "general Copilot"
+      "dated release notes",
+      "model selection",
+      "agent sessions",
+      "MCP authentication",
+      "experimental features"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Changelog Copilot-label REST index, paginated"
   },
   {
@@ -22835,11 +22839,14 @@
     "published_date": "2026-11-17",
     "updated_date": "2026-11-17",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
-      "general Copilot"
+      "browser use",
+      "computer use",
+      "permissions",
+      "public preview"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Changelog Copilot-label REST index, paginated"
   },
   {
@@ -22849,11 +22856,14 @@
     "published_date": "2026-11-17",
     "updated_date": "2026-11-17",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
-      "general Copilot"
+      "model selection",
+      "model availability",
+      "enterprise policy",
+      "usage-based billing"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Changelog Copilot-label REST index, paginated"
   },
   {
@@ -22923,11 +22933,13 @@
     "published_date": "2026-11-17",
     "updated_date": "2026-11-17",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
-      "general Copilot"
+      "model deprecation",
+      "migration",
+      "enterprise policy"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Changelog Copilot-label REST index, paginated"
   }
 ]
