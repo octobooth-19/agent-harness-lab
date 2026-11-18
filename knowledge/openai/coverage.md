@@ -9,14 +9,14 @@ Counts below describe unique canonical URL rows in `source-inventory.json`. A pa
 
 | Measure | Count | Meaning |
 |---|---:|---|
-| Discovered pages | 2,833 | Redirect-resolved page URLs cataloged from official documentation indexes, selected sitemaps, the OpenAI News RSS feed, and official Codex release records. |
+| Discovered pages | 2,467 | Distinct canonical pages cataloged from official documentation indexes, selected sitemaps, the OpenAI News RSS feed, and official Codex release records. |
 | Read pages | 100 | The page itself was opened and reviewed sufficiently for synthesis. |
-| Partially read pages | 131 | The page was opened, but only part could be reviewed; these are counted separately from full reads. |
+| Partially read pages | 130 | The page was opened, but only part could be reviewed; these are counted separately from full reads. |
 | Inaccessible pages | 0 | No inventoried content page remained inaccessible after resolving the Codex changelog's HTML route. |
-| Pending pages | 2,602 | Discovered but not read. This includes most indexed API references, Codex/ChatGPT product docs, Cookbook entries, blog/news articles, and learning resources. |
+| Pending pages | 2,237 | Discovered but not read. This includes most indexed API references, Codex/ChatGPT product docs, Cookbook entries, blog/news articles, and learning resources. |
 | Excluded unique links | 26 | Non-primary-domain links or full-export/text resources omitted from the source-page inventory. |
 
-The page-status arithmetic is consistent: 100 read + 131 partial + 0 inaccessible + 2,602 pending = 2,833 discovered. `source-inventory.json` includes the required per-source fields and records whether a date comes from publication metadata or sitemap `lastmod`.
+The page-status arithmetic is consistent: 100 read + 130 partial + 0 inaccessible + 2,237 pending = 2,467 discovered. Before canonicalization, 2,833 source URL rows included 366 trailing-slash aliases; those alternate URLs and their discovery provenance are retained on the merged records in `source-inventory.json`.
 
 ## Discovery methods and corpus boundaries
 
@@ -26,17 +26,17 @@ The page-status arithmetic is consistent: 100 read + 131 partial + 0 inaccessibl
 4. **Codex release history:** Read the official `openai/codex` GitHub Releases page. Its November 18, 2026 release entry is reviewed in the synthesis.
 5. **Search:** Used official-domain web search to locate the Codex loop and harness-engineering articles, then opened those primary OpenAI pages directly. Search snippets were not treated as page reads.
 
-The inventory contains **2,833** page rows after resolving redirect aliases and deduplicating canonical URLs across those sources. The counts are not a count of the entire OpenAI web presence: the RSS and selected sitemap sets are bounded discovery sources, while the documentation indexes include pages that remain pending.
+The inventory contains **2,467** distinct canonical page rows after resolving redirect aliases and merging 366 trailing-slash URL variants across those sources. The counts are not a count of the entire OpenAI web presence: the RSS and selected sitemap sets are bounded discovery sources, while the documentation indexes include pages that remain pending.
 
 ## Read coverage and source status
 
-The 97 fully reviewed pages are marked `review_status: "read"` and 130 partial reads are marked `read_partial`. The cumulative reviewed sample covers:
+The 100 fully reviewed pages are marked `review_status: "read"` and 130 partial reads are marked `read_partial`. The cumulative reviewed sample covers:
 
 - Codex instruction discovery, skills, memories, MCP, rules, subagents, permissions, sandboxing, and approvals.
 - Agents API and Agents SDK architecture, sessions, events, recovery, environments, tool use, MCP, multi-agent flows, and human review.
 - Agent Builder's typed-node workflow and its safety recommendations, including the dated shutdown notice.
 - Responses API function calling, tools, compaction, model selection, evaluation guides, changelog, and deprecations.
-- Twenty-three OpenAI developer-blog posts, 24 Cookbook pages (including agent and evaluation recipes), 20 OpenAI News articles, four sitemap-indexed articles, three research articles, the current ChatGPT & Codex changelog, and the official Codex GitHub release listing.
+- Twenty-three OpenAI developer-blog posts, 24 Cookbook pages (including agent and evaluation recipes), 23 OpenAI News articles (including four sitemap-discovered URL rows now merged as aliases), three research articles, the current ChatGPT & Codex changelog, and the official Codex GitHub release listing.
 - The new batch reviewed Codex/Agents SDK architecture, agent definitions, prompt caching, secure MCP, skills, a Codex app-server integration, safety and cyber checks, archived Cookbook patterns, and dated engineering/blog and plugin-changelog entries.
 - This batch adds Agents SDK model/provider selection and results/state, API conversation state and async tool calls, two evaluation resources, and dated customer/research/developer-blog cases. Several Evals and Graders pages state a read-only/shutdown transition dated October 31/November 30, 2026; those product lifecycle notes are time-sensitive and remain separate from application-owned evaluation practice.
 - Batch five adds Agent SDK quickstart, Bedrock/AWS/Databricks environment integration, Agents API plugins and web search, plus dated Codex harness/security and multi-agent/evaluation case studies.
@@ -59,7 +59,7 @@ The 97 fully reviewed pages are marked `review_status: "read"` and 130 partial r
 - Batch twenty-two adds four new partial sources on agent standards, read-only Docs MCP, remote MCP publication review, and ChatGPT Apps. A pending non-trailing-slash harness URL was merged into the already reviewed trailing-slash canonical page; the alias is not an additional read.
 - Batch twenty-three adds three full reads on model optimization, GPT-5.6 guidance, and the archived routines-and-handoffs Cookbook, plus a partial Agents API streaming-events reference. GPT-5.6 prompt/PTC recommendations and API lifecycle details are model-, beta-, or surface-specific; the Cookbook explicitly marks its Swarm code as proof of concept.
 
-Read status means the page was opened and its relevant content reviewed; it does not mean every code sample or every section was exhaustively audited. `read_partial` records a page whose fetched content was incomplete. Batch four opened 12 pages (2 full, 10 partial); batch five opened 11 pages (all full); batch six opened 4 pages (1 full and 3 partial); batch seven opened 4 pages (all partial); batch eight opened 4 pages (all partial); batch nine opened 11 pages (all partial); batch ten opened 8 pages (4 full, 4 partial); batch eleven opened 8 pages (3 full, 5 partial); batch twelve opened 4 pages (all partial); batch thirteen opened 4 pages (all partial); batch fourteen opened 4 pages (all partial); batch fifteen opened 4 pages (1 full and 3 partial); batch sixteen opened 9 pages (all partial); batch seventeen opened 6 pages (1 full and 5 partial); batch eighteen opened 6 pages (all partial); batch nineteen opened 4 pages (all partial); batch twenty opened 4 pages (all partial); batch twenty-one reviewed four unique canonical pages (all partial) after merging two duplicate trailing-slash aliases; batch twenty-two adds four new partial pages after one redirect alias was merged into an already-read canonical page; batch twenty-three adds three full pages and one partial page. The archived RAG notebook and long Cookbook pages remain partial. No URL was inaccessible. Linked papers, repos, and provider documentation were not followed and are not counted as reviewed.
+Read status means the page was opened and its relevant content reviewed; it does not mean every code sample or every section was exhaustively audited. `read_partial` records a page whose fetched content was incomplete. Batch four opened 12 pages (2 full, 10 partial); batch five opened 11 pages (all full); batch six opened 4 pages (1 full and 3 partial); batch seven opened 4 pages (all partial); batch eight opened 4 pages (all partial); batch nine opened 11 pages (all partial); batch ten opened 8 pages (4 full, 4 partial); batch eleven opened 8 pages (3 full, 5 partial); batch twelve opened 4 pages (all partial); batch thirteen opened 4 pages (all partial); batch fourteen opened 4 pages (all partial); batch fifteen opened 4 pages (1 full and 3 partial); batch sixteen opened 9 pages (all partial); batch seventeen opened 6 pages (1 full and 5 partial); batch eighteen opened 6 pages (all partial); batch nineteen opened 4 pages (all partial); batch twenty opened 4 pages (all partial); batch twenty-one reviewed four unique canonical pages (all partial) after merging two duplicate trailing-slash aliases; batch twenty-two adds four new partial pages after one redirect alias was merged into an already-read canonical page; batch twenty-three adds three full pages and one partial page. The inventory reconciliation merged 366 trailing-slash aliases and now counts each canonical page once, retaining alternate URLs and provenance. The archived RAG notebook and long Cookbook pages remain partial. No URL was inaccessible. Linked papers, repos, and provider documentation were not followed and are not counted as reviewed.
 
 ## Inaccessible, excluded, and pending areas
 
