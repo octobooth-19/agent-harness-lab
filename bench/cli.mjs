@@ -45,8 +45,10 @@ try {
     let result;
     if (command === 'catalog') {
       const kind = second;
-      if (first === 'list') result = catalog.list(kind);
-      else if (first === 'read') result = catalog.read(kind, third, version);
+      if (first === 'list') {
+        ensure(positionals.length === 3, 'Usage: catalog list KIND (exactly one kind is required)');
+        result = catalog.list(kind);
+      } else if (first === 'read') result = catalog.read(kind, third, version);
       else if (first === 'create' || first === 'update') {
         ensure(values.file, '--file is required');
         result = catalog.put(kind, readJSON(values.file), first);
