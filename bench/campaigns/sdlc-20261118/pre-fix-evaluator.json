@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "validReproduction": true,
+  "observedAt": "2026-11-18T17:45:35.107Z",
+  "commit": "2b5e6f7399a7b48005140b5d5c6bc6c0e62919a8",
+  "evaluatorSha256": "1f5f76574ff3a322756e882e4bef7b59eefd6c7e8188fdf1c7046de7793b7bd6",
+  "runtime": {
+    "node": "v26.13.1",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "status": 1,
+  "stdout": "FAIL published sparse-array reproduction preserves holes and length: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   '0',\n+   '1',\n+   '2',\n    '3',\n+   '4'\n  ]\n\nFAIL all-hole arrays remain sparse: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   '0',\n+   '1',\n+   '2',\n+   '3'\n+ ]\n- []\n\nFAIL explicit undefined remains an own element rather than a hole: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   '0',\n    '1',\n+   '2',\n    '3'\n  ]\n\nFAIL nested sparse arrays retain structure and deep-clone objects: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   '0',\n    '1',\n+   '2'\n  ]\n\nFAIL circular sparse arrays retain their cycle: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   '0',\n+   '1',\n    '2'\n  ]\n\nPASS ordinary dense array behavior remains correct\n{\"passed\":1,\"total\":6,\"failures\":[\"published sparse-array reproduction preserves holes and length\",\"all-hole arrays remain sparse\",\"explicit undefined remains an own element rather than a hole\",\"nested sparse arrays retain structure and deep-clone objects\",\"circular sparse arrays retain their cycle\"]}\n",
+  "stderr": "",
+  "noFixApplied": true
+}

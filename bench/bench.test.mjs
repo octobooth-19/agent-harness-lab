@@ -383,6 +383,65 @@ test('grading and reporting remain usable from retained repo artifacts after exe
   assert.equal(archive(root, trial.runId).record.passed, true);
 });
 
+test('real-source cases materialize exact pinned bytes and keep frozen evaluators outside the subject', t => {
+  const { root, workspaceRoot, catalog } = fixture(t);
+  const source = path.join(root, 'bench/source');
+  fs.mkdirSync(source);
+  const sourceText = 'export const original = 7;\n';
+  fs.writeFileSync(path.join(source, 'module.mjs'), sourceText);
+  const evaluator = 'import fs from "node:fs"; import path from "node:path"; if(!fs.readFileSync(path.join(process.argv[2],"upstream.mjs"),"utf8").includes("original")) process.exitCode=1;\n';
+  fs.writeFileSync(path.join(source, 'evaluator.mjs'), evaluator);
+  fs.writeFileSync(path.join(source, 'policy.json'), '{"runner":"app","budgetMinutes":15}\n');
+  const original = catalog.read('cases', 'incident-summary');
+  const value = { ...original, id: 'real-source-case',
+    source: { repository: 'example/upstream', commit: 'a'.repeat(40),
+      files: { 'upstream.mjs': { path: 'bench/source/module.mjs', sha256: hash(sourceText) } } },
+    policy: { path: 'bench/source/policy.json', sha256: hash(fs.readFileSync(path.join(source, 'policy.json'))) },
+    checks: [{ id: 'external-evaluator', type: 'evaluator', script: { path: 'bench/source/evaluator.mjs', sha256: hash(evaluator) }, timeoutMs: 1000 }],
+  };
+  catalog.put('cases', value, 'create');
+  const trial = prepare(root, value.id, { variant: 'baseline', workspaceRoot });
+  assert.equal(fs.readFileSync(path.join(trial.workspace, 'upstream.mjs'), 'utf8'), sourceText);
+  assert.equal(fs.existsSync(path.join(trial.workspace, 'evaluator.mjs')), false);
+  assert.equal(readJSON(trial.manifest).policy.value.budgetMinutes, 15);
+  fs.writeFileSync(path.join(source, 'evaluator.mjs'), 'throw Error("changed after prepare");');
+  assert.throws(() => collect(root, trial.runId, receipt()), /allow-commands/);
+  const result = collect(root, trial.runId, receipt(), { allowCommands: true });
+  assert.equal(result.deterministicPassed, true, 'uses frozen evaluator, not mutable original');
+  fs.writeFileSync(path.join(source, 'module.mjs'), 'changed');
+  assert.throws(() => prepare(root, value.id, { variant: 'baseline', workspaceRoot }), /hash mismatch/);
+});
+
+test('source references reject traversal, symlinks, collisions and mismatched hashes', t => {
+  const { root, catalog } = fixture(t);
+  const directory = path.join(root, 'bench/source');
+  fs.mkdirSync(directory);
+  fs.writeFileSync(path.join(directory, 'module.mjs'), 'source');
+  const original = catalog.read('cases', 'incident-summary');
+  const value = { ...original, id: 'source-error',
+    source: { repository: 'example/upstream', commit: 'b'.repeat(40),
+      files: { 'upstream.mjs': { path: 'bench/source/module.mjs', sha256: hash('wrong') } } } };
+  assert.throws(() => catalog.put('cases', value, 'create'), /hash mismatch/);
+  value.source.files['upstream.mjs'].sha256 = hash('source');
+  value.files['upstream.mjs'] = 'collides';
+  assert.throws(() => catalog.put('cases', value, 'create'), /collision/);
+  delete value.files['upstream.mjs'];
+  value.source.files['upstream.mjs'].path = '../outside';
+  assert.throws(() => catalog.put('cases', value, 'create'), /unsafe/);
+  value.source.files['upstream.mjs'].path = 'bench/source/link.mjs';
+  fs.symlinkSync(path.join(directory, 'module.mjs'), path.join(directory, 'link.mjs'));
+  assert.throws(() => catalog.put('cases', value, 'create'), /symlink/);
+});
+
+test('observable receipt metrics survive reporting without fabricated token defaults', t => {
+  const { root, trial } = prepared(t);
+  const metadata = { ...receipt(), metrics: { wallMs: 1234, inputTokens: null, outputTokens: null,
+    totalTokens: null, observedFrom: 'fixture clock; tokens unavailable' } };
+  collect(root, trial.runId, metadata);
+  assert.deepEqual(report(root).runs[0].metrics, metadata.metrics);
+  assert.equal(report(root).runs[0].passed, null);
+});
+
 test('CLI validates catalog, surfaces errors, and drives the lifecycle without dependencies', t => {
   const { root, workspaceRoot } = fixture(t);
   const invoke = (...args) => spawnSync(process.execPath, [path.join(source, 'cli.mjs'), '--root', root, ...args], { encoding: 'utf8' });
