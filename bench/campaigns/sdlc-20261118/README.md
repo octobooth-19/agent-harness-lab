@@ -133,6 +133,8 @@ checks run after the evaluator. Run `judge-packet RUN` and send its generated
 prompt to a fresh independent app judge folder. Judges see task/rubric/artifacts
 and check observations, not the variant label, component manifest or expected
 winner. Never grade the tested agent using its own success statement.
+Unchanged installed harness files are omitted from judge packets (but retained
+in raw evidence); subject edits to configuration remain visible for review.
 
 Large upstream files are not duplicated inline in the judge's packet JSON.
 They are inert numbered text artifacts with independently computed source

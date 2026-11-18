@@ -302,11 +302,12 @@ export function judgePacket(root, runId) {
   const judgeWorkspace = path.join(path.dirname(manifest.workspace), 'judge');
   ensure(!fs.existsSync(judgeWorkspace), 'judge packet already exists; use its existing prompt without overwriting it');
   fs.mkdirSync(judgeWorkspace);
-  const originalFiles = Object.assign(Object.create(null), manifest.case.value.files,
-    ...manifest.components.map(component => component.value.files));
+  const componentFiles = Object.assign(Object.create(null), ...manifest.components.map(component => component.value.files));
+  const originalFiles = Object.assign(Object.create(null), manifest.case.value.files, componentFiles);
   const artifactDirectory = path.join(judgeWorkspace, 'artifacts');
   const retainedArtifacts = path.join(directory, 'judge-artifacts');
-  const packetFiles = evidence.files.map((file, index) => {
+  const packetFiles = evidence.files.filter(file =>
+    !Object.hasOwn(componentFiles, file.path) || hash(componentFiles[file.path]) !== file.sha256).map((file, index) => {
     const bytes = Buffer.from(file.content, 'base64');
     const description = { path: `workspace/${file.path}`, sha256: file.sha256, bytes: bytes.length };
     if (bytes.length <= 12000) return { ...description, contentBase64: file.content, text: bytes.toString('utf8') };
