@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "3d517b0dc6809045c308d856666c99a05c6600102264a3810cf00d8695552411",
+  "scanRevision": 2,
+  "path": "packages/test-support/llm-replay/README.md",
+  "revision": 1,
+  "decision": "reference-only",
+  "reason": "Replay must not be assumed side-effect-free: accepted deepseek-official replay can invoke extension prepare/accept. Require independent permission and effect-boundary review and confirmation of applicable dependency licenses before adoption. No upstream code was run.",
+  "source": {
+    "repo": "deepseek-ai/deepseek-harness",
+    "commit": "2e39e70496aa02986ca6a820c5d497e816b69d7e"
+  },
+  "scanSha256": "7e6bfa709d40937c44812ecb585939d85b6c5e037e7801f2368a07b84ba41cf6",
+  "sourceSha256": "12c37d1c2aac95bc0664df6cdd5018c9b41cb8bfaae96c289635c36f530a0770",
+  "license": {
+    "status": "permissive",
+    "expression": "MIT",
+    "attribution": "Preserve the package/repository MIT notice and all applicable dependency notices; do not infer that the repository license covers external dependencies.",
+    "evidence": [
+      "LICENSE",
+      "packages/test-support/llm-replay/package.json",
+      "THIRD_PARTY_NOTICES.md"
+    ]
+  }
+}
