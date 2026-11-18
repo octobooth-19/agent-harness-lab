@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "15149b68a73612573754c9b2b70c4917fb8876bc94a4925447da124829971bcf",
+  "scanRevision": 4,
+  "path": "skills/executing-plans/scripts/task-done",
+  "revision": 1,
+  "decision": "reference-only",
+  "reason": "The helper executes arbitrary caller-supplied command arguments before recording completion. Command effects and authority depend on the caller and host permission policy; no generic allowlist or containment contract was established. Do not copy or execute it absent explicit scoped approval and a reviewed host boundary; MIT licensing does not clear execution risk.",
+  "source": {
+    "repo": "obra/superpowers",
+    "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
+  },
+  "scanSha256": "2eca8f072b40a1002e95839ee56ebeb216d9276c6d31e55aea0859b2fb406251",
+  "sourceSha256": "ac0b5ebafc7d471507b7e94d88da77a11f187ba277c8d48fefaf8ff3e4fee50e",
+  "license": {
+    "status": "permissive",
+    "expression": "MIT",
+    "attribution": "Preserve the repository root LICENSE copyright and permission notice when redistributing adapted material.",
+    "evidence": [
+      "LICENSE"
+    ]
+  }
+}
