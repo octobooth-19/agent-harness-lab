@@ -2446,11 +2446,14 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
-      "CLI"
+      "Copilot CLI",
+      "enterprise policy",
+      "administration",
+      "agent access"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -2460,7 +2463,7 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "index_read",
     "topics": [
       "CLI"
     ],
@@ -2474,11 +2477,15 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
-      "CLI"
+      "Copilot CLI",
+      "GitHub Actions",
+      "automation",
+      "permissions",
+      "Agentic Workflows"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -2502,11 +2509,15 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
-      "CLI"
+      "Copilot CLI",
+      "programmatic mode",
+      "least privilege",
+      "model selection",
+      "CI"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {

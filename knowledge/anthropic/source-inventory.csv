@@ -1427,11 +1427,11 @@ https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompti
 https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5,Prompting Claude Sonnet 5,platform_documentation,,,2026-11-18,indexed_only,prompting,
 https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-haiku-5-5,Prompting Claude Haiku 5.5,platform_documentation,,,2026-11-18,indexed_only,prompting,
 https://platform.claude.com/docs/en/test-and-evaluate/develop-tests,Define success and build evaluations,platform_documentation,,,2026-11-18,read_partial,evaluations,synthesis.md
-https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-latency,Reducing latency,platform_documentation,,,2026-11-18,indexed_only,evaluations,
+https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-latency,Reducing latency,platform_documentation,,,2026-11-18,read_partial,latency;TTFT;model selection;streaming;prompt optimization,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations,Reduce hallucinations,platform_documentation,,,2026-11-18,read_partial,prompting;grounding;uncertainty;citations,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/increase-consistency,Increase output consistency,platform_documentation,,,2026-11-18,read_partial,prompting;output-format;structured-outputs,knowledge/anthropic/synthesis.md
-https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/mitigate-jailbreaks,Mitigate jailbreaks,platform_documentation,,,2026-11-18,indexed_only,evaluations,
-https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-prompt-leak,Reduce prompt leak,platform_documentation,,,2026-11-18,indexed_only,evaluations;prompting,
+https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/mitigate-jailbreaks,Mitigate jailbreaks,platform_documentation,,,2026-11-18,read_partial,prompt injection;direct and indirect attacks;input screening;guardrails,knowledge/anthropic/synthesis.md
+https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-prompt-leak,Reduce prompt leak,platform_documentation,,,2026-11-18,read_partial,prompt leakage;output screening;prompt minimization;evaluation,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/about-claude/glossary,Glossary,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/about-claude/additional-resources,Additional resources,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/models/overview,Models overview,platform_documentation,,,2026-11-18,read_partial,models,synthesis.md
@@ -1523,7 +1523,7 @@ https://platform.claude.com/docs/en/api/migration-2026-10-21,Migrating to API ve
 https://platform.claude.com/docs/en/api/ip-addresses,IP addresses,platform_documentation,,,2026-11-18,indexed_only,api,
 https://platform.claude.com/docs/en/api/supported-regions,Supported regions,platform_documentation,,,2026-11-18,indexed_only,api,
 https://platform.claude.com/docs/en/api/claude-code/routines-fire,Trigger a routine,platform_documentation,,,2026-11-18,indexed_only,claude-code;api,
-https://platform.claude.com/docs/en/agents-and-tools/agent-skills/claude-api-skill,Overview,platform_documentation,,,2026-11-18,indexed_only,agents;tools;skills;api,
+https://platform.claude.com/docs/en/agents-and-tools/agent-skills/claude-api-skill,Overview,platform_documentation,,,2026-11-18,read_partial,skills;Messages API;Managed Agents;progressive disclosure;SDKs,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/release-notes/overview,Overview,platform_documentation,,,2026-11-18,read_partial,release-notes,synthesis.md
 https://platform.claude.com/docs/de/about-claude/use-case-guides/overview,,platform_documentation,,,2026-11-18,excluded_non_English,general,
 https://platform.claude.com/docs/de/about-claude/use-case-guides/ticket-routing,,platform_documentation,,,2026-11-18,excluded_non_English,general,
