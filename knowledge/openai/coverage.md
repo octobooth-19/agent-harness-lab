@@ -5,18 +5,18 @@
 
 ## Counts
 
-Counts below describe unique canonical URL rows in `source-inventory.json`. A page marked **indexed** was found in an official index, sitemap, or RSS feed, but its own content was not opened. Index/feed metadata is not counted as reading the linked article.
+Counts below describe distinct URL strings in `source-inventory.json`, not necessarily distinct pages: 367 URL groups differ only by a trailing slash and have not been reconciled. A page marked **indexed** was found in an official index, sitemap, or RSS feed, but its own content was not opened. Index/feed metadata is not counted as reading the linked article.
 
 | Measure | Count | Meaning |
 |---|---:|---|
-| Discovered pages | 2,834 | Redirect-resolved page URLs cataloged from official documentation indexes, selected sitemaps, the OpenAI News RSS feed, and official Codex release records. |
+| Discovered URL rows | 2,834 | URLs cataloged from official documentation indexes, selected sitemaps, the OpenAI News RSS feed, and official Codex release records. |
 | Read pages | 97 | The page itself was opened and reviewed sufficiently for synthesis. |
 | Partially read pages | 126 | The page was opened, but only part could be reviewed; these are counted separately from full reads. |
 | Inaccessible pages | 0 | No inventoried content page remained inaccessible after resolving the Codex changelog's HTML route. |
 | Pending pages | 2,611 | Discovered but not read. This includes most indexed API references, Codex/ChatGPT product docs, Cookbook entries, blog/news articles, and learning resources. |
 | Excluded unique links | 26 | Non-primary-domain links or full-export/text resources omitted from the source-page inventory. |
 
-The page-status arithmetic is consistent: 97 read + 126 partial + 0 inaccessible + 2,611 pending = 2,834 discovered. `source-inventory.json` includes the required per-source fields and records whether a date comes from publication metadata or sitemap `lastmod`.
+The row-status arithmetic is consistent: 97 read + 126 partial + 0 inaccessible + 2,611 pending = 2,834 discovered URL rows. `source-inventory.json` includes the required per-source fields and records whether a date comes from publication metadata or sitemap `lastmod`.
 
 ## Discovery methods and corpus boundaries
 
@@ -26,11 +26,11 @@ The page-status arithmetic is consistent: 97 read + 126 partial + 0 inaccessible
 4. **Codex release history:** Read the official `openai/codex` GitHub Releases page. Its November 18, 2026 release entry is reviewed in the synthesis.
 5. **Search:** Used official-domain web search to locate the Codex loop and harness-engineering articles, then opened those primary OpenAI pages directly. Search snippets were not treated as page reads.
 
-The inventory contains **2,834** page rows after resolving redirect aliases and deduplicating canonical URLs across those sources. The counts are not a count of the entire OpenAI web presence: the RSS and selected sitemap sets are bounded discovery sources, while the documentation indexes include pages that remain pending.
+The inventory contains **2,834** URL rows. This batch reconciles redirect aliases for its reviewed sources, but the remaining trailing-slash variants have not been reconciled. The counts are not a count of the entire OpenAI web presence: the RSS and selected sitemap sets are bounded discovery sources, while the documentation indexes include pages that remain pending.
 
 ## Read coverage and source status
 
-The 97 fully reviewed pages are marked `review_status: "read"` and 118 partial reads are marked `read_partial`. The cumulative reviewed sample covers:
+The 97 fully reviewed pages are marked `review_status: "read"` and 126 partial reads are marked `read_partial`. The cumulative reviewed sample covers:
 
 - Codex instruction discovery, skills, memories, MCP, rules, subagents, permissions, sandboxing, and approvals.
 - Agents API and Agents SDK architecture, sessions, events, recovery, environments, tool use, MCP, multi-agent flows, and human review.
