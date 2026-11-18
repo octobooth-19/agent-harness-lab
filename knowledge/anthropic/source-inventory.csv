@@ -4924,7 +4924,7 @@ https://code.claude.com/docs/en/accessibility,Use Claude Code with a screen read
 https://code.claude.com/docs/en/admin-setup,Set up Claude Code for your organization,claude_code_documentation,2026-11-18,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://code.claude.com/docs/en/advisor,Escalate hard decisions with the advisor tool,claude_code_documentation,2026-11-14,sitemap_lastmod,2026-11-18,indexed_only,tools,
 https://code.claude.com/docs/en/agent-sdk/agent-loop,How the agent loop works,claude_code_documentation,2026-11-16,sitemap_lastmod,2026-11-18,read_partial,agent-sdk;agents,synthesis.md
-https://code.claude.com/docs/en/agent-sdk/claude-code-features,Use Claude Code features in the SDK,claude_code_documentation,2026-11-12,sitemap_lastmod,2026-11-18,indexed_only,claude-code;agent-sdk;agents,
+https://code.claude.com/docs/en/agent-sdk/claude-code-features,Use Claude Code features in the SDK,claude_code_documentation,2026-11-12,sitemap_lastmod,2026-11-18,read,claude-code;agent-sdk;agents,knowledge/anthropic/synthesis.md
 https://code.claude.com/docs/en/agent-sdk/configuration,Configure your agent,claude_code_documentation,2026-11-16,sitemap_lastmod,2026-11-18,read,agent-sdk;agents;tools;context and memory,knowledge/anthropic/synthesis.md
 https://code.claude.com/docs/en/agent-sdk/cost-tracking,Track cost and usage,claude_code_documentation,2026-11-16,sitemap_lastmod,2026-11-18,indexed_only,agent-sdk;agents,
 https://code.claude.com/docs/en/agent-sdk/custom-tools,Give Claude custom tools,claude_code_documentation,2026-11-14,sitemap_lastmod,2026-11-18,read_partial,agent-sdk;agents;tools;context and memory,knowledge/anthropic/synthesis.md
@@ -4938,13 +4938,13 @@ https://code.claude.com/docs/en/agent-sdk/modifying-system-prompts,Modifying sys
 https://code.claude.com/docs/en/agent-sdk/observability,Observability with OpenTelemetry,claude_code_documentation,2026-11-12,sitemap_lastmod,2026-11-18,read,agent-sdk;agents;tools;context and memory,knowledge/anthropic/synthesis.md
 https://code.claude.com/docs/en/agent-sdk/overview,Agent SDK overview,claude_code_documentation,2026-11-12,sitemap_lastmod,2026-11-18,read_partial,agent-sdk;agents,synthesis.md
 https://code.claude.com/docs/en/agent-sdk/permissions,Configure permissions,claude_code_documentation,2026-11-14,sitemap_lastmod,2026-11-18,read_partial,agent-sdk;agents;permissions;tools;context and memory,knowledge/anthropic/synthesis.md
-https://code.claude.com/docs/en/agent-sdk/plugins,Plugins in the SDK,claude_code_documentation,2026-11-06,sitemap_lastmod,2026-11-18,indexed_only,agent-sdk;agents,
+https://code.claude.com/docs/en/agent-sdk/plugins,Plugins in the SDK,claude_code_documentation,2026-11-06,sitemap_lastmod,2026-11-18,read,agent-sdk;agents,knowledge/anthropic/synthesis.md
 https://code.claude.com/docs/en/agent-sdk/python,Agent SDK reference - Python,claude_code_documentation,2026-11-17,sitemap_lastmod,2026-11-18,indexed_only,agent-sdk;agents,
 https://code.claude.com/docs/en/agent-sdk/quickstart,Quickstart,claude_code_documentation,2026-11-16,sitemap_lastmod,2026-11-18,indexed_only,agent-sdk;agents,
 https://code.claude.com/docs/en/agent-sdk/secure-deployment,Securely deploying AI agents,claude_code_documentation,2026-11-16,sitemap_lastmod,2026-11-18,read_partial,Agent SDK;security;permissions;sandboxing;network controls,knowledge/anthropic/synthesis.md
 https://code.claude.com/docs/en/agent-sdk/session-storage,Persist sessions to external storage,claude_code_documentation,2026-11-12,sitemap_lastmod,2026-11-18,read_partial,Agent SDK;sessions;transcript storage;retention;multi-host,knowledge/anthropic/synthesis.md
-https://code.claude.com/docs/en/agent-sdk/sessions,Work with sessions,claude_code_documentation,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,agent-sdk;agents,
-https://code.claude.com/docs/en/agent-sdk/skills,Extend agents with skills,claude_code_documentation,2026-11-16,sitemap_lastmod,2026-11-18,indexed_only,agent-sdk;agents;skills,
+https://code.claude.com/docs/en/agent-sdk/sessions,Work with sessions,claude_code_documentation,2026-11-13,sitemap_lastmod,2026-11-18,read,agent-sdk;agents,knowledge/anthropic/synthesis.md
+https://code.claude.com/docs/en/agent-sdk/skills,Extend agents with skills,claude_code_documentation,2026-11-16,sitemap_lastmod,2026-11-18,read_partial,agent-sdk;agents;skills,knowledge/anthropic/synthesis.md
 https://code.claude.com/docs/en/agent-sdk/streaming-output,Stream responses in real-time,claude_code_documentation,2026-11-16,sitemap_lastmod,2026-11-18,indexed_only,agent-sdk;agents,
 https://code.claude.com/docs/en/agent-sdk/streaming-vs-single-mode,Send messages to a running agent,claude_code_documentation,2026-11-16,sitemap_lastmod,2026-11-18,indexed_only,agent-sdk;agents,
 https://code.claude.com/docs/en/agent-sdk/structured-outputs,Get structured output from agents,claude_code_documentation,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,agent-sdk;agents,
