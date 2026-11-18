@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "3d517b0dc6809045c308d856666c99a05c6600102264a3810cf00d8695552411",
+  "scanRevision": 1,
+  "path": "packages/experimental/auto-review/README.md",
+  "revision": 1,
+  "decision": "rejected",
+  "reason": "Model-mediated permission decisions are out of scope; the treatment must not alter tool approval policy.",
+  "source": {
+    "repo": "deepseek-ai/deepseek-harness",
+    "commit": "2e39e70496aa02986ca6a820c5d497e816b69d7e"
+  },
+  "scanSha256": "c8b94a1f3c20608d7db2e32d56b183be8c10e083267340b2a177c7348dbd31de",
+  "sourceSha256": "690ea340a77dd4fddd80a4557579eb49eda88a8a0b856386668842f5dfd14db0",
+  "license": {
+    "status": "permissive",
+    "expression": "MIT",
+    "attribution": "Preserve the repository MIT copyright and license notice when reusing substantial material; do not reuse before safety and dependency review.",
+    "evidence": [
+      "LICENSE",
+      "packages/experimental/auto-review/package.json"
+    ]
+  }
+}

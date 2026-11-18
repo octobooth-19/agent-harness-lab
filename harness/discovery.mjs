@@ -192,8 +192,12 @@ export class Discovery {
       ensure(current.sessionId && current.sessionId === request.sessionId, 'session ID must match this source dispatch');
       Object.assign(event, { reservation: current.reservation, sessionId: current.sessionId });
       if (request.action === 'accept') {
-        ensure(current.status === 'running', 'only a running scan can be accepted');
+        ensure(['running', 'complete'].includes(current.status), 'accept requires a running scan or a follow-up to completed coverage');
         ensure(request.scanRevision > (current.result?.revision ?? 0), 'scan revision was already accepted');
+        if (current.status === 'complete') {
+          text(request.note, 'reason for extending the completed scan scope');
+          event.note = request.note;
+        }
         ensure(typeof request.resultCommit === 'string' && sha.test(request.resultCommit), 'accepted scan needs its lab results commit SHA');
         const scan = this.scan(key, request.scanRevision);
         Object.assign(event, { status: scan.coverage.state === 'complete' ? 'complete' : 'partial',

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "aa0f2bad76590c10f961b0b84c0eabddd85ef92e48af0e945e7fb4b4304eba42",
+  "scanRevision": 1,
+  "path": "skills/doc-coauthoring/SKILL.md",
+  "revision": 1,
+  "decision": "reference-only",
+  "reason": "The applicable license remains unclear. Preserve the reference rather than copying or adapting text.",
+  "source": {
+    "repo": "anthropics/skills",
+    "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba"
+  },
+  "scanSha256": "488e5682872e7b1dfd16e3a7d54335f3d5077bc31e4ba8f5e88c0ea28f92e691",
+  "sourceSha256": "2e47d78846faeea4a56e9809c52700087a15a2155a3f293a3efbaded81398ef4",
+  "license": {
+    "status": "unclear",
+    "expression": "NOASSERTION",
+    "attribution": "No applicable file-level license was found or confirmed for this path; obtain/verify permission before copying.",
+    "evidence": []
+  }
+}

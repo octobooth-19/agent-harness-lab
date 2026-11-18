@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "8733271e739d23d8a8187d62bcbb2232755203eee87c2f46846aacbfd9e732cf",
+  "scanRevision": 2,
+  "path": "skills/eval-harness/SKILL.md",
+  "revision": 1,
+  "decision": "reference-only",
+  "reason": "Evaluation guidance points to uninspected scripts and host dependencies; this lab already owns benchmark execution and grading.",
+  "source": {
+    "repo": "affaan-m/ecc",
+    "commit": "3f14a103a8694e51c1df9a806217a6d0b5f7a6f7"
+  },
+  "scanSha256": "1b7ebc250aa22c00bbdf4737d7ff3ea83509898386cfb6f476025104ea500373",
+  "sourceSha256": "3a5339a5a80099a5c9d55da9b6c8e05a690f5befc6f78d779c75dd79d818ca07",
+  "license": {
+    "status": "permissive",
+    "expression": "MIT",
+    "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+    "evidence": [
+      "LICENSE"
+    ]
+  }
+}
