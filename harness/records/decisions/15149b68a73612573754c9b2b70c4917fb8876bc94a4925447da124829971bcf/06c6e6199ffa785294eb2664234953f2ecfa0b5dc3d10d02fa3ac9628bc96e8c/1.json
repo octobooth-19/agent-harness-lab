@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "15149b68a73612573754c9b2b70c4917fb8876bc94a4925447da124829971bcf",
+  "scanRevision": 2,
+  "path": "skills/systematic-debugging/SKILL.md",
+  "revision": 1,
+  "decision": "adopted",
+  "reason": "Adds a narrowly triggered reproduction, cause-tracing and hypothesis-discrimination process for general software failures, beyond delivery scoping or test isolation.",
+  "adaptation": "Reauthored the workflow as a native Copilot markdown skill; omitted special agents, scripts, external runners and host-specific dependencies. Uses only repository tooling already within the session permissions.",
+  "component": {
+    "id": "sdlc-diagnose-failures",
+    "version": 1
+  },
+  "notices": [
+    "THIRD-PARTY-NOTICES/sdlc-diagnose-failures.txt"
+  ],
+  "source": {
+    "repo": "obra/superpowers",
+    "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
+  },
+  "scanSha256": "8beb55136a434f86408dc5de4c9cdd4e86636c86dabc186bccc5c53834132968",
+  "sourceSha256": "51c6435d98c83c42c96ba7c35725a0b2c376cd487fb1a4e6bd0ddbe7e33ef202",
+  "license": {
+    "status": "permissive",
+    "expression": "MIT",
+    "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+    "evidence": [
+      "LICENSE"
+    ]
+  },
+  "componentSha256": "ab545f9de66ee5a8f848df7beb818b798740d7847498de6abf0adb1eec3d6ea0"
+}

@@ -38,7 +38,7 @@ call until you reconcile its reservation with the app.
 | --- | --- |
 | Reserve before creating | `"action":"reserve"` |
 | Bind actual app session | `"action":"bind"`, `sessionId` |
-| Accept reviewed results | `"action":"accept"`, `sessionId`, `scanRevision`, `resultCommit` (lab results commit SHA) |
+| Accept reviewed results | `"action":"accept"`, `sessionId`, `scanRevision`, `resultCommit` (lab results commit SHA); include `note` when accepting a newer revision after a completed scope |
 | Record a blocker | `"action":"block"`, `sessionId`, `note` |
 | Resume the same app session | `"action":"resume"`, `sessionId` |
 | Release a reservation after proving no session was created | `"action":"release"`, `note` |
@@ -47,6 +47,8 @@ call until you reconcile its reservation with the app.
 Commit ledger events at handoffs. Import only reviewed results files or
 results-only commits from each scanner's worktree; verify both provenance and
 the diff before accepting. A partial checkpoint can be accepted and resumed.
+The same session can extend a completed scope; accept its newer revision with
+an explicit reason rather than launching a new scanner or editing past events.
 Missing tool access, untrusted repository settings or app capacity can block
 dispatch. No claim is made that any particular app can run 50 sessions at once.
 
@@ -96,6 +98,32 @@ source, snapshot and component hashes where applicable. These are reviewing
 agent attestations, not an automatic license determination. Keep unclear
 materials reference-only; check effective license obligations, permissions and
 configuration before approval.
+
+The [initial seven-source review](records/initial-top-seven-selection.md)
+produced the app treatment `initial-top-seven@1`. It enables a compact
+software-delivery instruction adapted from Ponytail and a targeted
+test-isolation skill adapted from DeepSeek Harness, with verified MIT notices.
+All seven source checkpoints were reviewed before the freeze; ECC, DeepSeek,
+and Superpowers still had partial repository coverage. Unreviewed integrations,
+host-specific code, and overlapping instructions were not installed. The
+treatment changes workspace guidance, not the model or permissions. A new
+treatment version is required for subsequent curation changes.
+
+`initial-top-seven@2` is an independent treatment candidate, not an update to
+the frozen campaign. It keeps both original pins and adds one on-demand
+diagnostic skill adapted from Superpowers revision 2. That checkpoint inspected
+the linked tracing, waiting, and helper materials. The adaptation packages only
+the diagnostic workflow: reproduce the symptom, trace the first unexpected
+boundary, and use a check that distinguishes plausible causes before editing.
+It imports no scripts, adapters, or runners.
+
+The other follow-ups did not justify enabling more parts: planning and
+test-first procedures partly overlap the existing treatment; OpenCode test
+recipes depend on its stack and overlap test isolation; ECC, DeepSeek, and
+Hermes runtime integrations require separate dependency and permission review;
+Anthropic's authoring/runtime packages are out of scope and have asset-specific
+terms. Ponytail's revised support reinforces the existing instruction without
+requiring a new component. Profile 2 has not been evaluated in live trials.
 
 For approval and activation, create a named profile revision:
 

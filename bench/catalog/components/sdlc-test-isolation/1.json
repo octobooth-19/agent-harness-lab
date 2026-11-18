@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "sdlc-test-isolation",
+  "version": 1,
+  "title": "Deterministic software test isolation",
+  "kind": "skill",
+  "prompt": "",
+  "files": {
+    ".github/skills/sdlc-test-isolation/SKILL.md": "---\nname: sdlc-test-isolation\ndescription: Diagnose flaky software tests or design deterministic tests involving concurrency, subprocesses, clocks, shared resources, or asynchronous cleanup.\n---\n\n# Reliable test isolation\n\nUse the target repository's test framework and CI topology. Diagnose the failure mechanism before changing the test. For each shared resource, identify its owner, how allocation avoids collisions, what proves readiness, and what proves cleanup finished.\n\n- Use isolated fixture state and operating-system resource allocation. Restore mutable process state in the narrowest scope.\n- Synchronize on observable state or owned completion, not a fixed delay. Bound waits and close owned resources even when assertions fail.\n- Demonstrate the intended failure with a focused regression or negative control. For concurrency bugs, make the relevant overlap observable instead of treating repeated runs as proof.\n- Do not hide a deterministic failure with broader retries, global serialization, weaker assertions, or longer timeouts. Report the exact checks and any unverified platform or CI topology.\n",
+    "THIRD-PARTY-NOTICES/sdlc-test-isolation.txt": "MIT License\n\nCopyright (c) 2026 DeepSeek\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  }
+}

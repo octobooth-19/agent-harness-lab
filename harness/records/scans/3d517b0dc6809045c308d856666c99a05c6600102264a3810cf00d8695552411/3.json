@@ -1,0 +1,1383 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "repo": "deepseek-ai/deepseek-harness",
+    "commit": "2e39e70496aa02986ca6a820c5d497e816b69d7e"
+  },
+  "revision": 3,
+  "scope": "Deep inspection of the session-snapshot harness, manifest/normalizers, replay adapter and tests, and loader-smoke subprocess/agent-turn helpers and tests; selected skill entrypoints plus agent-loop/tool, MCP, bounded instruction-context, session-projection/persistence and license dependencies. Runtime code remains tightly DSH/Cordis-coupled; other repository areas are indexed only.",
+  "coverage": {
+    "tree": "complete",
+    "state": "partial",
+    "limits": [
+      "The pinned recursive tree is complete (25,329 entries, not truncated); this continuation deep-inspected and hashed selected files only, not the full repository.",
+      "Source content was read only from exact commit/tree/blob objects through read-only GitHub APIs; no checkout, execution, installation, or enabling was performed.",
+      "The replay adapter can call the DeepSeek extension prepare/accept path for accepted deepseek-official replay calls, so model replay is not inherently side-effect-free.",
+      "Snapshot, replay, loader, agent-loop, tools, MCP, context and persistence implementations depend on DSH/Cordis packages and Node-specific test infrastructure; target-runtime compatibility was not tested.",
+      "The root and package manifests declare MIT, while THIRD_PARTY_NOTICES.md preserves separate dependency terms, including Apache-2.0; this is evidence, not legal clearance.",
+      "Other skill entrypoints, linked support files, hook adapters, prompt/tool manifests, and much of the broader runtime remain indexed-only; external links and the full transitive dependency closure were not independently reviewed.",
+      "Accepted deepseek-official replay scripts invoke registered extension prepare/accept callbacks with an empty messages body and without an HTTP request. With the shipped session-log extension mounted, the acceptance callback can append a delivery watermark for a suffix that replay did not transmit; the next request may therefore omit that suffix. This is a source-level control-flow inference, not an executed reproduction.",
+      "The extension registry accepts arbitrary provider callbacks. The shipped session-log and package-inventory providers were inspected; other contributors and deployment-specific exclusions were not exhaustively enumerated, so no global side-effect guarantee is justified. Package-inventory preparation also reads active package manifests and may log failures.",
+      "Auto review gates supported tools through tools/pre-execute and uses a Full-access sandbox with ask approval. The replay adapter calls the provider extension registry directly, outside that tool path; approval and file-sandbox semantics do not establish control over those extension callbacks. The Auto documentation also excludes direct Node effects inside PTC programs.",
+      "The reviewed packages declare MIT; relevant external dependency notices include eventsource-parser (MIT), semver (ISC), and zod (MIT). This is a scoped notice review, not legal clearance or a complete transitive dependency audit."
+    ],
+    "next": [
+      "Enumerate all extension registration sites and deployment-specific session-log exclusions at the pinned tree, then distinguish known shipped callbacks from arbitrary providers.",
+      "Before adapting replay, isolate/replace provider acceptance callbacks or otherwise prevent replay from advancing external-effect state; this scan did not execute code to validate a remedy.",
+      "Inspect remaining skill entrypoints and linked support, hook adapters, prompt/tool manifests, and broader runtime surfaces; compare candidates with the other pinned scans and review complete license obligations before any separate curation."
+    ]
+  },
+  "files": [
+    {
+      "path": ".agents/notes/AGENTS.md",
+      "status": "inspected",
+      "sha256": "1c1b4a6d771ed1a7b0e4fd83776dd0cfb0567f4e89f2c7b3bc8b61b73e9a01d2"
+    },
+    {
+      "path": ".agents/notes/archived/AGENTS.md",
+      "status": "inspected",
+      "sha256": "63d728ce615c3a8109f0467a32525ca00c4c553e76a532fe90f13642e6986b34"
+    },
+    {
+      "path": ".agents/notes/implemented/AGENTS.md",
+      "status": "inspected",
+      "sha256": "d01c6586ab5f807ccdda2e6ec30185416356b13d1f2fddb40d05cdac6d35189c"
+    },
+    {
+      "path": ".agents/notes/implemented/feature/2026-08-28-auto-review.md",
+      "status": "indexed",
+      "reason": "Auto-review decision/context reference; indexed only."
+    },
+    {
+      "path": ".agents/notes/proposed/process/2026-07-26-remove-packed-session-fixture-migrator.md",
+      "status": "indexed",
+      "reason": "Direct local reference from the session-snapshot guide; indexed only."
+    },
+    {
+      "path": ".agents/notes/README.md",
+      "status": "inspected",
+      "sha256": "089a84df7751fa993630302cb0ea1bf3ac10bf3f4bcca70ee95e55208b071f37"
+    },
+    {
+      "path": ".agents/skills/agent-experience/SKILL.md",
+      "status": "inspected",
+      "sha256": "5037504aa94ab95fe50c3a390e0a8d625dc041b35d90aa8d55a39f7c39f8feb4"
+    },
+    {
+      "path": ".agents/skills/cordis-styling-nitpicking/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-archive-agent-notes/SKILL.md",
+      "status": "inspected",
+      "sha256": "298e95629ade953ba5e0e4fd4c50e5205389ac6adc5d55dea1ef26617a323f84"
+    },
+    {
+      "path": ".agents/skills/dsh-ci-test-reliability/references/ci-flake-diagnosis.md",
+      "status": "inspected",
+      "sha256": "9fb8d3a56e9e90331dd2155f5bc55a9bea7d000f7dd2b519a4e59524a97f2b44"
+    },
+    {
+      "path": ".agents/skills/dsh-ci-test-reliability/SKILL.md",
+      "status": "inspected",
+      "sha256": "6ed04407132759698e5e5e9684178f826b4c659e15e90e8e996141e5ad7edb4c"
+    },
+    {
+      "path": ".agents/skills/dsh-client-ui-ux/SKILL.md",
+      "status": "inspected",
+      "sha256": "5b73d58e2e5d47323a395065aa466e8950431fee3e177401b582683e3a1480cd"
+    },
+    {
+      "path": ".agents/skills/dsh-code-review/SKILL.md",
+      "status": "inspected",
+      "sha256": "b3903c1a6242e5f3329de7bab6af07dcec9bc2262384135c620daac3ab72634c"
+    },
+    {
+      "path": ".agents/skills/dsh-create-upgrade-guide/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-cua-macos-signing/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-doc-writing/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-error-handling/SKILL.md",
+      "status": "inspected",
+      "sha256": "0663f5d34580e909cf0f750f83d040ccd8186779fe07f209f1e95c0e5f421ae3"
+    },
+    {
+      "path": ".agents/skills/dsh-find-simplifications/SKILL.md",
+      "status": "inspected",
+      "sha256": "0287165e16f482bc197bc36a40e66a2eee3d47479bb0dfc1836602a96052befe"
+    },
+    {
+      "path": ".agents/skills/dsh-merging-stacked-prs/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-official-plugin-artwork/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-pr-description/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-pre-push-checks/SKILL.md",
+      "status": "inspected",
+      "sha256": "8a4b78f71444be44bc2fcfab25f6b1553230bdb61433f1bd586f53f8429d17d7"
+    },
+    {
+      "path": ".agents/skills/dsh-prose-standard/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-responsive-ui/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-session-projection/SKILL.md",
+      "status": "inspected",
+      "sha256": "a99bf245906efb60a615b32111a75510eb708f38efff8286892db39382a9a0c9"
+    },
+    {
+      "path": ".agents/skills/dsh-speed-up-perf/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-translate-docs/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-trim-cot-leakage/SKILL.md",
+      "status": "inspected",
+      "sha256": "158009cad23c9124e761b28e70d6d764630866f14fcbbd7cfcf27767f842ddf5"
+    },
+    {
+      "path": ".agents/skills/record-browser-gif/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".claude/skills",
+      "status": "indexed",
+      "reason": "Symlink entry; target was not followed as source content."
+    },
+    {
+      "path": ".github/AGENTS.md",
+      "status": "inspected",
+      "sha256": "cae573220fa39f768c3500bca624b1aa9d835eed59d46d42b1052b42299571c7"
+    },
+    {
+      "path": "AGENTS.md",
+      "status": "inspected",
+      "sha256": "08c843ca789ea7f8803268b61c8e313a20163d1a013e09aef1903a0d1d4d57b8"
+    },
+    {
+      "path": "BENCHMARK.md",
+      "status": "inspected",
+      "sha256": "3e38b63e4507b4db923d2cacdff0828e12e2774a35cd1695b592cfaa3d9e7bc2"
+    },
+    {
+      "path": "CLAUDE.md",
+      "status": "indexed",
+      "reason": "Symlink entry; target was not followed as source content."
+    },
+    {
+      "path": "docs/config-catalog.md",
+      "status": "indexed",
+      "reason": "Local configuration reference linked from replay support; indexed only."
+    },
+    {
+      "path": "docs/defensive-patterns/general.md",
+      "status": "inspected",
+      "sha256": "33f8f2be7a651f86915f0ee2bff53f9e36a9cb3849d809ab86e8153dbb395311"
+    },
+    {
+      "path": "docs/session-format-status.md",
+      "status": "indexed",
+      "reason": "Direct local reference from the session-snapshot guide; indexed only."
+    },
+    {
+      "path": "docs/testing.md",
+      "status": "inspected",
+      "sha256": "12027738dfdd1a3a5b4a2cc846d0d9e02ad651cd5dfa05667344e19f670a4d20"
+    },
+    {
+      "path": "LICENSE",
+      "status": "inspected",
+      "sha256": "ebb4f09972aee8608be255debaf78451a68e95c290f55c240dec2ecfa16ea6be"
+    },
+    {
+      "path": "package.json",
+      "status": "inspected",
+      "sha256": "4a532e2cf6c2e8283bb5714b6fa6d4a0e6c123be0cecb0b0ab5763892eb80b91"
+    },
+    {
+      "path": "packages/client/ui-permission-presets/README.md",
+      "status": "indexed",
+      "reason": "Auto-review integration dependency; indexed only."
+    },
+    {
+      "path": "packages/client/ui-tool/README.md",
+      "status": "indexed",
+      "reason": "Auto-review integration dependency; indexed only."
+    },
+    {
+      "path": "packages/compaction/compaction-basic/README.md",
+      "status": "inspected",
+      "sha256": "d3b046eccfed324d9e018c3c964e0843ef44604f2bc5c46c495f013b1c36a24a"
+    },
+    {
+      "path": "packages/compaction/compaction-basic/src/index.ts",
+      "status": "inspected",
+      "sha256": "d0e2bf52e3a0ae70da153ce329aedab354fd37e1ccfacb27fea7070b7063aa28"
+    },
+    {
+      "path": "packages/compaction/README.md",
+      "status": "indexed",
+      "reason": "Compaction surface; indexed only."
+    },
+    {
+      "path": "packages/context/agent-instructions/README.md",
+      "status": "inspected",
+      "sha256": "e084b89a94b63d4e4deb455feb5ca7f101326086409d3aa4513e445b18b8ae9a"
+    },
+    {
+      "path": "packages/context/agent-instructions/src/config.ts",
+      "status": "inspected",
+      "sha256": "e19acb898825a7324434b1b69021ee16e79030277e9f791c325287f2073c8644"
+    },
+    {
+      "path": "packages/context/agent-instructions/src/files.ts",
+      "status": "inspected",
+      "sha256": "79d64704d1d86ba9d6a11d91e1a596d84de6d774e80c3bbf275f24f6b4ca1f5c"
+    },
+    {
+      "path": "packages/context/agent-instructions/src/index.ts",
+      "status": "inspected",
+      "sha256": "2cca75eef331d2ba2e615a6d7292037ad189121bbe53f773e5888149b24975b6"
+    },
+    {
+      "path": "packages/context/agent-instructions/src/render.ts",
+      "status": "inspected",
+      "sha256": "09a7c1b445a18fd32d380116b82de62df6eb95f9e6934b737b5813119aa3a26d"
+    },
+    {
+      "path": "packages/context/agent-instructions/src/state.ts",
+      "status": "inspected",
+      "sha256": "9f1dd768d9a0e24defe2fce728111a7a898a12a69c2a64b23c0882f561438f38"
+    },
+    {
+      "path": "packages/context/agent-instructions/tests/agent-instructions.spec.ts",
+      "status": "inspected",
+      "sha256": "5589cee34a89acd2768f672377dedbf57fe97bd53aaeebb9dbba51c1484fcd3f"
+    },
+    {
+      "path": "packages/context/README.md",
+      "status": "indexed",
+      "reason": "Context assembly surface; indexed only."
+    },
+    {
+      "path": "packages/core/agent-loop/README.md",
+      "status": "inspected",
+      "sha256": "63beae37c800961fc795c1597fc526ec8186d0c6a7088c7aff19993528483f2f"
+    },
+    {
+      "path": "packages/core/agent-loop/src/index.ts",
+      "status": "inspected",
+      "sha256": "e5be58314b69006a32f84e008656bad0ef01f0db37c8ade00245baaede0f1fe8"
+    },
+    {
+      "path": "packages/core/agent-loop/src/runtime-context.ts",
+      "status": "inspected",
+      "sha256": "1dd0caf0f3dc4571d768783707580805d1cae4a4ac09f872775891cd013bad8c"
+    },
+    {
+      "path": "packages/core/agent/README.md",
+      "status": "indexed",
+      "reason": "Runtime dependency context for loader smoke support; indexed only."
+    },
+    {
+      "path": "packages/core/tools/README.md",
+      "status": "inspected",
+      "sha256": "a55c8f9cfbe12df66ca26b4c5b5bb3238c5e12e0bbc9e55ff1f1475dce0464b2"
+    },
+    {
+      "path": "packages/core/tools/src/contracts.ts",
+      "status": "inspected",
+      "sha256": "bae0ec829e13e700b1d8b8125e832b5748afbf23a5be86655bbc6efb45cef201"
+    },
+    {
+      "path": "packages/core/tools/src/index.ts",
+      "status": "inspected",
+      "sha256": "5d95d7f47781ba001a0116feb61a87bf436f2ca587c01fb4ce517258710b7537"
+    },
+    {
+      "path": "packages/core/tools/src/pipeline.ts",
+      "status": "inspected",
+      "sha256": "9ae322a5771cac6f5badad9b66d02b157543659858df630bfb0fb4236ad4667e"
+    },
+    {
+      "path": "packages/experimental/auto-review/cordis.patch.yml",
+      "status": "inspected",
+      "sha256": "21d456d0053b3d52ca8ad4ceef60e4cd5618e8c850ab8fe9e6377dfcdcb3bc2a"
+    },
+    {
+      "path": "packages/experimental/auto-review/package.json",
+      "status": "inspected",
+      "sha256": "e10d437daa58f34a1bc655c6a5b4449676d083d2c2f99b1610c9215baa7ef713"
+    },
+    {
+      "path": "packages/experimental/auto-review/README.md",
+      "status": "inspected",
+      "sha256": "690ea340a77dd4fddd80a4557579eb49eda88a8a0b856386668842f5dfd14db0"
+    },
+    {
+      "path": "packages/experimental/auto-review/src/index.ts",
+      "status": "inspected",
+      "sha256": "179e8f50be62f0e76359d252cddd0d44e46306d394bc77045bf9f790afead297"
+    },
+    {
+      "path": "packages/experimental/hooks-claude-code/src/index.ts",
+      "status": "indexed",
+      "reason": "Claude Code hook adapter; indexed only."
+    },
+    {
+      "path": "packages/experimental/hooks-codex/src/index.ts",
+      "status": "indexed",
+      "reason": "Codex hook adapter; indexed only."
+    },
+    {
+      "path": "packages/experimental/README.md",
+      "status": "indexed",
+      "reason": "Experimental integrations overview; indexed only."
+    },
+    {
+      "path": "packages/interaction/permission-presets/package.json",
+      "status": "inspected",
+      "sha256": "130dc7b280b01b59d2fe638fb82ff2500dd556cb5c0a85aebdb1b4f8202c8aae"
+    },
+    {
+      "path": "packages/interaction/permission-presets/README.md",
+      "status": "inspected",
+      "sha256": "25d7d8cfb1476f73db68a5f1ad72217d713ce4f29540548187573352018850bd"
+    },
+    {
+      "path": "packages/interaction/permission-presets/src/index.ts",
+      "status": "inspected",
+      "sha256": "20132e8f0aa8c0bee6525a16b8d8c386d72f937b0a54b15fe6d2174aa4047be0"
+    },
+    {
+      "path": "packages/interaction/user-approval/package.json",
+      "status": "inspected",
+      "sha256": "cf514de75b5f01473c872098f2365c721461c2cf94e2a913485fb3c30bc98c73"
+    },
+    {
+      "path": "packages/interaction/user-approval/README.md",
+      "status": "inspected",
+      "sha256": "9821c759daecc354f205cec4bfa10cda68253474cf914dc8d237a8fa76ff00ef"
+    },
+    {
+      "path": "packages/interaction/user-approval/src/index.ts",
+      "status": "inspected",
+      "sha256": "f12eaaa7ec0a1ecf7730d27f30ea8fb589331aff3778fc5aba3e1e32d4d46c49"
+    },
+    {
+      "path": "packages/llm/deepseek-llm-api-extensions/package.json",
+      "status": "inspected",
+      "sha256": "2f3da31c96feaa1cbd416de13c826c2529c0f01a1194d4aaeaa3c1f8addde020"
+    },
+    {
+      "path": "packages/llm/deepseek-llm-api-extensions/src/index.ts",
+      "status": "inspected",
+      "sha256": "bda2206d97137d5761e17a39bdfbd0e9000d0a9191bf8c909b47be81e99f1fbd"
+    },
+    {
+      "path": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+      "status": "inspected",
+      "sha256": "57048dfd8bf5412ba6f28cc8bb530a97082b2dc30197137ffd507565280fbe5b"
+    },
+    {
+      "path": "packages/llm/llm-deepseek/package.json",
+      "status": "inspected",
+      "sha256": "2d8c2f2ecb0543c9157f5d14fb956c220c5658d03196d2eee9570a266e5e36fa"
+    },
+    {
+      "path": "packages/llm/llm-deepseek/src/adapter.ts",
+      "status": "inspected",
+      "sha256": "4a8fbfe8913e01d15bbe8cc861f8115a9af9a9945860c7ed33331df708e43ac9"
+    },
+    {
+      "path": "packages/llm/llm-deepseek/src/request-extensions.ts",
+      "status": "inspected",
+      "sha256": "4ec4c58efb30f6666d5eccad44d0319f7bdac1065140140b4ad85492fcde0d4e"
+    },
+    {
+      "path": "packages/llm/llm/README.md",
+      "status": "indexed",
+      "reason": "Local runtime dependency referenced by replay support; indexed only."
+    },
+    {
+      "path": "packages/llm/plugin-package-inventory-deepseek/package.json",
+      "status": "inspected",
+      "sha256": "7495f7e108e6ace665962f3a7829d2df519037596558304dc9e1fce29e42e8fc"
+    },
+    {
+      "path": "packages/llm/plugin-package-inventory-deepseek/README.md",
+      "status": "inspected",
+      "sha256": "9d20b2c73b741efb795228f16cde8d237127b08425ca3a6b159234b14223d3a5"
+    },
+    {
+      "path": "packages/llm/plugin-package-inventory-deepseek/src/index.ts",
+      "status": "inspected",
+      "sha256": "8e1ef1d55e577e875ce4d561d92c6e02ba5f832b15e022ec4c897dfbcf5c35c4"
+    },
+    {
+      "path": "packages/llm/plugin-package-inventory-deepseek/src/types.ts",
+      "status": "inspected",
+      "sha256": "1752e57fa02cc353e95baf5185236529be9653e57debeffad2915d6f5b007667"
+    },
+    {
+      "path": "packages/mcp/mcp-client/src/index.ts",
+      "status": "inspected",
+      "sha256": "2cb14d9e450bfecade9f1a98686ec8597a41d3fe157dd28656eb64f2f2175ff1"
+    },
+    {
+      "path": "packages/mcp/mcp-client/tests/tool-loading.spec.ts",
+      "status": "inspected",
+      "sha256": "6a2f90beb2450e589c43c574010e9b237811903364b36b94b7d45c47cd5f459f"
+    },
+    {
+      "path": "packages/mcp/README.md",
+      "status": "indexed",
+      "reason": "MCP surface; indexed only."
+    },
+    {
+      "path": "packages/sandbox/sandbox-policy/README.md",
+      "status": "inspected",
+      "sha256": "de7fbcc4e355b9e2869ea3db28b9ce84d1c3e937d9f8744be7fdf057b8545bf3"
+    },
+    {
+      "path": "packages/sandbox/sandbox-policy/src/index.ts",
+      "status": "inspected",
+      "sha256": "272f0a19246dc3c12df3008462052fe5500719b2d082efa78d4b8f5c57cf2bbe"
+    },
+    {
+      "path": "packages/session/session-log-deepseek/package.json",
+      "status": "inspected",
+      "sha256": "e1d50027925ddb2a603e7a623d89c82a9d1134bb64dac9c668f30c01c39ccbe7"
+    },
+    {
+      "path": "packages/session/session-log-deepseek/README.md",
+      "status": "inspected",
+      "sha256": "42cd61044bc6997eb968803f673669de0e0358e7eef91275b179adb72d38d337"
+    },
+    {
+      "path": "packages/session/session-log-deepseek/src/index.ts",
+      "status": "inspected",
+      "sha256": "eb457a11f237e0e6fc255bdb1cb4d7be1de8c72931d07cd84a7a81be6a17e927"
+    },
+    {
+      "path": "packages/session/session-log-deepseek/src/types.ts",
+      "status": "inspected",
+      "sha256": "3cf206e1eab2253c17934fd4fedce82f0104ffdfbf644d3f8a7c24eb2542a273"
+    },
+    {
+      "path": "packages/session/session-persistence-jsonl/README.md",
+      "status": "inspected",
+      "sha256": "ca1c936fdf6920d08c82f85e60b6db4c9c1b4a03a14b4c1ff0eaffd70eb5cd06"
+    },
+    {
+      "path": "packages/session/session-persistence-jsonl/src/format.ts",
+      "status": "inspected",
+      "sha256": "87d536ead041fb953f866e0191a79b4dbbbc510aee1461706f9cdc2e4c46a038"
+    },
+    {
+      "path": "packages/session/session-persistence-jsonl/src/generation.ts",
+      "status": "inspected",
+      "sha256": "fab0885c4f3cfbe29780a4c210a8a0fa12864c9a8f13bdf40bf50bfd5c236c69"
+    },
+    {
+      "path": "packages/session/session-persistence-jsonl/src/index.ts",
+      "status": "inspected",
+      "sha256": "d5e518979727457f2dd32ffc0465839188c09d7b8c13a05501ba8c748693049a"
+    },
+    {
+      "path": "packages/session/session-persistence-jsonl/src/storage.ts",
+      "status": "inspected",
+      "sha256": "8ed946abaa2484648c6a250b760abcad7c2aead2f384df591d10adeb6fef1927"
+    },
+    {
+      "path": "packages/session/session-persistence-jsonl/tests/content-admission.spec.ts",
+      "status": "inspected",
+      "sha256": "a581cf7c5decd3993cdaec63181c1a90550897ea943dd9f842bb93c2c66fcc6b"
+    },
+    {
+      "path": "packages/session/session-persistence-jsonl/tests/migration-refusal.spec.ts",
+      "status": "inspected",
+      "sha256": "88691e684d8c3c1a002b3f892f6a7517b1f09c02877c77e4bb5d4c4b40c90385"
+    },
+    {
+      "path": "packages/session/session-persistence-sqlite/README.md",
+      "status": "inspected",
+      "sha256": "2199a9e9e762ad32fc8383cc6c6fb822b7c88f4c6094266e43118cd60515aeee"
+    },
+    {
+      "path": "packages/session/session-persistence-sqlite/src/codec.ts",
+      "status": "inspected",
+      "sha256": "0b218b87112c58cf8bc39b08a7ca314910b0c1316398575b52bca7aa83d06cbc"
+    },
+    {
+      "path": "packages/session/session-persistence-sqlite/src/frame.ts",
+      "status": "inspected",
+      "sha256": "b5ca2bb19c0164874787c0d3cba9cc9c4b1744a71e545f2a34352888e434e0ea"
+    },
+    {
+      "path": "packages/session/session-persistence-sqlite/src/index.ts",
+      "status": "inspected",
+      "sha256": "ca7425450c5fe966300c0dfe584722884b0af334a6b6378c8934a88e3a7cbcee"
+    },
+    {
+      "path": "packages/session/session-persistence-sqlite/src/persistence.ts",
+      "status": "inspected",
+      "sha256": "0d9d4fe758ad1ad928149780e99e6f6add87e3f96881abacb766538391193950"
+    },
+    {
+      "path": "packages/session/session-persistence-sqlite/tests/persistence.spec.ts",
+      "status": "inspected",
+      "sha256": "9ac71474329b36d51bde576a0d87027f34f0580d7582510204098c34bf24aed9"
+    },
+    {
+      "path": "packages/session/session-persistence-sqlite/tests/storage-failures.spec.ts",
+      "status": "inspected",
+      "sha256": "4768eabc7680edf64f9ecaa24d642f85429a003aa843debeaf95986934cac89f"
+    },
+    {
+      "path": "packages/session/session-persistence/README.md",
+      "status": "inspected",
+      "sha256": "c9cf4f7108ec36ffc743e7e902c8fc668691e3bd202e13dc22af2c6433257990"
+    },
+    {
+      "path": "packages/session/session-persistence/src/handle.ts",
+      "status": "inspected",
+      "sha256": "2fd8b5c5188ffdf5adee78a260b3dd0a9be97e5eb9fcdb5aafae5a8ed5471a31"
+    },
+    {
+      "path": "packages/session/session-persistence/src/index.ts",
+      "status": "inspected",
+      "sha256": "74c926d4209da8ca622ef0beedafd01c34def2e764d43b40028b14010d7db2c0"
+    },
+    {
+      "path": "packages/session/session-persistence/src/storage-contract.ts",
+      "status": "inspected",
+      "sha256": "062911ece08832418f2fd0dc8fabdd8848897de6b2d97bc7fca54a634e0c99bd"
+    },
+    {
+      "path": "packages/session/session-persistence/tests/storage-contract.spec.ts",
+      "status": "inspected",
+      "sha256": "3acaccc58076fc8b88fda27a553cc3a0686fb99f04e6433a3835234074c94b37"
+    },
+    {
+      "path": "packages/session/session-projection/README.md",
+      "status": "inspected",
+      "sha256": "364eadbed9fd53d2285776eb2a9cb8e87e53661a0e35613495c0a309db311815"
+    },
+    {
+      "path": "packages/shell/tool-bash/README.md",
+      "status": "inspected",
+      "sha256": "47a204ca31daac9d6eb317c4310fb704194a3a71e1ece80fc5e1b0bc680bd377"
+    },
+    {
+      "path": "packages/shell/tool-bash/src/index.ts",
+      "status": "inspected",
+      "sha256": "0092da52690cdf04ec49a41551d4490a5c8c2e672c123a3c5f2f3a6418a48039"
+    },
+    {
+      "path": "packages/skill/README.md",
+      "status": "indexed",
+      "reason": "Skill loading surface; indexed only."
+    },
+    {
+      "path": "packages/test-support/llm-replay/package.json",
+      "status": "inspected",
+      "sha256": "1accda0ba44273b706bb7a6ed885d82c242443f661bad6e7069d6823b71ea3d5"
+    },
+    {
+      "path": "packages/test-support/llm-replay/README.md",
+      "status": "inspected",
+      "sha256": "12c37d1c2aac95bc0664df6cdd5018c9b41cb8bfaae96c289635c36f530a0770"
+    },
+    {
+      "path": "packages/test-support/llm-replay/src/index.ts",
+      "status": "inspected",
+      "sha256": "0026605f06ef71bdfe6c75f1bbecfff355a57207d0e6d5aa8bef2441fc3e3278"
+    },
+    {
+      "path": "packages/test-support/llm-replay/tests/llm-replay.spec.ts",
+      "status": "inspected",
+      "sha256": "7e0baaca002df02ee9de7d62b64841a5ebe8326a17603372888d35759495f8e6"
+    },
+    {
+      "path": "packages/test-support/loader-smoke/package.json",
+      "status": "inspected",
+      "sha256": "d981c2b95433a5ad5da0fbafeb22b5d22480b05a0cf47ddf8008a9cb78b9cb35"
+    },
+    {
+      "path": "packages/test-support/loader-smoke/README.md",
+      "status": "inspected",
+      "sha256": "1632765093a94d2625c3307a4d4448c1f42d95410c7ae11c37c7a72fbb626a65"
+    },
+    {
+      "path": "packages/test-support/loader-smoke/src/agent-turn.ts",
+      "status": "inspected",
+      "sha256": "548e33d9d4bbe1843eba3fdd8689d7b207c3a47896597b7840bb58a17c1eb33e"
+    },
+    {
+      "path": "packages/test-support/loader-smoke/src/index.ts",
+      "status": "inspected",
+      "sha256": "e5bbe296c916adb8dac8c9dbc63df3971f78282fc52777829cc9f3e6a4514b08"
+    },
+    {
+      "path": "packages/test-support/loader-smoke/tests/loader-smoke.spec.ts",
+      "status": "inspected",
+      "sha256": "6dd9b98dea41e51e4a1c2ab9e4b884ec5ec3ffd5259bd8758d9203cdb5335904"
+    },
+    {
+      "path": "packages/test-support/README.md",
+      "status": "inspected",
+      "sha256": "cd0a844f050455bcbba1db6c79035859c2542f21d13c81f6ec9f735fc112c4ce"
+    },
+    {
+      "path": "packages/test-support/session-snapshot/package.json",
+      "status": "inspected",
+      "sha256": "0b5845cfb4dc9669fc84b1a3c57b0e9495fb745526e59e6ef442405efd7bb2df"
+    },
+    {
+      "path": "packages/test-support/session-snapshot/README.md",
+      "status": "inspected",
+      "sha256": "1db01ee209873c1dc7f620a059c86b8cc999fd30f270df56c995ef28e0e18891"
+    },
+    {
+      "path": "packages/test-support/session-snapshot/src/harness.ts",
+      "status": "inspected",
+      "sha256": "ed68f5c53e792bafc8b424ed0241c81af0d747924ed211f24180d803335cee7f"
+    },
+    {
+      "path": "packages/test-support/session-snapshot/src/identity.ts",
+      "status": "inspected",
+      "sha256": "4a4e552296f8d5d7e9a18632fc7d89001c37d58dcf594dff695c71bd319f4fa3"
+    },
+    {
+      "path": "packages/test-support/session-snapshot/src/launcher.ts",
+      "status": "inspected",
+      "sha256": "a4fcdab77edd623123c83cd53379deb13a36d7f63e953c8993d05283dc7ba90d"
+    },
+    {
+      "path": "packages/test-support/session-snapshot/src/manifest.ts",
+      "status": "inspected",
+      "sha256": "967934b70393208739a70680339b84fbf686b60a18b72139439780d90309278c"
+    },
+    {
+      "path": "packages/test-support/session-snapshot/src/normalize.ts",
+      "status": "inspected",
+      "sha256": "4bf07bb3f33f5563d4527a126171660733bccf6ed090e2bdf9c1622bcdb78669"
+    },
+    {
+      "path": "packages/test-support/session-snapshot/src/session-files.ts",
+      "status": "inspected",
+      "sha256": "5849d5a5ac2426c2d12c6377e8cb982480d59f0ed0d2bb1d7b09f78a00a56346"
+    },
+    {
+      "path": "packages/test-support/session-snapshot/src/suite.ts",
+      "status": "inspected",
+      "sha256": "da9bef6769d24ddcc30aeef5d13f2a292d3dc2a4d386b0c2878a74d17ddd1275"
+    },
+    {
+      "path": "packages/test-support/session-snapshot/src/workspace.ts",
+      "status": "inspected",
+      "sha256": "d801ffade11744e89c9adf7ce63d43efdaf298eb56e95eb8181d48897adfc62c"
+    },
+    {
+      "path": "packages/test-support/session-snapshot/tests/harness.spec.ts",
+      "status": "inspected",
+      "sha256": "38b8382a0ec7caa8f2e3cdbd408fb54ab58f5586dc475c6def0dd9c3bbdffa29"
+    },
+    {
+      "path": "packages/test-support/session-snapshot/tests/storage-policy.spec.ts",
+      "status": "inspected",
+      "sha256": "31b36ec5d4cb92ac719d7f556022cd4709e7c341d680df26434f87dcce044223"
+    },
+    {
+      "path": "packages/test-support/session-snapshot/tests/suite.spec.ts",
+      "status": "inspected",
+      "sha256": "7a9338077cf0a83f7cd73faa09605c09d02804346670a515c3234c7ba6fdc0dd"
+    },
+    {
+      "path": "packages/test-support/session-snapshot/tests/workspace.spec.ts",
+      "status": "inspected",
+      "sha256": "98ae15c1df1b15dbd3a76b35331200f94a2e4f3842d21b4a25dd964b9287a75b"
+    },
+    {
+      "path": "README.md",
+      "status": "inspected",
+      "sha256": "0f5516be2acde776f05572cbc8c3093c90549afe04ce118e11157d073d5d15f4"
+    },
+    {
+      "path": "SAFETY.md",
+      "status": "inspected",
+      "sha256": "62075bb51e0f7790441e7722ff12063107b4866019332e71ef01b63b6f880fee"
+    },
+    {
+      "path": "scripts/agent-note-tree.ts",
+      "status": "inspected",
+      "sha256": "a10e1c12568a4afefaa09db92651163dae309cd4e1d054db16b18806b3fab40a"
+    },
+    {
+      "path": "scripts/archived-agent-notes.spec.ts",
+      "status": "inspected",
+      "sha256": "4f96b8ccdd061ce21d912295969ac077efd7870fb38ed906edbd617d961bc911"
+    },
+    {
+      "path": "scripts/archived-agent-notes.ts",
+      "status": "inspected",
+      "sha256": "f7e8e314e83b0baaeb6ffee319d20139506a78537389a9f1d6810d20ca1967ed"
+    },
+    {
+      "path": "scripts/migrate-packed-session-fixtures.ts",
+      "status": "indexed",
+      "reason": "Direct local reference from the session-snapshot guide; indexed only."
+    },
+    {
+      "path": "scripts/verify-archived-agent-notes.ts",
+      "status": "inspected",
+      "sha256": "d9d051c957d1ee33604265a69ed71e01dea8db865dc68de3c28e9ed8f387df4e"
+    },
+    {
+      "path": "snapshots/AGENTS.md",
+      "status": "inspected",
+      "sha256": "c09fc456a5ddae41f95bbf8f874a737cf2308fdbc33670003552f57595efa9b3"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "status": "inspected",
+      "sha256": "15098d6e9918439362a8460513a60733d146d6fab966293669b9deb6f1f0ce04"
+    }
+  ],
+  "candidates": [
+    {
+      "path": ".agents/skills/dsh-ci-test-reliability/SKILL.md",
+      "kind": "skill",
+      "purpose": "A test-reliability procedure centered on diagnosing the shared failure mechanism, atomic allocation of scarce resources, explicit readiness, cross-process topology, and teardown to quiescence rather than masking flakes.",
+      "requirements": [
+        "Adapt commands and examples to the target repository test runner, CI topology, and platform-specific resource model.",
+        "No additional runtime dependency is evident for the guidance itself."
+      ],
+      "overlaps": [
+        "dsh-pre-push-checks for local validation and CI gates.",
+        "docs/testing.md and snapshot test guidance for deterministic setup and cleanup."
+      ],
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "The principles are portable, but procedures assume DeepSeek-specific Vitest, CI lanes, and service topology; translate only after mapping the target test stack."
+      },
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the repository MIT copyright and license notice when reusing substantial material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "evidence": [
+        {
+          "path": ".agents/skills/dsh-ci-test-reliability/SKILL.md",
+          "note": "Defines diagnosis-first test reliability rules and requires cleanup/readiness discipline."
+        },
+        {
+          "path": ".agents/skills/dsh-ci-test-reliability/references/ci-flake-diagnosis.md",
+          "note": "Details resource collision, process topology, readiness, and deterministic teardown failure modes."
+        },
+        {
+          "path": ".agents/skills/dsh-pre-push-checks/SKILL.md",
+          "note": "Shows adjacent DSH-specific local/CI validation workflow and overlap."
+        },
+        {
+          "path": "docs/testing.md",
+          "note": "Documents the host repository testing and fixture conventions that constrain portability."
+        }
+      ],
+      "links": [
+        {
+          "path": ".agents/skills/dsh-ci-test-reliability/references/ci-flake-diagnosis.md",
+          "reason": "Core supporting diagnosis reference."
+        },
+        {
+          "path": ".agents/skills/dsh-pre-push-checks/SKILL.md",
+          "reason": "Related validation workflow; inspect for overlap when adapting."
+        },
+        {
+          "path": "docs/testing.md",
+          "reason": "Local test and fixture conventions."
+        },
+        {
+          "path": "docs/defensive-patterns/general.md",
+          "reason": "General defensive-testing context."
+        },
+        {
+          "path": "snapshots/AGENTS.md",
+          "reason": "Fixture-specific instructions relevant to deterministic test behavior."
+        }
+      ]
+    },
+    {
+      "path": ".agents/skills/dsh-archive-agent-notes/SKILL.md",
+      "kind": "memory",
+      "purpose": "A lifecycle-aware curation process for human-authored agent notes, including proposed/implemented/archived states, structured note families, bilingual triplets, and append-only SHA-256 archival verification.",
+      "requirements": [
+        "Requires a governed note corpus and lifecycle/schema conventions.",
+        "The implementation uses repository-specific TypeScript scripts and package-manager/test commands; port the review invariants, not the scripts.",
+        "Does not itself provide model memory retrieval or automatic context assembly."
+      ],
+      "overlaps": [
+        "Repository instructions and ADR/change-log systems.",
+        "Potentially overlaps native agent memory; this source is a human-reviewed archive workflow, not an equivalent memory store."
+      ],
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "The provenance, review, and archival-seal ideas can transfer; DSH directory taxonomy, bilingual completeness requirements, and scripts are repository-specific."
+      },
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the repository MIT copyright and license notice when reusing substantial material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "evidence": [
+        {
+          "path": ".agents/skills/dsh-archive-agent-notes/SKILL.md",
+          "note": "Defines the note review and archival workflow."
+        },
+        {
+          "path": ".agents/notes/README.md",
+          "note": "Specifies note types, lifecycle, localization, and corpus policy."
+        },
+        {
+          "path": ".agents/notes/archived/AGENTS.md",
+          "note": "Requires archived-note integrity/provenance conventions."
+        },
+        {
+          "path": "scripts/archived-agent-notes.ts",
+          "note": "Implements archive generation and hash-seal handling."
+        },
+        {
+          "path": "scripts/verify-archived-agent-notes.ts",
+          "note": "Verifies archived note structure and integrity."
+        },
+        {
+          "path": "scripts/archived-agent-notes.spec.ts",
+          "note": "Covers archive/verifier behavior."
+        }
+      ],
+      "links": [
+        {
+          "path": ".agents/notes/README.md",
+          "reason": "Corpus rules and lifecycle model."
+        },
+        {
+          "path": ".agents/notes/AGENTS.md",
+          "reason": "Shared note authoring constraints."
+        },
+        {
+          "path": ".agents/notes/archived/AGENTS.md",
+          "reason": "Archived-state requirements."
+        },
+        {
+          "path": ".agents/notes/implemented/AGENTS.md",
+          "reason": "Implemented-state requirements."
+        },
+        {
+          "path": "scripts/archived-agent-notes.ts",
+          "reason": "Archive tooling."
+        },
+        {
+          "path": "scripts/verify-archived-agent-notes.ts",
+          "reason": "Integrity verification."
+        },
+        {
+          "path": "scripts/agent-note-tree.ts",
+          "reason": "Shared note-tree helper."
+        },
+        {
+          "path": "scripts/archived-agent-notes.spec.ts",
+          "reason": "Tooling tests."
+        }
+      ]
+    },
+    {
+      "path": "packages/test-support/session-snapshot/README.md",
+      "kind": "support",
+      "purpose": "A keyless, real-process evaluation approach combining recorded LLM streams, scripted scenario inputs, normalized ACP/session logs, prompt/tool-schema pins, and before/after workspace snapshots under a closed manifest.",
+      "requirements": [
+        "Requires a compatible ACP agent/runtime, profile and session-format adapters, Vitest fixtures, and a separate live-API record workflow; replay/refresh can be keyless but only validate captured scenarios.",
+        "The snapshot/replay/loader packages are coupled to DSH/Cordis services and session-format packages; the snapshot package also depends on the ACP SDK and test infrastructure, so adapt the method rather than importing it unchanged.",
+        "Accepted deepseek-official replay calls may invoke the local extension prepare/accept path; isolate or replace that effect boundary before using replay as a no-side-effect test.",
+        "Keep model-output replay assertions separate from workspace-state assertions and from side effects outside the captured workspace."
+      ],
+      "overlaps": [
+        "packages/test-support/llm-replay for recorded model-stream replay.",
+        "packages/test-support/loader-smoke for real Loader and direct-agent smoke tests.",
+        "dsh-ci-test-reliability and snapshots/AGENTS.md for deterministic tests and fixture boundaries."
+      ],
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "The methodology is reusable, but implementation is tied to DSH session formats, Cordis, ACP, Vitest, and Node. Replay is not guaranteed side-effect-free; port only after replacing runtime seams and explicitly isolating extension effects."
+      },
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the repository MIT notice and package-level notices; review third-party terms separately, including the ACP SDK Apache-2.0 notice, before reusing implementation.",
+        "evidence": [
+          "LICENSE",
+          "packages/test-support/session-snapshot/package.json",
+          "THIRD_PARTY_NOTICES.md"
+        ]
+      },
+      "evidence": [
+        {
+          "path": "packages/test-support/session-snapshot/README.md",
+          "note": "Describes replay/record/refresh tiers and session/workspace fixtures; keyless replay is distinct from live-API recording."
+        },
+        {
+          "path": "packages/test-support/session-snapshot/src/harness.ts",
+          "note": "Launches the real ACP process, scripts permission/input steps, waits on persisted turn/event boundaries, captures output/logs/workspace state, and aggregates cleanup failures."
+        },
+        {
+          "path": "packages/test-support/session-snapshot/src/launcher.ts",
+          "note": "Owns ACP subprocess startup and teardown; the harness is integration-level rather than a pure unit replay."
+        },
+        {
+          "path": "packages/test-support/session-snapshot/src/suite.ts",
+          "note": "Separates replay, record, and refresh; pins selected system-prompt/tool-schema header classes and serializes fixture writers."
+        },
+        {
+          "path": "packages/test-support/session-snapshot/src/manifest.ts",
+          "note": "Uses a closed JSON-schema YAML parse with explicit profile, platform, permission, and fixture fields; rejects unknown fields."
+        },
+        {
+          "path": "packages/test-support/session-snapshot/src/normalize.ts",
+          "note": "Normalizes volatile cwd/session/RPC identity values while retaining event structure, and has composable prompt/schema scrubbing."
+        },
+        {
+          "path": "packages/test-support/session-snapshot/src/identity.ts",
+          "note": "Redacts snapshot identities as typed first-seen tokens shared across logs, preserving relationships."
+        },
+        {
+          "path": "packages/test-support/session-snapshot/src/workspace.ts",
+          "note": "Captures text, binary, symlink, and empty-directory workspace state; declared runtime roots can be excluded."
+        },
+        {
+          "path": "packages/test-support/session-snapshot/tests/harness.spec.ts",
+          "note": "Covers subprocess lifecycle, permission fallback, durable event waits, timeouts, concurrent spill roots, and reporting cleanup failures."
+        },
+        {
+          "path": "packages/test-support/session-snapshot/tests/suite.spec.ts",
+          "note": "Covers mode separation, refresh write-back, header/schema pins, and fixture registration guards."
+        },
+        {
+          "path": "packages/test-support/session-snapshot/tests/workspace.spec.ts",
+          "note": "Checks deterministic path ordering and text/binary/link/empty-directory capture."
+        },
+        {
+          "path": "packages/test-support/session-snapshot/package.json",
+          "note": "Lists the internal DSH and ACP SDK coupling and MIT package license."
+        },
+        {
+          "path": "packages/test-support/llm-replay/src/index.ts",
+          "note": "Derives scripts from versioned persisted Assistant streams, requires sidecars for thrown/hanging calls, binds parent/child scripts by first-use order, and checks full consumption."
+        },
+        {
+          "path": "packages/test-support/llm-replay/tests/llm-replay.spec.ts",
+          "note": "Exercises derived versus sidecar scripts, throw/hang behavior, acceptance states, format-catalog parity, and replay-triggered extension acceptance."
+        },
+        {
+          "path": "packages/test-support/loader-smoke/src/index.ts",
+          "note": "Runs a real Loader in src/tsx or built-lib/Node mode with proxy clearing, isolated homes/cwd, bounded process lifetime, output capture, and owned cleanup."
+        },
+        {
+          "path": "packages/test-support/loader-smoke/src/agent-turn.ts",
+          "note": "Drives one agent from durable inbox receipt to idle, filters events to that agent session, then flushes persistence."
+        },
+        {
+          "path": "packages/test-support/loader-smoke/tests/loader-smoke.spec.ts",
+          "note": "Checks isolated versus caller-owned cwd, argv, expected nonzero exits, captured diagnostics, timeout kill, and cleanup."
+        },
+        {
+          "path": "packages/test-support/llm-replay/package.json",
+          "note": "Declares DSH workspace dependencies, with the DeepSeek LLM extension package optional."
+        },
+        {
+          "path": "packages/test-support/loader-smoke/package.json",
+          "note": "Declares execa and tsx plus DSH Cordis/agent/session/proxy peers."
+        },
+        {
+          "path": "THIRD_PARTY_NOTICES.md",
+          "note": "States that the project MIT license does not replace dependency terms and lists ACP SDK Apache-2.0 and execa/tsx/Vitest MIT."
+        }
+      ],
+      "links": [
+        {
+          "path": "snapshots/AGENTS.md",
+          "reason": "Fixture policy and determinism requirements."
+        },
+        {
+          "path": "docs/testing.md",
+          "reason": "Repository test conventions."
+        },
+        {
+          "path": "packages/test-support/README.md",
+          "reason": "Parent test-support package map."
+        },
+        {
+          "path": "docs/session-format-status.md",
+          "reason": "Direct session-format reference; indexed only."
+        },
+        {
+          "path": "scripts/migrate-packed-session-fixtures.ts",
+          "reason": "Direct fixture-migration reference; indexed only."
+        },
+        {
+          "path": ".agents/notes/proposed/process/2026-07-26-remove-packed-session-fixture-migrator.md",
+          "reason": "Direct local proposal reference; indexed only."
+        },
+        {
+          "path": "packages/test-support/session-snapshot/src/harness.ts",
+          "reason": "Runner implementation; indexed only."
+        },
+        {
+          "path": "packages/test-support/session-snapshot/src/suite.ts",
+          "reason": "Suite implementation; indexed only."
+        },
+        {
+          "path": "packages/llm/llm/README.md",
+          "reason": "Local runtime dependency context; indexed only."
+        },
+        {
+          "path": "packages/core/agent/README.md",
+          "reason": "Runtime dependency context; indexed only."
+        },
+        {
+          "path": "packages/test-support/llm-replay/README.md",
+          "reason": "Direct replay adapter companion; assessed separately below."
+        },
+        {
+          "path": "packages/test-support/loader-smoke/README.md",
+          "reason": "Direct real-Loader smoke companion; assessed separately below."
+        }
+      ]
+    },
+    {
+      "path": "packages/experimental/auto-review/README.md",
+      "kind": "support",
+      "purpose": "Reference-only experiment for model-mediated per-tool review; its decision-hook pattern may inform future study, but it is not a safe authorization policy or directly adoptable harness component.",
+      "requirements": [
+        "Requires DSH Cordis/tool/session-log runtime integration and model access.",
+        "The README states it runs with Full access and may permit unsafe actions; do not enable as a security boundary.",
+        "A separate threat model and security review would be required before considering any derived design.",
+        "Its tools/pre-execute gate does not mediate the replay adapter’s direct extension prepare/accept callbacks; the README also excludes direct Node effects in PTC.",
+        "Auto fixes Full-access sandbox plus ask approval; neither setting converts provider-extension callbacks into reviewed or sandboxed tool executions."
+      ],
+      "overlaps": [
+        "Native tool permissions, user-approval mechanisms, and host MCP controls.",
+        "The session-persistence and tool-dispatch implementation in DSH."
+      ],
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "The package is explicitly experimental, DSH-specific, and uses Full access; it does not cover every execution effect and must not be copied as an authorization control."
+      },
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the repository MIT copyright and license notice when reusing substantial material; do not reuse before safety and dependency review.",
+        "evidence": [
+          "LICENSE",
+          "packages/experimental/auto-review/package.json"
+        ]
+      },
+      "evidence": [
+        {
+          "path": "packages/experimental/auto-review/README.md",
+          "note": "Labels the feature experimental and describes Full-access operation and unsafe-action limitations."
+        },
+        {
+          "path": "packages/experimental/auto-review/src/index.ts",
+          "note": "Implements the DSH-specific tool review integration; not a complete effect or permission boundary."
+        },
+        {
+          "path": "packages/experimental/auto-review/package.json",
+          "note": "Shows the Cordis and DSH runtime dependencies."
+        },
+        {
+          "path": "packages/experimental/auto-review/cordis.patch.yml",
+          "note": "Pins a Cordis compatibility patch, demonstrating additional framework coupling."
+        },
+        {
+          "path": "packages/interaction/permission-presets/README.md",
+          "note": "Auto is a current-session preset bundling danger-full-access with ask; sandbox and approval remain independent enforcement knobs."
+        },
+        {
+          "path": "packages/interaction/user-approval/README.md",
+          "note": "The approval service delegates ask decisions to answerers and fails closed if unavailable; it does not itself prompt or intercept non-tool callbacks."
+        },
+        {
+          "path": "packages/sandbox/sandbox-policy/README.md",
+          "note": "Policy applies through enforcing capability consumers such as confined bash, filesystem, and terminal."
+        },
+        {
+          "path": "packages/core/tools/src/pipeline.ts",
+          "note": "Approval requests are resolved in the tool pipeline; replay’s provider callback bypasses this pipeline."
+        }
+      ],
+      "links": [
+        {
+          "path": "packages/experimental/README.md",
+          "reason": "Experimental package context; indexed only."
+        },
+        {
+          "path": "packages/client/ui-permission-presets/README.md",
+          "reason": "Permission UI dependency; indexed only."
+        },
+        {
+          "path": "packages/client/ui-tool/README.md",
+          "reason": "Tool UI dependency; indexed only."
+        },
+        {
+          "path": "packages/interaction/permission-presets/README.md",
+          "reason": "Permission interaction dependency; indexed only."
+        },
+        {
+          "path": "packages/core/tools/README.md",
+          "reason": "Tool execution dependency; indexed only."
+        },
+        {
+          "path": "packages/session/session-log-deepseek/README.md",
+          "reason": "Session log dependency; indexed only."
+        },
+        {
+          "path": ".agents/notes/implemented/feature/2026-08-28-auto-review.md",
+          "reason": "Local implementation decision reference; indexed only."
+        }
+      ]
+    },
+    {
+      "path": "packages/test-support/llm-replay/README.md",
+      "kind": "support",
+      "purpose": "Keyless stream replay support that derives per-session model-call scripts from versioned persisted assistant streams, models thrown and hanging calls through explicit override sidecars, and fails if recorded calls remain unused.",
+      "requirements": [
+        "Requires the matching session-format catalog and DSH LLM/session/compaction packages; the optional DeepSeek extension integration can reproduce post-accept side effects.",
+        "Fixture derivation assumes this repository’s durable Assistant stream representation and ordered parent/child session creation; target formats and concurrency semantics need new adapters.",
+        "Use only with isolated side effects and explicit fixtures; it validates deterministic replay of recorded outputs, not model quality or all live provider behavior.",
+        "Accepted deepseek-official replay calls invoke registered extension prepare/accept callbacks with a synthetic empty messages body; control or replace all callbacks before making any no-side-effect claim.",
+        "With the shipped session-log provider active and no matching exclusion, replay acceptance can append a delivery watermark for a suffix that was not sent, potentially causing a later request to skip those events; this is inferred from the inspected path, not experimentally exercised."
+      ],
+      "overlaps": [
+        "packages/test-support/session-snapshot for scenario orchestration and persisted-output assertions.",
+        "Loader-smoke supplies a real process/runtime boundary; replay alone is not an end-to-end harness."
+      ],
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "The call-script/consumption-check method is portable; the adapter is DSH event-format and plugin specific, and accepted provider-extension effects must be controlled. Replay reproduces local provider acceptance callbacks without HTTP; a shipped session-log callback can mark an unsent suffix accepted, so isolate extension effects before adapting."
+      },
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the package/repository MIT notice and all applicable dependency notices; do not infer that the repository license covers external dependencies. The reviewed callback path additionally depends on DSH workspace packages and uses eventsource-parser (MIT), semver (ISC), and zod (MIT) per THIRD_PARTY_NOTICES.md; retain applicable notices.",
+        "evidence": [
+          "LICENSE",
+          "packages/test-support/llm-replay/package.json",
+          "THIRD_PARTY_NOTICES.md"
+        ]
+      },
+      "evidence": [
+        {
+          "path": "packages/test-support/llm-replay/README.md",
+          "note": "Documents the keyless replay role and fixture workflow."
+        },
+        {
+          "path": "packages/test-support/llm-replay/src/index.ts",
+          "note": "Lines 994-1082 treat scripted chunks/hangs as accepted and call extension prepare with `{ messages: [] }`, then accept, before yielding replayed chunks; no provider HTTP call occurs on this branch."
+        },
+        {
+          "path": "packages/test-support/llm-replay/tests/llm-replay.spec.ts",
+          "note": "Tests replay loading, sidecar validation, abortable hangs, thrown stream errors, extension acceptance, and unconsumed scripts."
+        },
+        {
+          "path": "packages/test-support/llm-replay/package.json",
+          "note": "Declares the DSH runtime packages and MIT license."
+        },
+        {
+          "path": "THIRD_PARTY_NOTICES.md",
+          "note": "Records separate dependency licensing; preserve notices if dependencies or code are reused."
+        },
+        {
+          "path": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+          "note": "Lines 30-58 define an optional provider-owned acceptance callback and a joint acceptance transaction."
+        },
+        {
+          "path": "packages/llm/deepseek-llm-api-extensions/src/index.ts",
+          "note": "Lines 40-48 settle every provider callback; lines 111-140 prepare all registered fields and return an idempotent accept transaction. JSON detachment does not constrain callback effects."
+        },
+        {
+          "path": "packages/llm/llm-deepseek/src/adapter.ts",
+          "note": "Lines 135-176 prepare the extensions, POST the merged body, reject non-2xx, then accept only after HTTP success."
+        },
+        {
+          "path": "packages/llm/llm-deepseek/src/request-extensions.ts",
+          "note": "Lines 21-57 merge prepared fields and expose the acceptance transaction used after the live response."
+        },
+        {
+          "path": "packages/session/session-log-deepseek/README.md",
+          "note": "Lines 34, 48, 66, and 70 document default-enabled shipped profiles, optional purpose exclusions, normal post-2xx watermarking, and shared Auto-review eligibility."
+        },
+        {
+          "path": "packages/session/session-log-deepseek/src/index.ts",
+          "note": "Lines 196-259 read the canonical session suffix after the accepted watermark and return an accept callback that appends session-log-deepseek/delivery-accepted with throughSeq; replay can invoke this callback without transmission."
+        },
+        {
+          "path": "packages/session/session-log-deepseek/src/types.ts",
+          "note": "Declares the request purpose, extension field, and session-log-deepseek/delivery-accepted event whose throughSeq is consumed by acceptedThrough."
+        },
+        {
+          "path": "packages/llm/plugin-package-inventory-deepseek/README.md",
+          "note": "Documents active package identity metadata as a request contribution, enabled by shipped profiles."
+        },
+        {
+          "path": "packages/llm/plugin-package-inventory-deepseek/src/index.ts",
+          "note": "Preparation resolves active package identities and reads package manifests; this inspected provider has no accept callback."
+        },
+        {
+          "path": "packages/llm/plugin-package-inventory-deepseek/src/types.ts",
+          "note": "Declaration-merges the dsh_plugin_packages field into the extension map."
+        },
+        {
+          "path": "packages/interaction/permission-presets/README.md",
+          "note": "Documents separate sandbox and approval knobs; Auto fixes Full access plus ask."
+        },
+        {
+          "path": "packages/interaction/user-approval/README.md",
+          "note": "Documents that ask dispatches to composed answerers, never rejects, and missing/failing answerers fail closed; this seam is tool approval, not provider-extension acceptance."
+        },
+        {
+          "path": "packages/interaction/user-approval/src/index.ts",
+          "note": "Approval request auditing and answerer dispatch are invoked by tool-consumer paths; the replay adapter does not invoke this service."
+        },
+        {
+          "path": "packages/experimental/auto-review/README.md",
+          "note": "Documents the tools/pre-execute review scope and explicitly states that Auto has no file sandbox and direct Node effects in PTC are outside review."
+        },
+        {
+          "path": "packages/experimental/auto-review/src/index.ts",
+          "note": "The prepended listener gates ToolExecution calls; the replay adapter’s direct extension callback path is not a ToolExecution."
+        },
+        {
+          "path": "packages/sandbox/sandbox-policy/README.md",
+          "note": "Describes the shared policy as applying to confined bash, filesystem, and terminal calls; it does not claim to govern arbitrary extension callbacks."
+        },
+        {
+          "path": "packages/shell/tool-bash/README.md",
+          "note": "Documents that bash escalation is an executor/tool path routed through sandbox policy and approval."
+        }
+      ],
+      "links": [
+        {
+          "path": "packages/session/session-log-deepseek/README.md",
+          "reason": "Shipped extension contributor with a session-log acceptance watermark."
+        },
+        {
+          "path": "packages/llm/deepseek-llm-api-extensions/src/types.ts",
+          "reason": "Provider acceptance callback contract used by replay."
+        },
+        {
+          "path": "packages/interaction/permission-presets/README.md",
+          "reason": "Documents sandbox and approval knobs that do not govern direct extension callbacks."
+        },
+        {
+          "path": "packages/interaction/user-approval/README.md",
+          "reason": "Documents the approval seam and its fail-closed behavior for tool approval requests."
+        }
+      ]
+    },
+    {
+      "path": "packages/test-support/loader-smoke/README.md",
+      "kind": "support",
+      "purpose": "Keyless runtime smoke support that boots a real configured Loader in both source/tsx and built-lib/Node modes, or drives one durable agent inbox turn through idle and flush.",
+      "requirements": [
+        "Requires Node ESM, execa, tsx for source-mode tests, DSH/Cordis loader packages, configured local fixtures, and target-specific proxy/environment isolation.",
+        "The helper controls process launch, cwd, homes, timeout, expected exit, and cleanup but does not make an arbitrary Loader configuration safe or portable.",
+        "Replace the DSH-specific service/event contracts and dependency set when adapting to another agent runtime."
+      ],
+      "overlaps": [
+        "packages/test-support/session-snapshot for ACP process-level scenario/output coverage.",
+        "Overlaps existing integration-test harnesses that own real subprocesses and fixture workspaces."
+      ],
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "The source-versus-built consumer check and failure-safe subprocess pattern transfer; the implementation is DSH/Cordis- and Node-specific."
+      },
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the package/repository MIT notice and all applicable dependency notices; execa and tsx have separate MIT entries in THIRD_PARTY_NOTICES.md.",
+        "evidence": [
+          "LICENSE",
+          "packages/test-support/loader-smoke/package.json",
+          "THIRD_PARTY_NOTICES.md"
+        ]
+      },
+      "evidence": [
+        {
+          "path": "packages/test-support/loader-smoke/README.md",
+          "note": "Describes real-Loader keyless smoke tests and source/lib launch paths."
+        },
+        {
+          "path": "packages/test-support/loader-smoke/src/index.ts",
+          "note": "Clears inherited proxy variables, isolates DSH homes, closes stdin, enforces a deadline and expected exit, captures diagnostics, and removes only its owned temporary cwd."
+        },
+        {
+          "path": "packages/test-support/loader-smoke/src/agent-turn.ts",
+          "note": "Waits for durable inbox receipt and whole-agent idle, scopes observations to the target session, and flushes before success."
+        },
+        {
+          "path": "packages/test-support/loader-smoke/tests/loader-smoke.spec.ts",
+          "note": "Covers owned/shared cwd semantics, argv/env isolation, expected errors, timeout kill, and cleanup."
+        },
+        {
+          "path": "packages/test-support/loader-smoke/package.json",
+          "note": "Declares execa/tsx plus DSH runtime peers and the MIT package license."
+        },
+        {
+          "path": "THIRD_PARTY_NOTICES.md",
+          "note": "Lists execa and tsx under MIT while retaining per-dependency notices."
+        }
+      ],
+      "links": []
+    }
+  ]
+}

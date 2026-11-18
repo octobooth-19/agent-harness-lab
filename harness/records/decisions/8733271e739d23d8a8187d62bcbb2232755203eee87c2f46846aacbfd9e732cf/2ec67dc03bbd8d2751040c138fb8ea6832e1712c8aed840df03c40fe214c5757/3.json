@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "8733271e739d23d8a8187d62bcbb2232755203eee87c2f46846aacbfd9e732cf",
+  "scanRevision": 6,
+  "path": "skills/eval-harness/SKILL.md",
+  "revision": 3,
+  "decision": "reference-only",
+  "reason": "Revision six deepens the skill and helper evidence, but the upstream utility layer is repository-specific, adds a pinned Node package, and includes executable model/tool fixture behavior whose containment has not been independently verified. This lab already provides pinned eval cases, rubrics, checks, and evaluator contracts; do not copy helpers or change the frozen profile.",
+  "source": {
+    "repo": "affaan-m/ecc",
+    "commit": "3f14a103a8694e51c1df9a806217a6d0b5f7a6f7"
+  },
+  "scanSha256": "cd1a3faa323ea6dbc6a2570fa0176a965d9c6a8672bf2fe1744c789e7d16e723",
+  "sourceSha256": "3a5339a5a80099a5c9d55da9b6c8e05a690f5befc6f78d779c75dd79d818ca07",
+  "license": {
+    "status": "permissive",
+    "expression": "MIT",
+    "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+    "evidence": [
+      "LICENSE"
+    ]
+  }
+}

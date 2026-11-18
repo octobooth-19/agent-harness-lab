@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "sdlc-20261118-requirements",
+  "version": 1,
+  "title": "Turn conflicting export requests into testable requirements",
+  "passScore": 8,
+  "criteria": [
+    {
+      "id": "confirmed-scope",
+      "maxScore": 4,
+      "description": "Requirements preserve admin-only access, team isolation, CSV, UTC timestamps, omission of emails, and asynchronous job/download flow. No unsupported expansion is presented as confirmed."
+    },
+    {
+      "id": "uncertainty",
+      "maxScore": 4,
+      "description": "Explicitly surfaces the unresolved 30/90-day conflict, undecided expiry/size and relevant failure questions. Distinguishes questions and assumptions from decisions instead of inventing resolution."
+    },
+    {
+      "id": "verifiability",
+      "maxScore": 2,
+      "description": "Acceptance conditions are observable and cover denied access/no cross-team data and large exports; handoff is traceable to the brief and honest about unvalidated decisions."
+    }
+  ]
+}

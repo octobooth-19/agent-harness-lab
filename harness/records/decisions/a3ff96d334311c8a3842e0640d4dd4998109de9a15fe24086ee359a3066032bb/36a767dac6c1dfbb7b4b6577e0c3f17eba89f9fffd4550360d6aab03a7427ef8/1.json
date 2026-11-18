@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "a3ff96d334311c8a3842e0640d4dd4998109de9a15fe24086ee359a3066032bb",
+  "scanRevision": 2,
+  "path": "skills/ponytail/SKILL.md",
+  "revision": 1,
+  "decision": "duplicate",
+  "reason": "The compact delivery instruction is the primary adaptation of this shared scoping/reuse behavior; installing both would duplicate guidance.",
+  "component": {
+    "id": "sdlc-delivery-instructions",
+    "version": 1
+  },
+  "source": {
+    "repo": "dietrichgebert/ponytail",
+    "commit": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846"
+  },
+  "scanSha256": "760b2617e8df3c5e5158ca5d97fe8e0a35845c1f4d16cc38d8cf3709d97e288e",
+  "sourceSha256": "9badd22a32e19cb884e46dfa8d3aae82bb81dfa5484105b8b4f0262df823a509",
+  "license": {
+    "status": "permissive",
+    "expression": "MIT",
+    "attribution": "The root MIT license allows reuse, modification and distribution subject to retaining the copyright and license notice in copies or substantial portions; package metadata also declares MIT.",
+    "evidence": [
+      "LICENSE",
+      "package.json",
+      "skills/ponytail/SKILL.md"
+    ]
+  },
+  "componentSha256": "d36a6bc1d3845a08c87a0717718a79597ca0fde9ecedb6aa5e4ae593afbcb5b1"
+}

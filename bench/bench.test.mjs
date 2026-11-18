@@ -7,8 +7,9 @@ import { randomUUID } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { Catalog, readJSON, hash, writeJSON } from './store.mjs';
+import { inspectAppEvents } from './observations.mjs';
 import { validate } from './schema.mjs';
-import { prepare, collect, judgePacket, grade, report, executeHeadless, executeJudgeHeadless, archive, publicTranscript } from './lifecycle.mjs';
+import { prepare, registerApp, collect, judgePacket, grade, report, executeHeadless, executeJudgeHeadless, archive, publicTranscript } from './lifecycle.mjs';
 
 const source = path.dirname(fileURLToPath(import.meta.url));
 
@@ -19,7 +20,9 @@ function fixture(t) {
   const workspaceRoot = path.join(temp, 'trials');
   fs.mkdirSync(path.join(root, 'bench'), { recursive: true });
   fs.mkdirSync(workspaceRoot);
-  fs.cpSync(path.join(source, 'catalog'), path.join(root, 'bench', 'catalog'), { recursive: true });
+  for (const record of ['cases/incident-summary', 'rubrics/incident-summary', 'components/brief-prompt', 'components/evidence-prompt']) {
+    fs.cpSync(path.join(source, 'catalog', record), path.join(root, 'bench/catalog', record), { recursive: true });
+  }
   return { root, workspaceRoot, catalog: new Catalog(root) };
 }
 
@@ -218,6 +221,28 @@ test('judge packet is inert, excludes treatment prompts, and binds grading to in
   assert.equal(report(root).runs[0].status, 'graded');
 });
 
+test('judges do not receive unchanged installed harness configuration but can see subject edits', t => {
+  const { root, workspaceRoot, catalog } = fixture(t);
+  catalog.put('components', { schemaVersion: 1, id: 'blind-guidance', version: 1, title: 'Synthetic blinding fixture',
+    kind: 'instructions', prompt: 'Synthetic treatment prompt', files: {
+      '.github/copilot-instructions.md': 'Do not reveal this treatment configuration to the judge.',
+      '.github/skills/probe/SKILL.md': 'Original synthetic skill.',
+    } }, 'create');
+  const original = catalog.read('cases', 'incident-summary');
+  catalog.put('cases', { ...original, id: 'blinding-case',
+    variants: [{ name: 'configured', components: [{ id: 'blind-guidance', version: 1 }] }] }, 'create');
+  const trial = prepare(root, 'blinding-case', { variant: 'configured', workspaceRoot });
+  fs.writeFileSync(path.join(trial.workspace, '.github/skills/probe/SKILL.md'), 'Subject changed this configuration.');
+  const collected = collect(root, trial.runId, receipt());
+  const judge = judgePacket(root, trial.runId);
+  const packet = readJSON(path.join(judge.workspace, 'packet.json'));
+  assert.ok(readJSON(collected.evidence).files.some(file => file.path === '.github/copilot-instructions.md'), 'retain complete audit evidence');
+  assert.equal(packet.files.some(file => file.path === 'workspace/.github/copilot-instructions.md'), false);
+  assert.ok(packet.files.some(file => file.path === 'workspace/.github/skills/probe/SKILL.md'));
+  assert.equal(JSON.stringify(packet).includes('Synthetic treatment prompt'), false);
+  assert.equal(fs.existsSync(path.join(judge.workspace, '.github')), false);
+});
+
 test('grading rejects self-judging, stale evidence, missing criteria, bad ranges, and invented citations', t => {
   const { root, trial, verdict, collected } = completed(t);
   const self = structuredClone(verdict);
@@ -381,6 +406,173 @@ test('grading and reporting remain usable from retained repo artifacts after exe
   assert.equal(grade(root, trial.runId, verdict).passed, true);
   assert.equal(report(root).runs[0].score, 10);
   assert.equal(archive(root, trial.runId).record.passed, true);
+});
+
+test('real-source cases materialize exact pinned bytes and keep frozen evaluators outside the subject', t => {
+  const { root, workspaceRoot, catalog } = fixture(t);
+  const source = path.join(root, 'bench/source');
+  fs.mkdirSync(source);
+  const sourceText = 'export const original = 7;\n';
+  fs.writeFileSync(path.join(source, 'module.mjs'), sourceText);
+  const evaluator = 'import fs from "node:fs"; import path from "node:path"; if(!fs.readFileSync(path.join(process.argv[2],"upstream.mjs"),"utf8").includes("original")) process.exitCode=1;\n';
+  fs.writeFileSync(path.join(source, 'evaluator.mjs'), evaluator);
+  fs.writeFileSync(path.join(source, 'policy.json'), '{"runner":"app","budgetMinutes":15}\n');
+  const original = catalog.read('cases', 'incident-summary');
+  const value = { ...original, id: 'real-source-case',
+    source: { repository: 'example/upstream', commit: 'a'.repeat(40),
+      files: { 'upstream.mjs': { path: 'bench/source/module.mjs', sha256: hash(sourceText) } } },
+    policy: { path: 'bench/source/policy.json', sha256: hash(fs.readFileSync(path.join(source, 'policy.json'))) },
+    checks: [{ id: 'external-evaluator', type: 'evaluator', script: { path: 'bench/source/evaluator.mjs', sha256: hash(evaluator) }, timeoutMs: 1000 }],
+  };
+  catalog.put('cases', value, 'create');
+  const trial = prepare(root, value.id, { variant: 'baseline', workspaceRoot });
+  assert.equal(fs.readFileSync(path.join(trial.workspace, 'upstream.mjs'), 'utf8'), sourceText);
+  assert.equal(fs.existsSync(path.join(trial.workspace, 'evaluator.mjs')), false);
+  assert.equal(readJSON(trial.manifest).policy.value.budgetMinutes, 15);
+  fs.writeFileSync(path.join(source, 'evaluator.mjs'), 'throw Error("changed after prepare");');
+  assert.throws(() => collect(root, trial.runId, receipt()), /allow-commands/);
+  const result = collect(root, trial.runId, receipt(), { allowCommands: true });
+  assert.equal(result.deterministicPassed, true, 'uses frozen evaluator, not mutable original');
+  fs.writeFileSync(path.join(source, 'module.mjs'), 'changed');
+  assert.throws(() => prepare(root, value.id, { variant: 'baseline', workspaceRoot }), /hash mismatch/);
+});
+
+test('source references reject traversal, symlinks, collisions and mismatched hashes', t => {
+  const { root, catalog } = fixture(t);
+  const directory = path.join(root, 'bench/source');
+  fs.mkdirSync(directory);
+  fs.writeFileSync(path.join(directory, 'module.mjs'), 'source');
+  const original = catalog.read('cases', 'incident-summary');
+  const value = { ...original, id: 'source-error',
+    source: { repository: 'example/upstream', commit: 'b'.repeat(40),
+      files: { 'upstream.mjs': { path: 'bench/source/module.mjs', sha256: hash('wrong') } } } };
+  assert.throws(() => catalog.put('cases', value, 'create'), /hash mismatch/);
+  value.source.files['upstream.mjs'].sha256 = hash('source');
+  value.files['upstream.mjs'] = 'collides';
+  assert.throws(() => catalog.put('cases', value, 'create'), /collision/);
+  delete value.files['upstream.mjs'];
+  value.source.files['upstream.mjs'].path = '../outside';
+  assert.throws(() => catalog.put('cases', value, 'create'), /unsafe/);
+  value.source.files['upstream.mjs'].path = 'bench/source/link.mjs';
+  fs.symlinkSync(path.join(directory, 'module.mjs'), path.join(directory, 'link.mjs'));
+  assert.throws(() => catalog.put('cases', value, 'create'), /symlink/);
+});
+
+test('observable receipt metrics survive reporting without fabricated token defaults', t => {
+  const { root, trial } = prepared(t);
+  const metadata = { ...receipt(), metrics: { wallMs: 1234, inputTokens: null, outputTokens: null,
+    totalTokens: null, observedFrom: 'fixture clock; tokens unavailable' } };
+  collect(root, trial.runId, metadata);
+  assert.deepEqual(report(root).runs[0].metrics, metadata.metrics);
+  assert.equal(report(root).runs[0].passed, null);
+});
+
+test('app telemetry validates exact cwd/prompt and reports observable model, token counters and elapsed time', () => {
+  const metadata = { sessionId: 'fresh-fixture', workspace: '/fixture/subject', prompt: 'frozen task' };
+  const events = [
+    { type: 'session.start', timestamp: '2026-01-01T00:00:00Z', data: {
+      sessionId: metadata.sessionId, context: { cwd: metadata.workspace }, selectedModel: 'auto', copilotVersion: 'fixture' } },
+    { type: 'user.message', data: { content: metadata.prompt } },
+    { type: 'session.auto_mode_resolved', data: { chosenModel: 'fixture-model' } },
+    { type: 'assistant.turn_end', timestamp: '2026-01-01T00:00:05Z' },
+    { type: 'session.usage_checkpoint', data: { providerModelMetrics: [
+      { metrics: { usage: { inputTokens: 100, outputTokens: 12 } } },
+    ] } },
+    { type: 'session.shutdown', timestamp: '2026-01-01T00:30:00Z' },
+  ];
+  const result = inspectAppEvents(events, metadata);
+  assert.equal(result.metrics.wallMs, 5000);
+  assert.equal(result.metrics.totalTokens, 112);
+  assert.equal(result.actualModel, 'fixture-model');
+  assert.equal(inspectAppEvents(events.filter(event => event.type !== 'session.usage_checkpoint'), metadata).metrics.totalTokens, null);
+  assert.throws(() => inspectAppEvents(events, { ...metadata, workspace: '/wrong' }), /working directory/);
+  assert.throws(() => inspectAppEvents(events, { ...metadata, prompt: 'changed' }), /kickoff/);
+  assert.throws(() => inspectAppEvents([...events, { type: 'user.message', data: { content: 'extra instructions' } }], metadata), /extra or changed/);
+});
+
+test('app configuration evidence distinguishes pinned skill invocation from unverified instruction loading', () => {
+  const workspace = '/fixture/subject';
+  const relative = '.github/skills/probe/SKILL.md';
+  const asset = path.join(workspace, relative);
+  const metadata = { sessionId: 'fixture', workspace, prompt: 'frozen task',
+    components: [{ id: 'guidance', version: 1, files: {
+      '.github/copilot-instructions.md': 'Private instruction text.',
+      [relative]: '---\nname: probe\n---\n\nPinned skill body.\n',
+    } }] };
+  const event = (file, content) => ({ type: 'skill.invoked', data: { name: 'probe', path: file, content } });
+  const events = [
+    { type: 'session.start', data: { sessionId: 'fixture', context: { cwd: workspace } } },
+    event(asset, 'Pinned skill body.'),
+    { type: 'user.message', data: { content: 'frozen task' } },
+    { type: 'instruction.update', data: { content: 'Private instruction text.' } },
+    event('/fixture/inherited/probe/SKILL.md', 'Pinned skill body.'),
+    event(relative, 'Pinned skill body.'),
+  ];
+  const absent = inspectAppEvents(events, metadata).configurationEvidence;
+  assert.equal(absent[0].status, 'not-verifiable-from-trace');
+  assert.deepEqual(absent[1], { component: 'guidance', version: 1, kind: 'skill', path: relative,
+    status: 'invocation-not-observed', matchingEvents: 0, pinnedBodyMatched: null });
+  const changed = inspectAppEvents([...events, event(asset, 'Changed content.')], metadata).configurationEvidence;
+  assert.equal(changed[1].status, 'invocation-observed');
+  assert.equal(changed[1].pinnedBodyMatched, false);
+  const positive = [...events, event(asset, 'Pinned skill body.\n')];
+  const observed = inspectAppEvents(positive, metadata).configurationEvidence;
+  assert.equal(observed[1].matchingEvents, 1);
+  assert.equal(observed[1].pinnedBodyMatched, true);
+  assert.doesNotMatch(JSON.stringify(observed), /Private instruction text|Pinned skill body/);
+  assert.doesNotMatch(publicTranscript(positive.map(e => JSON.stringify(e)).join('\n')).transcript, /Private instruction text|Pinned skill body/);
+});
+
+test('registered app launches remain observable before collection and reject reused or mismatched sessions', t => {
+  const { root, workspaceRoot, trial } = prepared(t);
+  const metadata = { ...receipt(), runner: 'app', outcome: 'unknown' };
+  const launch = { receipt: metadata, actualCwd: trial.workspace, startedAt: new Date().toISOString() };
+  assert.throws(() => registerApp(root, trial.runId, { ...launch, actualCwd: '/wrong' }), /actual app cwd/);
+  registerApp(root, trial.runId, launch);
+  assert.equal(report(root).runs[0].status, 'launched');
+  assert.throws(() => registerApp(root, trial.runId, launch), /app launch is already registered/);
+  assert.throws(() => executeHeadless(root, trial.runId, { environment: 'fixture', configurationAudit: 'fixture' }),
+    /trial is registered to an app session/);
+  assert.throws(() => collect(root, trial.runId, { ...metadata, sessionId: 'different' }), /registered app session/);
+  const other = prepare(root, 'incident-summary', { variant: 'evidence-first', workspaceRoot });
+  assert.throws(() => registerApp(root, other.runId, { ...launch, actualCwd: other.workspace }), /already belongs/);
+  const headless = prepare(root, 'incident-summary', { variant: 'evidence-first', workspaceRoot });
+  writeJSON(path.join(root, 'bench/runs', headless.runId, 'launch.json'), { receipt: { sessionId: 'prior-runner' } });
+  assert.throws(() => registerApp(root, headless.runId, { ...launch, receipt: { ...metadata, sessionId: 'fresh-session' },
+    actualCwd: headless.workspace }), /another runner is already registered/);
+  collect(root, trial.runId, { ...metadata, outcome: 'failed' });
+  assert.equal(report(root).runs.find(run => run.runId === trial.runId).runnerSucceeded, false);
+});
+
+test('large-source judge packets stay bounded and expose inert source plus independent diffs', t => {
+  const { root, workspaceRoot, catalog } = fixture(t);
+  const original = catalog.read('cases', 'incident-summary');
+  const bigSource = Array.from({ length: 2000 }, (_, i) => `const item${i} = ${i};`).join('\n');
+  catalog.put('cases', { ...original, id: 'large-source', files: { ...original.files, 'large.mjs': bigSource } }, 'create');
+  const trial = prepare(root, 'large-source', { variant: 'baseline', workspaceRoot });
+  fs.writeFileSync(path.join(trial.workspace, 'large.mjs'), bigSource.replace('const item100 = 100;', 'const item100 = 101;'));
+  fs.writeFileSync(path.join(trial.workspace, 'answer.md'), '120 requests.');
+  collect(root, trial.runId, receipt());
+  const judge = judgePacket(root, trial.runId);
+  const packetPath = path.join(judge.workspace, 'packet.json');
+  assert.ok(fs.statSync(packetPath).size < 12000, 'do not embed the entire large upstream source in packet JSON');
+  const entry = readJSON(packetPath).files.find(file => file.path === 'workspace/large.mjs');
+  assert.equal(entry.contentBase64, undefined);
+  assert.match(fs.readFileSync(path.join(judge.workspace, entry.diffFile), 'utf8'), /-const item100 = 100;\n\+const item100 = 101;/);
+  assert.equal(fs.readFileSync(path.join(judge.workspace, entry.contentFile), 'utf8'), fs.readFileSync(path.join(trial.workspace, 'large.mjs'), 'utf8'));
+  const retained = path.join(root, 'bench/runs', trial.runId, 'judge-artifacts', path.basename(entry.diffFile));
+  assert.ok(fs.existsSync(retained));
+  assert.equal(fs.existsSync(path.join(judge.workspace, '.github')), false);
+  const verdict = readJSON(path.join(judge.workspace, 'verdict-template.json'));
+  verdict.judge = receipt();
+  verdict.scores = verdict.scores.map(score => ({ ...score, rationale: 'Synthetic verdict', evidence: ['workspace/large.mjs'] }));
+  const liveDiff = path.join(judge.workspace, entry.diffFile);
+  const diffContent = fs.readFileSync(liveDiff, 'utf8');
+  fs.unlinkSync(liveDiff);
+  assert.throws(() => grade(root, trial.runId, verdict), /judge artifact is missing/);
+  fs.writeFileSync(liveDiff, diffContent);
+  fs.writeFileSync(path.join(judge.workspace, entry.diffFile), 'tampered');
+  assert.throws(() => grade(root, trial.runId, verdict), /judge artifact was modified/);
 });
 
 test('CLI validates catalog, surfaces errors, and drives the lifecycle without dependencies', t => {

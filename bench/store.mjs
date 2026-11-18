@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
-import { ensure, identifier, kinds, validate, MAX_TOTAL_BYTES } from './schema.mjs';
+import { ensure, identifier, kinds, validate, relativePath, object, MAX_FILE_BYTES, MAX_TOTAL_BYTES } from './schema.mjs';
 
 export function canonical(value) {
   if (Array.isArray(value)) return `[${value.map(canonical).join(',')}]`;
@@ -21,6 +21,22 @@ export const writeJSON = (file, value) => fs.writeFileSync(file, `${JSON.stringi
 export function inside(parent, candidate) {
   const rel = path.relative(parent, candidate);
   return rel === '' || (!rel.startsWith(`..${path.sep}`) && rel !== '..' && !path.isAbsolute(rel));
+}
+
+export function readPinnedFile(root, pin) {
+  relativePath(pin.path);
+  ensure(pin.path.startsWith('bench/'), 'pinned files must be retained under bench/');
+  let current = fs.realpathSync(root);
+  for (const part of pin.path.split('/')) {
+    current = path.join(current, part);
+    ensure(!fs.lstatSync(current).isSymbolicLink(), `pinned source cannot be a symlink: ${pin.path}`);
+  }
+  const stat = fs.statSync(current);
+  ensure(stat.isFile() && stat.size <= MAX_FILE_BYTES, `pinned source must be a regular file <= 1 MiB: ${pin.path}`);
+  const bytes = fs.readFileSync(current);
+  ensure(hash(bytes) === pin.sha256, `pinned file hash mismatch: ${pin.path}`);
+  ensure(Buffer.from(bytes.toString('utf8')).equals(bytes), `pinned source must be UTF-8: ${pin.path}`);
+  return bytes.toString('utf8');
 }
 
 function validateComposition(components, fixtures, label, target) {
@@ -147,6 +163,14 @@ export class Catalog {
 
   resolveCase(value) {
     const rubric = this.read('rubrics', value.rubric.id, value.rubric.version);
+    const fixtures = Object.assign(Object.create(null), value.files);
+    for (const [destination, pin] of Object.entries(value.source?.files ?? {})) {
+      ensure(!Object.hasOwn(fixtures, destination), `source/fixture collision: ${destination}`);
+      fixtures[destination] = readPinnedFile(this.root, pin);
+    }
+    const policy = value.policy && JSON.parse(readPinnedFile(this.root, value.policy));
+    if (value.policy) object(policy, 'pinned policy');
+    for (const check of value.checks.filter(check => check.type === 'evaluator')) readPinnedFile(this.root, check.script);
     const variants = value.variants.map(variant => {
       const profile = variant.profile && this.read('profiles', variant.profile.id, variant.profile.version);
       if (profile) {
@@ -154,14 +178,14 @@ export class Catalog {
           `variant ${variant.name} must match enabled profile pins and order`);
       }
       const resolved = variant.components.map(ref => this.read('components', ref.id, ref.version));
-      validateComposition(resolved, value.files, `variant ${variant.name}`, profile?.target);
+      validateComposition(resolved, fixtures, `variant ${variant.name}`, profile?.target);
       for (const check of value.checks.filter(c => c.type === 'file-unchanged')) {
-        ensure([value.files, ...resolved.map(c => c.files)].some(files => Object.hasOwn(files, check.path)),
+        ensure([fixtures, ...resolved.map(c => c.files)].some(files => Object.hasOwn(files, check.path)),
           `file-unchanged check must reference an input: ${check.path}`);
       }
       return { ...variant, resolved, profileRecord: profile };
     });
-    return { rubric, variants };
+    return { rubric, variants, fixtures, policy };
   }
 
   validateReferences(kind, value) {

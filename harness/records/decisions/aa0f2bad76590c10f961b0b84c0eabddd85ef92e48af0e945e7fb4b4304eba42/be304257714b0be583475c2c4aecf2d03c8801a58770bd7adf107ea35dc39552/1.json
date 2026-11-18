@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "aa0f2bad76590c10f961b0b84c0eabddd85ef92e48af0e945e7fb4b4304eba42",
+  "scanRevision": 1,
+  "path": "skills/skill-creator/SKILL.md",
+  "revision": 1,
+  "decision": "reference-only",
+  "reason": "The skill package depends on uninspected agents, evaluation helpers, and schemas. It is an authoring tool rather than software delivery guidance for subjects.",
+  "source": {
+    "repo": "anthropics/skills",
+    "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba"
+  },
+  "scanSha256": "488e5682872e7b1dfd16e3a7d54335f3d5077bc31e4ba8f5e88c0ea28f92e691",
+  "sourceSha256": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf",
+  "license": {
+    "status": "permissive",
+    "expression": "Apache-2.0",
+    "attribution": "Include the applicable LICENSE.txt and preserve copyright/attribution notices; mark modified files, and carry forward applicable NOTICE attributions.",
+    "evidence": [
+      "skills/skill-creator/LICENSE.txt"
+    ]
+  }
+}

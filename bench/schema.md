@@ -104,6 +104,25 @@ file content/prompt hashes use exact bytes. Manifests freeze full validated
 catalog records and their individual hashes, input hashes, requested model,
 workspace, variant, runtime settings, and UTC creation time.
 
+Cases may also pin `source: { repository: "owner/repo", commit: "<40-hex>",
+files: { "<destination>": { path: "bench/<retained-source>", sha256: "<64-hex>" } } }`.
+Source bytes are retained UTF-8 files no larger than 1 MiB apiece, verified before
+materialization, and composed with common fixtures/component files without
+collisions or symlinks. No network fetch or solution lookup occurs at preparation.
+Original licenses and acquisition/issue metadata belong beside retained sources.
+
+An optional case `policy: {path, sha256}` pins retained JSON policy; its complete
+content is additionally frozen in the run manifest. Both kinds of file pin must
+refer under `bench/` using safe relative paths.
+
+An `evaluator` check has `id`, `type: "evaluator"`, `script: {path, sha256}`, and
+`timeoutMs` from 1 through 60000. Preparation freezes the standalone Node script
+in the run directory, never in the subject. Collection verifies its digest and
+runs `node <frozen-script> <subject-workspace>` only with `--allow-commands`.
+Evaluators use built-in modules and absolute subject paths, not relative imports
+from their authoring directory. Their stdout/stderr/exit status become check
+evidence. Treat these scripts as trusted lab code, not a sandbox.
+
 A receipt has `schemaVersion`, `sessionId`, `runner`, `model`,
 `actualModel`, `environment`, `configurationAudit`, `permissions`, and `isolation`.
 All text fields are nonempty; unfilled `<placeholders>` are rejected. `runner`
@@ -118,6 +137,11 @@ based on observed session completion, not output claims. Unknown or failed
 execution cannot pass. Headless execution outcome comes from the recorded
 process result; its receipt need not repeat that field. Judge app/manual
 receipts must attest completed execution.
+
+Optional receipt `metrics` contains `observedFrom` (nonempty text) and optional
+`wallMs`, `inputTokens`, `outputTokens`, `totalTokens`, each a nonnegative finite
+number or `null` when unavailable. Never infer usage from prose or default a
+missing metric to zero. Reports retain the observations per run.
 
 The generated verdict template supplies `schemaVersion`, `runId`,
 `manifestSha256`, `evidenceSha256`, a `judge` receipt, and `scores`. Each score has

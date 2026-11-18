@@ -1,0 +1,4529 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "repo": "obra/superpowers",
+    "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
+  },
+  "revision": 3,
+  "scope": "Partial continuation: adoption-critical review of the optional visual companion, its local server/browser client, start/stop scripts, complete companion test package, and root ignore/license/package metadata. Reconfirmed 20 relevant source/test blobs through the pinned GitHub commit/tree/blob API; no source code or tests were executed.",
+  "coverage": {
+    "tree": "complete",
+    "state": "partial",
+    "limits": [
+      "The pinned recursive tree is complete (308 entries, 236 blobs, 72 directories); deep inspection includes the revision-1 scope, 46 selected revision-2 support/test blobs, and a 20-blob visual-companion review. Other skill playbooks, adapter implementations/tests, and external evaluation materials remain indexed or unreviewed.",
+      "No source code or test was executed, installed, or enabled. Host support for a persistent browser-facing server, private port forwarding, content sandboxing, and permission policy is not established by this scan.",
+      "Repository source is MIT and test lockfile records ws 8.21.0 as MIT. The default remote branding image has no reviewed license notice. Optional ws peer dependencies are not resolved in the lockfile; their licenses were not assessed."
+    ],
+    "next": [
+      "Before adoption, decide whether the host can provide explicit approval, project-scoped writes/retention, private browser access, process ownership/shutdown, and an allowlisted or disabled browser-launch command.",
+      "For remote access, require a trusted private tunnel or TLS-capable host boundary; the service emits plain HTTP and ws://, and non-loopback binding does not configure TLS.",
+      "Define a content policy for generated HTML: full documents are served as-is and no restrictive script/network CSP or sandbox was observed; do not serve untrusted markup in the authenticated origin.",
+      "Clear the external logo rights or disable/remove the image. Review optional peers if installed and set a supported Node version because package metadata declares no engine range.",
+      "Inspect remaining local support/adapters and separately pin any external evaluation repository before completing the scan."
+    ]
+  },
+  "files": [
+    {
+      "path": ".agents/plugins/marketplace.json",
+      "status": "inspected",
+      "sha256": "2b94116c190896480e5054222a744e375976f8ae5bdb66ff0ab6b348dfad4182"
+    },
+    {
+      "path": ".antigravity-plugin/plugin.json",
+      "status": "inspected",
+      "sha256": "47fe1ae9311cdf7a1136e2d39d74194ee2bc06d4b9fe2fe8d8652a265ca4a57a"
+    },
+    {
+      "path": ".claude-plugin/marketplace.json",
+      "status": "inspected",
+      "sha256": "04015bf36c0c8e475e61509f4c0c2e72838abb1b6ab70a2c44f04be4317f79fa"
+    },
+    {
+      "path": ".claude-plugin/plugin.json",
+      "status": "inspected",
+      "sha256": "6728b554d1aaf9235f7981c7838a32f50c191297284af97f4c2a808155f7c399"
+    },
+    {
+      "path": ".codex-plugin/plugin.json",
+      "status": "inspected",
+      "sha256": "925b862a7ee38f170f4595a33a1d3c1cecd5e944f271b30d98efa55919febab0"
+    },
+    {
+      "path": ".cursor-plugin/plugin.json",
+      "status": "inspected",
+      "sha256": "e74bbc3086286fec5595e3adc35f3c340ec255508afdf5030dd617a6a850afea"
+    },
+    {
+      "path": ".devin-plugin/plugin.json",
+      "status": "inspected",
+      "sha256": "5d1227aa357f7c44c07c6555190c3f8e106af24666b8cb48bf0475026113f3d7"
+    },
+    {
+      "path": ".gitattributes",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".github/FUNDING.yml",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/platform_support.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".gitignore",
+      "status": "inspected",
+      "sha256": "30b79670d7359590a4f1798e99112d9298d8eed889042aba2ee9a1722dc06ebb"
+    },
+    {
+      "path": ".hermes-plugin/__init__.py",
+      "status": "inspected",
+      "sha256": "767b7956f86b0343a8244943ac733c4f9f2a38cb571162cf67b26d2704a8afb1"
+    },
+    {
+      "path": ".hermes-plugin/plugin.yaml",
+      "status": "inspected",
+      "sha256": "31827794da38529aa1fd1b0020f29b6325a94029aaa425a1c3a1b329c47efec7"
+    },
+    {
+      "path": ".kimi-plugin/plugin.json",
+      "status": "inspected",
+      "sha256": "fd150224125adf931a839b210adeff56a36ce7937c67916da93c7da428d22e44"
+    },
+    {
+      "path": ".muse-plugin/marketplace.json",
+      "status": "inspected",
+      "sha256": "cb77cc7e9cc87ca74892584ad6810288551b6ec71123ece2da112a20a6b190ae"
+    },
+    {
+      "path": ".muse-plugin/plugin.json",
+      "status": "inspected",
+      "sha256": "56f1ce972975db8f6efe65e6b0136e7cbcc3a1c3ca22658e2fae01f132af7c9a"
+    },
+    {
+      "path": ".opencode/INSTALL.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".opencode/plugins/superpowers.js",
+      "status": "inspected",
+      "sha256": "e0a696ca06f0b05f9e76734ea302f0796fe747d6a79fe4910e34462822723043"
+    },
+    {
+      "path": ".pi/extensions/superpowers.ts",
+      "status": "inspected",
+      "sha256": "59774512277ffb41b706f6ed376b27fda83c3a04045a41560f4a2307591e3939"
+    },
+    {
+      "path": ".pre-commit-config.yaml",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".version-bump.json",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "AGENTS.md",
+      "status": "inspected",
+      "sha256": "3d7c31b2ed1592d0816e436a90549c8af5829627bcb663fe1c886a30f427cabe"
+    },
+    {
+      "path": "assets/antigravity-logo.png",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "assets/app-icon.png",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "assets/superpowers-small.svg",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/plans/2025-11-22-opencode-support-design.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/plans/2025-11-22-opencode-support-implementation.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/plans/2025-11-28-skills-improvements-from-user-feedback.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/plans/2026-01-17-visual-brainstorming.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/porting-to-a-new-harness.md",
+      "status": "inspected",
+      "sha256": "562a1436134babc815c11adf0379e2df00c8de0e73c362291faf495448b94f3e"
+    },
+    {
+      "path": "docs/README.kimi.md",
+      "status": "inspected",
+      "sha256": "915b112731bbcb635885ed1c5f24a36b43248bc18689fa253bb4f89c937c6585"
+    },
+    {
+      "path": "docs/README.opencode.md",
+      "status": "inspected",
+      "sha256": "7ce149e5b91bf7f55bab76732c0e054c0b7ff29dc2865b3a59a10085c793e5ae"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-01-22-document-review-system-design.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-02-19-visual-brainstorming-refactor-design.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-03-11-zero-dep-brainstorm-server-design.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-03-23-codex-app-compatibility-design.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-04-06-worktree-rototill-design.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-05-05-platform-neutral-config-refs-design.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-05-05-platform-neutral-prose-design.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-05-05-platform-neutral-readme-design.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-05-06-lift-drill-into-evals-design.md",
+      "status": "inspected",
+      "sha256": "fac3785f6f779bd899a6e93bcd60a934b4946ce4f7e8b6129d7910979650a6a1"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-06-09-sdd-task-scoped-review-dispatch-design.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-06-10-positive-instruction-redesign-design.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-06-10-strict-cost-sdd-design.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-06-10-visual-companion-auth-hardening-design.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-06-11-visual-companion-final-hardening-fixup-design.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-07-06-sdd-plan-scoped-workspace-eval-results.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-07-06-sdd-plan-scoped-workspace.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-07-15-sdd-fix-loop-redesign-design.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-07-30-codex-efficiency-fixes-design.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-05-hermes-version-bump-wiring-design.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-27-diagnosing-superpowers-design.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-10-05-brainstorming-rebuild-design.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-10-06-antigravity-marketplace-design.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/testing.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "docs/windows/polyglot-hooks.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "gemini-extension.json",
+      "status": "inspected",
+      "sha256": "acb18fa699f7e1b313ef46df10cea32904ea3681b833d6ef068ed87fb00f39b7"
+    },
+    {
+      "path": "GEMINI.md",
+      "status": "inspected",
+      "sha256": "0823da8b7277f8b623746d57c0bee75fda02e4c832fe57843e644d0fe633abbc"
+    },
+    {
+      "path": "hooks/hooks-cursor.json",
+      "status": "inspected",
+      "sha256": "53d8ceb3ff5d8bb1c4f283f238cc868b8c1af22e40a3ac30f6d6e4173effefbd"
+    },
+    {
+      "path": "hooks/hooks.json",
+      "status": "inspected",
+      "sha256": "19fa1af26a0ed32bfabee6c4d744e5447ea3bdf769efceba9e268f2d9f6dc263"
+    },
+    {
+      "path": "hooks/run-hook.cmd",
+      "status": "inspected",
+      "sha256": "324b298bd370d6f3ea71c165e0b732d5678e5cff68d0d7f7e47c13bc2cb2559a"
+    },
+    {
+      "path": "hooks/session-start",
+      "status": "inspected",
+      "sha256": "38fdeed045b28b62034a809e45602e33358573acbc23c83787d76d449cb89902"
+    },
+    {
+      "path": "index.js",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "LICENSE",
+      "status": "inspected",
+      "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+    },
+    {
+      "path": "package.json",
+      "status": "inspected",
+      "sha256": "49004c08be59f027bf23a500d57ab1ba6a288deb5697d3cbd743432cf4a42059"
+    },
+    {
+      "path": "README.md",
+      "status": "inspected",
+      "sha256": "79f29f50c735862d2e304ea547b4c9aa67d9db6909ff6fb7b5ea922d7bcbc3e7"
+    },
+    {
+      "path": "RELEASE-NOTES.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "scripts/bump-version.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "scripts/lint-shell.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "scripts/package-codex-plugin.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "scripts/render-antigravity-logo.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "scripts/sync-to-codex-plugin.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/brainstorming/builder-check-prompt.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/brainstorming/scripts/frame-template.html",
+      "status": "inspected",
+      "sha256": "6a8a4e58bd6a44b904e2e3c57de774481d909204597e1498de53f1b2fecc4c4e"
+    },
+    {
+      "path": "skills/brainstorming/scripts/helper.js",
+      "status": "inspected",
+      "sha256": "43c6d69954a46ec34a2a262bcc62a9a7e83e839c739f199cb72646d397c686e3"
+    },
+    {
+      "path": "skills/brainstorming/scripts/server.cjs",
+      "status": "inspected",
+      "sha256": "763abf96510e0b892a1141397b31aa82ef900cf87ed34dde94bc8782baf4a7ca"
+    },
+    {
+      "path": "skills/brainstorming/scripts/start-server.sh",
+      "status": "inspected",
+      "sha256": "314dd68dc00e8dd94c7491aca8a5f004c7fddffc161e2b07482f29f48d13659a"
+    },
+    {
+      "path": "skills/brainstorming/scripts/stop-server.sh",
+      "status": "inspected",
+      "sha256": "0b5ccbbd57f62d3ed88993f7940b5ee0e5c0fc9b21c550c623da4f6292e47daf"
+    },
+    {
+      "path": "skills/brainstorming/SKILL.md",
+      "status": "inspected",
+      "sha256": "2c9ca71f94886f9ca9f4aef055f7cafb3e1a9bdf3aeebf8f4cb547c69405d207"
+    },
+    {
+      "path": "skills/brainstorming/visual-companion.md",
+      "status": "inspected",
+      "sha256": "6ffcb038b53254bd31debaa15e12dcd4ff24bd63d690e0b644ac6396701cf2e2"
+    },
+    {
+      "path": "skills/diagnosing-superpowers/prompts/analyst-common.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/diagnosing-superpowers/prompts/cost-and-time.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/diagnosing-superpowers/prompts/plan-adherence.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/diagnosing-superpowers/prompts/quality-evidence.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/diagnosing-superpowers/prompts/repeated-work.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/diagnosing-superpowers/prompts/request-conflicts.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/diagnosing-superpowers/prompts/scrub-audit.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/diagnosing-superpowers/prompts/scrub.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/diagnosing-superpowers/prompts/similar-session.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/diagnosing-superpowers/prompts/skill-timeline.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/diagnosing-superpowers/prompts/stumbles.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/diagnosing-superpowers/references/context-safety.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/diagnosing-superpowers/references/github-issues.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/diagnosing-superpowers/references/redaction-policy.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/diagnosing-superpowers/references/session-discovery.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/diagnosing-superpowers/SKILL.md",
+      "status": "inspected",
+      "sha256": "3143de8695c5a2d63e8b1675f33837578076f464deb127c2ebdd0b46fceef886"
+    },
+    {
+      "path": "skills/diagnosing-superpowers/templates/bundle-README.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/diagnosing-superpowers/templates/case.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/diagnosing-superpowers/templates/issue.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/diagnosing-superpowers/templates/report.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/dispatching-parallel-agents/SKILL.md",
+      "status": "inspected",
+      "sha256": "1968923066f3b707eb01d1992cdf4c42284c3855f70253b9cd5000ff45fca13c"
+    },
+    {
+      "path": "skills/executing-plans/scripts/task-done",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/executing-plans/scripts/task-start",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/executing-plans/SKILL.md",
+      "status": "inspected",
+      "sha256": "deaf176fa179827e80f2ea3101db3ea90fdf562ebef340eba761e4687940f5f5"
+    },
+    {
+      "path": "skills/finishing-a-development-branch/SKILL.md",
+      "status": "inspected",
+      "sha256": "8db5a922b242dd4e1bf824cb91c13b3e8d8e8a86d6ceaf7f0774eb9cce909d65"
+    },
+    {
+      "path": "skills/receiving-code-review/SKILL.md",
+      "status": "inspected",
+      "sha256": "091df1629510af1b92fc4abd6f96732ebedb4cb2c0f3457e8f2740b0504a2438"
+    },
+    {
+      "path": "skills/requesting-code-review/code-reviewer.md",
+      "status": "inspected",
+      "sha256": "82e370be6b3447523816286195571e4216ba56ba1ad6ad0e87862294c4c78dcb"
+    },
+    {
+      "path": "skills/requesting-code-review/SKILL.md",
+      "status": "inspected",
+      "sha256": "2180e14a448e9410bec88e6646a2d1f0ce7fdd58de27388c1e052e929679d2bc"
+    },
+    {
+      "path": "skills/subagent-driven-development/implementer-prompt.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/subagent-driven-development/re-review-prompt.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/subagent-driven-development/references/batching.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/subagent-driven-development/references/cannot-verify.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/subagent-driven-development/references/final-review.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/subagent-driven-development/references/fix-loop.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/subagent-driven-development/references/handling-reports.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/subagent-driven-development/references/preflight.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/subagent-driven-development/references/resuming.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/subagent-driven-development/scripts/review-package",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/subagent-driven-development/scripts/sdd-repo",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/subagent-driven-development/scripts/sdd-workspace",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/subagent-driven-development/scripts/task-brief",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/subagent-driven-development/SKILL.md",
+      "status": "inspected",
+      "sha256": "1baf70e307bde682c462513c86116333f1f066168c6710f45145bf5f0b00828d"
+    },
+    {
+      "path": "skills/subagent-driven-development/task-reviewer-prompt.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/systematic-debugging/condition-based-waiting-example.ts",
+      "status": "inspected",
+      "sha256": "40ae5ebe497fdf310200e43fe986552546d0a22837c0d39e855db1cfd33eb88e"
+    },
+    {
+      "path": "skills/systematic-debugging/condition-based-waiting.md",
+      "status": "inspected",
+      "sha256": "e89fec8400d6cd50f43407cec9fab50976ba4d55d0ec2eb51c0bd68036b54c26"
+    },
+    {
+      "path": "skills/systematic-debugging/defense-in-depth.md",
+      "status": "inspected",
+      "sha256": "1e175fb86fc357e58c6aebf5441e481e1b7868b4380c0456b63a17eefbd18ba7"
+    },
+    {
+      "path": "skills/systematic-debugging/find-polluter.sh",
+      "status": "inspected",
+      "sha256": "dd7b8f13c4cc2a24b33ff87b18da9248f3e1c80a085c3316224f69ff0fa5c43c"
+    },
+    {
+      "path": "skills/systematic-debugging/root-cause-tracing.md",
+      "status": "inspected",
+      "sha256": "75b933b6a8c40bdb2031b10f21654395b56ec6ab6bc7b018c18d3fe57aeb7fb8"
+    },
+    {
+      "path": "skills/systematic-debugging/SKILL.md",
+      "status": "inspected",
+      "sha256": "51c6435d98c83c42c96ba7c35725a0b2c376cd487fb1a4e6bd0ddbe7e33ef202"
+    },
+    {
+      "path": "skills/test-driven-development/SKILL.md",
+      "status": "inspected",
+      "sha256": "64b03fce4aee5a97a93160cea8111f3ba13a17b7c001db4bd5836d67fd10705d"
+    },
+    {
+      "path": "skills/test-driven-development/writing-good-tests.md",
+      "status": "inspected",
+      "sha256": "51471c853306ff92ca8bb41dcaea05f31c0e46b03651f8f3c99754b7172f4ae1"
+    },
+    {
+      "path": "skills/using-git-worktrees/SKILL.md",
+      "status": "inspected",
+      "sha256": "8cfb86f121269e8f7f12361e6795c4f6738828340e28964c9229d365666c9edd"
+    },
+    {
+      "path": "skills/using-superpowers/references/antigravity-tools.md",
+      "status": "inspected",
+      "sha256": "4880f6de3da4e32f9659ebe7a72b9e0ebfff04e028c2ed96173f86d0387a04c0"
+    },
+    {
+      "path": "skills/using-superpowers/references/claude-code-tools.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/using-superpowers/references/codex-tools.md",
+      "status": "inspected",
+      "sha256": "1a38ad9b188c393052f58d95657a1c35ea6aafc8b5a27f198f3922912f70bbe7"
+    },
+    {
+      "path": "skills/using-superpowers/references/gemini-tools.md",
+      "status": "inspected",
+      "sha256": "62b9157bcb0ee3c6784e3d0da0798ddfa5872f9e0c34bea48f3079dabea71965"
+    },
+    {
+      "path": "skills/using-superpowers/references/hermes-tools.md",
+      "status": "inspected",
+      "sha256": "e2185c976a3c87503910e05e2aea58cc89bc8e569bb624b93df9958ac47a9190"
+    },
+    {
+      "path": "skills/using-superpowers/references/muse-tools.md",
+      "status": "inspected",
+      "sha256": "5a1da5c575fe18456ca71cd47ebfd8a38c745f8d82a67fe64d5b83080000eeb3"
+    },
+    {
+      "path": "skills/using-superpowers/references/pi-tools.md",
+      "status": "inspected",
+      "sha256": "703dbc83d23ecab9c6f388460c38abc482e9dee2fe6772a8c7a255152ad3a4d5"
+    },
+    {
+      "path": "skills/using-superpowers/SKILL.md",
+      "status": "inspected",
+      "sha256": "82c5c8866ad7f5dd4440ce66bd7806ba48a2f13771beae5cf112e53f08fe36ba"
+    },
+    {
+      "path": "skills/verification-before-completion/SKILL.md",
+      "status": "inspected",
+      "sha256": "2befe7fc55bcadaa3d97dd9e8efeb633d2561c0ebe74c5a8b17c4d9e7e4520b3"
+    },
+    {
+      "path": "skills/writing-plans/SKILL.md",
+      "status": "inspected",
+      "sha256": "a6c67c1900064347c2a329990dd3c555657c51c3ec53b259a08aa01a2c26139a"
+    },
+    {
+      "path": "skills/writing-skills/references/anthropic-best-practices.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/writing-skills/references/bulletproofing.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/writing-skills/references/CLAUDE_MD_TESTING.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/writing-skills/references/discovery.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/writing-skills/references/flowcharts.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/writing-skills/references/graphviz-conventions.dot",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/writing-skills/references/persuasion-principles.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/writing-skills/references/testing-skills-with-subagents.md",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "skills/writing-skills/render-graphs.js",
+      "status": "inspected",
+      "sha256": "c7f412cc629461c4d10287e668731874c0497707023e3e3f74a5355eb2cee196"
+    },
+    {
+      "path": "skills/writing-skills/SKILL.md",
+      "status": "inspected",
+      "sha256": "8cb3ac68c6d8c4bb46886b998b09af7989643cab8bd0e46ee86dd62e64546bbe"
+    },
+    {
+      "path": "tests/antigravity/run-tests.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/antigravity/test-antigravity-tools.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/antigravity/test-logo.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/antigravity/test-plugin-manifest.sh",
+      "status": "inspected",
+      "sha256": "627d97c59d806a6d495e54dff5dd57447eba21d8a3293251b472898f28268c12"
+    },
+    {
+      "path": "tests/brainstorm-server/auth.test.js",
+      "status": "inspected",
+      "sha256": "8efa43628b582973dcc543c0768e91066cf9834292e2e724657c6801b63df062"
+    },
+    {
+      "path": "tests/brainstorm-server/branding.test.js",
+      "status": "inspected",
+      "sha256": "b116f645b46130a3a58867493863a1398cf5426375d695203c858c95eb5e8d02"
+    },
+    {
+      "path": "tests/brainstorm-server/browser-launcher.test.js",
+      "status": "inspected",
+      "sha256": "ffb9ccecf27968b9359049ff96b50725669b1f86863f88b583b9aa0c3aa37c94"
+    },
+    {
+      "path": "tests/brainstorm-server/helper.test.js",
+      "status": "inspected",
+      "sha256": "9917fc944e8c5594430ba2600035ff5fd8212119b9cae2d62c75f5725de94061"
+    },
+    {
+      "path": "tests/brainstorm-server/lifecycle.test.js",
+      "status": "inspected",
+      "sha256": "686e19a12c6ba9b3003f4dedf840161b05f5c42dfb87c49a6b9c8abc596f1156"
+    },
+    {
+      "path": "tests/brainstorm-server/package-lock.json",
+      "status": "inspected",
+      "sha256": "80f45a9d8857e27d9363d47789284a26d13fb47388fa8596ef0db7207e6d7c10"
+    },
+    {
+      "path": "tests/brainstorm-server/package.json",
+      "status": "inspected",
+      "sha256": "d785483894bfedbccf9731fd7ed52f959973f62dc9c42a8a7407fc7779d220c8"
+    },
+    {
+      "path": "tests/brainstorm-server/server.test.js",
+      "status": "inspected",
+      "sha256": "7e98be35f51747ac54def39b17fc5de1002fdd36ecbad17c3d026ca11e5d1f90"
+    },
+    {
+      "path": "tests/brainstorm-server/start-server.test.sh",
+      "status": "inspected",
+      "sha256": "fc32961620c79a01230631a29e50760c0cc39e08638ac42aa5341ea5106b58a2"
+    },
+    {
+      "path": "tests/brainstorm-server/stop-server.test.sh",
+      "status": "inspected",
+      "sha256": "35e150e95f0e97d50470f2c0a30bc7c9c8c5cb7721c53dcff887b430067490db"
+    },
+    {
+      "path": "tests/brainstorm-server/windows-lifecycle.test.sh",
+      "status": "inspected",
+      "sha256": "7dc8e09edfe0a4cc34550fdb0e5ae5117758991d490756971be51c88e4f5908d"
+    },
+    {
+      "path": "tests/brainstorm-server/ws-protocol.test.js",
+      "status": "inspected",
+      "sha256": "abd0a10eaffe4e30a9918c79c7692775db36c8a3e132e04d52ec06d6cddaa132"
+    },
+    {
+      "path": "tests/claude-code/analyze-token-usage.py",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/claude-code/README.md",
+      "status": "inspected",
+      "sha256": "df8cc7a1709b5fd881f41f6e7afc180f1b686c14b97624c27e4957a174c09911"
+    },
+    {
+      "path": "tests/claude-code/run-skill-tests.sh",
+      "status": "inspected",
+      "sha256": "a7bffa447f489be5a9507114027ddcdb94409eba3156df88c9338307710502a4"
+    },
+    {
+      "path": "tests/claude-code/test-executing-plans-scripts.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/claude-code/test-helpers.sh",
+      "status": "inspected",
+      "sha256": "b06a890c9d371195d8f256b1227607dd32ad28831658be1033756cc8dbcd86a7"
+    },
+    {
+      "path": "tests/claude-code/test-sdd-workspace.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/claude-code/test-subagent-driven-development-integration.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/claude-code/test-subagent-driven-development.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/claude-code/test-worktree-native-preference.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/claude-code/test-worktree-path-policy.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/codex-plugin-sync/test-sync-to-codex-plugin.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/codex/test-marketplace-manifest.sh",
+      "status": "inspected",
+      "sha256": "9c5afb24318bd959606f5063f444042e08e6fc2c6ff8c4988760476021e4ec90"
+    },
+    {
+      "path": "tests/codex/test-package-codex-plugin.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/devin/test-devin-plugin.sh",
+      "status": "inspected",
+      "sha256": "e156be13b2e902449ef8bd1836b9dc60a7fc5f2f670896f4faf621d9a1f3a6e4"
+    },
+    {
+      "path": "tests/diagnosing-superpowers/test-skill-structure.sh",
+      "status": "inspected",
+      "sha256": "35baf007e9a744621c6d374200cfac3b597a5b969bbf824178975257f239854b"
+    },
+    {
+      "path": "tests/explicit-skill-requests/prompts/action-oriented.txt",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/explicit-skill-requests/prompts/after-planning-flow.txt",
+      "status": "inspected",
+      "sha256": "7da11dd7918b083c43087cd21e241d3b397d5488ba1e06bebed74488c4827d22"
+    },
+    {
+      "path": "tests/explicit-skill-requests/prompts/claude-suggested-it.txt",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/explicit-skill-requests/prompts/i-know-what-sdd-means.txt",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/explicit-skill-requests/prompts/mid-conversation-execute-plan.txt",
+      "status": "inspected",
+      "sha256": "601301c1da6e138427c5c1b18acf34b3931bdd08397c3aec7bc94bec30d5c606"
+    },
+    {
+      "path": "tests/explicit-skill-requests/prompts/please-use-brainstorming.txt",
+      "status": "inspected",
+      "sha256": "de9508ffad9e29ee8ddda26ed9403b4a650e1081df39800edb6b56a6a3a859dd"
+    },
+    {
+      "path": "tests/explicit-skill-requests/prompts/skip-formalities.txt",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/explicit-skill-requests/prompts/subagent-driven-development-please.txt",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/explicit-skill-requests/prompts/use-systematic-debugging.txt",
+      "status": "inspected",
+      "sha256": "4aa7a8da6f68bb22d2b1fb66aeb26c1bed6fdf86d33d2d6f7a9752334856a990"
+    },
+    {
+      "path": "tests/explicit-skill-requests/run-all.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/explicit-skill-requests/run-extended-multiturn-test.sh",
+      "status": "inspected",
+      "sha256": "1004578e3ef68d6fda8646c9257d27dd4ca30c4c1bdc986a50fbcb929ea0934d"
+    },
+    {
+      "path": "tests/explicit-skill-requests/run-haiku-test.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/explicit-skill-requests/run-multiturn-test.sh",
+      "status": "inspected",
+      "sha256": "dc22f0b1ed0d367811ecf046c942430d15e87f4b8b2b4cc8260d60e00bee6ecb"
+    },
+    {
+      "path": "tests/explicit-skill-requests/run-test.sh",
+      "status": "inspected",
+      "sha256": "841f1d014f231c84f441cc6b91f388cc3e9e788012e6d36f5e78406c1f4c9b49"
+    },
+    {
+      "path": "tests/hermes/__init__.py",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/hermes/conftest.py",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/hermes/test_bootstrap.py",
+      "status": "inspected",
+      "sha256": "a4aaeb394779f3d22106866bfe67723301a5cf317dfad7a1386994eddd7a3031"
+    },
+    {
+      "path": "tests/hermes/test_plugin.py",
+      "status": "inspected",
+      "sha256": "f15ef2b31a293113830a8e82441540372bf0cb3bd02ffa51ef690ec7207e5ff9"
+    },
+    {
+      "path": "tests/hooks/test-run-hook-cmd-windows.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/hooks/test-session-start.sh",
+      "status": "inspected",
+      "sha256": "23f462f38fc152d1f63b0bbe859acb88cc382adf51e7c8f9537b4e8f2e83b2af"
+    },
+    {
+      "path": "tests/kimi/run-tests.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/kimi/test-plugin-manifest.sh",
+      "status": "inspected",
+      "sha256": "d7ca4db2e67c8611d3d1fe1fbf28fe41a33b187155563f1a553212df04250aaa"
+    },
+    {
+      "path": "tests/opencode/run-tests.sh",
+      "status": "inspected",
+      "sha256": "fa16ebeba28fd98adbb4c9a7572965de8e614e06de9912c287883f677114cf1c"
+    },
+    {
+      "path": "tests/opencode/setup.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/opencode/test-bootstrap-caching.mjs",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/opencode/test-bootstrap-caching.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/opencode/test-hook-registration.mjs",
+      "status": "inspected",
+      "sha256": "22bc8f8031787c20f291e0a4e852d9e6fbd8c7fd11931e75586433ba26134634"
+    },
+    {
+      "path": "tests/opencode/test-hook-registration.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/opencode/test-plugin-loading.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/opencode/test-priority.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/opencode/test-session-bootstrap.mjs",
+      "status": "inspected",
+      "sha256": "fc1655c45f484e6c19e738b1aec162e9b2e825a89dbe7facdd90b3a8fcbe81d7"
+    },
+    {
+      "path": "tests/opencode/test-session-bootstrap.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/opencode/test-skill-registration.mjs",
+      "status": "inspected",
+      "sha256": "779ba75046c2860096e232b5efa298c2073b459234e7279d87510e10fdeacd79"
+    },
+    {
+      "path": "tests/opencode/test-skill-registration.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/opencode/test-tools.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/pi/test-pi-extension.mjs",
+      "status": "inspected",
+      "sha256": "807b0d5623600d70e8fc4bd4bb8ab836d0f45003a2fd044114b076d1ba3d4af5"
+    },
+    {
+      "path": "tests/sdd-helper-paths/test-sdd-helper-paths.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/shell-lint/test-lint-shell.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/skill-layout/test-no-dev-files-in-skills.sh",
+      "status": "inspected",
+      "sha256": "4ebc2c8e396998764d55855012efa3ad38dece864b9bef137ee81b30bfc61bc6"
+    },
+    {
+      "path": "tests/skill-size/test-skill-size.sh",
+      "status": "inspected",
+      "sha256": "82aa688a6f17cb04006954f2c7e6894578ef13009c273fd40777f90c87d8b99a"
+    },
+    {
+      "path": "tests/systematic-debugging/pressure-scenarios/CREATION-LOG.md",
+      "status": "inspected",
+      "sha256": "c24733a5b1821bd6bed1fc950261f0b9f4e90097e0bbb96459d8179713730789"
+    },
+    {
+      "path": "tests/systematic-debugging/pressure-scenarios/test-academic.md",
+      "status": "inspected",
+      "sha256": "fe2ba480d78ac0d686dc025f41c2a32a43d642bf533f91b0c6053a04d35d6486"
+    },
+    {
+      "path": "tests/systematic-debugging/pressure-scenarios/test-pressure-1.md",
+      "status": "inspected",
+      "sha256": "0b6a915db0054577819834c79be9eb614e97bddba10d73768e1fbe91cfed048a"
+    },
+    {
+      "path": "tests/systematic-debugging/pressure-scenarios/test-pressure-2.md",
+      "status": "inspected",
+      "sha256": "b2030aeffba07050e8ad573ddf87486457c4a016a786bb326235bebd856f2016"
+    },
+    {
+      "path": "tests/systematic-debugging/pressure-scenarios/test-pressure-3.md",
+      "status": "inspected",
+      "sha256": "96b50a52e2c7989c9cf20fb752c47c1e9a3a70dc362f8f7989f8f5b64dac7708"
+    },
+    {
+      "path": "tests/systematic-debugging/test-find-polluter.sh",
+      "status": "inspected",
+      "sha256": "7c5ae1adb7c6e292b73eccba6ba442501c442aefe8c883a94c9fdd809d592cea"
+    },
+    {
+      "path": "tests/version-bump/test-bump-version.sh",
+      "status": "indexed",
+      "reason": "Present in the complete recursive source tree; content was not deep-inspected in this checkpoint."
+    },
+    {
+      "path": "tests/writing-skills/test-render-graphs.sh",
+      "status": "inspected",
+      "sha256": "e758c2e751fcfa73ceaeac7114251d48cd7ece167ac535dd765c3f9d95a6a9a9"
+    }
+  ],
+  "candidates": [
+    {
+      "path": "skills/using-superpowers/SKILL.md",
+      "kind": "skill",
+      "purpose": "Session-start bootstrap and dispatch convention for skill discovery and use.",
+      "requirements": [
+        "Skill package discovery and frontmatter parsing",
+        "Automatic bootstrap injection",
+        "Host-specific tool mapping"
+      ],
+      "overlaps": [
+        "Overlaps all source skills and session-start instructions."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Lines 3-13 make the bootstrap mandatory for all interactions; docs describe platform-specific injection and tool mapping."
+      },
+      "evidence": [
+        {
+          "path": "skills/using-superpowers/SKILL.md",
+          "note": "Lines 3-13 make the bootstrap mandatory for all interactions; docs describe platform-specific injection and tool mapping."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/brainstorming/SKILL.md",
+      "kind": "skill",
+      "purpose": "Staged design workflow requiring clarification and approval before implementation.",
+      "requirements": [
+        "Interactive user approval",
+        "Durable design document output",
+        "Follow-on planning workflow",
+        "Optional companion needs browser access, local filesystem writes, and background-process lifecycle support.",
+        "Companion requires user approval, private browser URL, filesystem writes, persistent server lifecycle."
+      ],
+      "overlaps": [
+        "Overlaps clarification, plan approval, and design-review flows."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material. Remote companion brand image is not covered and was not cleared.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Lines 17-32 define the sequence through design approval and plan creation. Core conversational design/approval is portable; the companion is host-specific and optional. Core approval flow remains portable, while the optional visual companion is reference-only until browser/network/process/file-write boundaries are supplied by the host."
+      },
+      "evidence": [
+        {
+          "path": "skills/brainstorming/SKILL.md",
+          "note": "Lines 17-32 define the sequence through design approval and plan creation."
+        },
+        {
+          "path": "skills/brainstorming/visual-companion.md",
+          "note": "Optional visual workflow, server implementation, and lifecycle were inspected."
+        },
+        {
+          "path": "skills/brainstorming/SKILL.md",
+          "note": "Core approval flow remains portable, while the optional visual companion is reference-only until browser/network/process/file-write boundaries are supplied by the host."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/brainstorming/visual-companion.md",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": ".gitignore",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "reason": "Pinned local implementation or regression test inspected."
+        }
+      ]
+    },
+    {
+      "path": "skills/test-driven-development/SKILL.md",
+      "kind": "skill",
+      "purpose": "Test-first implementation workflow with explicit failing-test evidence.",
+      "requirements": [
+        "Runnable project-specific test command",
+        "Inspect failing then passing test"
+      ],
+      "overlaps": [
+        "Overlaps repository test conventions and verification gates."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Lines 8-12 state the red/green/minimal-change loop."
+      },
+      "evidence": [
+        {
+          "path": "skills/test-driven-development/SKILL.md",
+          "note": "Lines 8-12 state the red/green/minimal-change loop."
+        },
+        {
+          "path": "skills/test-driven-development/writing-good-tests.md",
+          "note": "Linked guidance emphasizes behavior-focused assertions and independent expected values."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/test-driven-development/writing-good-tests.md",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "skills/systematic-debugging/SKILL.md",
+      "kind": "skill",
+      "purpose": "Hypothesis-driven debugging workflow beginning with reproduction and cause tracing.",
+      "requirements": [
+        "Runnable reproduction or diagnostic checks",
+        "Project-specific test and logging access",
+        "Polluter helper invokes project npm tests; adapt to a disposable, approved environment."
+      ],
+      "overlaps": [
+        "Overlaps ordinary debugging instructions and test-driven development."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Lines 8-25 establish systematic debugging and an evidence-first rule. Linked tracing, defense-in-depth, and condition-waiting references were inspected; polluter helper is project-specific and should not run generically."
+      },
+      "evidence": [
+        {
+          "path": "skills/systematic-debugging/SKILL.md",
+          "note": "Lines 8-25 establish systematic debugging and an evidence-first rule."
+        },
+        {
+          "path": "skills/systematic-debugging/root-cause-tracing.md",
+          "note": "Linked cause-tracing procedure inspected."
+        },
+        {
+          "path": "skills/systematic-debugging/defense-in-depth.md",
+          "note": "Linked multi-boundary mitigation guidance inspected."
+        },
+        {
+          "path": "skills/systematic-debugging/condition-based-waiting.md",
+          "note": "Linked async test-wait guidance inspected."
+        },
+        {
+          "path": "skills/systematic-debugging/find-polluter.sh",
+          "note": "Helper invokes project test commands; test fixture inspected, not run."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/systematic-debugging/root-cause-tracing.md",
+          "reason": "Inspected linked local support or test."
+        },
+        {
+          "path": "skills/systematic-debugging/defense-in-depth.md",
+          "reason": "Inspected linked local support or test."
+        },
+        {
+          "path": "skills/systematic-debugging/condition-based-waiting.md",
+          "reason": "Inspected linked local support or test."
+        },
+        {
+          "path": "skills/systematic-debugging/find-polluter.sh",
+          "reason": "Inspected linked local support or test."
+        },
+        {
+          "path": "tests/systematic-debugging/test-find-polluter.sh",
+          "reason": "Inspected linked local support or test."
+        },
+        {
+          "path": "tests/systematic-debugging/pressure-scenarios/CREATION-LOG.md",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "skills/verification-before-completion/SKILL.md",
+      "kind": "skill",
+      "purpose": "Final verification gate requiring fresh evidence before completion claims.",
+      "requirements": [
+        "Relevant test/build/lint commands and access to output"
+      ],
+      "overlaps": [
+        "Overlaps repository completion criteria and CI checks."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Lines 14-22 require fresh verification evidence before claiming success."
+      },
+      "evidence": [
+        {
+          "path": "skills/verification-before-completion/SKILL.md",
+          "note": "Lines 14-22 require fresh verification evidence before claiming success."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/writing-plans/SKILL.md",
+      "kind": "skill",
+      "purpose": "Task decomposition workflow producing a durable implementation plan.",
+      "requirements": [
+        "Requirements/specification",
+        "Plan file location and task format",
+        "Execution workflow selection"
+      ],
+      "overlaps": [
+        "Overlaps plan approval and benchmark-task decomposition."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Lines 8-16 describe when to plan, where to save plans, and the isolated-worktree expectation. Multi-turn fixtures exercise later skill invocation after planning context, not plan quality."
+      },
+      "evidence": [
+        {
+          "path": "skills/writing-plans/SKILL.md",
+          "note": "Lines 8-16 describe when to plan, where to save plans, and the isolated-worktree expectation."
+        },
+        {
+          "path": "tests/explicit-skill-requests/run-multiturn-test.sh",
+          "note": "Tests skill selection after planning; assertion is tool invocation, not plan correctness."
+        },
+        {
+          "path": "tests/explicit-skill-requests/run-extended-multiturn-test.sh",
+          "note": "Extended model runner is host-specific and uses permission bypass; inspected only."
+        }
+      ],
+      "links": [
+        {
+          "path": "tests/explicit-skill-requests/run-multiturn-test.sh",
+          "reason": "Inspected linked local support or test."
+        },
+        {
+          "path": "tests/explicit-skill-requests/run-extended-multiturn-test.sh",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "skills/subagent-driven-development/SKILL.md",
+      "kind": "skill",
+      "purpose": "Plan executor using fresh implementer and reviewer agents for each task.",
+      "requirements": [
+        "Agent creation/dispatch tools",
+        "Independent state isolation",
+        "Review and result-reporting protocol"
+      ],
+      "overlaps": [
+        "Overlaps app-native delegation and code-review workflows."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Lines 8-20 define implementer/reviewer dispatch and automatic decision-making; substantial app lifecycle adaptation is required."
+      },
+      "evidence": [
+        {
+          "path": "skills/subagent-driven-development/SKILL.md",
+          "note": "Lines 8-20 define implementer/reviewer dispatch and automatic decision-making; substantial app lifecycle adaptation is required."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/executing-plans/SKILL.md",
+      "kind": "skill",
+      "purpose": "Inline plan-execution alternative with a final fresh-context review.",
+      "requirements": [
+        "Durable task list",
+        "Separate reviewer agent at completion"
+      ],
+      "overlaps": [
+        "Overlaps subagent-driven-development; the two execution models are alternatives, not additive defaults."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Lines 8-14 explicitly contrast inline execution with per-task subagents."
+      },
+      "evidence": [
+        {
+          "path": "skills/executing-plans/SKILL.md",
+          "note": "Lines 8-14 explicitly contrast inline execution with per-task subagents."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/requesting-code-review/code-reviewer.md",
+          "reason": "Local supporting file referenced by the candidate; indexed and requires inspection before adoption."
+        }
+      ]
+    },
+    {
+      "path": "skills/writing-skills/SKILL.md",
+      "kind": "skill",
+      "purpose": "Test-driven authoring and validation process for agent skill documentation.",
+      "requirements": [
+        "Skill parser/runtime to test trigger and behavior",
+        "Subagent or equivalent for isolated review"
+      ],
+      "overlaps": [
+        "Overlaps skill package validation and instruction testing."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Lines 8-30 frame skill authoring as TDD and define its test-first mapping."
+      },
+      "evidence": [
+        {
+          "path": "skills/writing-skills/SKILL.md",
+          "note": "Lines 8-30 frame skill authoring as TDD and define its test-first mapping."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/writing-skills/references/discovery.md",
+          "reason": "Local supporting file referenced by the candidate; indexed and requires inspection before adoption."
+        },
+        {
+          "path": "skills/writing-skills/references/flowcharts.md",
+          "reason": "Local supporting file referenced by the candidate; indexed and requires inspection before adoption."
+        },
+        {
+          "path": "skills/writing-skills/references/bulletproofing.md",
+          "reason": "Local supporting file referenced by the candidate; indexed and requires inspection before adoption."
+        },
+        {
+          "path": "skills/writing-skills/references/testing-skills-with-subagents.md",
+          "reason": "Local supporting file referenced by the candidate; indexed and requires inspection before adoption."
+        },
+        {
+          "url": "https://agentskills.io/specification",
+          "reason": "External skill-format specification referenced by source; not followed."
+        }
+      ]
+    },
+    {
+      "path": "skills/dispatching-parallel-agents/SKILL.md",
+      "kind": "skill",
+      "purpose": "Routing heuristic for dispatching independent tasks to parallel agents.",
+      "requirements": [
+        "Agent dispatch and result collection",
+        "Tasks independent of shared mutable state"
+      ],
+      "overlaps": [
+        "Overlaps platform-level parallel session/agent orchestration."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Lines 16-47 describe eligibility and a dispatch pattern."
+      },
+      "evidence": [
+        {
+          "path": "skills/dispatching-parallel-agents/SKILL.md",
+          "note": "Lines 16-47 describe eligibility and a dispatch pattern."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/using-git-worktrees/SKILL.md",
+      "kind": "skill",
+      "purpose": "Isolation workflow that prefers platform-native worktree management.",
+      "requirements": [
+        "Native isolated-workspace support or explicit Git worktree access",
+        "Repository-specific cleanup policy"
+      ],
+      "overlaps": [
+        "Overlaps Copilot worktree lifecycle and task isolation."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Lines 8-26 prefer native isolation and include a submodule guard; source cleanup assumptions need host-specific review."
+      },
+      "evidence": [
+        {
+          "path": "skills/using-git-worktrees/SKILL.md",
+          "note": "Lines 8-26 prefer native isolation and include a submodule guard; source cleanup assumptions need host-specific review."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/finishing-a-development-branch/SKILL.md",
+      "kind": "skill",
+      "purpose": "Post-implementation verification and integration-choice workflow.",
+      "requirements": [
+        "User-directed merge/PR choices",
+        "Test command and repository status",
+        "Branch/worktree lifecycle controls"
+      ],
+      "overlaps": [
+        "Overlaps app-native PR/merge and session cleanup behavior."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Lines 10-16 start with test verification and present integration as a sequence; do not copy source-side merge/cleanup actions unchanged."
+      },
+      "evidence": [
+        {
+          "path": "skills/finishing-a-development-branch/SKILL.md",
+          "note": "Lines 10-16 start with test verification and present integration as a sequence; do not copy source-side merge/cleanup actions unchanged."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/requesting-code-review/SKILL.md",
+      "kind": "skill",
+      "purpose": "Reviewer-task construction pattern with bounded context rather than full session history.",
+      "requirements": [
+        "Reviewer agent/session",
+        "Bounded change scope and acceptance criteria"
+      ],
+      "overlaps": [
+        "Overlaps subagent development and app-native PR review."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Lines 8-15 define reviewer dispatch and when to request it."
+      },
+      "evidence": [
+        {
+          "path": "skills/requesting-code-review/SKILL.md",
+          "note": "Lines 8-15 define reviewer dispatch and when to request it."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/requesting-code-review/code-reviewer.md",
+          "reason": "Local supporting file referenced by the candidate; indexed and requires inspection before adoption."
+        }
+      ]
+    },
+    {
+      "path": "skills/receiving-code-review/SKILL.md",
+      "kind": "skill",
+      "purpose": "Workflow for technically evaluating and implementing review feedback.",
+      "requirements": [
+        "Review comment context",
+        "Verify each proposed correction"
+      ],
+      "overlaps": [
+        "Overlaps app-native review threads and change verification."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Lines 14-24 prescribe one-item-at-a-time evaluation and implementation."
+      },
+      "evidence": [
+        {
+          "path": "skills/receiving-code-review/SKILL.md",
+          "note": "Lines 14-24 prescribe one-item-at-a-time evaluation and implementation."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/diagnosing-superpowers/SKILL.md",
+      "kind": "skill",
+      "purpose": "Session-diagnosis workflow analyzing transcripts and subagent reports.",
+      "requirements": [
+        "Access to complete session and child-agent transcripts",
+        "Privacy controls, consent, redaction, secure report storage"
+      ],
+      "overlaps": [
+        "Overlaps session telemetry, trace review, and persistent memory."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Lines 19-40 require enumerating subagent transcripts and writing reports; privacy-sensitive and unsuitable without explicit data-access controls."
+      },
+      "evidence": [
+        {
+          "path": "skills/diagnosing-superpowers/SKILL.md",
+          "note": "Lines 19-40 require enumerating subagent transcripts and writing reports; privacy-sensitive and unsuitable without explicit data-access controls."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "docs/porting-to-a-new-harness.md",
+      "kind": "support",
+      "purpose": "Cross-harness integration invariants and acceptance-test guidance for adapting skills to another host.",
+      "requirements": [
+        "Automatic session-start bootstrap",
+        "Exact host tool mapping",
+        "Fresh-session acceptance test",
+        "Host-specific integration shape"
+      ],
+      "overlaps": [
+        "Overlaps local benchmark runtime/profile requirements and skill packaging."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Lines 31-134 compare shell-hook, in-process-plugin, and context-file integrations; lines 225-302 cover tool mapping and portability details."
+      },
+      "evidence": [
+        {
+          "path": "docs/porting-to-a-new-harness.md",
+          "note": "Lines 31-134 compare shell-hook, in-process-plugin, and context-file integrations; lines 225-302 cover tool mapping and portability details."
+        }
+      ],
+      "links": [
+        {
+          "path": "README.md",
+          "reason": "Local supporting file referenced by the candidate; indexed and requires inspection before adoption."
+        }
+      ]
+    },
+    {
+      "path": "hooks/session-start",
+      "kind": "support",
+      "purpose": "Shell-hook implementation for session-start bootstrap with platform-specific output.",
+      "requirements": [
+        "Host lifecycle hook registration",
+        "Bash-compatible runtime and host environment variables"
+      ],
+      "overlaps": [
+        "Overlaps existing session-start context injection and adapter hooks."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Implementation emits host-specific JSON; the wrapper returns successfully without injection if Bash is missing."
+      },
+      "evidence": [
+        {
+          "path": "hooks/session-start",
+          "note": "Implementation emits host-specific JSON; the wrapper returns successfully without injection if Bash is missing."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": ".opencode/plugins/superpowers.js",
+      "kind": "harness",
+      "purpose": "OpenCode plugin bootstrap and host-tool mapping, including V1/V2, compaction, and child-session behavior.",
+      "requirements": [
+        "OpenCode plugin API",
+        "Host-specific tool mapping",
+        "Bootstrap de-duplication and compaction lifecycle"
+      ],
+      "overlaps": [
+        "Overlaps general skill bootstrap and other host adapters."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Inspected implementation handles multiple OpenCode APIs, bootstrap de-duplication, compaction, and child sessions."
+      },
+      "evidence": [
+        {
+          "path": ".opencode/plugins/superpowers.js",
+          "note": "Inspected implementation handles multiple OpenCode APIs, bootstrap de-duplication, compaction, and child sessions."
+        }
+      ],
+      "links": [
+        {
+          "url": "https://opencode.ai/docs/",
+          "reason": "OpenCode documentation reference recorded from source; not followed."
+        },
+        {
+          "url": "https://opencode.ai/v2/docs/",
+          "reason": "OpenCode V2 documentation reference recorded from source; not followed."
+        }
+      ]
+    },
+    {
+      "path": ".hermes-plugin/__init__.py",
+      "kind": "harness",
+      "purpose": "Hermes plugin context injection and skill-description registration.",
+      "requirements": [
+        "Hermes plugin lifecycle",
+        "Python runtime and host skill tool mapping"
+      ],
+      "overlaps": [
+        "Overlaps session-start bootstrap adapters."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Implementation registers skill descriptions and injects bootstrap on a first non-subagent LLM call."
+      },
+      "evidence": [
+        {
+          "path": ".hermes-plugin/__init__.py",
+          "note": "Implementation registers skill descriptions and injects bootstrap on a first non-subagent LLM call."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": ".pi/extensions/superpowers.ts",
+      "kind": "harness",
+      "purpose": "Pi extension transient context injection and post-compaction bootstrap.",
+      "requirements": [
+        "Pi extension API and provider-request lifecycle",
+        "Host-specific tool mappings"
+      ],
+      "overlaps": [
+        "Overlaps other session-start and compaction hooks."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Extension injects transient context per provider request and after compaction; companion tests cover ordering and de-duplication."
+      },
+      "evidence": [
+        {
+          "path": ".pi/extensions/superpowers.ts",
+          "note": "Extension injects transient context per provider request and after compaction; companion tests cover ordering and de-duplication."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "GEMINI.md",
+      "kind": "context",
+      "purpose": "Extension-declared context including the skill bootstrap and tool-mapping references.",
+      "requirements": [
+        "Gemini extension context-file support",
+        "All included local skill and tool-map files"
+      ],
+      "overlaps": [
+        "Overlaps repository instructions and session-start bootstrap."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Context file includes the using-superpowers skill; extension metadata selects it."
+      },
+      "evidence": [
+        {
+          "path": "GEMINI.md",
+          "note": "Context file includes the using-superpowers skill; extension metadata selects it."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/using-superpowers/SKILL.md",
+          "reason": "Local supporting file referenced by the candidate; indexed and requires inspection before adoption."
+        }
+      ]
+    },
+    {
+      "path": "gemini-extension.json",
+      "kind": "support",
+      "purpose": "Gemini extension metadata selecting a context file.",
+      "requirements": [
+        "Gemini extension host support",
+        "Context file at declared path"
+      ],
+      "overlaps": [
+        "Overlaps plugin manifests for other runtimes."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Manifest declares GEMINI.md as the extension context file."
+      },
+      "evidence": [
+        {
+          "path": "gemini-extension.json",
+          "note": "Manifest declares GEMINI.md as the extension context file."
+        }
+      ],
+      "links": [
+        {
+          "path": "GEMINI.md",
+          "reason": "Local supporting file referenced by the candidate; indexed and requires inspection before adoption."
+        }
+      ]
+    },
+    {
+      "path": "hooks/hooks.json",
+      "kind": "support",
+      "purpose": "Claude Code SessionStart command-hook registration for bootstrap.",
+      "requirements": [
+        "Claude Code hook lifecycle",
+        "Shell command runner and platform-compatible path resolution"
+      ],
+      "overlaps": [
+        "Overlaps hooks/hooks-cursor.json and hooks/session-start."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Manifest wires a SessionStart command hook to the shared wrapper."
+      },
+      "evidence": [
+        {
+          "path": "hooks/hooks.json",
+          "note": "Manifest wires a SessionStart command hook to the shared wrapper."
+        }
+      ],
+      "links": [
+        {
+          "path": "hooks/session-start",
+          "reason": "Local supporting file referenced by the candidate; indexed and requires inspection before adoption."
+        },
+        {
+          "path": "hooks/run-hook.cmd",
+          "reason": "Local supporting file referenced by the candidate; indexed and requires inspection before adoption."
+        }
+      ]
+    },
+    {
+      "path": "hooks/hooks-cursor.json",
+      "kind": "support",
+      "purpose": "Cursor session-start command-hook registration.",
+      "requirements": [
+        "Cursor plugin hook schema",
+        "Shared hook wrapper"
+      ],
+      "overlaps": [
+        "Overlaps Claude Code hook manifest and shared session-start code."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Manifest registers a sessionStart command action for the common hook."
+      },
+      "evidence": [
+        {
+          "path": "hooks/hooks-cursor.json",
+          "note": "Manifest registers a sessionStart command action for the common hook."
+        }
+      ],
+      "links": [
+        {
+          "path": "hooks/session-start",
+          "reason": "Local supporting file referenced by the candidate; indexed and requires inspection before adoption."
+        },
+        {
+          "path": "hooks/run-hook.cmd",
+          "reason": "Local supporting file referenced by the candidate; indexed and requires inspection before adoption."
+        }
+      ]
+    },
+    {
+      "path": ".codex-plugin/plugin.json",
+      "kind": "support",
+      "purpose": "Codex plugin metadata and explicit empty hooks configuration.",
+      "requirements": [
+        "Codex plugin manifest compatibility",
+        "Skill package paths"
+      ],
+      "overlaps": [
+        "Overlaps other plugin manifests and hook registration."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Manifest declares skills and an empty hooks object to avoid unintended discovery of the Claude hook."
+      },
+      "evidence": [
+        {
+          "path": ".codex-plugin/plugin.json",
+          "note": "Manifest declares skills and an empty hooks object to avoid unintended discovery of the Claude hook."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": ".cursor-plugin/plugin.json",
+      "kind": "support",
+      "purpose": "Cursor plugin metadata pointing to skills and a Cursor-specific hooks manifest.",
+      "requirements": [
+        "Cursor plugin schema",
+        "Referenced skills and hook manifest"
+      ],
+      "overlaps": [
+        "Overlaps hooks/hooks-cursor.json and cross-platform skill manifests."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Manifest links the skills package and hooks/hooks-cursor.json."
+      },
+      "evidence": [
+        {
+          "path": ".cursor-plugin/plugin.json",
+          "note": "Manifest links the skills package and hooks/hooks-cursor.json."
+        }
+      ],
+      "links": [
+        {
+          "path": "hooks/hooks-cursor.json",
+          "reason": "Local supporting file referenced by the candidate; indexed and requires inspection before adoption."
+        }
+      ]
+    },
+    {
+      "path": ".kimi-plugin/plugin.json",
+      "kind": "support",
+      "purpose": "Kimi plugin metadata with sessionStart.skill bootstrap and tool instructions.",
+      "requirements": [
+        "Kimi plugin schema",
+        "Kimi tool mappings and supported session-start behavior"
+      ],
+      "overlaps": [
+        "Overlaps other plugin manifests and shared bootstrap."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Manifest declares sessionStart.skill and Kimi-specific tool instructions."
+      },
+      "evidence": [
+        {
+          "path": ".kimi-plugin/plugin.json",
+          "note": "Manifest declares sessionStart.skill and Kimi-specific tool instructions."
+        }
+      ],
+      "links": [
+        {
+          "path": "docs/README.kimi.md",
+          "reason": "Local supporting file referenced by the candidate; indexed and requires inspection before adoption."
+        },
+        {
+          "path": "skills/using-superpowers/references/codex-tools.md",
+          "reason": "Local supporting file referenced by the candidate; indexed and requires inspection before adoption."
+        }
+      ]
+    },
+    {
+      "path": ".muse-plugin/plugin.json",
+      "kind": "support",
+      "purpose": "Muse plugin capabilities and session-start hook configuration.",
+      "requirements": [
+        "Muse plugin lifecycle",
+        "Muse-specific tool contract"
+      ],
+      "overlaps": [
+        "Overlaps session-start hooks and other plugin manifests."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Manifest declares capabilities, a session-start hook, and an empty MCP server list."
+      },
+      "evidence": [
+        {
+          "path": ".muse-plugin/plugin.json",
+          "note": "Manifest declares capabilities, a session-start hook, and an empty MCP server list."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": ".antigravity-plugin/plugin.json",
+      "kind": "support",
+      "purpose": "Antigravity plugin metadata and surfaced suggested prompts.",
+      "requirements": [
+        "Antigravity plugin validation/runtime",
+        "Skills and prompt metadata"
+      ],
+      "overlaps": [
+        "Overlaps surfaced skill descriptions and other plugin manifests."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Manifest provides plugin metadata and suggested prompts; it is not evidence of automatic session bootstrap."
+      },
+      "evidence": [
+        {
+          "path": ".antigravity-plugin/plugin.json",
+          "note": "Manifest provides plugin metadata and suggested prompts; it is not evidence of automatic session bootstrap."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": ".devin-plugin/plugin.json",
+      "kind": "support",
+      "purpose": "Devin plugin package metadata for skill discovery.",
+      "requirements": [
+        "Devin plugin support for skill packages"
+      ],
+      "overlaps": [
+        "Overlaps skill package manifests; source-specific runtime capabilities differ."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Paired tests explicitly reject unsupported hook, inject, and session-start fields."
+      },
+      "evidence": [
+        {
+          "path": ".devin-plugin/plugin.json",
+          "note": "Paired tests explicitly reject unsupported hook, inject, and session-start fields."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": ".agents/plugins/marketplace.json",
+      "kind": "support",
+      "purpose": "Marketplace install metadata for the plugin.",
+      "requirements": [
+        "GitHub plugin marketplace",
+        "User-mediated installation/authentication"
+      ],
+      "overlaps": [
+        "Overlaps plugin distribution metadata."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Manifest names a GitHub source and ON_INSTALL authentication; it describes distribution, not agent runtime behavior."
+      },
+      "evidence": [
+        {
+          "path": ".agents/plugins/marketplace.json",
+          "note": "Manifest names a GitHub source and ON_INSTALL authentication; it describes distribution, not agent runtime behavior."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": ".claude-plugin/plugin.json",
+      "kind": "support",
+      "purpose": "Claude plugin metadata and declared license.",
+      "requirements": [
+        "Claude plugin manifest and skill directory layout"
+      ],
+      "overlaps": [
+        "Overlaps other platform plugin manifests."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Manifest declares plugin metadata, skills, and MIT license."
+      },
+      "evidence": [
+        {
+          "path": ".claude-plugin/plugin.json",
+          "note": "Manifest declares plugin metadata, skills, and MIT license."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "package.json",
+      "kind": "support",
+      "purpose": "Package entrypoint and declared plugin/extension locations for OpenCode and Pi.",
+      "requirements": [
+        "Node/Bun host runtimes",
+        "Review package dependencies before any adoption",
+        "Host must choose and validate Node runtime."
+      ],
+      "overlaps": [
+        "Overlaps host plugin manifest and skill package registrations."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Manifest points to OpenCode as main and declares Pi extension and skill paths. Root package has no dependencies or engines field; actual minimum supported Node version is unresolved."
+      },
+      "evidence": [
+        {
+          "path": "package.json",
+          "note": "Manifest points to OpenCode as main and declares Pi extension and skill paths."
+        },
+        {
+          "path": "package.json",
+          "note": "Root package has no dependencies or engines field; actual minimum supported Node version is unresolved."
+        }
+      ],
+      "links": [
+        {
+          "path": "tests/brainstorm-server/package.json",
+          "reason": "Pinned local implementation or regression test inspected."
+        }
+      ]
+    },
+    {
+      "path": "tests/pi/test-pi-extension.mjs",
+      "kind": "support",
+      "purpose": "Deterministic tests for Pi context injection, compaction order, and host tool-map documentation.",
+      "requirements": [
+        "Node.js test runner and local mocks"
+      ],
+      "overlaps": [
+        "Overlaps target harness adapter contract tests."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Tests cover provider-request injection, post-compaction ordering, and Pi tool references."
+      },
+      "evidence": [
+        {
+          "path": "tests/pi/test-pi-extension.mjs",
+          "note": "Tests cover provider-request injection, post-compaction ordering, and Pi tool references."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "tests/hermes/test_plugin.py",
+      "kind": "support",
+      "purpose": "Hermes plugin tests for first-turn injection and subagent exclusion.",
+      "requirements": [
+        "Python test runner and Hermes test doubles"
+      ],
+      "overlaps": [
+        "Overlaps target harness lifecycle tests."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Tests cover bootstrap on first turn, subagent platform skip, and host context."
+      },
+      "evidence": [
+        {
+          "path": "tests/hermes/test_plugin.py",
+          "note": "Tests cover bootstrap on first turn, subagent platform skip, and host context."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "tests/claude-code/README.md",
+      "kind": "support",
+      "purpose": "Claude skill instruction test setup and limitations.",
+      "requirements": [
+        "Claude CLI/model access for integration tests",
+        "Shell and project-specific setup"
+      ],
+      "overlaps": [
+        "Overlaps model-based skill behavior evaluation."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "README states the tests verify skill instructions, not full execution; live-model dependencies make them non-portable unit tests."
+      },
+      "evidence": [
+        {
+          "path": "tests/claude-code/README.md",
+          "note": "README states the tests verify skill instructions, not full execution; live-model dependencies make them non-portable unit tests."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "tests/explicit-skill-requests/run-test.sh",
+      "kind": "support",
+      "purpose": "Explicit-skill-request behavioral drill with ordering assertions.",
+      "requirements": [
+        "Claude CLI and real model behavior",
+        "Permission bypass flag appears in runner; do not reuse without separate safety review",
+        "Claude CLI/model integration runner; writes outputs.",
+        "Claude CLI/model; writes outputs"
+      ],
+      "overlaps": [
+        "Overlaps instruction-following behavioral evaluations."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Runner invokes Claude with --dangerously-skip-permissions and checks for premature tool use; inspected only and never run. Model-specific runner; inspected only."
+      },
+      "evidence": [
+        {
+          "path": "tests/explicit-skill-requests/run-test.sh",
+          "note": "Runner invokes Claude with --dangerously-skip-permissions and checks for premature tool use; inspected only and never run."
+        },
+        {
+          "path": "tests/explicit-skill-requests/prompts/please-use-brainstorming.txt",
+          "note": "Explicit request prompt fixture inspected."
+        },
+        {
+          "path": "tests/explicit-skill-requests/prompts/use-systematic-debugging.txt",
+          "note": "Explicit request prompt fixture inspected."
+        },
+        {
+          "path": "tests/explicit-skill-requests/run-test.sh",
+          "note": "Model-specific runner; inspected only."
+        }
+      ],
+      "links": [
+        {
+          "path": "tests/explicit-skill-requests/prompts/please-use-brainstorming.txt",
+          "reason": "Inspected linked local support or test."
+        },
+        {
+          "path": "tests/explicit-skill-requests/prompts/use-systematic-debugging.txt",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "tests/diagnosing-superpowers/test-skill-structure.sh",
+      "kind": "support",
+      "purpose": "Static structural checks for diagnostic skill file presence, word budget, and private-path leakage.",
+      "requirements": [
+        "POSIX shell and grep"
+      ],
+      "overlaps": [
+        "Overlaps skill schema and privacy linting."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Test checks expected files, word budget, and leaked personal-path patterns."
+      },
+      "evidence": [
+        {
+          "path": "tests/diagnosing-superpowers/test-skill-structure.sh",
+          "note": "Test checks expected files, word budget, and leaked personal-path patterns."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "docs/superpowers/specs/2026-05-06-lift-drill-into-evals-design.md",
+      "kind": "support",
+      "purpose": "Evaluation-harness design notes for a multi-step behavior drill.",
+      "requirements": [
+        "External evaluation runner, model API access, human/subagent review gates"
+      ],
+      "overlaps": [
+        "Overlaps benchmark eval cases and traces; this is a design document, not a shipped eval harness."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Design document describes manual-only CI, deletion gates, and subagent-gated verification; no in-tree evals directory was found."
+      },
+      "evidence": [
+        {
+          "path": "docs/superpowers/specs/2026-05-06-lift-drill-into-evals-design.md",
+          "note": "Design document describes manual-only CI, deletion gates, and subagent-gated verification; no in-tree evals directory was found."
+        }
+      ],
+      "links": [
+        {
+          "path": "README.md",
+          "reason": "Local supporting file referenced by the candidate; indexed and requires inspection before adoption."
+        },
+        {
+          "url": "https://github.com/prime-radiant-inc/superpowers-evals/",
+          "reason": "Separate evaluation repository linked by source README; not followed or independently pinned."
+        }
+      ]
+    },
+    {
+      "path": "tests/codex/test-marketplace-manifest.sh",
+      "kind": "support",
+      "purpose": "Static regression test for Codex marketplace hook suppression.",
+      "requirements": [
+        "Python standard library or configured test runner"
+      ],
+      "overlaps": [
+        "Overlaps plugin manifest validation."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Test asserts the relevant hooks configuration is exactly an empty object."
+      },
+      "evidence": [
+        {
+          "path": "tests/codex/test-marketplace-manifest.sh",
+          "note": "Test asserts the relevant hooks configuration is exactly an empty object."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "tests/devin/test-devin-plugin.sh",
+      "kind": "support",
+      "purpose": "Static regression test that rejects unsupported Devin manifest fields.",
+      "requirements": [
+        "Shell and Python standard library"
+      ],
+      "overlaps": [
+        "Overlaps cross-platform manifest validation."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Test explicitly rejects skills/hooks/sessionStart/context injection fields unsupported by the target."
+      },
+      "evidence": [
+        {
+          "path": "tests/devin/test-devin-plugin.sh",
+          "note": "Test explicitly rejects skills/hooks/sessionStart/context injection fields unsupported by the target."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "tests/kimi/test-plugin-manifest.sh",
+      "kind": "support",
+      "purpose": "Static validation of Kimi session-start configuration and unsupported fields.",
+      "requirements": [
+        "Shell and Python standard library"
+      ],
+      "overlaps": [
+        "Overlaps manifest schema validation."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Test checks sessionStart.skill and rejects unsupported manifest fields."
+      },
+      "evidence": [
+        {
+          "path": "tests/kimi/test-plugin-manifest.sh",
+          "note": "Test checks sessionStart.skill and rejects unsupported manifest fields."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "tests/antigravity/test-plugin-manifest.sh",
+      "kind": "support",
+      "purpose": "CI-safe validation of Antigravity bootstrap metadata and optional host validation.",
+      "requirements": [
+        "Shell; optional Antigravity CLI for host validation"
+      ],
+      "overlaps": [
+        "Overlaps plugin manifest and skill discovery validation."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Test documents an optional agy plugin validation path; do not assume the CLI is available."
+      },
+      "evidence": [
+        {
+          "path": "tests/antigravity/test-plugin-manifest.sh",
+          "note": "Test documents an optional agy plugin validation path; do not assume the CLI is available."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "tests/claude-code/run-skill-tests.sh",
+      "kind": "support",
+      "purpose": "Model-based instruction tests with an opt-in integration mode.",
+      "requirements": [
+        "Claude CLI and model behavior",
+        "Tests examine instruction following, not full execution",
+        "Claude CLI/model required; permission behavior is controlled by the runner.",
+        "Claude CLI/model; configured permission behavior"
+      ],
+      "overlaps": [
+        "Overlaps behavioral skill evaluation."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Runner defines a gated integration mode and prompt cases; test README states this verifies instructions rather than full task execution. Runner/helper dependencies inspected; tests not run because they require a model/CLI. README scopes these as instruction-following, not full task execution; tests not run."
+      },
+      "evidence": [
+        {
+          "path": "tests/claude-code/run-skill-tests.sh",
+          "note": "Runner defines a gated integration mode and prompt cases; test README states this verifies instructions rather than full task execution."
+        },
+        {
+          "path": "tests/claude-code/test-helpers.sh",
+          "note": "Shared Claude helper inspected."
+        },
+        {
+          "path": "tests/claude-code/run-skill-tests.sh",
+          "note": "README scopes these as instruction-following, not full task execution; tests not run."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "LICENSE",
+      "kind": "license",
+      "purpose": "MIT terms governing reuse of inspected repository material.",
+      "requirements": [
+        "Retain copyright and permission notice in substantial redistribution"
+      ],
+      "overlaps": [
+        "Applies to inspected source material; independently verify third-party assets/dependencies."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Root license is MIT; this is not a blanket rights determination for third-party or external content."
+      },
+      "evidence": [
+        {
+          "path": "LICENSE",
+          "note": "Root license is MIT; this is not a blanket rights determination for third-party or external content."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/brainstorming/visual-companion.md",
+      "kind": "support",
+      "purpose": "Optional browser visual companion for iterating on design screens.",
+      "requirements": [
+        "Browser host, local filesystem, background lifecycle",
+        "Host must provide browser reachability and process persistence. Remote/container use needs private tunnel policy.",
+        "Generated HTML runs in authenticated origin; do not admit untrusted markup.",
+        "--open requires approval; remote binds require private URL handling."
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Core design/approval is portable; companion adds host-specific browser/process/filesystem behavior. Reference-only: starts persistent HTTP/WebSocket server, writes mockups/events, may launch a browser, and permits non-loopback binding; host controls/transport are unresolved."
+      },
+      "evidence": [
+        {
+          "path": "skills/brainstorming/visual-companion.md",
+          "note": "Core design/approval is portable; companion adds host-specific browser/process/filesystem behavior."
+        },
+        {
+          "path": "skills/brainstorming/visual-companion.md",
+          "note": "Reference-only: starts persistent HTTP/WebSocket server, writes mockups/events, may launch a browser, and permits non-loopback binding; host controls/transport are unresolved."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "skills/brainstorming/scripts/helper.js",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "skills/brainstorming/scripts/frame-template.html",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "skills/brainstorming/scripts/start-server.sh",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "skills/brainstorming/scripts/stop-server.sh",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "tests/brainstorm-server/auth.test.js",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "tests/brainstorm-server/server.test.js",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "tests/brainstorm-server/lifecycle.test.js",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": ".gitignore",
+          "reason": "Pinned local implementation or regression test inspected."
+        }
+      ]
+    },
+    {
+      "path": "skills/brainstorming/scripts/frame-template.html",
+      "kind": "support",
+      "purpose": "HTML frame template for the browser companion.",
+      "requirements": [
+        "Browser DOM/CSS/JavaScript"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Host UI asset; review rather than treating as a portable skill."
+      },
+      "evidence": [
+        {
+          "path": "skills/brainstorming/scripts/frame-template.html",
+          "note": "Host UI asset; review rather than treating as a portable skill."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "skills/brainstorming/scripts/helper.js",
+      "kind": "support",
+      "purpose": "Transforms screen content and events for the local server.",
+      "requirements": [
+        "Node.js built-ins; server contract"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Support implementation, not a standalone workflow."
+      },
+      "evidence": [
+        {
+          "path": "skills/brainstorming/scripts/helper.js",
+          "note": "Support implementation, not a standalone workflow."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "reason": "Inspected linked local support or test."
+        },
+        {
+          "path": "skills/brainstorming/scripts/frame-template.html",
+          "reason": "Inspected linked local support or test."
+        },
+        {
+          "path": "tests/brainstorm-server/helper.test.js",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "skills/brainstorming/scripts/server.cjs",
+      "kind": "support",
+      "purpose": "Local HTTP/WebSocket server serves companion and persists events.",
+      "requirements": [
+        "Node.js built-ins; local filesystem; browser network; background process",
+        "Set/validate target Node version; neither root package nor test package declares engines.",
+        "Host must provide transport protection for remote binds and protect keyed URL/server-info/logs.",
+        "Treat served HTML as trusted or sandbox it; the frame-ancestors CSP does not constrain scripts or network.",
+        "Keep BRAINSTORM_OPEN_CMD unset or admin-controlled; default platform launcher uses execFile."
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT (repository code); external default logo license not established",
+        "attribution": "Preserve repository MIT notice. The external image is not part of this license; clear rights or suppress it before redistribution.",
+        "evidence": [
+          "LICENSE",
+          "skills/brainstorming/scripts/server.cjs",
+          "tests/brainstorm-server/branding.test.js"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Session-key/origin checks exist; optional operator-configured browser command invokes a shell command. Remote logo rights unresolved. Reverified source: built-in Node modules only; binds 127.0.0.1 by default, configurable host and random high port. Generates 32-byte session key, accepts query/cookie auth; security headers include no-store, no-referrer, frame-ancestors none and same-origin resource policy. WebSocket requires key and same-origin Origin when present, but originless clients with the key are allowed. Reads newest regular single-link HTML from CONTENT_DIR; serves basename-only /files, rejects symlink/hard-link/dotfile targets, logs user events, appends choices to state. Uses HTTP/ws:// without TLS. Full documents are served as-is and helper script injected; no script-src/connect-src CSP or sandbox observed. Remote logo is browser-loaded with no-referrer; opt-out vars suppress only that image, not external content in authored HTML. BRAINSTORM_OPEN_CMD uses child_process.exec and is trusted operator input."
+      },
+      "evidence": [
+        {
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "note": "Session-key/origin checks exist; optional operator-configured browser command invokes a shell command. Remote logo rights unresolved."
+        },
+        {
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "note": "Reverified source: built-in Node modules only; binds 127.0.0.1 by default, configurable host and random high port. Generates 32-byte session key, accepts query/cookie auth; security headers include no-store, no-referrer, frame-ancestors none and same-origin resource policy. WebSocket requires key and same-origin Origin when present, but originless clients with the key are allowed. Reads newest regular single-link HTML from CONTENT_DIR; serves basename-only /files, rejects symlink/hard-link/dotfile targets, logs user events, appends choices to state. Uses HTTP/ws:// without TLS. Full documents are served as-is and helper script injected; no script-src/connect-src CSP or sandbox observed. Remote logo is browser-loaded with no-referrer; opt-out vars suppress only that image, not external content in authored HTML. BRAINSTORM_OPEN_CMD uses child_process.exec and is trusted operator input."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/brainstorming/visual-companion.md",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "skills/brainstorming/scripts/helper.js",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "skills/brainstorming/scripts/frame-template.html",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "skills/brainstorming/scripts/start-server.sh",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "skills/brainstorming/scripts/stop-server.sh",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "tests/brainstorm-server/package.json",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "tests/brainstorm-server/package-lock.json",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "tests/brainstorm-server/auth.test.js",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "tests/brainstorm-server/server.test.js",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "tests/brainstorm-server/branding.test.js",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "tests/brainstorm-server/lifecycle.test.js",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "url": "https://primeradiant.com/brand/superpowers-visual-brainstorming-logo.png",
+          "reason": "Remote image URL in served markup; rights not reviewed and no asset blob exists in source tree."
+        },
+        {
+          "url": "https://github.com/obra/superpowers",
+          "reason": "Repository link rendered by branding."
+        },
+        {
+          "url": "https://registry.npmjs.org/ws/-/ws-8.21.0.tgz",
+          "reason": "Lockfile tarball URL; not fetched."
+        }
+      ]
+    },
+    {
+      "path": "skills/brainstorming/scripts/start-server.sh",
+      "kind": "support",
+      "purpose": "Starts companion with project-scoped state and platform lifecycle logic.",
+      "requirements": [
+        "Bash; Node.js; local writes",
+        "Host must constrain --project-dir and own foreground/background process policy."
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Creates persistent process/state; adapt to host lifecycle and require approval. Creates unique session directories, applies umask 077, writes PID/instance/log state; project-dir mode persists content/state and shared .last-port/.last-token. --open opts in to browser launch. CODEX_CI and Windows may force foreground mode."
+      },
+      "evidence": [
+        {
+          "path": "skills/brainstorming/scripts/start-server.sh",
+          "note": "Creates persistent process/state; adapt to host lifecycle and require approval."
+        },
+        {
+          "path": "skills/brainstorming/scripts/start-server.sh",
+          "note": "Creates unique session directories, applies umask 077, writes PID/instance/log state; project-dir mode persists content/state and shared .last-port/.last-token. --open opts in to browser launch. CODEX_CI and Windows may force foreground mode."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "skills/brainstorming/scripts/stop-server.sh",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "tests/brainstorm-server/start-server.test.sh",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "tests/brainstorm-server/windows-lifecycle.test.sh",
+          "reason": "Pinned local implementation or regression test inspected."
+        }
+      ]
+    },
+    {
+      "path": "skills/brainstorming/scripts/stop-server.sh",
+      "kind": "support",
+      "purpose": "Stops a matching server using PID and instance identity.",
+      "requirements": [
+        "Bash; process inspection/signals",
+        "Only pass a host-recorded session directory; constrain path provenance and retention."
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Process management is host-specific; preserve ownership checks if adapting. Validates PID and per-start server ID, attempts graceful stop then SIGKILL, removes metadata/log; preserves project-dir files, but recursively deletes a session dir whose supplied path begins /tmp/."
+      },
+      "evidence": [
+        {
+          "path": "skills/brainstorming/scripts/stop-server.sh",
+          "note": "Process management is host-specific; preserve ownership checks if adapting."
+        },
+        {
+          "path": "skills/brainstorming/scripts/stop-server.sh",
+          "note": "Validates PID and per-start server ID, attempts graceful stop then SIGKILL, removes metadata/log; preserves project-dir files, but recursively deletes a session dir whose supplied path begins /tmp/."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/brainstorming/scripts/start-server.sh",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "tests/brainstorm-server/stop-server.test.sh",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "tests/brainstorm-server/windows-lifecycle.test.sh",
+          "reason": "Pinned local implementation or regression test inspected."
+        }
+      ]
+    },
+    {
+      "path": "skills/systematic-debugging/root-cause-tracing.md",
+      "kind": "support",
+      "purpose": "Supporting procedure for tracing a reproducible failure through its cause.",
+      "requirements": [
+        "Reproduction; source/log access"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Portable reasoning aid; examples/commands need project adaptation."
+      },
+      "evidence": [
+        {
+          "path": "skills/systematic-debugging/root-cause-tracing.md",
+          "note": "Portable reasoning aid; examples/commands need project adaptation."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/systematic-debugging/defense-in-depth.md",
+      "kind": "support",
+      "purpose": "Guidance for mitigating root causes at multiple boundaries.",
+      "requirements": [
+        "Identified root cause; validation checks"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Adapt mitigation layers to actual system boundaries; not a threat model."
+      },
+      "evidence": [
+        {
+          "path": "skills/systematic-debugging/defense-in-depth.md",
+          "note": "Adapt mitigation layers to actual system boundaries; not a threat model."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/systematic-debugging/condition-based-waiting.md",
+      "kind": "support",
+      "purpose": "Guidance on condition-based waits instead of fixed sleeps.",
+      "requirements": [
+        "Control of async condition/test"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Portable principle; APIs are framework-specific."
+      },
+      "evidence": [
+        {
+          "path": "skills/systematic-debugging/condition-based-waiting.md",
+          "note": "Portable principle; APIs are framework-specific."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/systematic-debugging/condition-based-waiting-example.ts",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "skills/systematic-debugging/condition-based-waiting-example.ts",
+      "kind": "support",
+      "purpose": "TypeScript illustration of condition-based waiting.",
+      "requirements": [
+        "TypeScript test/runtime"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Example needs translation to target test framework."
+      },
+      "evidence": [
+        {
+          "path": "skills/systematic-debugging/condition-based-waiting-example.ts",
+          "note": "Example needs translation to target test framework."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/systematic-debugging/find-polluter.sh",
+      "kind": "support",
+      "purpose": "Runs project tests in isolation to identify a state-polluting test.",
+      "requirements": [
+        "Bash; project npm test; disposable worktree"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Invokes project tests, which may execute arbitrary code; do not run/adopt generically without scoped approval."
+      },
+      "evidence": [
+        {
+          "path": "skills/systematic-debugging/find-polluter.sh",
+          "note": "Invokes project tests, which may execute arbitrary code; do not run/adopt generically without scoped approval."
+        }
+      ],
+      "links": [
+        {
+          "path": "tests/systematic-debugging/test-find-polluter.sh",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "skills/test-driven-development/writing-good-tests.md",
+      "kind": "support",
+      "purpose": "Guidance on behavior-focused assertions and independent expected results.",
+      "requirements": [
+        "Project test command; observable behavior"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Portable principles; code examples need framework adaptation."
+      },
+      "evidence": [
+        {
+          "path": "skills/test-driven-development/writing-good-tests.md",
+          "note": "Portable principles; code examples need framework adaptation."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "tests/systematic-debugging/test-find-polluter.sh",
+      "kind": "support",
+      "purpose": "Tests polluter helper with controlled fixtures/fake test command.",
+      "requirements": [
+        "Bash; temporary directory"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Utility regression test, not an end-to-end harness benchmark."
+      },
+      "evidence": [
+        {
+          "path": "tests/systematic-debugging/test-find-polluter.sh",
+          "note": "Utility regression test, not an end-to-end harness benchmark."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "tests/systematic-debugging/pressure-scenarios/CREATION-LOG.md",
+      "kind": "support",
+      "purpose": "Records scenario authoring and claimed validation.",
+      "requirements": [
+        "Human/model evaluator"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "No in-tree runner or answer key; reported outcomes not independently verified."
+      },
+      "evidence": [
+        {
+          "path": "tests/systematic-debugging/pressure-scenarios/CREATION-LOG.md",
+          "note": "No in-tree runner or answer key; reported outcomes not independently verified."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "tests/systematic-debugging/pressure-scenarios/test-academic.md",
+      "kind": "support",
+      "purpose": "Prompt fixture for an academic-style debugging scenario.",
+      "requirements": [
+        "Human/model evaluation; no local rubric"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Fixture only; no runner or expected-response rubric in inspected paths."
+      },
+      "evidence": [
+        {
+          "path": "tests/systematic-debugging/pressure-scenarios/test-academic.md",
+          "note": "Fixture only; no runner or expected-response rubric in inspected paths."
+        }
+      ],
+      "links": [
+        {
+          "path": "tests/systematic-debugging/pressure-scenarios/CREATION-LOG.md",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "tests/systematic-debugging/pressure-scenarios/test-pressure-1.md",
+      "kind": "support",
+      "purpose": "Prompt fixture for debugging behavior under pressure.",
+      "requirements": [
+        "Human/model evaluation; no local rubric"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Fixture only; no in-tree runner or answer key."
+      },
+      "evidence": [
+        {
+          "path": "tests/systematic-debugging/pressure-scenarios/test-pressure-1.md",
+          "note": "Fixture only; no in-tree runner or answer key."
+        }
+      ],
+      "links": [
+        {
+          "path": "tests/systematic-debugging/pressure-scenarios/CREATION-LOG.md",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "tests/systematic-debugging/pressure-scenarios/test-pressure-2.md",
+      "kind": "support",
+      "purpose": "Prompt fixture for debugging behavior under pressure.",
+      "requirements": [
+        "Human/model evaluation; no local rubric"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Fixture only; no in-tree runner or answer key."
+      },
+      "evidence": [
+        {
+          "path": "tests/systematic-debugging/pressure-scenarios/test-pressure-2.md",
+          "note": "Fixture only; no in-tree runner or answer key."
+        }
+      ],
+      "links": [
+        {
+          "path": "tests/systematic-debugging/pressure-scenarios/CREATION-LOG.md",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "tests/systematic-debugging/pressure-scenarios/test-pressure-3.md",
+      "kind": "support",
+      "purpose": "Prompt fixture for debugging behavior under pressure.",
+      "requirements": [
+        "Human/model evaluation; no local rubric"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Fixture only; no in-tree runner or answer key."
+      },
+      "evidence": [
+        {
+          "path": "tests/systematic-debugging/pressure-scenarios/test-pressure-3.md",
+          "note": "Fixture only; no in-tree runner or answer key."
+        }
+      ],
+      "links": [
+        {
+          "path": "tests/systematic-debugging/pressure-scenarios/CREATION-LOG.md",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "tests/explicit-skill-requests/prompts/please-use-brainstorming.txt",
+      "kind": "support",
+      "purpose": "Prompt fixture for explicit brainstorming skill selection.",
+      "requirements": [
+        "Model/adapter evaluation runner"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Prompt-only case; no standalone score."
+      },
+      "evidence": [
+        {
+          "path": "tests/explicit-skill-requests/prompts/please-use-brainstorming.txt",
+          "note": "Prompt-only case; no standalone score."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "tests/explicit-skill-requests/prompts/use-systematic-debugging.txt",
+      "kind": "support",
+      "purpose": "Prompt fixture for explicit debugging skill selection.",
+      "requirements": [
+        "Model/adapter evaluation runner"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Prompt-only case; no standalone score."
+      },
+      "evidence": [
+        {
+          "path": "tests/explicit-skill-requests/prompts/use-systematic-debugging.txt",
+          "note": "Prompt-only case; no standalone score."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "tests/explicit-skill-requests/prompts/mid-conversation-execute-plan.txt",
+      "kind": "support",
+      "purpose": "Prompt fixture for skill selection after planning context.",
+      "requirements": [
+        "Multi-turn model runner"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Tests invocation context, not plan quality."
+      },
+      "evidence": [
+        {
+          "path": "tests/explicit-skill-requests/prompts/mid-conversation-execute-plan.txt",
+          "note": "Tests invocation context, not plan quality."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "tests/explicit-skill-requests/prompts/after-planning-flow.txt",
+      "kind": "support",
+      "purpose": "Prompt fixture for transition from planning to execution.",
+      "requirements": [
+        "Multi-turn model runner"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Host/model-specific case; no plan-quality rubric."
+      },
+      "evidence": [
+        {
+          "path": "tests/explicit-skill-requests/prompts/after-planning-flow.txt",
+          "note": "Host/model-specific case; no plan-quality rubric."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "tests/explicit-skill-requests/run-multiturn-test.sh",
+      "kind": "support",
+      "purpose": "Three-turn Claude integration runner for skill invocation after planning.",
+      "requirements": [
+        "Claude CLI/model; writes outputs; --dangerously-skip-permissions"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Permission bypass makes it inappropriate to run unreviewed; asserts skill invocation, not plan quality."
+      },
+      "evidence": [
+        {
+          "path": "tests/explicit-skill-requests/run-multiturn-test.sh",
+          "note": "Permission bypass makes it inappropriate to run unreviewed; asserts skill invocation, not plan quality."
+        }
+      ],
+      "links": [
+        {
+          "path": "tests/explicit-skill-requests/prompts/mid-conversation-execute-plan.txt",
+          "reason": "Inspected linked local support or test."
+        },
+        {
+          "path": "tests/explicit-skill-requests/prompts/after-planning-flow.txt",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "tests/explicit-skill-requests/run-extended-multiturn-test.sh",
+      "kind": "support",
+      "purpose": "Extended multi-turn Claude integration runner.",
+      "requirements": [
+        "Claude CLI/model; writes outputs; --dangerously-skip-permissions"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Host/model-specific and permission-bypassing; inspected only."
+      },
+      "evidence": [
+        {
+          "path": "tests/explicit-skill-requests/run-extended-multiturn-test.sh",
+          "note": "Host/model-specific and permission-bypassing; inspected only."
+        }
+      ],
+      "links": [
+        {
+          "path": "tests/explicit-skill-requests/prompts/mid-conversation-execute-plan.txt",
+          "reason": "Inspected linked local support or test."
+        },
+        {
+          "path": "tests/explicit-skill-requests/prompts/after-planning-flow.txt",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "tests/hooks/test-session-start.sh",
+      "kind": "support",
+      "purpose": "Tests session-start hook output schemas and injected context across hosts.",
+      "requirements": [
+        "Bash; Node.js; hook manifests"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Useful adapter-contract pattern; host dispatch/schema is not directly portable."
+      },
+      "evidence": [
+        {
+          "path": "tests/hooks/test-session-start.sh",
+          "note": "Useful adapter-contract pattern; host dispatch/schema is not directly portable."
+        }
+      ],
+      "links": [
+        {
+          "path": "hooks/session-start",
+          "reason": "Inspected linked local support or test."
+        },
+        {
+          "path": "hooks/hooks.json",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "tests/opencode/test-session-bootstrap.mjs",
+      "kind": "support",
+      "purpose": "Tests OpenCode session classification, cache bounds, failure recovery, and compaction.",
+      "requirements": [
+        "Node.js; plugin module path"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Mock harness needs no live OpenCode; event/session contract is host-specific."
+      },
+      "evidence": [
+        {
+          "path": "tests/opencode/test-session-bootstrap.mjs",
+          "note": "Mock harness needs no live OpenCode; event/session contract is host-specific."
+        }
+      ],
+      "links": [
+        {
+          "path": "tests/opencode/run-tests.sh",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "tests/opencode/test-skill-registration.mjs",
+      "kind": "support",
+      "purpose": "Tests OpenCode skill payload schema, frontmatter conversion, and registration recovery.",
+      "requirements": [
+        "Node.js; plugin module; fixture filesystem"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "OpenCode 2.0.4 Skill.Info contract is host-specific."
+      },
+      "evidence": [
+        {
+          "path": "tests/opencode/test-skill-registration.mjs",
+          "note": "OpenCode 2.0.4 Skill.Info contract is host-specific."
+        }
+      ],
+      "links": [
+        {
+          "path": "tests/opencode/run-tests.sh",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "tests/opencode/test-hook-registration.mjs",
+      "kind": "support",
+      "purpose": "Tests bootstrap across context, compaction, and generate hooks.",
+      "requirements": [
+        "Node.js; plugin module"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Host lifecycle-specific; tests do not require live OpenCode."
+      },
+      "evidence": [
+        {
+          "path": "tests/opencode/test-hook-registration.mjs",
+          "note": "Host lifecycle-specific; tests do not require live OpenCode."
+        }
+      ],
+      "links": [
+        {
+          "path": "tests/opencode/run-tests.sh",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "tests/opencode/run-tests.sh",
+      "kind": "support",
+      "purpose": "Separates local Node/shell adapter tests from live OpenCode integration cases.",
+      "requirements": [
+        "Bash; Node.js; OpenCode for integration"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Default suite declares no external dependencies; integration cases require OpenCode. Runner may chmod tests."
+      },
+      "evidence": [
+        {
+          "path": "tests/opencode/run-tests.sh",
+          "note": "Default suite declares no external dependencies; integration cases require OpenCode. Runner may chmod tests."
+        }
+      ],
+      "links": [
+        {
+          "path": "tests/opencode/test-session-bootstrap.mjs",
+          "reason": "Inspected linked local support or test."
+        },
+        {
+          "path": "tests/opencode/test-skill-registration.mjs",
+          "reason": "Inspected linked local support or test."
+        },
+        {
+          "path": "tests/opencode/test-hook-registration.mjs",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "tests/claude-code/test-helpers.sh",
+      "kind": "support",
+      "purpose": "Shared helpers for Claude skill-evaluation scripts.",
+      "requirements": [
+        "Bash; Claude CLI/model when invoked"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Host/model-specific test dependency."
+      },
+      "evidence": [
+        {
+          "path": "tests/claude-code/test-helpers.sh",
+          "note": "Host/model-specific test dependency."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "tests/brainstorm-server/package.json",
+      "kind": "support",
+      "purpose": "Separate test package declaring visual-server test dependency.",
+      "requirements": [
+        "npm-compatible manager only if tests run; Node.js"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT (repository) and MIT (test-only ws 8.21.0 per lockfile)",
+        "attribution": "Preserve repository LICENSE notice; test package declares ws as a development/test dependency and the lockfile records its MIT license. External branding image is not covered.",
+        "evidence": [
+          "LICENSE",
+          "tests/brainstorm-server/package-lock.json"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "ws is test-only, not server runtime dependency. Separate test package uses ws for protocol tests; server runtime itself uses only Node built-ins. Test script runs Node and Bash tests, including local process/HTTP behavior."
+      },
+      "evidence": [
+        {
+          "path": "tests/brainstorm-server/package.json",
+          "note": "ws is test-only, not server runtime dependency."
+        },
+        {
+          "path": "tests/brainstorm-server/package.json",
+          "note": "Separate test package uses ws for protocol tests; server runtime itself uses only Node built-ins. Test script runs Node and Bash tests, including local process/HTTP behavior."
+        }
+      ],
+      "links": [
+        {
+          "path": "tests/brainstorm-server/package-lock.json",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "tests/brainstorm-server/package-lock.json",
+      "kind": "support",
+      "purpose": "Pins server test dependency and integrity/license metadata.",
+      "requirements": [
+        "No runtime requirement unless tests run"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT (locked ws 8.21.0 test dependency)",
+        "attribution": "Lockfile identifies ws as MIT. Optional peers bufferutil and utf-8-validate are not resolved here; review if installed.",
+        "evidence": [
+          "tests/brainstorm-server/package-lock.json"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Lockfile records ws 8.21.0 as MIT; registry URL recorded but not followed. ws 8.21.0 is the only resolved package. Optional bufferutil and utf-8-validate peers have no resolved lock entries/license evidence; not fetched or installed."
+      },
+      "evidence": [
+        {
+          "path": "tests/brainstorm-server/package-lock.json",
+          "note": "Lockfile records ws 8.21.0 as MIT; registry URL recorded but not followed."
+        },
+        {
+          "path": "tests/brainstorm-server/package-lock.json",
+          "note": "Verified the pinned ws 8.21.0 lock entry declares MIT; optional peer dependencies are unresolved."
+        }
+      ],
+      "links": [
+        {
+          "url": "https://registry.npmjs.org/ws/-/ws-8.21.0.tgz",
+          "reason": "Lockfile URL only; not fetched."
+        }
+      ]
+    },
+    {
+      "path": "tests/brainstorm-server/server.test.js",
+      "kind": "support",
+      "purpose": "HTTP/WebSocket server behavior tests.",
+      "requirements": [
+        "Node.js; test-only ws"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT (repository) and MIT (test-only ws 8.21.0 per lockfile)",
+        "attribution": "Preserve repository LICENSE notice; test package declares ws as a development/test dependency and the lockfile records its MIT license. External branding image is not covered.",
+        "evidence": [
+          "LICENSE",
+          "tests/brainstorm-server/package-lock.json"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Stateful local-server tests; inspected, not run. Tests cover authorization, dotfiles, symlink/hard-link exclusion from root and /files routes, screen watching/reload, and event recording; test intent only, not run."
+      },
+      "evidence": [
+        {
+          "path": "tests/brainstorm-server/server.test.js",
+          "note": "Stateful local-server tests; inspected, not run."
+        },
+        {
+          "path": "tests/brainstorm-server/server.test.js",
+          "note": "Tests cover authorization, dotfiles, symlink/hard-link exclusion from root and /files routes, screen watching/reload, and event recording; test intent only, not run."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "reason": "Inspected linked local support or test."
+        },
+        {
+          "path": "tests/brainstorm-server/package-lock.json",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "tests/brainstorm-server/lifecycle.test.js",
+      "kind": "support",
+      "purpose": "Tests server lifecycle and persistent state cleanup.",
+      "requirements": [
+        "Node.js; test-only ws; temp filesystem/process"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT (repository) and MIT (test-only ws 8.21.0 per lockfile)",
+        "attribution": "Preserve repository LICENSE notice; test package declares ws as a development/test dependency and the lockfile records its MIT license. External branding image is not covered.",
+        "evidence": [
+          "LICENSE",
+          "tests/brainstorm-server/package-lock.json"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Stateful lifecycle tests; not run. Tests owner/idle shutdown, persistent port/token behavior, explicit-token port conflict, auto-open once only after the open flag, and no open without approval. Not run."
+      },
+      "evidence": [
+        {
+          "path": "tests/brainstorm-server/lifecycle.test.js",
+          "note": "Stateful lifecycle tests; not run."
+        },
+        {
+          "path": "tests/brainstorm-server/lifecycle.test.js",
+          "note": "Tests owner/idle shutdown, persistent port/token behavior, explicit-token port conflict, auto-open once only after the open flag, and no open without approval. Not run."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "reason": "Inspected linked local support or test."
+        },
+        {
+          "path": "tests/brainstorm-server/package-lock.json",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "tests/brainstorm-server/ws-protocol.test.js",
+      "kind": "support",
+      "purpose": "Tests WebSocket message protocol for companion events.",
+      "requirements": [
+        "Node.js; ws test dependency"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT (repository) and MIT (test-only ws 8.21.0 per lockfile)",
+        "attribution": "Preserve repository LICENSE notice; test package declares ws as a development/test dependency and the lockfile records its MIT license. External branding image is not covered.",
+        "evidence": [
+          "LICENSE",
+          "tests/brainstorm-server/package-lock.json"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Relevant only if companion is considered."
+      },
+      "evidence": [
+        {
+          "path": "tests/brainstorm-server/ws-protocol.test.js",
+          "note": "Relevant only if companion is considered."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "reason": "Inspected linked local support or test."
+        },
+        {
+          "path": "tests/brainstorm-server/package-lock.json",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "tests/brainstorm-server/auth.test.js",
+      "kind": "support",
+      "purpose": "Tests local server authentication and origin behavior.",
+      "requirements": [
+        "Node.js; ws test dependency"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT (repository) and MIT (test-only ws 8.21.0 per lockfile)",
+        "attribution": "Preserve repository LICENSE notice; test package declares ws as a development/test dependency and the lockfile records its MIT license. External branding image is not covered.",
+        "evidence": [
+          "LICENSE",
+          "tests/brainstorm-server/package-lock.json"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Some access-control coverage, not an independent security review. Tests query/cookie auth, security headers, cross-origin browser WebSocket rejection, and no event write on rejection; implementation also permits originless clients with valid key. Not run."
+      },
+      "evidence": [
+        {
+          "path": "tests/brainstorm-server/auth.test.js",
+          "note": "Some access-control coverage, not an independent security review."
+        },
+        {
+          "path": "tests/brainstorm-server/auth.test.js",
+          "note": "Tests query/cookie auth, security headers, cross-origin browser WebSocket rejection, and no event write on rejection; implementation also permits originless clients with valid key. Not run."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "reason": "Inspected linked local support or test."
+        },
+        {
+          "path": "tests/brainstorm-server/package-lock.json",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "tests/brainstorm-server/helper.test.js",
+      "kind": "support",
+      "purpose": "Tests companion HTML/event helper behavior.",
+      "requirements": [
+        "Node.js"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Relevant only with optional companion."
+      },
+      "evidence": [
+        {
+          "path": "tests/brainstorm-server/helper.test.js",
+          "note": "Relevant only with optional companion."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/brainstorming/scripts/helper.js",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "tests/brainstorm-server/browser-launcher.test.js",
+      "kind": "support",
+      "purpose": "Tests platform browser launcher selection.",
+      "requirements": [
+        "Node.js"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Tests shell-avoidance on Windows and headless Linux; does not launch a browser."
+      },
+      "evidence": [
+        {
+          "path": "tests/brainstorm-server/browser-launcher.test.js",
+          "note": "Tests shell-avoidance on Windows and headless Linux; does not launch a browser."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "tests/brainstorm-server/start-server.test.sh",
+      "kind": "support",
+      "purpose": "Tests startup platform detection and project-relative paths.",
+      "requirements": [
+        "Bash; temp fixtures"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Creates temporary files; inspected only."
+      },
+      "evidence": [
+        {
+          "path": "tests/brainstorm-server/start-server.test.sh",
+          "note": "Creates temporary files; inspected only."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/brainstorming/scripts/start-server.sh",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "tests/brainstorm-server/stop-server.test.sh",
+      "kind": "support",
+      "purpose": "Tests stale/reused PID handling and instance-ID matching.",
+      "requirements": [
+        "Bash; Node.js; processes/signals"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Spawns and kills processes; inspected only."
+      },
+      "evidence": [
+        {
+          "path": "tests/brainstorm-server/stop-server.test.sh",
+          "note": "Spawns and kills processes; inspected only."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/brainstorming/scripts/stop-server.sh",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "tests/skill-layout/test-no-dev-files-in-skills.sh",
+      "kind": "support",
+      "purpose": "Prevents test fixtures and creation logs shipping in skills.",
+      "requirements": [
+        "Bash; repository skill layout"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Portable hygiene invariant; shell and exclusions need adaptation."
+      },
+      "evidence": [
+        {
+          "path": "tests/skill-layout/test-no-dev-files-in-skills.sh",
+          "note": "Portable hygiene invariant; shell and exclusions need adaptation."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "tests/skill-size/test-skill-size.sh",
+      "kind": "support",
+      "purpose": "Checks skill length against repository-specific size threshold.",
+      "requirements": [
+        "Bash; skill files"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Inspected suite uses a 20 KB threshold; do not inherit without target context-window rationale."
+      },
+      "evidence": [
+        {
+          "path": "tests/skill-size/test-skill-size.sh",
+          "note": "Inspected suite uses a 20 KB threshold; do not inherit without target context-window rationale."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/writing-skills/render-graphs.js",
+      "kind": "support",
+      "purpose": "Generates SVG/DOT visuals for writing-skills documentation.",
+      "requirements": [
+        "Node.js; Graphviz dot; filesystem writes"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Documentation authoring utility, not runtime skill dependency; Graphviz license/tool availability not reviewed."
+      },
+      "evidence": [
+        {
+          "path": "skills/writing-skills/render-graphs.js",
+          "note": "Documentation authoring utility, not runtime skill dependency; Graphviz license/tool availability not reviewed."
+        }
+      ],
+      "links": [
+        {
+          "path": "tests/writing-skills/test-render-graphs.sh",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": "tests/writing-skills/test-render-graphs.sh",
+      "kind": "support",
+      "purpose": "Checks graph rendering and missing-Graphviz handling.",
+      "requirements": [
+        "Bash; Node.js; Graphviz dot"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE copyright and permission notice when redistributing adapted material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "External dependency; not run."
+      },
+      "evidence": [
+        {
+          "path": "tests/writing-skills/test-render-graphs.sh",
+          "note": "External dependency; not run."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/writing-skills/render-graphs.js",
+          "reason": "Inspected linked local support or test."
+        }
+      ]
+    },
+    {
+      "path": ".gitignore",
+      "kind": "context",
+      "purpose": "Excludes the companion persistent .superpowers directory from version control.",
+      "requirements": [
+        "Consuming repository must define its own ignore and retention policy."
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE notice.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "native",
+        "notes": "Pinned source root already ignores .superpowers/. The companion doc generic advice to add it is redundant here but applies to consumers."
+      },
+      "evidence": [
+        {
+          "path": ".gitignore",
+          "note": "Contains .superpowers/ ignore rule."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/brainstorming/visual-companion.md",
+          "reason": "Pinned local implementation or regression test inspected."
+        }
+      ]
+    },
+    {
+      "path": "tests/brainstorm-server/branding.test.js",
+      "kind": "support",
+      "purpose": "Tests companion branding markup and telemetry-opt-out behavior.",
+      "requirements": [
+        "Node.js",
+        "Local server process",
+        "Temporary filesystem writes"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT (repository test code); external image license unknown",
+        "attribution": "Preserve repository MIT notice; test references but does not include or fetch the remote image.",
+        "evidence": [
+          "LICENSE",
+          "tests/brainstorm-server/branding.test.js"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Checks returned local HTML only; three environment flags suppress remote image markup while retaining local branding. Does not fetch image; not run."
+      },
+      "evidence": [
+        {
+          "path": "tests/brainstorm-server/branding.test.js",
+          "note": "Default logo markup and opt-out variants are checked through a local HTTP server; test does not retrieve the image."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "tests/brainstorm-server/package.json",
+          "reason": "Pinned local implementation or regression test inspected."
+        }
+      ]
+    },
+    {
+      "path": "tests/brainstorm-server/windows-lifecycle.test.sh",
+      "kind": "support",
+      "purpose": "Platform lifecycle tests for Windows/Git Bash foreground mode, owner PID handling, and shutdown.",
+      "requirements": [
+        "Bash/Git Bash",
+        "Node.js",
+        "Local process creation/signals",
+        "Temporary files"
+      ],
+      "overlaps": [],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve repository LICENSE notice.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Platform-specific tests can spawn/terminate local server processes; inspected only and not run."
+      },
+      "evidence": [
+        {
+          "path": "tests/brainstorm-server/windows-lifecycle.test.sh",
+          "note": "Exercises Windows-specific lifecycle and cleanup contracts; not executed."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/brainstorming/scripts/start-server.sh",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "skills/brainstorming/scripts/stop-server.sh",
+          "reason": "Pinned local implementation or regression test inspected."
+        },
+        {
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "reason": "Pinned local implementation or regression test inspected."
+        }
+      ]
+    }
+  ]
+}

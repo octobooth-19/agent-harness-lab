@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "campaignId": "sdlc-20261118",
+  "frozenAt": "2026-11-18T17:56:23.039Z",
+  "labBaseCommit": "d5e784be1042ff337018dd65baf7091dce6c6779",
+  "policy": {
+    "path": "bench/campaigns/sdlc-20261118/policy.json",
+    "sha256": "5a145474753a0bea9d5f212556c9411363e0393dd1063710e08fcdc78a1fcffb"
+  },
+  "selectionSha256": "6685af01e5b503601559d9f8f7c141320d4671d5fa89c9be05216258da616694",
+  "preFixReproductionSha256": "5baf66f809a2213733302a0a7381226839887028cad92e8906335d3ce64b8dff",
+  "preFixEvaluatorSha256": "a342aa4066d6ec9f0e0a1309de16e621ada7cf5f664489643f20fee1cefaf5d7",
+  "treatment": {
+    "id": "initial-top-seven",
+    "version": 1,
+    "sha256": "d66d4879a59471c8ecb38ac4754752cf440cee934ee5118da8b70fa12eb81e9e",
+    "components": [
+      {
+        "id": "sdlc-delivery-instructions",
+        "version": 1,
+        "sha256": "d36a6bc1d3845a08c87a0717718a79597ca0fde9ecedb6aa5e4ae593afbcb5b1"
+      },
+      {
+        "id": "sdlc-test-isolation",
+        "version": 1,
+        "sha256": "d17e16d6a70bd90ce5dae899a81098b6c4c89e84abc85bbf837d3f0e41a86850"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "id": "sdlc-20261118-requirements",
+      "version": 1,
+      "stage": "requirements",
+      "partition": "development",
+      "caseSha256": "fdde3335bb384b3395493a6436a992a3fe204a64892c4f18c4e75dcdade6a8a3",
+      "rubricSha256": "13e31f517f866ff992f0e7cbea28a6cfda5c6cec4294ce570f91e75e97c0d746",
+      "evaluatorSha256": "2a30e705aba53263da166f7f9a5992fe449ed91ec468264747796d57dbb27e9e"
+    },
+    {
+      "id": "sdlc-20261118-architecture",
+      "version": 1,
+      "stage": "architecture",
+      "partition": "development",
+      "caseSha256": "389fccbbcb8119d36728b4b29c9fd9e8d83b4119e27bc5c7e990082c3ba32b2e",
+      "rubricSha256": "e12e748c56799e132587976d3611dad0f0ebd1803133c213be748975b4e19a53",
+      "evaluatorSha256": "4bbe5872ffb95599c3b40e1426a1b7609bda3e9bcabee45a691dd600cd6697d3"
+    },
+    {
+      "id": "sdlc-20261118-issue",
+      "version": 1,
+      "stage": "issue",
+      "partition": "development",
+      "caseSha256": "3dbedcf768115e5f98cfbe4eb145910ca83b0131a2c4bbf95b6daab89152f84d",
+      "rubricSha256": "07fb51775738a2510695b311e87638aad08bb9f0e7775cd116d832a940e05496",
+      "evaluatorSha256": "1f5f76574ff3a322756e882e4bef7b59eefd6c7e8188fdf1c7046de7793b7bd6"
+    },
+    {
+      "id": "sdlc-20261118-review",
+      "version": 1,
+      "stage": "review",
+      "partition": "development",
+      "caseSha256": "c00c322d81af32c1016466068c951139325c75290e66ebb4938988a0bafdb3e3",
+      "rubricSha256": "3afeb329a138b9be8a78be991e5c41c03df1432eb2603bf5f95231c724d90efe",
+      "evaluatorSha256": "efda9621609e33424ef144c636be1a10c41d30a50de3e47846e94552511a1b9c"
+    },
+    {
+      "id": "sdlc-20261118-maintenance",
+      "version": 1,
+      "stage": "maintenance",
+      "partition": "held-out",
+      "caseSha256": "65c0993ddfe9282426fcd3011e7048c72c5819b9c16f18573f57b0d0a8db5ede",
+      "rubricSha256": "badbb0f825972b3a5f1690ad7a6b0f4af9db60376b8d752eb747ae203027ab9d",
+      "evaluatorSha256": "c93dcb7c35babda4986a5526af21d31a36114051fd4d9d056880a2a5b5e94203"
+    }
+  ],
+  "noSubjectOutputsObserved": true
+}

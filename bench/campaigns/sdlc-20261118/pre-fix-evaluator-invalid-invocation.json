@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "validReproduction": false,
+  "reason": "Initial evaluator invocation supplied a relative source directory; module resolution failed before behavioral checks. Retained as an invalid setup attempt, not issue evidence.",
+  "observedAt": "2026-11-18T17:45:15.684Z",
+  "commit": "2b5e6f7399a7b48005140b5d5c6bc6c0e62919a8",
+  "node": "v26.13.1",
+  "status": 1,
+  "stdout": "",
+  "stderr": "node:internal/modules/cjs/loader:1603\n  const err = new Error(message);\n              ^\n\nError: Cannot find module 'bench/campaigns/sdlc-20261118/sources/2b5e6f7399a7b48005140b5d5c6bc6c0e62919a8/lodash.js'\nRequire stack:\n- /Users/octodemo/repos/copilot-worktrees/agent-harness-lab/octobooth-19-friendly-guacamole/bench/campaigns/sdlc-20261118/evaluators/issue.mjs\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1603:15)\n    at wrapResolveFilename (node:internal/modules/cjs/loader:1145:27)\n    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1169:10)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1196:12)\n    at Module._load (node:internal/modules/cjs/loader:1370:5)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.require (node:internal/modules/cjs/loader:1713:12)\n    at require (node:internal/modules/helpers:318:16)\n    at file:///Users/octodemo/repos/copilot-worktrees/agent-harness-lab/octobooth-19-friendly-guacamole/bench/campaigns/sdlc-20261118/evaluators/issue.mjs:6:16\n    at ModuleJob.run (node:internal/modules/esm/module_job:569:25) {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: [\n    '/Users/octodemo/repos/copilot-worktrees/agent-harness-lab/octobooth-19-friendly-guacamole/bench/campaigns/sdlc-20261118/evaluators/issue.mjs'\n  ]\n}\n\nNode.js v26.13.1\n",
+  "noFixApplied": true
+}

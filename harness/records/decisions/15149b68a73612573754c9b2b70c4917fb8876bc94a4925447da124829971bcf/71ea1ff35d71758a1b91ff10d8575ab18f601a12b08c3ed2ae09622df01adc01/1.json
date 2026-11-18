@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "15149b68a73612573754c9b2b70c4917fb8876bc94a4925447da124829971bcf",
+  "scanRevision": 4,
+  "path": "tests/claude-code/test-subagent-driven-development-integration.sh",
+  "revision": 1,
+  "decision": "reference-only",
+  "reason": "The integration test invokes Claude with --allowed-tools=all and --permission-mode bypassPermissions. This intentionally bypasses the host permission boundary and is not an acceptable Copilot-app test or adaptation. It was inspected only; do not run it or port its bypass behavior. Retain the finding as reference-only under the existing MIT notice.",
+  "source": {
+    "repo": "obra/superpowers",
+    "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
+  },
+  "scanSha256": "2eca8f072b40a1002e95839ee56ebeb216d9276c6d31e55aea0859b2fb406251",
+  "sourceSha256": "0794d17e3cc5d8a64c07a6c181538e1142819b86382d171f677510cfe6a3f722",
+  "license": {
+    "status": "permissive",
+    "expression": "MIT",
+    "attribution": "Preserve the repository root LICENSE copyright and permission notice when redistributing adapted material.",
+    "evidence": [
+      "LICENSE"
+    ]
+  }
+}

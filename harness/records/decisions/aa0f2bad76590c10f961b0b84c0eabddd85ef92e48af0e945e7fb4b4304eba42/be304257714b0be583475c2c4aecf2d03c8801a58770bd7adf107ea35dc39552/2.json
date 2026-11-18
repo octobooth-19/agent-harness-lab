@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "aa0f2bad76590c10f961b0b84c0eabddd85ef92e48af0e945e7fb4b4304eba42",
+  "scanRevision": 2,
+  "path": "skills/skill-creator/SKILL.md",
+  "revision": 2,
+  "decision": "reference-only",
+  "reason": "The entrypoint has an inspected Apache-2.0 license, not a repository-wide grant. Viewer runtime and separately licensed third-party assets and external terms are not cleared for adoption.",
+  "source": {
+    "repo": "anthropics/skills",
+    "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba"
+  },
+  "scanSha256": "48726d6bf7dbf489ecec304d5d6791b58bdf3b78e94628886473df23b7704703",
+  "sourceSha256": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf",
+  "license": {
+    "status": "permissive",
+    "expression": "Apache-2.0",
+    "attribution": "Include the applicable LICENSE.txt and preserve copyright/attribution notices; mark modified files, and carry forward applicable NOTICE attributions.",
+    "evidence": [
+      "skills/skill-creator/LICENSE.txt"
+    ]
+  }
+}

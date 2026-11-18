@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "initial-top-seven",
+  "version": 2,
+  "title": "Software delivery harness with focused failure diagnosis",
+  "target": "app",
+  "parts": [
+    {
+      "id": "sdlc-delivery-instructions",
+      "version": 1,
+      "enabled": true
+    },
+    {
+      "id": "sdlc-test-isolation",
+      "version": 1,
+      "enabled": true
+    },
+    {
+      "id": "sdlc-diagnose-failures",
+      "version": 1,
+      "enabled": true
+    }
+  ]
+}

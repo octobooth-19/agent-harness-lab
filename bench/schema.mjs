@@ -59,6 +59,13 @@ function reference(value) {
   integer(value.version, 'reference.version');
 }
 
+function pinnedFile(value) {
+  keys(value, ['path', 'sha256'], 'pinned file');
+  relativePath(value.path);
+  ensure(value.path.startsWith('bench/'), 'pinned files must be retained under bench/');
+  ensure(typeof value.sha256 === 'string' && /^[a-f0-9]{64}$/.test(value.sha256), 'pinned file requires a SHA-256 digest');
+}
+
 function unique(values, label) {
   ensure(new Set(values).size === values.length, `duplicate ${label}`);
 }
@@ -121,9 +128,21 @@ export function validate(kind, value, { tombstone = false } = {}) {
     unique(value.criteria.map(c => c.id), 'criterion id');
     integer(value.passScore, 'passScore', 0, value.criteria.reduce((sum, c) => sum + c.maxScore, 0));
   } else {
-    keys(value, [...common, 'task', 'files', 'variants', 'rubric', 'checks'], kind);
+    keys(value, [...common, 'task', 'files', 'variants', 'rubric', 'checks', 'source', 'policy'], kind);
     text(value.task, 'task');
     files(value.files);
+    if (value.policy !== undefined) pinnedFile(value.policy);
+    if (value.source !== undefined) {
+      keys(value.source, ['repository', 'commit', 'files'], 'source');
+      ensure(typeof value.source.repository === 'string' && /^[\w.-]+\/[\w.-]+$/.test(value.source.repository), 'source.repository must be owner/repo');
+      ensure(typeof value.source.commit === 'string' && /^[a-f0-9]{40}$/.test(value.source.commit), 'source.commit must be an exact Git SHA');
+      object(value.source.files, 'source.files');
+      ensure(Object.keys(value.source.files).length > 0, 'source.files cannot be empty');
+      for (const [destination, pin] of Object.entries(value.source.files)) {
+        relativePath(destination);
+        pinnedFile(pin);
+      }
+    }
     reference(value.rubric);
     ensure(Array.isArray(value.variants) && value.variants.length > 0, 'variants must be a nonempty array');
     for (const variant of value.variants) {
@@ -138,7 +157,11 @@ export function validate(kind, value, { tombstone = false } = {}) {
     ensure(Array.isArray(value.checks), 'checks must be an array');
     for (const check of value.checks) {
       id(check.id, 'check.id');
-      if (check.type === 'command') {
+      if (check.type === 'evaluator') {
+        keys(check, ['id', 'type', 'script', 'timeoutMs'], 'check');
+        pinnedFile(check.script);
+        integer(check.timeoutMs, 'timeoutMs', 1, 60000);
+      } else if (check.type === 'command') {
         keys(check, ['id', 'type', 'argv', 'timeoutMs'], 'check');
         ensure(Array.isArray(check.argv) && check.argv.length > 0, 'command argv must be a nonempty array');
         check.argv.forEach(arg => ensure(typeof arg === 'string' && !arg.includes('\0'), 'argv entries must be strings without NUL'));
@@ -158,7 +181,7 @@ export function validate(kind, value, { tombstone = false } = {}) {
 
 export function validateReceipt(receipt) {
   keys(receipt, ['schemaVersion', 'sessionId', 'runner', 'model', 'actualModel', 'environment',
-    'configurationAudit', 'permissions', 'isolation', 'outcome'], 'receipt');
+    'configurationAudit', 'permissions', 'isolation', 'outcome', 'metrics'], 'receipt');
   ensure(receipt.schemaVersion === 1, 'receipt.schemaVersion must be 1');
   for (const field of ['sessionId', 'model', 'actualModel', 'environment', 'configurationAudit']) {
     text(receipt[field], `receipt.${field}`);
@@ -171,6 +194,13 @@ export function validateReceipt(receipt) {
   }
   ensure(receipt.isolation === 'workspace-only', 'receipt.isolation must explicitly acknowledge workspace-only isolation');
   ensure(Array.isArray(receipt.permissions) && receipt.permissions.every(p => typeof p === 'string'), 'receipt.permissions must be a string array');
+  if (receipt.metrics !== undefined) {
+    keys(receipt.metrics, ['wallMs', 'inputTokens', 'outputTokens', 'totalTokens', 'observedFrom'], 'receipt.metrics');
+    text(receipt.metrics.observedFrom, 'receipt.metrics.observedFrom');
+    for (const [key, value] of Object.entries(receipt.metrics).filter(([key]) => key !== 'observedFrom')) {
+      ensure(value === null || (Number.isFinite(value) && value >= 0), `receipt.metrics.${key} must be a nonnegative number or null`);
+    }
+  }
   return receipt;
 }
 

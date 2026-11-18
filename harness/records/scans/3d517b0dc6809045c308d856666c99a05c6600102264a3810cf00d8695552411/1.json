@@ -1,0 +1,748 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "repo": "deepseek-ai/deepseek-harness",
+    "commit": "2e39e70496aa02986ca6a820c5d497e816b69d7e"
+  },
+  "revision": 1,
+  "scope": "Selected DeepSeek harness guidance and evaluation surfaces: repository instructions, license and safety documents; CI-test reliability and archived-agent-note skills with their supporting docs/scripts/tests; session-snapshot evaluation design and linked replay/smoke support; experimental auto-review risk notes. Hook adapters, MCP, context/compaction, most runtime implementation, and 18 other skill entrypoints are indexed only.",
+  "coverage": {
+    "tree": "complete",
+    "state": "partial",
+    "limits": [
+      "The pinned recursive Git tree is complete (25,329 entries, not truncated), but only the listed files received deep inspection and exact-byte SHA-256 hashing.",
+      "Source content was read only through GitHub commit/tree/blob APIs; no checkout, execution, installation, or enabling was performed.",
+      "The snapshot package implementation, replay internals, hook adapters, MCP/context/compaction and most runtime dependencies remain indexed-only; external links were not followed.",
+      "Auto-review was inspected as a risk-bearing experiment, not evaluated as an enabled permission control; it is not recommended for direct adoption."
+    ],
+    "next": [
+      "Inspect the remaining 18 skill entrypoints and their linked local support, then deepen relevant prompts, tool/MCP manifests, and repository hooks.",
+      "Trace agent-loop/tool dispatch, context and compaction assembly, persistence, hook adapters, and runtime permission boundaries through implementations and tests.",
+      "Deep-inspect the session-snapshot suite/runner, fixtures, LLM replay implementation, loader smoke implementation, and their local transitive runtime dependencies.",
+      "Review third-party notices and target-runtime/license compatibility before curating any code; keep auto-review reference-only unless a separate security review approves a concrete design."
+    ]
+  },
+  "files": [
+    {
+      "path": ".agents/notes/AGENTS.md",
+      "status": "inspected",
+      "sha256": "1c1b4a6d771ed1a7b0e4fd83776dd0cfb0567f4e89f2c7b3bc8b61b73e9a01d2"
+    },
+    {
+      "path": ".agents/notes/archived/AGENTS.md",
+      "status": "inspected",
+      "sha256": "63d728ce615c3a8109f0467a32525ca00c4c553e76a532fe90f13642e6986b34"
+    },
+    {
+      "path": ".agents/notes/implemented/AGENTS.md",
+      "status": "inspected",
+      "sha256": "d01c6586ab5f807ccdda2e6ec30185416356b13d1f2fddb40d05cdac6d35189c"
+    },
+    {
+      "path": ".agents/notes/implemented/feature/2026-08-28-auto-review.md",
+      "status": "indexed",
+      "reason": "Auto-review decision/context reference; indexed only."
+    },
+    {
+      "path": ".agents/notes/proposed/process/2026-07-26-remove-packed-session-fixture-migrator.md",
+      "status": "indexed",
+      "reason": "Direct local reference from the session-snapshot guide; indexed only."
+    },
+    {
+      "path": ".agents/notes/README.md",
+      "status": "inspected",
+      "sha256": "089a84df7751fa993630302cb0ea1bf3ac10bf3f4bcca70ee95e55208b071f37"
+    },
+    {
+      "path": ".agents/skills/agent-experience/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/cordis-styling-nitpicking/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-archive-agent-notes/SKILL.md",
+      "status": "inspected",
+      "sha256": "298e95629ade953ba5e0e4fd4c50e5205389ac6adc5d55dea1ef26617a323f84"
+    },
+    {
+      "path": ".agents/skills/dsh-ci-test-reliability/references/ci-flake-diagnosis.md",
+      "status": "inspected",
+      "sha256": "9fb8d3a56e9e90331dd2155f5bc55a9bea7d000f7dd2b519a4e59524a97f2b44"
+    },
+    {
+      "path": ".agents/skills/dsh-ci-test-reliability/SKILL.md",
+      "status": "inspected",
+      "sha256": "6ed04407132759698e5e5e9684178f826b4c659e15e90e8e996141e5ad7edb4c"
+    },
+    {
+      "path": ".agents/skills/dsh-client-ui-ux/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-code-review/SKILL.md",
+      "status": "inspected",
+      "sha256": "b3903c1a6242e5f3329de7bab6af07dcec9bc2262384135c620daac3ab72634c"
+    },
+    {
+      "path": ".agents/skills/dsh-create-upgrade-guide/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-cua-macos-signing/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-doc-writing/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-error-handling/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-find-simplifications/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-merging-stacked-prs/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-official-plugin-artwork/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-pr-description/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-pre-push-checks/SKILL.md",
+      "status": "inspected",
+      "sha256": "8a4b78f71444be44bc2fcfab25f6b1553230bdb61433f1bd586f53f8429d17d7"
+    },
+    {
+      "path": ".agents/skills/dsh-prose-standard/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-responsive-ui/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-session-projection/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-speed-up-perf/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-translate-docs/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/dsh-trim-cot-leakage/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".agents/skills/record-browser-gif/SKILL.md",
+      "status": "indexed",
+      "reason": "Skill entrypoint present in the complete .agents/skills tree; not deep-inspected in this checkpoint."
+    },
+    {
+      "path": ".claude/skills",
+      "status": "indexed",
+      "reason": "Symlink entry; target was not followed as source content."
+    },
+    {
+      "path": ".github/AGENTS.md",
+      "status": "inspected",
+      "sha256": "cae573220fa39f768c3500bca624b1aa9d835eed59d46d42b1052b42299571c7"
+    },
+    {
+      "path": "AGENTS.md",
+      "status": "inspected",
+      "sha256": "08c843ca789ea7f8803268b61c8e313a20163d1a013e09aef1903a0d1d4d57b8"
+    },
+    {
+      "path": "BENCHMARK.md",
+      "status": "inspected",
+      "sha256": "3e38b63e4507b4db923d2cacdff0828e12e2774a35cd1695b592cfaa3d9e7bc2"
+    },
+    {
+      "path": "CLAUDE.md",
+      "status": "indexed",
+      "reason": "Symlink entry; target was not followed as source content."
+    },
+    {
+      "path": "docs/config-catalog.md",
+      "status": "indexed",
+      "reason": "Local configuration reference linked from replay support; indexed only."
+    },
+    {
+      "path": "docs/defensive-patterns/general.md",
+      "status": "inspected",
+      "sha256": "33f8f2be7a651f86915f0ee2bff53f9e36a9cb3849d809ab86e8153dbb395311"
+    },
+    {
+      "path": "docs/session-format-status.md",
+      "status": "indexed",
+      "reason": "Direct local reference from the session-snapshot guide; indexed only."
+    },
+    {
+      "path": "docs/testing.md",
+      "status": "inspected",
+      "sha256": "12027738dfdd1a3a5b4a2cc846d0d9e02ad651cd5dfa05667344e19f670a4d20"
+    },
+    {
+      "path": "LICENSE",
+      "status": "inspected",
+      "sha256": "ebb4f09972aee8608be255debaf78451a68e95c290f55c240dec2ecfa16ea6be"
+    },
+    {
+      "path": "package.json",
+      "status": "inspected",
+      "sha256": "4a532e2cf6c2e8283bb5714b6fa6d4a0e6c123be0cecb0b0ab5763892eb80b91"
+    },
+    {
+      "path": "packages/client/ui-permission-presets/README.md",
+      "status": "indexed",
+      "reason": "Auto-review integration dependency; indexed only."
+    },
+    {
+      "path": "packages/client/ui-tool/README.md",
+      "status": "indexed",
+      "reason": "Auto-review integration dependency; indexed only."
+    },
+    {
+      "path": "packages/compaction/README.md",
+      "status": "indexed",
+      "reason": "Compaction surface; indexed only."
+    },
+    {
+      "path": "packages/context/README.md",
+      "status": "indexed",
+      "reason": "Context assembly surface; indexed only."
+    },
+    {
+      "path": "packages/core/agent/README.md",
+      "status": "indexed",
+      "reason": "Runtime dependency context for loader smoke support; indexed only."
+    },
+    {
+      "path": "packages/core/tools/README.md",
+      "status": "indexed",
+      "reason": "Auto-review integration dependency; indexed only."
+    },
+    {
+      "path": "packages/experimental/auto-review/cordis.patch.yml",
+      "status": "inspected",
+      "sha256": "21d456d0053b3d52ca8ad4ceef60e4cd5618e8c850ab8fe9e6377dfcdcb3bc2a"
+    },
+    {
+      "path": "packages/experimental/auto-review/package.json",
+      "status": "inspected",
+      "sha256": "e10d437daa58f34a1bc655c6a5b4449676d083d2c2f99b1610c9215baa7ef713"
+    },
+    {
+      "path": "packages/experimental/auto-review/README.md",
+      "status": "inspected",
+      "sha256": "690ea340a77dd4fddd80a4557579eb49eda88a8a0b856386668842f5dfd14db0"
+    },
+    {
+      "path": "packages/experimental/auto-review/src/index.ts",
+      "status": "inspected",
+      "sha256": "179e8f50be62f0e76359d252cddd0d44e46306d394bc77045bf9f790afead297"
+    },
+    {
+      "path": "packages/experimental/hooks-claude-code/src/index.ts",
+      "status": "indexed",
+      "reason": "Claude Code hook adapter; indexed only."
+    },
+    {
+      "path": "packages/experimental/hooks-codex/src/index.ts",
+      "status": "indexed",
+      "reason": "Codex hook adapter; indexed only."
+    },
+    {
+      "path": "packages/experimental/README.md",
+      "status": "indexed",
+      "reason": "Experimental integrations overview; indexed only."
+    },
+    {
+      "path": "packages/interaction/permission-presets/README.md",
+      "status": "indexed",
+      "reason": "Auto-review integration dependency; indexed only."
+    },
+    {
+      "path": "packages/llm/llm/README.md",
+      "status": "indexed",
+      "reason": "Local runtime dependency referenced by replay support; indexed only."
+    },
+    {
+      "path": "packages/mcp/README.md",
+      "status": "indexed",
+      "reason": "MCP surface; indexed only."
+    },
+    {
+      "path": "packages/session/session-log-deepseek/README.md",
+      "status": "indexed",
+      "reason": "Auto-review integration dependency; indexed only."
+    },
+    {
+      "path": "packages/skill/README.md",
+      "status": "indexed",
+      "reason": "Skill loading surface; indexed only."
+    },
+    {
+      "path": "packages/test-support/llm-replay/README.md",
+      "status": "inspected",
+      "sha256": "12c37d1c2aac95bc0664df6cdd5018c9b41cb8bfaae96c289635c36f530a0770"
+    },
+    {
+      "path": "packages/test-support/loader-smoke/README.md",
+      "status": "inspected",
+      "sha256": "1632765093a94d2625c3307a4d4448c1f42d95410c7ae11c37c7a72fbb626a65"
+    },
+    {
+      "path": "packages/test-support/README.md",
+      "status": "inspected",
+      "sha256": "cd0a844f050455bcbba1db6c79035859c2542f21d13c81f6ec9f735fc112c4ce"
+    },
+    {
+      "path": "packages/test-support/session-snapshot/package.json",
+      "status": "inspected",
+      "sha256": "0b5845cfb4dc9669fc84b1a3c57b0e9495fb745526e59e6ef442405efd7bb2df"
+    },
+    {
+      "path": "packages/test-support/session-snapshot/README.md",
+      "status": "inspected",
+      "sha256": "1db01ee209873c1dc7f620a059c86b8cc999fd30f270df56c995ef28e0e18891"
+    },
+    {
+      "path": "packages/test-support/session-snapshot/src/harness.ts",
+      "status": "indexed",
+      "reason": "Snapshot runner implementation; indexed only."
+    },
+    {
+      "path": "packages/test-support/session-snapshot/src/identity.ts",
+      "status": "inspected",
+      "sha256": "4a4e552296f8d5d7e9a18632fc7d89001c37d58dcf594dff695c71bd319f4fa3"
+    },
+    {
+      "path": "packages/test-support/session-snapshot/src/manifest.ts",
+      "status": "inspected",
+      "sha256": "967934b70393208739a70680339b84fbf686b60a18b72139439780d90309278c"
+    },
+    {
+      "path": "packages/test-support/session-snapshot/src/normalize.ts",
+      "status": "inspected",
+      "sha256": "4bf07bb3f33f5563d4527a126171660733bccf6ed090e2bdf9c1622bcdb78669"
+    },
+    {
+      "path": "packages/test-support/session-snapshot/src/suite.ts",
+      "status": "indexed",
+      "reason": "Snapshot suite implementation; indexed only."
+    },
+    {
+      "path": "README.md",
+      "status": "inspected",
+      "sha256": "0f5516be2acde776f05572cbc8c3093c90549afe04ce118e11157d073d5d15f4"
+    },
+    {
+      "path": "SAFETY.md",
+      "status": "inspected",
+      "sha256": "62075bb51e0f7790441e7722ff12063107b4866019332e71ef01b63b6f880fee"
+    },
+    {
+      "path": "scripts/agent-note-tree.ts",
+      "status": "inspected",
+      "sha256": "a10e1c12568a4afefaa09db92651163dae309cd4e1d054db16b18806b3fab40a"
+    },
+    {
+      "path": "scripts/archived-agent-notes.spec.ts",
+      "status": "inspected",
+      "sha256": "4f96b8ccdd061ce21d912295969ac077efd7870fb38ed906edbd617d961bc911"
+    },
+    {
+      "path": "scripts/archived-agent-notes.ts",
+      "status": "inspected",
+      "sha256": "f7e8e314e83b0baaeb6ffee319d20139506a78537389a9f1d6810d20ca1967ed"
+    },
+    {
+      "path": "scripts/migrate-packed-session-fixtures.ts",
+      "status": "indexed",
+      "reason": "Direct local reference from the session-snapshot guide; indexed only."
+    },
+    {
+      "path": "scripts/verify-archived-agent-notes.ts",
+      "status": "inspected",
+      "sha256": "d9d051c957d1ee33604265a69ed71e01dea8db865dc68de3c28e9ed8f387df4e"
+    },
+    {
+      "path": "snapshots/AGENTS.md",
+      "status": "inspected",
+      "sha256": "c09fc456a5ddae41f95bbf8f874a737cf2308fdbc33670003552f57595efa9b3"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "status": "indexed",
+      "reason": "License-notice inventory entry; not inspected."
+    }
+  ],
+  "candidates": [
+    {
+      "path": ".agents/skills/dsh-ci-test-reliability/SKILL.md",
+      "kind": "skill",
+      "purpose": "A test-reliability procedure centered on diagnosing the shared failure mechanism, atomic allocation of scarce resources, explicit readiness, cross-process topology, and teardown to quiescence rather than masking flakes.",
+      "requirements": [
+        "Adapt commands and examples to the target repository test runner, CI topology, and platform-specific resource model.",
+        "No additional runtime dependency is evident for the guidance itself."
+      ],
+      "overlaps": [
+        "dsh-pre-push-checks for local validation and CI gates.",
+        "docs/testing.md and snapshot test guidance for deterministic setup and cleanup."
+      ],
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "The principles are portable, but procedures assume DeepSeek-specific Vitest, CI lanes, and service topology; translate only after mapping the target test stack."
+      },
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the repository MIT copyright and license notice when reusing substantial material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "evidence": [
+        {
+          "path": ".agents/skills/dsh-ci-test-reliability/SKILL.md",
+          "note": "Defines diagnosis-first test reliability rules and requires cleanup/readiness discipline."
+        },
+        {
+          "path": ".agents/skills/dsh-ci-test-reliability/references/ci-flake-diagnosis.md",
+          "note": "Details resource collision, process topology, readiness, and deterministic teardown failure modes."
+        },
+        {
+          "path": ".agents/skills/dsh-pre-push-checks/SKILL.md",
+          "note": "Shows adjacent DSH-specific local/CI validation workflow and overlap."
+        },
+        {
+          "path": "docs/testing.md",
+          "note": "Documents the host repository testing and fixture conventions that constrain portability."
+        }
+      ],
+      "links": [
+        {
+          "path": ".agents/skills/dsh-ci-test-reliability/references/ci-flake-diagnosis.md",
+          "reason": "Core supporting diagnosis reference."
+        },
+        {
+          "path": ".agents/skills/dsh-pre-push-checks/SKILL.md",
+          "reason": "Related validation workflow; inspect for overlap when adapting."
+        },
+        {
+          "path": "docs/testing.md",
+          "reason": "Local test and fixture conventions."
+        },
+        {
+          "path": "docs/defensive-patterns/general.md",
+          "reason": "General defensive-testing context."
+        },
+        {
+          "path": "snapshots/AGENTS.md",
+          "reason": "Fixture-specific instructions relevant to deterministic test behavior."
+        }
+      ]
+    },
+    {
+      "path": ".agents/skills/dsh-archive-agent-notes/SKILL.md",
+      "kind": "memory",
+      "purpose": "A lifecycle-aware curation process for human-authored agent notes, including proposed/implemented/archived states, structured note families, bilingual triplets, and append-only SHA-256 archival verification.",
+      "requirements": [
+        "Requires a governed note corpus and lifecycle/schema conventions.",
+        "The implementation uses repository-specific TypeScript scripts and package-manager/test commands; port the review invariants, not the scripts.",
+        "Does not itself provide model memory retrieval or automatic context assembly."
+      ],
+      "overlaps": [
+        "Repository instructions and ADR/change-log systems.",
+        "Potentially overlaps native agent memory; this source is a human-reviewed archive workflow, not an equivalent memory store."
+      ],
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "The provenance, review, and archival-seal ideas can transfer; DSH directory taxonomy, bilingual completeness requirements, and scripts are repository-specific."
+      },
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the repository MIT copyright and license notice when reusing substantial material.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "evidence": [
+        {
+          "path": ".agents/skills/dsh-archive-agent-notes/SKILL.md",
+          "note": "Defines the note review and archival workflow."
+        },
+        {
+          "path": ".agents/notes/README.md",
+          "note": "Specifies note types, lifecycle, localization, and corpus policy."
+        },
+        {
+          "path": ".agents/notes/archived/AGENTS.md",
+          "note": "Requires archived-note integrity/provenance conventions."
+        },
+        {
+          "path": "scripts/archived-agent-notes.ts",
+          "note": "Implements archive generation and hash-seal handling."
+        },
+        {
+          "path": "scripts/verify-archived-agent-notes.ts",
+          "note": "Verifies archived note structure and integrity."
+        },
+        {
+          "path": "scripts/archived-agent-notes.spec.ts",
+          "note": "Covers archive/verifier behavior."
+        }
+      ],
+      "links": [
+        {
+          "path": ".agents/notes/README.md",
+          "reason": "Corpus rules and lifecycle model."
+        },
+        {
+          "path": ".agents/notes/AGENTS.md",
+          "reason": "Shared note authoring constraints."
+        },
+        {
+          "path": ".agents/notes/archived/AGENTS.md",
+          "reason": "Archived-state requirements."
+        },
+        {
+          "path": ".agents/notes/implemented/AGENTS.md",
+          "reason": "Implemented-state requirements."
+        },
+        {
+          "path": "scripts/archived-agent-notes.ts",
+          "reason": "Archive tooling."
+        },
+        {
+          "path": "scripts/verify-archived-agent-notes.ts",
+          "reason": "Integrity verification."
+        },
+        {
+          "path": "scripts/agent-note-tree.ts",
+          "reason": "Shared note-tree helper."
+        },
+        {
+          "path": "scripts/archived-agent-notes.spec.ts",
+          "reason": "Tooling tests."
+        }
+      ]
+    },
+    {
+      "path": "packages/test-support/session-snapshot/README.md",
+      "kind": "support",
+      "purpose": "A keyless evaluation approach that replays recorded model output through real session/profile code, normalizes volatile identifiers while preserving relationships, and checks persisted session behavior plus workspace state against a closed fixture manifest.",
+      "requirements": [
+        "Requires a compatible agent/session runtime, captured replay streams, fixture adapters, and tests for normalized persisted behavior.",
+        "The package depends on DeepSeek-specific session/replay/loader packages, ACP SDK, Cordis, Vitest, and workspace configuration; these require replacement or substantial adaptation.",
+        "Keep model response replay separate from assertions about external workspace state and side effects."
+      ],
+      "overlaps": [
+        "packages/test-support/llm-replay for recorded model-stream replay.",
+        "packages/test-support/loader-smoke for profile/loader execution.",
+        "dsh-ci-test-reliability and snapshots/AGENTS.md for deterministic tests and fixture boundaries."
+      ],
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "The evaluation methodology is promising, but this package is tightly coupled to DSH session formats and runtime packages; reuse the design, not the package as-is."
+      },
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the repository MIT copyright and license notice when reusing substantial material.",
+        "evidence": [
+          "LICENSE",
+          "packages/test-support/session-snapshot/package.json"
+        ]
+      },
+      "evidence": [
+        {
+          "path": "packages/test-support/session-snapshot/README.md",
+          "note": "Describes keyless replay, profile execution, fixture expectations, and the workspace-state evaluation boundary."
+        },
+        {
+          "path": "packages/test-support/session-snapshot/src/identity.ts",
+          "note": "Defines stable identity handling for replayed session entities."
+        },
+        {
+          "path": "packages/test-support/session-snapshot/src/normalize.ts",
+          "note": "Canonicalizes volatile fields while retaining structural relationships."
+        },
+        {
+          "path": "packages/test-support/session-snapshot/src/manifest.ts",
+          "note": "Validates a closed fixture manifest instead of accepting arbitrary fixture paths."
+        },
+        {
+          "path": "packages/test-support/session-snapshot/package.json",
+          "note": "Shows the concrete runtime/test dependencies and DSH workspace coupling."
+        },
+        {
+          "path": "packages/test-support/llm-replay/README.md",
+          "note": "Provides the directly linked recorded-model replay support context."
+        },
+        {
+          "path": "packages/test-support/loader-smoke/README.md",
+          "note": "Provides the directly linked runtime/profile loading smoke-test context."
+        }
+      ],
+      "links": [
+        {
+          "path": "snapshots/AGENTS.md",
+          "reason": "Fixture policy and determinism requirements."
+        },
+        {
+          "path": "docs/testing.md",
+          "reason": "Repository test conventions."
+        },
+        {
+          "path": "packages/test-support/README.md",
+          "reason": "Parent test-support package map."
+        },
+        {
+          "path": "packages/test-support/llm-replay/README.md",
+          "reason": "Direct replay support dependency."
+        },
+        {
+          "path": "packages/test-support/loader-smoke/README.md",
+          "reason": "Direct loader/profile execution support."
+        },
+        {
+          "path": "docs/session-format-status.md",
+          "reason": "Direct session-format reference; indexed only."
+        },
+        {
+          "path": "scripts/migrate-packed-session-fixtures.ts",
+          "reason": "Direct fixture-migration reference; indexed only."
+        },
+        {
+          "path": ".agents/notes/proposed/process/2026-07-26-remove-packed-session-fixture-migrator.md",
+          "reason": "Direct local proposal reference; indexed only."
+        },
+        {
+          "path": "packages/test-support/session-snapshot/src/harness.ts",
+          "reason": "Runner implementation; indexed only."
+        },
+        {
+          "path": "packages/test-support/session-snapshot/src/suite.ts",
+          "reason": "Suite implementation; indexed only."
+        },
+        {
+          "path": "packages/llm/llm/README.md",
+          "reason": "Local runtime dependency context; indexed only."
+        },
+        {
+          "path": "packages/core/agent/README.md",
+          "reason": "Runtime dependency context; indexed only."
+        }
+      ]
+    },
+    {
+      "path": "packages/experimental/auto-review/README.md",
+      "kind": "support",
+      "purpose": "Reference-only experiment for model-mediated per-tool review; its decision-hook pattern may inform future study, but it is not a safe authorization policy or directly adoptable harness component.",
+      "requirements": [
+        "Requires DSH Cordis/tool/session-log runtime integration and model access.",
+        "The README states it runs with Full access and may permit unsafe actions; do not enable as a security boundary.",
+        "A separate threat model and security review would be required before considering any derived design."
+      ],
+      "overlaps": [
+        "Native tool permissions, user-approval mechanisms, and host MCP controls.",
+        "The session-persistence and tool-dispatch implementation in DSH."
+      ],
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "The package is explicitly experimental, DSH-specific, and uses Full access; it does not cover every execution effect and must not be copied as an authorization control."
+      },
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Preserve the repository MIT copyright and license notice when reusing substantial material; do not reuse before safety and dependency review.",
+        "evidence": [
+          "LICENSE",
+          "packages/experimental/auto-review/package.json"
+        ]
+      },
+      "evidence": [
+        {
+          "path": "packages/experimental/auto-review/README.md",
+          "note": "Labels the feature experimental and describes Full-access operation and unsafe-action limitations."
+        },
+        {
+          "path": "packages/experimental/auto-review/src/index.ts",
+          "note": "Implements the DSH-specific tool review integration; not a complete effect or permission boundary."
+        },
+        {
+          "path": "packages/experimental/auto-review/package.json",
+          "note": "Shows the Cordis and DSH runtime dependencies."
+        },
+        {
+          "path": "packages/experimental/auto-review/cordis.patch.yml",
+          "note": "Pins a Cordis compatibility patch, demonstrating additional framework coupling."
+        }
+      ],
+      "links": [
+        {
+          "path": "packages/experimental/README.md",
+          "reason": "Experimental package context; indexed only."
+        },
+        {
+          "path": "packages/client/ui-permission-presets/README.md",
+          "reason": "Permission UI dependency; indexed only."
+        },
+        {
+          "path": "packages/client/ui-tool/README.md",
+          "reason": "Tool UI dependency; indexed only."
+        },
+        {
+          "path": "packages/interaction/permission-presets/README.md",
+          "reason": "Permission interaction dependency; indexed only."
+        },
+        {
+          "path": "packages/core/tools/README.md",
+          "reason": "Tool execution dependency; indexed only."
+        },
+        {
+          "path": "packages/session/session-log-deepseek/README.md",
+          "reason": "Session log dependency; indexed only."
+        },
+        {
+          "path": ".agents/notes/implemented/feature/2026-08-28-auto-review.md",
+          "reason": "Local implementation decision reference; indexed only."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "15149b68a73612573754c9b2b70c4917fb8876bc94a4925447da124829971bcf",
+  "scanRevision": 4,
+  "path": "skills/subagent-driven-development/SKILL.md",
+  "revision": 1,
+  "decision": "reference-only",
+  "reason": "The workflow assumes creating a fresh implementer and reviewer agent for each task, independent worktree/state isolation, result collection, and controller adjudication. These are coordinator/host capabilities, not semantics an imported Copilot skill can guarantee; it also overlaps the app's delegation and review workflows. Keep the MIT-licensed source reference-only pending a verified target-level contract.",
+  "source": {
+    "repo": "obra/superpowers",
+    "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
+  },
+  "scanSha256": "2eca8f072b40a1002e95839ee56ebeb216d9276c6d31e55aea0859b2fb406251",
+  "sourceSha256": "1baf70e307bde682c462513c86116333f1f066168c6710f45145bf5f0b00828d",
+  "license": {
+    "status": "permissive",
+    "expression": "MIT",
+    "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+    "evidence": [
+      "LICENSE"
+    ]
+  }
+}

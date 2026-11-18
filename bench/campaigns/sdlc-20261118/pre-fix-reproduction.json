@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-11-18T17:40:33.253Z",
+  "repository": "lodash/lodash",
+  "issueUrl": "https://github.com/lodash/lodash/issues/6191",
+  "commit": "2b5e6f7399a7b48005140b5d5c6bc6c0e62919a8",
+  "sourceSha256": "9bd765def21a6704a6d7e54ecf76004811ba7df19b387b60e04740785794e376",
+  "runtime": {
+    "node": "v26.13.1",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "invocation": "node bench/campaigns/sdlc-20261118/reproduce.mjs",
+  "input": "const original = new Array(5); original[3] = 42; lodash.cloneDeep(original)",
+  "expected": {
+    "length": 5,
+    "ownIndices": [
+      "3"
+    ],
+    "forEachIndices": [
+      3
+    ]
+  },
+  "actual": {
+    "length": 5,
+    "ownIndices": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "forEachIndices": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "reproduced": true,
+  "noFixApplied": true
+}

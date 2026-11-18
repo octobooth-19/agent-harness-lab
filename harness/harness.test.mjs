@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { test } from 'node:test';
+import { fileURLToPath } from 'node:url';
 import { Catalog, hash, readJSON } from '../bench/store.mjs';
 import { executeHeadless, prepare } from '../bench/lifecycle.mjs';
 import { Discovery, sourceKey } from './discovery.mjs';
@@ -136,6 +137,13 @@ test('batch reservations resume the same app session and deduplicate work across
   ledger.saveScan({ ...scan, revision: 2 });
   assert.equal(dispatch(4, 'accept', { sessionId, scanRevision: 2, resultCommit }).status, 'complete');
   assert.equal(ledger.status('another')[0].result.sha256, hash(ledger.scan(key, 2)));
+  ledger.saveScan({ ...scan, revision: 3, scope: 'Extended fixture scope' });
+  assert.throws(() => dispatch(5, 'accept', { sessionId, scanRevision: 3, resultCommit }), /reason for extending/);
+  assert.throws(() => dispatch(5, 'accept', { sessionId, scanRevision: 2, resultCommit, note: 'Follow-up' }), /already accepted/);
+  const followup = dispatch(5, 'accept', { sessionId, scanRevision: 3, resultCommit, note: 'Extended support coverage.' });
+  assert.equal(followup.status, 'complete');
+  assert.equal(followup.result.revision, 3);
+  assert.equal(followup.note, 'Extended support coverage.');
 });
 
 test('indexed material cannot be adopted and unclear licenses remain reference-only', t => {
@@ -152,4 +160,40 @@ test('indexed material cannot be adopted and unclear licenses remain reference-o
   ledger.saveScan({ ...scan, revision: 2, files: [...scan.files, { ...indexed, path: supportPath }],
     candidates: [{ ...scan.candidates[0], links: [{ path: supportPath, reason: 'Linked requirements' }] }] });
   assert.throws(() => ledger.decide({ ...decision, revision: 2, scanRevision: 2 }), /missing inspected evidence/);
+});
+
+test('the diagnosis refinement adds only an opt-in skill and its notice to the first app profile', t => {
+  const { root, workspaceRoot, catalog } = setup(t);
+  const labCatalog = new Catalog(fileURLToPath(new URL('..', import.meta.url)));
+  const id = 'initial-top-seven';
+  const original = labCatalog.read('profiles', id, 1);
+  const refinement = labCatalog.read('profiles', id, 2);
+  for (const part of refinement.parts) {
+    catalog.put('components', labCatalog.read('components', part.id, part.version), 'create');
+  }
+  catalog.put('profiles', original, 'create');
+  catalog.put('profiles', refinement, 'update');
+  const rubric = { schemaVersion: 1, id: 'diagnosis-smoke', version: 1, title: 'Synthetic diagnosis',
+    passScore: 1, criteria: [{ id: 'evidence', description: 'Explain the observed behavior.', maxScore: 1 }] };
+  catalog.put('rubrics', rubric, 'create');
+  catalog.put('cases', { schemaVersion: 1, id: 'diagnosis-smoke', version: 1, title: 'Synthetic diagnosis',
+    task: 'Report the evidence for an unexpected empty input.', files: { 'fixture.txt': '' },
+    variants: [catalog.profileVariant(id, 1, 'original'), catalog.profileVariant(id, 2, 'refined')],
+    rubric: pin(rubric), checks: [] }, 'create');
+
+  const before = prepare(root, 'diagnosis-smoke', { variant: 'original', workspaceRoot });
+  const after = prepare(root, 'diagnosis-smoke', { variant: 'refined', workspaceRoot });
+  const previous = readJSON(before.manifest);
+  const current = readJSON(after.manifest);
+  assert.equal(current.profile.value.version, 2);
+  assert.equal(previous.profile.value.version, 1);
+  assert.deepEqual(current.components.slice(0, -1), previous.components);
+  assert.equal(current.promptSha256, previous.promptSha256);
+  assert.deepEqual(current.runtime, previous.runtime);
+  const paths = previous.inputs.map(input => input.path);
+  assert.deepEqual(current.inputs.filter(input => paths.includes(input.path)), previous.inputs);
+  assert.deepEqual(current.inputs.filter(input => !paths.includes(input.path)).map(input => input.path).sort(), [
+    '.github/skills/sdlc-diagnose-failures/SKILL.md',
+    'THIRD-PARTY-NOTICES/sdlc-diagnose-failures.txt',
+  ]);
 });

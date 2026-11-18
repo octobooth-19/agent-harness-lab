@@ -1,0 +1,1851 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "repo": "affaan-m/ecc",
+    "commit": "3f14a103a8694e51c1df9a806217a6d0b5f7a6f7"
+  },
+  "revision": 2,
+  "scope": "Selected cross-cutting ECC harness evidence: root policy and packaging, representative canonical skills/agents, capability-surface guidance, selected context manifests, and evaluation/hook integration examples. This is not a deep review of the full multi-harness catalog.",
+  "coverage": {
+    "tree": "complete",
+    "state": "partial",
+    "limits": [
+      "Recursive Git tree was complete (6,674 entries; not truncated), with no submodule or symlink entries; 46 binary-named assets were indexed but not fetched.",
+      "Deep review was bounded to representative cross-cutting files; the source has 327 canonical skill entries, 72 agents, 98 legacy commands, and many platform-specific mirrors/adapters.",
+      "Most hook handlers, 37-server MCP manifest details, the module installer map, and transitive memory/eval libraries remain indexed only; no package was installed and no source code was executed.",
+      "No external link was followed. Credential-related evidence records environment-variable names only, never values."
+    ],
+    "next": [
+      "Review the complete canonical skill/agent catalog and map duplicates/adaptations across .agents, .claude, .cursor, .codex, .opencode, and other harness adapters.",
+      "Trace the complete hook graph, its validators, and transitive session/memory helpers before considering any hook or memory runtime.",
+      "Inspect the install-modules registry and selected MCP server configurations/packages; verify per-server permissions and required credentials before any integration.",
+      "Review all eval-harness library modules and tests before importing any CLI behavior; execution remains unavailable until independently verified OS containment exists."
+    ]
+  },
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "status": "inspected",
+      "sha256": "75d2821a5f09b772750a36a2b1d9719d2cfddb68face0db207475200b5b5ea00"
+    },
+    {
+      "path": "CLAUDE.md",
+      "status": "inspected",
+      "sha256": "f42ac835a5d5ffaa83bec96429310abcca548baf630c16304b7ea0060a50feda"
+    },
+    {
+      "path": "LICENSE",
+      "status": "inspected",
+      "sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2"
+    },
+    {
+      "path": "README.md",
+      "status": "inspected",
+      "sha256": "dba95f5534ea8e852e37e971b683644097d26c1821f6f7841ad9cf5a497d67f3"
+    },
+    {
+      "path": "agent.yaml",
+      "status": "inspected",
+      "sha256": "e9c07bce3fe86585ca940a1abe7fc4313e3a90d25338be37ad2ed2a24dd0d92c"
+    },
+    {
+      "path": "package.json",
+      "status": "inspected",
+      "sha256": "c805c0a732c9c9686bad54b726de9c4f441cac6cd70eef1b808fea18e2b24952"
+    },
+    {
+      "path": ".mcp.json",
+      "status": "inspected",
+      "sha256": "dcba600bfb519438e259c9670bd465157418bcb85bc71abb3f586d8c27dbb288"
+    },
+    {
+      "path": "skills/agent-harness-construction/SKILL.md",
+      "status": "inspected",
+      "sha256": "e7fb390a6663b46ea5d3c2876753a5ce32ba3bad1889686b21a42894caa1742d"
+    },
+    {
+      "path": "skills/eval-harness/SKILL.md",
+      "status": "inspected",
+      "sha256": "3a5339a5a80099a5c9d55da9b6c8e05a690f5befc6f78d779c75dd79d818ca07"
+    },
+    {
+      "path": "skills/agent-eval/SKILL.md",
+      "status": "inspected",
+      "sha256": "57fa683e356b6f5612bc6d7dc101ae39c126e6edf9a48f4ec53afea3e80d7e5d"
+    },
+    {
+      "path": "skills/context-budget/SKILL.md",
+      "status": "inspected",
+      "sha256": "793d51ac6639a466213800c228189a48b102c88d7cfb5b0651baa3480a577206"
+    },
+    {
+      "path": "skills/unified-memory/SKILL.md",
+      "status": "inspected",
+      "sha256": "c42e96155783a44a50f13ab63e9d7f33c9d03b7a1f30777ef434401469c1630a"
+    },
+    {
+      "path": "skills/mcp-server-patterns/SKILL.md",
+      "status": "inspected",
+      "sha256": "eacb07c953e0440c758e3ee7d92984d2c9128e3444005ea7ad5da7bc0201d43d"
+    },
+    {
+      "path": "skills/safety-guard/SKILL.md",
+      "status": "inspected",
+      "sha256": "30c54754d4f56c64841d4826658f4fb82aaca35db4f766b7f9990286dca2b2e0"
+    },
+    {
+      "path": "skills/continuous-agent-loop/SKILL.md",
+      "status": "inspected",
+      "sha256": "f228cd383a9063b3a0116c5aea02565e859992f63fae5e799adf9c9e44e2454d"
+    },
+    {
+      "path": "agents/harness-optimizer.md",
+      "status": "inspected",
+      "sha256": "54444fd46afdfacb87a885bef4dcef129915740d35b5fe6f07a5a7e804f2b053"
+    },
+    {
+      "path": "agents/agent-evaluator.md",
+      "status": "inspected",
+      "sha256": "7ef0739152e7bbc837e9bab4fbae7164f29719a4d1dbdaa1e3b62b4f34358e3c"
+    },
+    {
+      "path": "hooks/README.md",
+      "status": "inspected",
+      "sha256": "a7b0e010af6eacf080a9938aff0bacdffbf7f0c3a97109d554cb459e2acfdd1a"
+    },
+    {
+      "path": "hooks/hooks.metadata.json",
+      "status": "inspected",
+      "sha256": "4dca8da4a9d98f88b920e7b5fe6714d9a60c335f34861af9dec7d0a7527037aa"
+    },
+    {
+      "path": "hooks/codex-hooks.json",
+      "status": "inspected",
+      "sha256": "82924b7630922577ee69850ef63bf8f1b5f149b15983e6dbef2824f809c7f886"
+    },
+    {
+      "path": "hooks/memory-persistence/README.md",
+      "status": "inspected",
+      "sha256": "020dc83bf19a4d0a887ee0683c087ebf14fc77f01d178e271277d6912a31bdf5"
+    },
+    {
+      "path": "hooks/memory-persistence/hooks.json",
+      "status": "inspected",
+      "sha256": "f5361a21a63fc9258920c4ab9fe9d57adcb52e9d6bdd22e7a94eb9349be86c7a"
+    },
+    {
+      "path": "contexts/dev.md",
+      "status": "inspected",
+      "sha256": "340ea6af2e75f71f38d53975ed51d94f2062bc4aaf3ce8f2157d2e961ed0c4d4"
+    },
+    {
+      "path": "contexts/research.md",
+      "status": "inspected",
+      "sha256": "8af3ae79e470c6051d2f03e3c900484d224ecbb3da76056f88bdc3bde95fc265"
+    },
+    {
+      "path": "contexts/review.md",
+      "status": "inspected",
+      "sha256": "95ad8fc5851f61bd169377ce94df22bc996b69ff72f09aa51e7f16ed92930411"
+    },
+    {
+      "path": "manifests/context-profiles/full@1.json",
+      "status": "inspected",
+      "sha256": "131f90973e1b34b85666393c23a5e5926d94375eaa3bb57b0d1a608288c81829"
+    },
+    {
+      "path": "manifests/context-profiles/lean@1.json",
+      "status": "inspected",
+      "sha256": "20e58f01ada67778f9283bfd38df6131fac1497b64dd0badb8c35c7dcbb0595c"
+    },
+    {
+      "path": "manifests/context-packs/skill-registry@1.json",
+      "status": "inspected",
+      "sha256": "39658b817c456028fe65d1013fd1aa4afc7c4c231122cbcd035f60cd6e79e727"
+    },
+    {
+      "path": "manifests/install-profiles.json",
+      "status": "inspected",
+      "sha256": "5b6a65553793771b60ab31813dad70fc9955fd926a57897ccb41be88bd34f8d3"
+    },
+    {
+      "path": ".claude-plugin/plugin.json",
+      "status": "inspected",
+      "sha256": "4145149a9005d256d54afead7f110d4d54d2c4daba6518b2b6543bac0150ba3b"
+    },
+    {
+      "path": "docs/capability-surface-selection.md",
+      "status": "inspected",
+      "sha256": "1eedb96a9b406cf08397b113f5a77cf5c7fd0d64acabaaf29b3fdd3b334c2db8"
+    },
+    {
+      "path": "docs/architecture/eval-harness-frameworks.md",
+      "status": "inspected",
+      "sha256": "ebc0abf24825b74d308c09c3f09e97df0b3097a7aaa4919ee44724e4f4ac1b7b"
+    },
+    {
+      "path": "examples/eval-harness/README.md",
+      "status": "inspected",
+      "sha256": "3560ee02c0e08895f55e54152a7c0e2396289e8d7d04123b727a2de175a12e1c"
+    },
+    {
+      "path": "scripts/eval-harness.js",
+      "status": "inspected",
+      "sha256": "1904d2c81c5401864d783be301034a26695ab7073d533663827876e35f020956"
+    },
+    {
+      "path": "scripts/hooks/pre-compact.js",
+      "status": "inspected",
+      "sha256": "98eee132c60edc683066233b227e65f0a4e752683efe97384509577bbbfb8bd6"
+    },
+    {
+      "path": "scripts/hooks/session-start-bootstrap.js",
+      "status": "inspected",
+      "sha256": "e1f2495e0846fdb8378b0d794e39134d52c01f8242c445faf0265227dfcddd50"
+    },
+    {
+      "path": "scripts/lib/eval-harness/gate.js",
+      "status": "inspected",
+      "sha256": "76d6613aa7aacb9863c61859d20e554826c6f08e71c10221f0b6fea4d04e3c4f"
+    },
+    {
+      "path": "tests/lib/eval-harness/security.test.js",
+      "status": "inspected",
+      "sha256": "01338815fbfe32be15576cb88c0f5190d07ed744172a4f7bbf83c1ef6ce66bb3"
+    },
+    {
+      "path": "hooks/hooks.json",
+      "status": "indexed",
+      "reason": "Parsed only to enumerate hook implementation references; executable graph was not exhaustively audited."
+    },
+    {
+      "path": "mcp-configs/mcp-servers.json",
+      "status": "indexed",
+      "reason": "Summarized server names, launch commands, and environment-variable names only; per-server capabilities and endpoint details were not reviewed."
+    },
+    {
+      "path": "manifests/context-packs/skill-triggers@1.json",
+      "status": "indexed",
+      "reason": "Only the initial trigger entries were sampled; the complete manually curated routing list was not reviewed."
+    },
+    {
+      "path": "manifests/install-modules.json",
+      "status": "indexed",
+      "reason": "Referenced by skill registry and install profiles; module declarations and transitive asset map remain unreviewed."
+    },
+    {
+      "path": "scripts/hooks/session-start.js",
+      "status": "indexed",
+      "reason": "Only entry-point excerpt and symbol/import index were reviewed; full behavior and dependencies remain unreviewed."
+    },
+    {
+      "path": "scripts/hooks/session-end.js",
+      "status": "indexed",
+      "reason": "Referenced by memory-persistence lifecycle; not read."
+    },
+    {
+      "path": "scripts/hooks/observe-runner.js",
+      "status": "indexed",
+      "reason": "Referenced by memory-persistence lifecycle; not read."
+    },
+    {
+      "path": "scripts/hooks/session-activity-tracker.js",
+      "status": "indexed",
+      "reason": "Referenced by memory-persistence lifecycle; not read."
+    },
+    {
+      "path": "scripts/hooks/run-with-flags.js",
+      "status": "indexed",
+      "reason": "Referenced by hook bootstraps and README controls; not read."
+    },
+    {
+      "path": "scripts/lib/utils.js",
+      "status": "indexed",
+      "reason": "Transitive hook dependency; not read."
+    },
+    {
+      "path": "scripts/lib/llm-summary.js",
+      "status": "indexed",
+      "reason": "Transitive pre-compact dependency; not read."
+    },
+    {
+      "path": "scripts/lib/resolve-ecc-root.js",
+      "status": "indexed",
+      "reason": "Transitive bootstrap dependency; not read."
+    },
+    {
+      "path": "scripts/hooks/hook-input.js",
+      "status": "indexed",
+      "reason": "Transitive bootstrap dependency; not read."
+    },
+    {
+      "path": "scripts/hooks/lifecycle-hook-bootstrap.js",
+      "status": "indexed",
+      "reason": "Transitive bootstrap dependency; not read."
+    },
+    {
+      "path": "scripts/memory.js",
+      "status": "indexed",
+      "reason": "Memory skill entry point was sampled; complete CLI and transitive implementation remain unreviewed."
+    },
+    {
+      "path": "scripts/memory-mcp.mjs",
+      "status": "indexed",
+      "reason": "Memory MCP entry point was sampled; complete server and transitive implementation remain unreviewed."
+    },
+    {
+      "path": "scripts/lib/memory-vault.js",
+      "status": "indexed",
+      "reason": "Transitive memory runtime implementation; not read."
+    },
+    {
+      "path": "scripts/lib/missing-dependency.js",
+      "status": "indexed",
+      "reason": "Transitive memory MCP startup helper; not read."
+    },
+    {
+      "path": "skills/agent-self-evaluation/SKILL.md",
+      "status": "indexed",
+      "reason": "Referenced by agent-evaluator; not read."
+    },
+    {
+      "path": "skills/autonomous-loops/SKILL.md",
+      "status": "indexed",
+      "reason": "Named as superseded workflow in continuous-agent-loop; not read."
+    },
+    {
+      "path": "skills/ralphinho-rfc-pipeline/SKILL.md",
+      "status": "indexed",
+      "reason": "Referenced by continuous-agent-loop; not read."
+    },
+    {
+      "path": "skills/plankton-code-quality/SKILL.md",
+      "status": "indexed",
+      "reason": "Referenced by continuous-agent-loop; not read."
+    },
+    {
+      "path": "skills/nanoclaw-repl/SKILL.md",
+      "status": "indexed",
+      "reason": "Referenced by continuous-agent-loop; not read."
+    },
+    {
+      "path": "commands/quality-gate.md",
+      "status": "indexed",
+      "reason": "Referenced by continuous-agent-loop; not read."
+    },
+    {
+      "path": "scripts/lib/eval-harness/canonical.js",
+      "status": "indexed",
+      "reason": "Transitive eval-harness library; not read."
+    },
+    {
+      "path": "scripts/lib/eval-harness/capsule.js",
+      "status": "indexed",
+      "reason": "Transitive eval-harness library; not read."
+    },
+    {
+      "path": "scripts/lib/eval-harness/effect-fence.js",
+      "status": "indexed",
+      "reason": "Transitive eval-harness library; not read."
+    },
+    {
+      "path": "scripts/lib/eval-harness/envelope.js",
+      "status": "indexed",
+      "reason": "Transitive eval-harness library; not read."
+    },
+    {
+      "path": "scripts/lib/eval-harness/gate-child.js",
+      "status": "indexed",
+      "reason": "Transitive eval-harness library; not read."
+    },
+    {
+      "path": "scripts/lib/eval-harness/index.js",
+      "status": "indexed",
+      "reason": "Hashed but not interpreted; transitive eval-harness library entry point."
+    },
+    {
+      "path": "scripts/lib/eval-harness/receipt.js",
+      "status": "indexed",
+      "reason": "Transitive eval-harness library; not read."
+    },
+    {
+      "path": "scripts/lib/eval-harness/replay.js",
+      "status": "indexed",
+      "reason": "Transitive eval-harness library; not read."
+    },
+    {
+      "path": "scripts/lib/eval-harness/retrospective.js",
+      "status": "indexed",
+      "reason": "Transitive eval-harness library; not read."
+    },
+    {
+      "path": "scripts/ci/validate-hooks.js",
+      "status": "indexed",
+      "reason": "Named as a hook sidecar validator; not read."
+    },
+    {
+      "path": "scripts/ci/check-hooks-schema-keys.js",
+      "status": "indexed",
+      "reason": "Named as a hook schema validator; not read."
+    },
+    {
+      "path": "scripts/ecc.js",
+      "status": "indexed",
+      "reason": "Package entry point; not read."
+    }
+  ],
+  "candidates": [
+    {
+      "path": "skills/agent-harness-construction/SKILL.md",
+      "kind": "skill",
+      "purpose": "Compact design checklist for agent action spaces, typed tool schemas, deterministic observations, safe retries, context budgeting, and measurable completion quality.",
+      "requirements": [
+        "A SKILL.md-capable agent runtime; no executable dependency in the inspected skill."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Strong conceptual fit; rewrite its guidance into the lab’s skill conventions and evaluate against existing harness rules."
+      },
+      "overlaps": [
+        "benchmarks and runner schema already constrain component inputs/outputs"
+      ],
+      "evidence": [
+        {
+          "path": "skills/agent-harness-construction/SKILL.md",
+          "note": "Core Model, Action Space Design, Observation Design, Error Recovery Contract, Context Budgeting, and Benchmarking sections."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/eval-harness/SKILL.md",
+      "kind": "skill",
+      "purpose": "Defines capability and regression evals, code/model/human graders, pass@k/pass^k reliability, and eval artifact/report workflow.",
+      "requirements": [
+        "Skill loader; the optional local utility layer requires the pinned Node package and its local library."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "The evaluation method is transferable, but avoid importing example shell commands blindly; its local gate is intentionally unavailable for candidate execution."
+      },
+      "overlaps": [
+        "lab benchmark cases, rubrics, run outcomes, and existing validation workflow"
+      ],
+      "evidence": [
+        {
+          "path": "skills/eval-harness/SKILL.md",
+          "note": "Eval Types, Grader Types, Metrics, Eval Workflow, and Local Framework Utilities; linked gate status cross-checked in docs and code."
+        }
+      ],
+      "links": [
+        {
+          "path": "scripts/eval-harness.js",
+          "reason": "Local capsule/receipt CLI; its complete library closure is not reviewed."
+        },
+        {
+          "path": "docs/architecture/eval-harness-frameworks.md",
+          "reason": "Explains safety limits and disabled execution gate."
+        },
+        {
+          "path": "examples/eval-harness/README.md",
+          "reason": "Documents the offline example and explicit no-execution behavior."
+        },
+        {
+          "path": "scripts/lib/eval-harness/gate.js",
+          "reason": "Inspected gate implementation unconditionally refuses execution."
+        },
+        {
+          "path": "tests/lib/eval-harness/security.test.js",
+          "reason": "Adversarial tests for refusal and malformed results."
+        },
+        {
+          "path": "scripts/lib/eval-harness/capsule.js",
+          "reason": "Indexed transitive library; not reviewed."
+        },
+        {
+          "path": "scripts/lib/eval-harness/envelope.js",
+          "reason": "Indexed transitive library; not reviewed."
+        },
+        {
+          "path": "scripts/lib/eval-harness/receipt.js",
+          "reason": "Indexed transitive library; not reviewed."
+        },
+        {
+          "path": "scripts/lib/eval-harness/replay.js",
+          "reason": "Indexed transitive library; not reviewed."
+        },
+        {
+          "path": "scripts/lib/eval-harness/retrospective.js",
+          "reason": "Indexed transitive library; not reviewed."
+        },
+        {
+          "path": "scripts/lib/eval-harness/canonical.js",
+          "reason": "Indexed transitive library; not reviewed."
+        },
+        {
+          "path": "scripts/lib/eval-harness/effect-fence.js",
+          "reason": "Indexed retired execution helper; not reviewed."
+        },
+        {
+          "path": "scripts/lib/eval-harness/gate-child.js",
+          "reason": "Indexed retired child entry; not reviewed."
+        },
+        {
+          "path": "scripts/lib/eval-harness/index.js",
+          "reason": "Indexed module entry; not reviewed."
+        }
+      ]
+    },
+    {
+      "path": "LICENSE",
+      "kind": "license",
+      "purpose": "States the repository-wide MIT license and required notice retention for reuse of source material.",
+      "requirements": [
+        "Retain the upstream copyright and license text when copying substantial portions; separately review third-party dependency licenses."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "native",
+        "notes": "The source license is permissive for reuse subject to notice obligations; compatibility is not a runtime property."
+      },
+      "overlaps": [
+        "license evidence for all scanned source candidates"
+      ],
+      "evidence": [
+        {
+          "path": "LICENSE",
+          "note": "MIT grant and notice condition, lines 1-21."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "agents/harness-optimizer.md",
+      "kind": "agent",
+      "purpose": "A specialist workflow to audit harness configuration, scope edits to hooks/evals/routing/context/safety, define regressions, and report trial evidence.",
+      "requirements": [
+        "Agent profile loader; Bash and Edit permissions; repository-specific harness-audit script and tests."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Its Claude-oriented tools and audit script need translation; broad Bash/Edit access must be narrowed, and human approval remains mandatory for safety-sensitive changes."
+      },
+      "overlaps": [
+        "agent-harness-construction skill; eval-harness skill; local code-review and test workflows"
+      ],
+      "evidence": [
+        {
+          "path": "agents/harness-optimizer.md",
+          "note": "Your Role and Workflow steps require baselines, reversible edits, regression trials, and human approval for security-sensitive changes."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/eval-harness/SKILL.md",
+          "reason": "Required grading method, inspected."
+        }
+      ]
+    },
+    {
+      "path": "docs/capability-surface-selection.md",
+      "kind": "instructions",
+      "purpose": "Routes capabilities to the narrowest suitable surface: deterministic rules, on-demand skills, MCP, local CLI/scripts, or direct API calls.",
+      "requirements": [
+        "Markdown instruction or skill consumer; no runtime dependency."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Useful selection rubric, but rewrite examples and cross-client assumptions for this lab’s supported runners."
+      },
+      "overlaps": [
+        "MCP patterns skill; component-kind and runtime constraints in the lab"
+      ],
+      "evidence": [
+        {
+          "path": "docs/capability-surface-selection.md",
+          "note": "Decision Order and Cost and Reliability Bias; explicitly favors small surfaces and avoiding unnecessary dependencies."
+        }
+      ],
+      "links": [
+        {
+          "path": "skills/mcp-server-patterns/SKILL.md",
+          "reason": "MCP-specific companion guidance, inspected."
+        }
+      ]
+    },
+    {
+      "path": "skills/context-budget/SKILL.md",
+      "kind": "skill",
+      "purpose": "Separates live context measurement from opt-in static installation audits; defaults to provider-native meter commands and prohibits file/tool scans for live usage.",
+      "requirements": [
+        "Provider-specific native status/context commands; no executable dependency for the guidance."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Strong privacy and measurement boundary; map commands to the target harness and keep static audits separately opt-in."
+      },
+      "overlaps": [
+        "local context profiles and context loading budgets"
+      ],
+      "evidence": [
+        {
+          "path": "skills/context-budget/SKILL.md",
+          "note": "Default: Live Context, Explicit Static Audit, and Audit Output sections."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "manifests/context-profiles/lean@1.json",
+      "kind": "context",
+      "purpose": "Declares a three-skill eager discovery kernel, routed remainder, and an 8,000-token blocking budget.",
+      "requirements": [
+        "A runtime that consumes ECC’s profile schema and skill registry; the manifest calls itself proposed and says native activation is unobserved."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unknown",
+        "notes": "Promising explicit eager/routed distinction, but it is not operational evidence and its registry/module closure is indexed only."
+      },
+      "overlaps": [
+        "lab profile variants and context-budget skill"
+      ],
+      "evidence": [
+        {
+          "path": "manifests/context-profiles/lean@1.json",
+          "note": "selection.eager/required lists three skills; description says remaining skills route and the profile does not activate a harness."
+        }
+      ],
+      "links": [
+        {
+          "path": "manifests/context-packs/skill-registry@1.json",
+          "reason": "Inspected registry declaration."
+        },
+        {
+          "path": "manifests/install-modules.json",
+          "reason": "Indexed source of the registry inventory."
+        }
+      ]
+    },
+    {
+      "path": "manifests/context-profiles/full@1.json",
+      "kind": "context",
+      "purpose": "Declares a report-only 8,000-token projection with all skills eager and a routed remainder.",
+      "requirements": [
+        "A runtime that consumes ECC’s profile schema and skill registry; native activation is explicitly unobserved."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unknown",
+        "notes": "Treat as a projection proposal only; it eagerly selects all skills and is not evidence that a harness enforces the budget."
+      },
+      "overlaps": [
+        "lab profile variants and context-budget skill"
+      ],
+      "evidence": [
+        {
+          "path": "manifests/context-profiles/full@1.json",
+          "note": "Description says agents, commands, rules, hooks and tool schemas remain outside the projection; native activation is unobserved."
+        }
+      ],
+      "links": [
+        {
+          "path": "manifests/context-packs/skill-registry@1.json",
+          "reason": "Inspected registry declaration."
+        },
+        {
+          "path": "manifests/install-modules.json",
+          "reason": "Indexed source of the registry inventory."
+        }
+      ]
+    },
+    {
+      "path": "hooks/hooks.metadata.json",
+      "kind": "support",
+      "purpose": "Provides stable hook IDs/descriptions with positional fingerprints so manifest reorder or command edits can be checked for drift.",
+      "requirements": [
+        "Hook manifest plus validator/update tooling; source README names scripts/ci validators."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Good integrity pattern for event registries, but schema and fingerprint logic are Claude/ECC-specific and validator implementation is unreviewed."
+      },
+      "overlaps": [
+        "hook registry and event identifiers in target harness"
+      ],
+      "evidence": [
+        {
+          "path": "hooks/hooks.metadata.json",
+          "note": "entries are grouped by event and include fingerprints; README explains positional alignment and validator behavior."
+        }
+      ],
+      "links": [
+        {
+          "path": "hooks/hooks.json",
+          "reason": "Indexed executable hook graph."
+        },
+        {
+          "path": "scripts/ci/validate-hooks.js",
+          "reason": "Named validator, indexed only."
+        },
+        {
+          "path": "scripts/ci/check-hooks-schema-keys.js",
+          "reason": "Named schema validator, indexed only."
+        }
+      ]
+    },
+    {
+      "path": "skills/unified-memory/SKILL.md",
+      "kind": "memory",
+      "purpose": "Defines scoped local project/team/user memory, bounded recall, create-only unreviewed writes, explicit handoffs, and a trust boundary against treating memories as policy.",
+      "requirements": [
+        "Separate ecc-universal Node runtime; optional stdio MCP requires ecc-memory-mcp, its Ajv dependency, and a local vault."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unknown",
+        "notes": "Potentially useful data-boundary model, but memory-vault implementation and dependencies are indexed only; npm install is not permitted in this booth."
+      },
+      "overlaps": [
+        "session handoffs and persistent-context features in the lab"
+      ],
+      "evidence": [
+        {
+          "path": "skills/unified-memory/SKILL.md",
+          "note": "Runtime Prerequisite, Vault Scopes, Recall is evidence, Trust And Data Boundaries, and MCP Setup sections."
+        }
+      ],
+      "links": [
+        {
+          "path": "scripts/memory.js",
+          "reason": "CLI excerpt sampled; full behavior not reviewed."
+        },
+        {
+          "path": "scripts/memory-mcp.mjs",
+          "reason": "MCP entry excerpt sampled; full behavior not reviewed."
+        },
+        {
+          "path": "scripts/lib/memory-vault.js",
+          "reason": "Indexed transitive implementation."
+        },
+        {
+          "path": "scripts/lib/missing-dependency.js",
+          "reason": "Indexed startup helper."
+        }
+      ]
+    },
+    {
+      "path": "skills/agent-eval/SKILL.md",
+      "kind": "skill",
+      "purpose": "Describes head-to-head agent evaluation using reproducible task YAML, isolated worktrees, deterministic judges, pass rate, cost, time, and repeated-run consistency.",
+      "requirements": [
+        "External agent-eval implementation and repository; commit pinning and isolated worktree support."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unknown",
+        "notes": "The skill explicitly points to a separate repository that was not read; treat only the metrics as a reference, not as a ready-to-run component."
+      },
+      "overlaps": [
+        "eval-harness skill and lab benchmark runs"
+      ],
+      "evidence": [
+        {
+          "path": "skills/agent-eval/SKILL.md",
+          "note": "Core Concepts and Best Practices; the Links section references a separate agent-eval repository."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/mcp-server-patterns/SKILL.md",
+      "kind": "skill",
+      "purpose": "Advises schema-first MCP tools, structured errors, idempotency, rate/cost limits, versioning, and transport separation.",
+      "requirements": [
+        "MCP SDK and schema validator are package dependencies; current API must be checked against official docs."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Useful guardrails, but source itself warns SDK APIs change and its sample install uses external packages not available here."
+      },
+      "overlaps": [
+        "lab MCP runtime constraints and capability-surface selection"
+      ],
+      "evidence": [
+        {
+          "path": "skills/mcp-server-patterns/SKILL.md",
+          "note": "Core concepts, Best Practices, and Official SDKs and Docs sections."
+        }
+      ],
+      "links": [
+        {
+          "path": "docs/capability-surface-selection.md",
+          "reason": "Companion surface-routing guidance, inspected."
+        }
+      ]
+    },
+    {
+      "path": "skills/safety-guard/SKILL.md",
+      "kind": "skill",
+      "purpose": "Lists careful/freeze/combined advisory modes for destructive actions and scoped writes.",
+      "requirements": [
+        "Actual blocking requires the host’s permission deny rules or a PreToolUse hook."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "The skill explicitly states its rules are advisory and no hook/command enforces them; do not present it as a safety control."
+      },
+      "overlaps": [
+        "harness permission controls and destructive-action policies"
+      ],
+      "evidence": [
+        {
+          "path": "skills/safety-guard/SKILL.md",
+          "note": "Enforcement section says the skill alone does not block tool calls."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "skills/continuous-agent-loop/SKILL.md",
+      "kind": "skill",
+      "purpose": "Offers a loop-selection flow and failure recovery reminders for autonomous agent loops.",
+      "requirements": [
+        "Several local companion skills and command shims named in the document."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unknown",
+        "notes": "Compact routing notes only; referenced loops and quality gates are indexed but not inspected, so no loop should be enabled from this scan."
+      },
+      "overlaps": [
+        "benchmark lifecycle and orchestration patterns"
+      ],
+      "evidence": [
+        {
+          "path": "skills/continuous-agent-loop/SKILL.md",
+          "note": "Loop Selection Flow, Combined Pattern, Failure Modes, and Recovery sections."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "agents/agent-evaluator.md",
+      "kind": "agent",
+      "purpose": "Provides a five-axis quality rubric and structured evidence-based evaluation output for agent responses.",
+      "requirements": [
+        "Agent profile loader with Read/Grep/Glob and Bash; companion self-evaluation rubric."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unknown",
+        "notes": "The referenced agent-self-evaluation skill is indexed only; review tool scope and output requirements before adapting."
+      },
+      "overlaps": [
+        "task-completion quality reviews and code-review agents"
+      ],
+      "evidence": [
+        {
+          "path": "agents/agent-evaluator.md",
+          "note": "Your Role, Bash Tool Constraints, and Output Format sections."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "hooks/README.md",
+      "kind": "support",
+      "purpose": "Documents Claude event hook semantics, lifecycle events, profile controls, tracked-rule trust defaults, and hook input limits.",
+      "requirements": [
+        "Claude Code hook event model plus local scripts and installer."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "README states ECC hooks are not adapted to Copilot; the broad runtime graph and many transitive helpers remain indexed only."
+      },
+      "overlaps": [
+        "host-specific hook systems and target app runtime events"
+      ],
+      "evidence": [
+        {
+          "path": "hooks/README.md",
+          "note": "How Hooks Work, Hooks in This Plugin, Runtime Hook Controls, and Hookify Rule Runtime sections."
+        }
+      ],
+      "links": [
+        {
+          "path": "hooks/hooks.json",
+          "reason": "Indexed executable graph."
+        },
+        {
+          "path": "scripts/hooks/pre-compact.js",
+          "reason": "Inspected PreCompact handler."
+        },
+        {
+          "path": "scripts/hooks/session-start-bootstrap.js",
+          "reason": "Inspected bootstrap."
+        },
+        {
+          "path": "scripts/hooks/session-start.js",
+          "reason": "Entry excerpt only; indexed."
+        },
+        {
+          "path": "scripts/hooks/session-end.js",
+          "reason": "Indexed lifecycle handler."
+        },
+        {
+          "path": "scripts/hooks/observe-runner.js",
+          "reason": "Indexed observer."
+        },
+        {
+          "path": "scripts/hooks/session-activity-tracker.js",
+          "reason": "Indexed tracker."
+        },
+        {
+          "path": "scripts/hooks/run-with-flags.js",
+          "reason": "Indexed shared runner."
+        }
+      ]
+    },
+    {
+      "path": "hooks/codex-hooks.json",
+      "kind": "harness",
+      "purpose": "Declares one Codex-native SessionStart bootstrap event and clarifies that Claude hook profiles are separate.",
+      "requirements": [
+        "Codex plugin host, PLUGIN_ROOT, Node.js, and ECC hook bootstrap."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Host-specific hook event/configuration; do not carry it to Copilot or portable profiles."
+      },
+      "overlaps": [
+        "other hook lifecycle manifests"
+      ],
+      "evidence": [
+        {
+          "path": "hooks/codex-hooks.json",
+          "note": "Description and SessionStart command point to the inspected bootstrap file."
+        }
+      ],
+      "links": [
+        {
+          "path": "scripts/hooks/session-start-bootstrap.js",
+          "reason": "Referenced bootstrap implementation, inspected."
+        }
+      ]
+    },
+    {
+      "path": "hooks/memory-persistence/README.md",
+      "kind": "support",
+      "purpose": "Defines lifecycle persistence expectations: local by default, bounded startup context, opt-out, and profile-gated hooks.",
+      "requirements": [
+        "Claude Code lifecycle events and five local hook scripts; several implementations/transitive helpers are not reviewed."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "The local-first and bounded-context contract may transfer; the host-specific event binding and script chain need a separate review."
+      },
+      "overlaps": [
+        "unified-memory skill and target session handoff storage"
+      ],
+      "evidence": [
+        {
+          "path": "hooks/memory-persistence/README.md",
+          "note": "Lifecycle Contract and Operator Expectations; Related Files enumerates handlers."
+        }
+      ],
+      "links": [
+        {
+          "path": "hooks/memory-persistence/hooks.json",
+          "reason": "Stable lifecycle definitions, inspected."
+        },
+        {
+          "path": "scripts/hooks/session-start.js",
+          "reason": "Excerpt only; indexed."
+        },
+        {
+          "path": "scripts/hooks/pre-compact.js",
+          "reason": "Inspected handler."
+        },
+        {
+          "path": "scripts/hooks/session-end.js",
+          "reason": "Indexed handler."
+        },
+        {
+          "path": "scripts/hooks/observe-runner.js",
+          "reason": "Indexed handler."
+        },
+        {
+          "path": "scripts/hooks/session-activity-tracker.js",
+          "reason": "Indexed handler."
+        },
+        {
+          "path": "scripts/lib/utils.js",
+          "reason": "Indexed transitive dependency."
+        },
+        {
+          "path": "scripts/lib/llm-summary.js",
+          "reason": "Indexed transitive dependency."
+        }
+      ]
+    },
+    {
+      "path": "hooks/memory-persistence/hooks.json",
+      "kind": "harness",
+      "purpose": "Lists SessionStart, PreCompact, Pre/PostToolUse, Stop, and SessionEnd lifecycle contracts with blocking expectations.",
+      "requirements": [
+        "ECC lifecycle runner and its event-specific scripts; not a standalone host configuration."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Useful event inventory, but not executable by itself and does not enumerate every runtime dependency."
+      },
+      "overlaps": [
+        "current harness lifecycle hooks and persistence"
+      ],
+      "evidence": [
+        {
+          "path": "hooks/memory-persistence/hooks.json",
+          "note": "Events array identifies script paths, purpose, and blocking flag."
+        }
+      ],
+      "links": [
+        {
+          "path": "hooks/memory-persistence/README.md",
+          "reason": "Inspected lifecycle contract."
+        },
+        {
+          "path": "scripts/hooks/pre-compact.js",
+          "reason": "Inspected handler."
+        },
+        {
+          "path": "scripts/hooks/session-start.js",
+          "reason": "Excerpt only; indexed."
+        },
+        {
+          "path": "scripts/hooks/session-end.js",
+          "reason": "Indexed handler."
+        },
+        {
+          "path": "scripts/hooks/observe-runner.js",
+          "reason": "Indexed handler."
+        },
+        {
+          "path": "scripts/hooks/session-activity-tracker.js",
+          "reason": "Indexed handler."
+        }
+      ]
+    },
+    {
+      "path": "contexts/dev.md",
+      "kind": "context",
+      "purpose": "A short active-development mode prioritizing implementation, testing, and atomic changes.",
+      "requirements": [
+        "Harness that can select a context file per task."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Simple, but task-mode selection and tool names are provider-specific."
+      },
+      "overlaps": [
+        "repository coding instructions"
+      ],
+      "evidence": [
+        {
+          "path": "contexts/dev.md",
+          "note": "Behavior, Priorities, and Tools to favor sections."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "contexts/research.md",
+      "kind": "context",
+      "purpose": "A short research mode emphasizing understanding, evidence, and findings-first reporting.",
+      "requirements": [
+        "Harness that can select a context file per task."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "The workflow is portable; the listed tool names are host-specific."
+      },
+      "overlaps": [
+        "harness discovery and analysis tasks"
+      ],
+      "evidence": [
+        {
+          "path": "contexts/research.md",
+          "note": "Research Process and Output sections."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "contexts/review.md",
+      "kind": "context",
+      "purpose": "A review-mode checklist emphasizing severity order, actionable fixes, security, and grouped findings.",
+      "requirements": [
+        "Harness that can select a context file per task."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Useful review checklist; reconcile it with target-specific review policy and tool permissions."
+      },
+      "overlaps": [
+        "code-review and security-review agents"
+      ],
+      "evidence": [
+        {
+          "path": "contexts/review.md",
+          "note": "Review Checklist and Output Format sections."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "manifests/context-packs/skill-registry@1.json",
+      "kind": "context",
+      "purpose": "Declares canonical skills as the source inventory for context projection manifests.",
+      "requirements": [
+        "Registry reader plus manifests/install-modules.json; module source is indexed only."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unknown",
+        "notes": "The registry is only a pointer and has no overrides; verify generated inventory and digest before using."
+      },
+      "overlaps": [
+        "skill catalog and context profiles"
+      ],
+      "evidence": [
+        {
+          "path": "manifests/context-packs/skill-registry@1.json",
+          "note": "inventory.source points to install-modules.json and skillsRoot is skills."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "manifests/install-profiles.json",
+      "kind": "harness",
+      "purpose": "Defines minimal, core, developer, security, research, and full module combinations instead of a single undifferentiated install.",
+      "requirements": [
+        "ECC installer and manifests/install-modules.json; host-specific module support."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Useful separation of install presets, but module contents and runtime closure are not reviewed."
+      },
+      "overlaps": [
+        "bench profiles and component selection"
+      ],
+      "evidence": [
+        {
+          "path": "manifests/install-profiles.json",
+          "note": "Profile descriptions and module lists show explicit scope differences."
+        }
+      ],
+      "links": [
+        {
+          "path": "manifests/install-modules.json",
+          "reason": "Referenced module map, indexed only."
+        }
+      ]
+    },
+    {
+      "path": ".claude-plugin/plugin.json",
+      "kind": "harness",
+      "purpose": "Declares Claude plugin metadata, skills and commands roots, and user hook preferences.",
+      "requirements": [
+        "Claude Code plugin loader and Claude-specific userConfig schema."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Not portable as-is to other harnesses; hook settings are Claude plugin configuration."
+      },
+      "overlaps": [
+        "native GitHub Copilot skills and agents configuration"
+      ],
+      "evidence": [
+        {
+          "path": ".claude-plugin/plugin.json",
+          "note": "skills, commands, userConfig.hooks_enabled, and hook_profile fields."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "agent.yaml",
+      "kind": "harness",
+      "purpose": "GitAgent export manifest enumerating ECC identity, skills, commands, model preference, and MIT license.",
+      "requirements": [
+        "GitAgent-compatible loader; Claude model identifiers and the listed catalog are platform-specific."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "The manifest explicitly says native agents/commands/hooks remain authoritative and manifest coverage is expanding."
+      },
+      "overlaps": [
+        "agent skill and command catalogs"
+      ],
+      "evidence": [
+        {
+          "path": "agent.yaml",
+          "note": "Description, model, skills, and commands sections."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": ".mcp.json",
+      "kind": "mcp",
+      "purpose": "Configures a Chrome DevTools stdio MCP server through npx and a pinned package version.",
+      "requirements": [
+        "Node/npm package access and Chrome DevTools browser runtime."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Requires package download and a host that supports this MCP schema; not usable in the no-download booth."
+      },
+      "overlaps": [
+        "available browser tools and project MCP servers"
+      ],
+      "evidence": [
+        {
+          "path": ".mcp.json",
+          "note": "mcpServers.chrome-devtools command and args; package is pinned but not installed or tested."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "package.json",
+      "kind": "support",
+      "purpose": "Defines ecc-universal package entrypoints, Node >=18, CLI bins, and runtime dependencies including Ajv, TOML, YAML, SQL.js, and Zod.",
+      "requirements": [
+        "Node.js >=18 and a package manager; several optional features depend on external packages."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Distribution metadata only; no dependencies were installed and package-level compatibility was not tested."
+      },
+      "overlaps": [
+        "Node built-ins and lab runtime requirements"
+      ],
+      "evidence": [
+        {
+          "path": "package.json",
+          "note": "bin, scripts, dependencies, and engines sections."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "README.md",
+      "kind": "support",
+      "purpose": "Maps ECC’s feature catalog and platform support, including native Codex/Qoder paths and capability-limited adapters.",
+      "requirements": [
+        "Current host-specific feature mapping and installer docs."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Broad overview only; source explicitly warns not to assume parity, and hooks are not adapted to Copilot."
+      },
+      "overlaps": [
+        "component format and target runtime documentation"
+      ],
+      "evidence": [
+        {
+          "path": "README.md",
+          "note": "Platform Support matrix and Copilot support in depth sections."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "CLAUDE.md",
+      "kind": "instructions",
+      "purpose": "Provides Claude-specific repository architecture, hook/agent/skill format conventions, and prompt defense baseline.",
+      "requirements": [
+        "Claude Code conventions, slash-command routing, and repository-specific paths."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Prompt defense and format ideas are useful, but host-specific commands and workflow assumptions should be rewritten."
+      },
+      "overlaps": [
+        "AGENTS.md and lab instruction policies"
+      ],
+      "evidence": [
+        {
+          "path": "CLAUDE.md",
+          "note": "Prompt Defense Baseline, Architecture, and Skills sections."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "AGENTS.md",
+      "kind": "instructions",
+      "purpose": "Provides repository-wide agent orchestration, coding, testing, security, workflow, and skill-first contribution conventions.",
+      "requirements": [
+        "Agent runtime that reads repository-level instructions; repository-specific commands and thresholds."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Useful defaults but contains unverified universal claims and ECC-specific tools; adapt rather than copy wholesale."
+      },
+      "overlaps": [
+        "lab coding instructions, task completion, and review workflows"
+      ],
+      "evidence": [
+        {
+          "path": "AGENTS.md",
+          "note": "Core Principles, Development Workflow, Workflow Surface Policy, and Project Structure sections."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "docs/architecture/eval-harness-frameworks.md",
+      "kind": "support",
+      "purpose": "Documents offline capsules, receipt integrity, replay contracts, effect classes, and a disabled execution gate.",
+      "requirements": [
+        "Local eval-harness library; no candidate execution backend is available in this revision."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Strong cautionary design evidence; do not treat static checks, replay, receipts, or tests as containment or promotion."
+      },
+      "overlaps": [
+        "lab benchmark isolation and evidence records"
+      ],
+      "evidence": [
+        {
+          "path": "docs/architecture/eval-harness-frameworks.md",
+          "note": "Verification gate: unavailable states all execution entrypoints refuse; sections also define capsule and receipt limits."
+        }
+      ],
+      "links": [
+        {
+          "path": "scripts/lib/eval-harness/gate.js",
+          "reason": "Inspected unconditional refusal."
+        },
+        {
+          "path": "tests/lib/eval-harness/security.test.js",
+          "reason": "Inspected refusal tests."
+        },
+        {
+          "path": "scripts/eval-harness.js",
+          "reason": "Inspected CLI entry point."
+        },
+        {
+          "path": "examples/eval-harness/README.md",
+          "reason": "Inspected offline example description."
+        }
+      ]
+    },
+    {
+      "path": "examples/eval-harness/README.md",
+      "kind": "support",
+      "purpose": "Explains an offline example that inspects source, records fixtures, and builds receipts without executing candidates or producing scores.",
+      "requirements": [
+        "Local example script and eval-harness library; script body not reviewed."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Good evidence boundary example, but the example itself was not executed or inspected as code."
+      },
+      "overlaps": [
+        "lab runner reporting and promotion gates"
+      ],
+      "evidence": [
+        {
+          "path": "examples/eval-harness/README.md",
+          "note": "Supported candidate execution backends: none; example explicitly produces no score or promotion verdict."
+        }
+      ],
+      "links": [
+        {
+          "path": "scripts/eval-harness.js",
+          "reason": "CLI command documented."
+        },
+        {
+          "path": "docs/architecture/eval-harness-frameworks.md",
+          "reason": "Safety and containment requirements."
+        }
+      ]
+    },
+    {
+      "path": "scripts/eval-harness.js",
+      "kind": "tool-config",
+      "purpose": "Provides capsule verification/projection/export, offline receipts, and refuses gate execution before reading gate configuration.",
+      "requirements": [
+        "Node.js plus scripts/lib/eval-harness dependencies; no installation or execution performed."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "The CLI’s static/offline functions may be useful after a full dependency review; its execution gate is intentionally unavailable."
+      },
+      "overlaps": [
+        "lab scan records, benchmarks, and deterministic local validation"
+      ],
+      "evidence": [
+        {
+          "path": "scripts/eval-harness.js",
+          "note": "CLI comments and runGate call show it refuses before config access; imports local library."
+        }
+      ],
+      "links": [
+        {
+          "path": "scripts/lib/eval-harness/gate.js",
+          "reason": "Inspected execution refusal."
+        },
+        {
+          "path": "scripts/lib/eval-harness/index.js",
+          "reason": "Indexed library entry."
+        },
+        {
+          "path": "scripts/lib/eval-harness/capsule.js",
+          "reason": "Indexed library module."
+        },
+        {
+          "path": "scripts/lib/eval-harness/receipt.js",
+          "reason": "Indexed library module."
+        }
+      ]
+    },
+    {
+      "path": "scripts/lib/eval-harness/gate.js",
+      "kind": "tool-config",
+      "purpose": "Implements static variant/taskset inspection and strict unconditional refusal for candidate execution.",
+      "requirements": [
+        "Node built-ins and local canonical/envelope modules; gate is not an OS sandbox."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Its refusal boundary and integrity checks are notable; do not treat its static scanning or JS wrappers as a sandbox."
+      },
+      "overlaps": [
+        "lab runner safety and candidate isolation"
+      ],
+      "evidence": [
+        {
+          "path": "scripts/lib/eval-harness/gate.js",
+          "note": "requireSupportedIsolation throws gate.isolation_required; runGate and runVariant call it unconditionally."
+        }
+      ],
+      "links": [
+        {
+          "path": "scripts/lib/eval-harness/envelope.js",
+          "reason": "Indexed dependency."
+        },
+        {
+          "path": "scripts/lib/eval-harness/canonical.js",
+          "reason": "Indexed dependency."
+        },
+        {
+          "path": "tests/lib/eval-harness/security.test.js",
+          "reason": "Inspected tests for refusal and result validation."
+        }
+      ]
+    },
+    {
+      "path": "tests/lib/eval-harness/security.test.js",
+      "kind": "support",
+      "purpose": "Tests refusal before work/config access, caller-trust bypass attempts, path/symlink validation, malformed output, and baseline integrity.",
+      "requirements": [
+        "Node test runner and local gate implementation; tests were read but not run."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "adaptation-needed",
+        "notes": "Valuable regression categories, not proof of an operational sandbox or safe execution backend."
+      },
+      "overlaps": [
+        "lab containment and evaluator regression tests"
+      ],
+      "evidence": [
+        {
+          "path": "tests/lib/eval-harness/security.test.js",
+          "note": "Test cases cover refusal, traversal/symlinks, invalid protocol, and baseline failures."
+        }
+      ],
+      "links": [
+        {
+          "path": "scripts/lib/eval-harness/gate.js",
+          "reason": "Inspected implementation under test."
+        }
+      ]
+    },
+    {
+      "path": "scripts/hooks/pre-compact.js",
+      "kind": "tool-config",
+      "purpose": "Persists a compaction event and attempts a session summary while matching the active worktree rather than the newest session globally.",
+      "requirements": [
+        "Claude PreCompact event, local session files, utility and LLM-summary modules."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Host-specific hook, and it invokes a local summary helper; session-write and transcript policies need separate review."
+      },
+      "overlaps": [
+        "session checkpoint/persistence lifecycle"
+      ],
+      "evidence": [
+        {
+          "path": "scripts/hooks/pre-compact.js",
+          "note": "selectActiveSessionPath matches worktree identity and avoids annotating another project; fallback logs when transcript/summary unavailable."
+        }
+      ],
+      "links": [
+        {
+          "path": "scripts/lib/utils.js",
+          "reason": "Indexed filesystem helper dependency."
+        },
+        {
+          "path": "scripts/lib/llm-summary.js",
+          "reason": "Indexed summarization dependency."
+        },
+        {
+          "path": "hooks/memory-persistence/hooks.json",
+          "reason": "Inspected lifecycle definition."
+        }
+      ]
+    },
+    {
+      "path": "scripts/hooks/session-start-bootstrap.js",
+      "kind": "tool-config",
+      "purpose": "Bounds hook stdin, resolves an installed plugin root, and delegates to a profile-gated SessionStart runner.",
+      "requirements": [
+        "Claude plugin root, Node.js process spawn, run-with-flags runner, and event JSON."
+      ],
+      "license": {
+        "status": "permissive",
+        "expression": "MIT",
+        "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+        "evidence": [
+          "LICENSE"
+        ]
+      },
+      "compatibility": {
+        "status": "unsupported",
+        "notes": "Bootstrap is tied to Claude lifecycle variables and process spawning; retain only as a design reference for bounded input and explicit root resolution."
+      },
+      "overlaps": [
+        "app startup/session bootstrap logic"
+      ],
+      "evidence": [
+        {
+          "path": "scripts/hooks/session-start-bootstrap.js",
+          "note": "Main flow resolves plugin root and delegates to scripts/hooks/run-with-flags.js with bounded input."
+        }
+      ],
+      "links": [
+        {
+          "path": "scripts/hooks/run-with-flags.js",
+          "reason": "Indexed shared hook runner."
+        },
+        {
+          "path": "scripts/lib/resolve-ecc-root.js",
+          "reason": "Indexed root resolver."
+        },
+        {
+          "path": "scripts/hooks/hook-input.js",
+          "reason": "Indexed input limiter."
+        },
+        {
+          "path": "scripts/hooks/lifecycle-hook-bootstrap.js",
+          "reason": "Indexed output/exit helper."
+        }
+      ]
+    }
+  ]
+}

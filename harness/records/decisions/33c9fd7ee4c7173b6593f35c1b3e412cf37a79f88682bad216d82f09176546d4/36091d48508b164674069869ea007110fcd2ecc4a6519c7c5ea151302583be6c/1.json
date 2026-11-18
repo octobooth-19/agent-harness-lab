@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "33c9fd7ee4c7173b6593f35c1b3e412cf37a79f88682bad216d82f09176546d4",
+  "scanRevision": 1,
+  "path": ".opencode/skills/unit-tests/SKILL.md",
+  "revision": 1,
+  "decision": "reference-only",
+  "reason": "The OpenCode-specific stack and links are not fully reviewed; a separate portable fixture-isolation skill avoids importing these dependencies.",
+  "source": {
+    "repo": "anomalyco/opencode",
+    "commit": "ae88eb6a7a239d1220612a6331afc3b00487638b"
+  },
+  "scanSha256": "399809f299a8ddeb9853182cc7b4c1752a336554e7728085d918eeea70ed129a",
+  "sourceSha256": "31fb5d19b3bc0268de9e445db4a0b75d746b1d9598ccfe46edbda3b2da797ee5",
+  "license": {
+    "status": "permissive",
+    "expression": "MIT",
+    "attribution": "Retain the upstream copyright and permission notice in redistributed copies or substantial portions.",
+    "evidence": [
+      "LICENSE"
+    ]
+  }
+}
