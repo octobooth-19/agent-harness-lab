@@ -121,7 +121,7 @@ https://platform.claude.com/docs/en/build-with-claude/pdf-support,PDF support,pl
 https://platform.claude.com/docs/en/build-with-claude/vision,Overview,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/build-with-claude/vision-coordinates,Coordinates and bounding boxes,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview,Overview,platform_documentation,,,2026-11-18,read_partial,agents;tools;skills,synthesis.md
-https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart,Quickstart,platform_documentation,,,2026-11-18,indexed_only,agents;tools;skills,
+https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart,Get started with Agent Skills in the API,platform_documentation,,,2026-11-18,read_partial,agents;tools;skills,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices,Best practices,platform_documentation,,,2026-11-18,read_partial,agents;tools;skills,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/agent-skills/enterprise,Skills for enterprise,platform_documentation,,,2026-11-18,read,agents;tools;skills,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/build-with-claude/skills-guide,Skills in the API,platform_documentation,,,2026-11-18,indexed_only,skills;api,
@@ -129,9 +129,9 @@ https://platform.claude.com/docs/en/agents-and-tools/remote-mcp-servers,Remote M
 https://platform.claude.com/docs/en/agents-and-tools/mcp-connector,MCP connector,platform_documentation,,,2026-11-18,read_partial,agents;mcp;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/overview,Overview,platform_documentation,,,2026-11-18,read_partial,agents;mcp;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/concepts,Architecture and components,platform_documentation,,,2026-11-18,read_partial,agents;mcp;tools,knowledge/anthropic/synthesis.md
-https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/quickstart,Quickstart,platform_documentation,,,2026-11-18,indexed_only,agents;mcp;tools,
+https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/quickstart,MCP tunnels quickstart,platform_documentation,,,2026-11-18,read,agents;mcp;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/console,Manage in the Console,platform_documentation,,,2026-11-18,indexed_only,agents;mcp;tools,
-https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/deploy-helm,Deploy with Helm,platform_documentation,,,2026-11-18,indexed_only,agents;mcp;tools,
+https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/deploy-helm,Deploy MCP tunnels with Helm,platform_documentation,,,2026-11-18,read_partial,agents;mcp;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/deploy-compose,Deploy with Docker Compose,platform_documentation,,,2026-11-18,indexed_only,agents;mcp;tools,
 https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/security,MCP tunnels security,platform_documentation,,,2026-11-18,read,agents;mcp;tools;security,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/troubleshooting,Troubleshooting,platform_documentation,,,2026-11-18,indexed_only,agents;mcp;tools,
@@ -655,7 +655,7 @@ https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes,Overvie
 https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-workers,Deploy workers,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
 https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-per-session,Sandbox per session,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
 https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-memory,Memory stores,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents;memory,
-https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-custom-tools,Custom tools and MCP servers,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents;mcp;tools,
+https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-custom-tools,Custom tools in self-hosted sandboxes,platform_documentation,,,2026-11-18,read_partial,managed-agents;agents;mcp;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-operations,Monitor and troubleshoot,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
 https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-reference,Worker reference,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
 https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-security,Security model,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents;security;models,
