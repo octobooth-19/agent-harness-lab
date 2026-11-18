@@ -1,0 +1,14 @@
+{
+  "version": 4,
+  "batch": "initial-top-seven",
+  "date": "2026-11-18T18:01:27.240Z",
+  "reservation": "fe16609b-26cb-4d48-809f-a209d204dbf3",
+  "sessionId": "430ce225-012b-4d01-9313-6276b2d75859",
+  "note": "Same scanner extended the support and licensing review; package-specific and runtime caveats remain.",
+  "status": "complete",
+  "result": {
+    "revision": 2,
+    "sha256": "3367b0a1e7a61d6370d29a96ab5e6f090a234a1a3bb9e4a45d1ea9be74c3ea35",
+    "commit": "757e3c2d7ec1f0f4775b7ac5387f893225fd8614"
+  }
+}
