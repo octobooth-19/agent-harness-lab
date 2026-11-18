@@ -689,9 +689,9 @@ https://platform.claude.com/docs/en/managed-agents/self-hosted/configure,Single 
 https://platform.claude.com/docs/en/managed-agents/self-hosted/agent-identity,Agent identity and credentials,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
 https://platform.claude.com/docs/en/managed-agents/self-hosted/inference-provider,Inference provider,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
 https://platform.claude.com/docs/en/managed-agents/secure-deployment,Secure your Managed Agents deployment,platform_documentation,,,2026-11-18,read_partial,managed-agents;security;permissions;networking,knowledge/anthropic/synthesis.md
-https://platform.claude.com/docs/en/managed-agents/secure-deployment-monitoring,Review and monitor sessions,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
+https://platform.claude.com/docs/en/managed-agents/secure-deployment-monitoring,Review and monitor sessions,platform_documentation,,,2026-11-18,read_partial,managed-agents;monitoring;retention;webhooks,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/managed-agents/secure-deployment-risks,Security risks and sandbox boundaries,platform_documentation,,,2026-11-18,read_partial,managed-agents;security;prompt-injection;sandbox,knowledge/anthropic/synthesis.md
-https://platform.claude.com/docs/en/managed-agents/reference,Managed Agents reference,platform_documentation,,,2026-11-18,indexed_only,managed-agents;agents,
+https://platform.claude.com/docs/en/managed-agents/reference,Managed Agents reference,platform_documentation,,,2026-11-18,read_partial,managed-agents;events;tools;self-hosted,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/de/managed-agents/overview,,platform_documentation,,,2026-11-18,excluded_non_English,managed-agents;agents,
 https://platform.claude.com/docs/de/managed-agents/quickstart,,platform_documentation,,,2026-11-18,excluded_non_English,managed-agents;agents,
 https://platform.claude.com/docs/de/managed-agents/onboarding,,platform_documentation,,,2026-11-18,excluded_non_English,managed-agents;agents,
@@ -1416,11 +1416,11 @@ https://platform.claude.com/docs/en/about-claude/use-case-guides/content-moderat
 https://platform.claude.com/docs/en/about-claude/use-case-guides/legal-summarization,Legal summarization,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/about-claude/use-case-guides/commerce-agents,Commerce agent,platform_documentation,,,2026-11-18,indexed_only,agents,
 https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview,Overview,platform_documentation,,,2026-11-18,indexed_only,prompting,
-https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices,Prompting best practices,platform_documentation,,,2026-11-18,indexed_only,prompting,
+https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices,Prompting best practices,platform_documentation,,,2026-11-18,read_partial,prompt-engineering;prompting;models,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-2,Prompting Claude Fable 5.2,platform_documentation,,,2026-11-18,indexed_only,prompting,
 https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-1,Prompting Claude Fable 5.1,platform_documentation,,,2026-11-18,indexed_only,prompting,
 https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5,Prompting Claude Fable 5,platform_documentation,,,2026-11-18,indexed_only,prompting,
-https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5,Prompting Claude Opus 5.5,platform_documentation,,,2026-11-18,indexed_only,prompting,
+https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5,Prompting Claude Opus 5.5,platform_documentation,,,2026-11-18,read_partial,prompt-engineering;models;agents,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5,Prompting Claude Opus 5,platform_documentation,,,2026-11-18,indexed_only,prompting,
 https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-4-8,Prompting Claude Opus 4.8,platform_documentation,,,2026-11-18,indexed_only,prompting,
 https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5-5,Prompting Claude Sonnet 5.5,platform_documentation,,,2026-11-18,indexed_only,prompting,

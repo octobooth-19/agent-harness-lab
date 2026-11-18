@@ -10,13 +10,13 @@ Counts below describe unique canonical URL rows in `source-inventory.json`. A pa
 | Measure | Count | Meaning |
 |---|---:|---|
 | Discovered pages | 2,836 | Distinct page URLs cataloged from official documentation indexes, selected sitemaps, the OpenAI News RSS feed, and official Codex release records. |
-| Read pages | 95 | The page itself was opened and reviewed sufficiently for synthesis. |
-| Partially read pages | 91 | The page was opened, but only part could be reviewed; these are counted separately from full reads. |
+| Read pages | 96 | The page itself was opened and reviewed sufficiently for synthesis. |
+| Partially read pages | 94 | The page was opened, but only part could be reviewed; these are counted separately from full reads. |
 | Inaccessible pages | 0 | No inventoried content page remained inaccessible after resolving the Codex changelog's HTML route. |
-| Pending pages | 2,650 | Discovered but not read. This includes most indexed API references, Codex/ChatGPT product docs, Cookbook entries, blog/news articles, and learning resources. |
+| Pending pages | 2,646 | Discovered but not read. This includes most indexed API references, Codex/ChatGPT product docs, Cookbook entries, blog/news articles, and learning resources. |
 | Excluded unique links | 26 | Non-primary-domain links or full-export/text resources omitted from the source-page inventory. |
 
-The page-status arithmetic is consistent: 95 read + 91 partial + 0 inaccessible + 2,650 pending = 2,836 discovered. `source-inventory.json` includes the required per-source fields and records whether a date comes from publication metadata or sitemap `lastmod`.
+The page-status arithmetic is consistent: 96 read + 94 partial + 0 inaccessible + 2,646 pending = 2,836 discovered. `source-inventory.json` includes the required per-source fields and records whether a date comes from publication metadata or sitemap `lastmod`.
 
 ## Discovery methods and corpus boundaries
 
@@ -49,8 +49,9 @@ The 95 fully reviewed pages are marked `review_status: "read"` and 91 partial re
 - Batch twelve adds the GPT-5.3-Codex and GPT-5.5 frontend prompt guides, an asynchronous Workspace Agent trigger example, and a GPT-Live evaluation guide. All four are partial; model-specific prompting and the voice-evaluation harness should not be generalized as current defaults for other surfaces.
 - Batch thirteen adds Codex CLI, a Codex phase-based workflow example, GPT-6.2-in-Codex prompting, and an Agents SDK sandbox-migration example. All four are partial; command/permission behavior, model advice, and sandbox setup are surface-specific.
 - Batch fourteen adds the Responses API multi-agent guide, LifeVal evaluation, model-misalignment reporting framework, and historical Model Spec launch post. All four are partial; feature/model claims are beta- or date-specific, and research results are not universal agent benchmarks.
+- Batch fifteen reviews Codex Cloud in full and partial excerpts from ChatGPT Tasks and memory, workload identity federation rules, and the Retrieval API guide. It adds one full and three partial reads; the scheduler, API identity, and retrieval behavior remain surface-specific, and the truncated pages need further review.
 
-Read status means the page was opened and its relevant content reviewed; it does not mean every code sample or every section was exhaustively audited. `read_partial` records a page whose fetched content was incomplete. Batch four opened 12 pages (2 full, 10 partial); batch five opened 11 pages (all full); batch six opened 4 pages (1 full and 3 partial); batch seven opened 4 pages (all partial); batch eight opened 4 pages (all partial); batch nine opened 11 pages (all partial); batch ten opened 8 pages (4 full, 4 partial); batch eleven opened 8 pages (3 full, 5 partial); batch twelve opened 4 pages (all partial); batch thirteen opened 4 pages (all partial); batch fourteen opened 4 pages (all partial). The archived RAG notebook and long Cookbook pages remain partial. No URL was inaccessible. Linked papers, repos, and provider documentation were not followed and are not counted as reviewed.
+Read status means the page was opened and its relevant content reviewed; it does not mean every code sample or every section was exhaustively audited. `read_partial` records a page whose fetched content was incomplete. Batch four opened 12 pages (2 full, 10 partial); batch five opened 11 pages (all full); batch six opened 4 pages (1 full and 3 partial); batch seven opened 4 pages (all partial); batch eight opened 4 pages (all partial); batch nine opened 11 pages (all partial); batch ten opened 8 pages (4 full, 4 partial); batch eleven opened 8 pages (3 full, 5 partial); batch twelve opened 4 pages (all partial); batch thirteen opened 4 pages (all partial); batch fourteen opened 4 pages (all partial); batch fifteen opened 4 pages (1 full and 3 partial). The archived RAG notebook and long Cookbook pages remain partial. No URL was inaccessible. Linked papers, repos, and provider documentation were not followed and are not counted as reviewed.
 
 ## Inaccessible, excluded, and pending areas
 
