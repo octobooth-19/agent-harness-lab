@@ -473,9 +473,16 @@ test('registered app launches remain observable before collection and reject reu
   assert.throws(() => registerApp(root, trial.runId, { ...launch, actualCwd: '/wrong' }), /actual app cwd/);
   registerApp(root, trial.runId, launch);
   assert.equal(report(root).runs[0].status, 'launched');
+  assert.throws(() => registerApp(root, trial.runId, launch), /app launch is already registered/);
+  assert.throws(() => executeHeadless(root, trial.runId, { environment: 'fixture', configurationAudit: 'fixture' }),
+    /trial is registered to an app session/);
   assert.throws(() => collect(root, trial.runId, { ...metadata, sessionId: 'different' }), /registered app session/);
   const other = prepare(root, 'incident-summary', { variant: 'evidence-first', workspaceRoot });
   assert.throws(() => registerApp(root, other.runId, { ...launch, actualCwd: other.workspace }), /already belongs/);
+  const headless = prepare(root, 'incident-summary', { variant: 'evidence-first', workspaceRoot });
+  writeJSON(path.join(root, 'bench/runs', headless.runId, 'launch.json'), { receipt: { sessionId: 'prior-runner' } });
+  assert.throws(() => registerApp(root, headless.runId, { ...launch, receipt: { ...metadata, sessionId: 'fresh-session' },
+    actualCwd: headless.workspace }), /another runner is already registered/);
   collect(root, trial.runId, { ...metadata, outcome: 'failed' });
   assert.equal(report(root).runs.find(run => run.runId === trial.runId).runnerSucceeded, false);
 });

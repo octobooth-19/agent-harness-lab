@@ -113,6 +113,8 @@ export function registerApp(root, runId, launch) {
   ensure(launch.receipt.model === manifest.requestedModel, 'app requested model differs from frozen manifest');
   ensure(Number.isFinite(Date.parse(launch.startedAt)), 'app launch needs an observed startedAt timestamp');
   ensure(!fs.existsSync(path.join(directory, 'evidence.json')), 'cannot register launch after evidence was collected');
+  ensure(!fs.existsSync(path.join(directory, 'app-launch.json')), 'app launch is already registered; prepare a new trial');
+  ensure(!fs.existsSync(path.join(directory, 'launch.json')), 'another runner is already registered; prepare a new trial');
   for (const otherId of fs.readdirSync(path.dirname(directory)).filter(id => uuid.test(id) && id !== runId)) {
     const otherDirectory = runDirectory(root, otherId);
     for (const name of ['app-launch.json', 'launch.json', 'evidence.json']) {
@@ -192,6 +194,7 @@ export function executeHeadless(root, runId, { environment, configurationAudit, 
   ensure(Number.isSafeInteger(timeoutMs) && timeoutMs > 0 && timeoutMs <= 3600000, 'timeout must be from 1 to 3600000ms');
   const { directory, manifest } = loadRun(root, runId);
   ensure(!fs.existsSync(path.join(directory, 'evidence.json')), 'trial is already collected');
+  ensure(!fs.existsSync(path.join(directory, 'app-launch.json')), 'trial is registered to an app session');
   ensure(!manifest.runtime.appSetup, 'this component requires app-specific setup; use the app coordinator runner');
   ensure(manifest.profile?.value.target !== 'app', 'this profile targets the app coordinator runner');
   for (const input of manifest.inputs) {
