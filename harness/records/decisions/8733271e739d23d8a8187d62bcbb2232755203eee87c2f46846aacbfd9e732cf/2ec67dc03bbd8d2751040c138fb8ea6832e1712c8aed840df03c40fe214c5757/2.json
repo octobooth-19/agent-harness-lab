@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "8733271e739d23d8a8187d62bcbb2232755203eee87c2f46846aacbfd9e732cf",
+  "scanRevision": 4,
+  "path": "skills/eval-harness/SKILL.md",
+  "revision": 2,
+  "decision": "reference-only",
+  "reason": "The scan reinforces this as reference-only: evaluation principles are already implemented by this lab’s pinned cases, rubrics, deterministic checks and separately sourced evaluators. The upstream helper layer is repository-specific, uses an additional pinned Node package and can execute model/tool fixtures; independent permission and containment properties are not established. Do not copy helpers or change either frozen profile.",
+  "source": {
+    "repo": "affaan-m/ecc",
+    "commit": "3f14a103a8694e51c1df9a806217a6d0b5f7a6f7"
+  },
+  "scanSha256": "b0e13cc2499a617b40bf83ddb3c5e9fc79ebb1c4410c9e8119479e764533ac2d",
+  "sourceSha256": "3a5339a5a80099a5c9d55da9b6c8e05a690f5befc6f78d779c75dd79d818ca07",
+  "license": {
+    "status": "permissive",
+    "expression": "MIT",
+    "attribution": "Retain the upstream MIT copyright notice and license text when copying substantial portions; this does not clear third-party packages or linked repositories.",
+    "evidence": [
+      "LICENSE"
+    ]
+  }
+}
