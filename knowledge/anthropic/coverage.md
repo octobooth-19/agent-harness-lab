@@ -10,16 +10,16 @@ I used official published indexes and sitemaps rather than relying only on searc
 
 | Official source | Discovery method | URLs discovered | Read in this pass |
 |---|---|---:|---:|
-| Claude Platform docs | `https://platform.claude.com/llms.txt` plus `https://platform.claude.com/sitemap.xml` | 4,718 sitemap URLs: 923 English docs, 3,762 non-English docs, and 33 non-documentation platform/console routes | 36 English documentation pages, partial or full |
+| Claude Platform docs | `https://platform.claude.com/llms.txt` plus `https://platform.claude.com/sitemap.xml` | 4,718 sitemap URLs: 923 English docs, 3,762 non-English docs, and 33 non-documentation platform/console routes | 44 English documentation pages, partial or full |
 | Claude Code docs | `https://code.claude.com/docs/llms.txt` plus `https://code.claude.com/docs/sitemap.xml` | 2,437 sitemap URLs: 204 English pages and 2,233 non-English pages. The LLMS index exposes 216 links; the sitemap is the page-count basis. | 27 English documentation pages, partial or full |
-| Anthropic site | `https://www.anthropic.com/sitemap.xml` | 593 pages: 280 `/news/`, 219 `/research/`, and 94 other site pages. Sitemap `lastmod` exists for 574. | 31 news/research pages, partial or full |
+| Anthropic site | `https://www.anthropic.com/sitemap.xml` | 593 pages: 280 `/news/`, 219 `/research/`, and 94 other site pages. Sitemap `lastmod` exists for 574. | 37 news/research pages, partial or full |
 | Claude Code changelog | Linked by Claude Code documentation; fetched from the official `anthropics/claude-code` repository | 1 moving changelog | Latest top entry reviewed; partial |
 
 **Sitemap page URLs discovered:** 7,748 across the three sitemap corpora, before adding the changelog and index records. The inventory includes every sitemap URL, including non-English pages and non-documentation platform routes. It also includes the two documentation indexes, the three sitemap endpoints, the changelog, and two failed endpoint probes as separate discovery records.
 
-**Unique source pages reviewed:** 95 (94 documentation/news/research pages plus the changelog). Of the 94 docs/news/research pages, 66 are marked `read_partial` and 28 are marked `read`; the changelog remains `read_partial`. This batch added 18 pages (15 full, 3 partial) and deepened two existing research pages from partial to full. The changelog, sandboxing guide, and hooks guide remain partial. Review status is page-level and does not imply exhaustive reading of every linked subpage. Index records are marked `index_read`, not page reads. The count excludes index and sitemap records.
+**Unique source pages reviewed:** 109 (108 documentation/news/research pages plus the changelog). Of the 108 docs/news/research pages, 68 are marked `read_partial` and 40 are marked `read`; the changelog remains `read_partial`. This batch added 14 pages (12 full, 2 partial), including six news/research sources and eight Platform docs. Two docs pages were truncated; details are in the inventory. Review status is page-level and does not imply exhaustive reading of every linked subpage. Index records are marked `index_read`, not page reads. The count excludes index and sitemap records.
 
-**Remaining indexed English pages:** 1,626 sitemap pages (923 Platform docs + 204 Claude Code docs + 280 News + 219 Research) less 94 reviewed docs/news/research pages = **1,532 sitemap-indexed pages pending review**. The Claude Code LLMS index exposes 12 additional links not present in the sitemap; these are also inventoried as pending. The inventory therefore has 1,544 `indexed_only` rows. All 94 other Anthropic-site pages, all 33 platform routes outside the docs section, and all 5,995 non-English sitemap URLs are inventoried but not reviewed as documentation sources.
+**Remaining indexed English pages:** 1,626 sitemap pages (923 Platform docs + 204 Claude Code docs + 280 News + 219 Research) less 108 reviewed docs/news/research pages = **1,518 sitemap-indexed pages pending review**. The Claude Code LLMS index exposes 12 additional links not present in the sitemap; these are also inventoried as pending. The inventory therefore has 1,530 `indexed_only` rows. All 94 other Anthropic-site pages, all 33 platform routes outside the docs section, and all 5,995 non-English sitemap URLs are inventoried but not reviewed as documentation sources.
 
 ## Reviewed source coverage
 
@@ -33,13 +33,14 @@ Priority review covered:
 - Managed Agents policies, budgets, memory, skills, credentials, threads, and orchestration; Messages API tool-context controls, tool combinations, programmatic calling, bash execution, and compaction. The Managed Agents, programmatic tool-calling, and several other long pages were only partially reviewed.
 - Anthropic articles on agent patterns, context engineering, long-running coding harnesses, agent evaluations, MCP, skills, multi-agent research, tool use, and auto mode.
 - This batch adds research on sandboxing, managed-agent architecture, autonomy and multi-agent coordination; current Claude Code loop and permission docs; a partial changelog, hooks and sandboxing review; and dated news on Claude Code, Agent SDK, Xcode, and governance. Its study claims and model examples remain attributed to their sources rather than generalized.
+- Batch four adds tool-loop, server-tool and web-search guidance; cache-prefix behavior; enterprise-skill review/versioning; remote MCP caveats; and MCP-tunnel security controls. News/research covers Claude Code Security, Claude in Xcode, contextual retrieval, coding-skills research, a survey of coding-agent adoption, and safety-evaluation design. Two long docs remain partial; no publication dates were visible in these fetched pages.
 - The Claude Code changelog’s leading entry.
 
 See `source-inventory.csv` for canonical URLs, source type, title where provided by an official index or reviewed page, sitemap date and date basis, snapshot access date, review state, inferred topic tags, and synthesis link.
 
 ## Pending work
 
-- Read the remaining 1,532 sitemap-indexed English docs/news/research pages plus the 12 additional Claude Code LLMS-index links. The docs are broad and include API references, SDK language references, model guides, enterprise/admin material, release notes, and product-specific details not covered in the synthesis.
+- Read the remaining 1,518 sitemap-indexed English docs/news/research pages plus the 12 additional Claude Code LLMS-index links. The docs are broad and include API references, SDK language references, model guides, enterprise/admin material, release notes, and product-specific details not covered in the synthesis.
 - Review older and less-agent-focused Anthropic announcements, research papers, and API feature pages.
 - Review all 94 other Anthropic site pages only if the intended corpus includes company, policy, trust, legal, careers, and non-documentation product pages. These are indexed as excluded from this coding-agent knowledge synthesis, not discarded from the inventory.
 - Review 33 platform URLs outside `/docs/`; these are product/console routes rather than documentation pages.
