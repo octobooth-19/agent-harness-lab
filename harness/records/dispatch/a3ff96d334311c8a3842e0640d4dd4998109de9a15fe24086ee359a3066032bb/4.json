@@ -1,0 +1,14 @@
+{
+  "version": 4,
+  "batch": "initial-top-seven",
+  "date": "2026-11-18T17:50:53.252Z",
+  "reservation": "09c7d9c8-c827-453e-8506-2d14ec880e72",
+  "sessionId": "79bc078d-8540-4ff8-9bde-60fda47cd180",
+  "note": "Same scanner extended the candidate-support scope to adapters, skill support, and MIT license evidence.",
+  "status": "complete",
+  "result": {
+    "revision": 2,
+    "sha256": "760b2617e8df3c5e5158ca5d97fe8e0a35845c1f4d16cc38d8cf3709d97e288e",
+    "commit": "fe6b583aabfd7d93b6e45a743a049a2d9aa34276"
+  }
+}
