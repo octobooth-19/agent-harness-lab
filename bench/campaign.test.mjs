@@ -1,0 +1,75 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { spawnSync } from 'node:child_process';
+import { Catalog, readJSON, hash } from './store.mjs';
+
+const bench = path.dirname(fileURLToPath(import.meta.url));
+
+test('campaign freezes five valid cases then prepares exact independent baseline/treatment sources without running models', t => {
+  const temporary = fs.mkdtempSync(path.join(os.tmpdir(), 'sdlc-campaign-test-'));
+  t.after(() => fs.rmSync(temporary, { recursive: true, force: true }));
+  const root = path.join(temporary, 'lab');
+  const campaign = path.join(root, 'bench/campaigns/sdlc-20261118');
+  fs.mkdirSync(path.join(root, 'bench'), { recursive: true });
+  for (const name of ['store.mjs', 'schema.mjs', 'lifecycle.mjs']) fs.copyFileSync(path.join(bench, name), path.join(root, 'bench', name));
+  fs.cpSync(path.join(bench, 'campaigns/sdlc-20261118'), campaign, {
+    recursive: true, filter: source => !['freeze.json', 'launches', 'reports'].includes(path.basename(source)),
+  });
+  const catalog = new Catalog(root);
+  catalog.put('components', { schemaVersion: 1, id: 'fixture-guidance', version: 1, title: 'Test fixture only',
+    kind: 'instructions', prompt: '', files: { '.github/copilot-instructions.md': 'Synthetic test configuration; no model executed.\n' } }, 'create');
+  catalog.put('profiles', { schemaVersion: 1, id: 'fixture-profile', version: 1, title: 'Fixture profile', target: 'app',
+    parts: [{ id: 'fixture-guidance', version: 1, enabled: true }] }, 'create');
+  const invoke = (script, ...args) => {
+    const result = spawnSync(process.execPath, [path.join(campaign, script), ...args], { cwd: root, encoding: 'utf8' });
+    assert.equal(result.status, 0, result.stderr);
+    return JSON.parse(result.stdout);
+  };
+  invoke('build-catalog.mjs', '--profile', 'fixture-profile', '--version', '1');
+  const freeze = readJSON(path.join(campaign, 'freeze.json'));
+  assert.equal(freeze.cases.length, 5);
+  assert.equal(freeze.cases.filter(record => record.partition === 'held-out').length, 1);
+  assert.equal(catalog.validateAll().valid, true);
+  const workspaceRoot = path.join(temporary, 'trials');
+  fs.mkdirSync(workspaceRoot);
+  const baseline = invoke('prepare-campaign.mjs', '--arm', 'baseline', '--workspace-root', workspaceRoot);
+  const treatment = invoke('prepare-campaign.mjs', '--arm', 'initial-harness', '--workspace-root', workspaceRoot);
+  assert.equal(new Set([...baseline.trials, ...treatment.trials].map(trial => trial.workspace)).size, 10);
+  for (const trial of baseline.trials) {
+    const manifest = readJSON(trial.manifest);
+    assert.deepEqual(manifest.components, []);
+    assert.equal(manifest.profile, undefined);
+    assert.equal(fs.existsSync(path.join(trial.workspace, '.github')), false);
+    assert.equal(fs.existsSync(path.join(trial.workspace, 'evaluators')), false);
+    assert.equal(manifest.policy.value.runner, 'app');
+    const matched = treatment.trials.find(other => other.caseId === trial.caseId);
+    const treatmentManifest = readJSON(matched.manifest);
+    assert.equal(manifest.case.sha256, treatmentManifest.case.sha256);
+    assert.equal(manifest.rubric.sha256, treatmentManifest.rubric.sha256);
+    assert.equal(manifest.policy.sha256, treatmentManifest.policy.sha256);
+    for (const input of manifest.inputs) {
+      assert.equal(hash(fs.readFileSync(path.join(matched.workspace, input.path))), input.sha256);
+    }
+  }
+  const issue = baseline.trials.find(trial => trial.stage === 'issue');
+  const issueManifest = readJSON(issue.manifest);
+  assert.equal(issueManifest.case.value.source.repository, 'lodash/lodash');
+  assert.equal(fs.statSync(path.join(issue.workspace, 'lodash.js')).size, 545953);
+  assert.match(fs.readFileSync(path.join(issue.workspace, 'LICENSE'), 'utf8'), /Permission is hereby granted/);
+  const evaluator = spawnSync(process.execPath, [
+    path.join(path.dirname(issue.manifest), 'evaluators/independent-behavior.mjs'), issue.workspace,
+  ], { encoding: 'utf8' });
+  assert.equal(evaluator.status, 1);
+  assert.equal(evaluator.stderr, '');
+  assert.match(evaluator.stdout, /FAIL published sparse-array reproduction/);
+  assert.match(evaluator.stdout, /PASS ordinary dense array behavior/);
+  const summary = invoke('report-campaign.mjs');
+  assert.equal(summary.runs.length, 10);
+  assert.ok(summary.runs.every(run => run.status === 'prepared' && run.passed === null));
+  assert.ok(summary.cases.every(record => record.arms.every(arm => arm.graded === 0 && arm.meanScore === null)));
+  assert.equal(summary.cases[0].arms[0].metrics[0].totalTokens, null);
+});

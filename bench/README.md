@@ -10,6 +10,11 @@ The skill is the app-native trigger; the commands below are tools the agent uses
 not a requirement for a human to operate a terminal. No extension, service, npm
 package, or Python package is required. Use Node.js 22 or newer.
 
+The [AI SDLC campaign](campaigns/sdlc-20261118/README.md) adds a representative
+out-of-box versus pinned-harness suite, including a real reproducible public
+Lodash issue with licensed upstream source and pre-fix failure evidence. It uses
+app-launched subjects/judges, source pins, and external held-out evaluators.
+
 See the [design](design.md), [architecture diagram](architecture.md), and
 [record schema](schema.md). The executable schema lives in `schema.mjs`.
 

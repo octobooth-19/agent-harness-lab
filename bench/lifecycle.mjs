@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
-import { Catalog, hash, inside, readJSON, writeJSON, canonical } from './store.mjs';
+import { Catalog, hash, inside, readJSON, writeJSON, canonical, readPinnedFile } from './store.mjs';
 import { ensure, relativePath, text, validateReceipt, validateVerdict, MAX_FILE_BYTES, MAX_TOTAL_BYTES } from './schema.mjs';
 
 const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
@@ -97,7 +97,8 @@ function loadRun(root, runId) {
   const manifest = readJSON(path.join(directory, 'manifest.json'));
   const manifestSha256 = fs.readFileSync(path.join(directory, 'manifest.sha256'), 'utf8').trim();
   ensure(hash(manifest) === manifestSha256 && manifest.runId === runId, 'frozen manifest integrity failure');
-  for (const record of [manifest.case, manifest.rubric, ...(manifest.profile ? [manifest.profile] : []), ...manifest.components]) {
+  for (const record of [manifest.case, manifest.rubric, ...(manifest.profile ? [manifest.profile] : []),
+    ...(manifest.policy ? [manifest.policy] : []), ...manifest.components]) {
     ensure(hash(record.value) === record.sha256, 'frozen record integrity failure');
   }
   ensure(hash(fs.readFileSync(path.join(directory, 'trial-prompt.txt'), 'utf8')) === manifest.promptSha256, 'trial prompt integrity failure');
@@ -125,7 +126,7 @@ export function prepare(root, caseId, { variant: variantName, workspaceRoot, ver
   const trialRoot = fs.mkdtempSync(path.join(workspaceRoot, `harness-lab-${runId}-`));
   const workspace = path.join(trialRoot, 'subject');
   fs.mkdirSync(workspace);
-  const inputFiles = Object.assign(Object.create(null), testCase.files);
+  const inputFiles = Object.assign(Object.create(null), resolved.fixtures);
   for (const component of variant.resolved) Object.assign(inputFiles, component.files);
   ensure(Object.values(inputFiles).reduce((sum, content) => sum + Buffer.byteLength(content), 0) <= MAX_TOTAL_BYTES,
     'combined trial inputs exceed total size limit');
@@ -144,11 +145,17 @@ export function prepare(root, caseId, { variant: variantName, workspaceRoot, ver
     schemaVersion: 1, runId, createdAt: new Date().toISOString(), variant: variant.name,
     requestedModel: model, isolation: 'workspace-only', workspace, runtime,
     case: frozen(testCase), rubric: frozen(resolved.rubric), components: variant.resolved.map(frozen),
+    ...(resolved.policy ? { policy: frozen(resolved.policy) } : {}),
     ...(variant.profileRecord ? { profile: frozen(variant.profileRecord) } : {}),
     inputs: Object.entries(inputFiles).map(([file, content]) => ({ path: file, sha256: hash(content) })),
     promptSha256: hash(prompt),
   };
   fs.mkdirSync(directory, { recursive: true });
+  const evaluators = testCase.checks.filter(check => check.type === 'evaluator');
+  if (evaluators.length) fs.mkdirSync(path.join(directory, 'evaluators'));
+  for (const check of evaluators) {
+    fs.writeFileSync(path.join(directory, 'evaluators', `${check.id}.mjs`), readPinnedFile(catalog.root, check.script), { flag: 'wx' });
+  }
   writeJSON(path.join(directory, 'manifest.json'), manifest);
   fs.writeFileSync(path.join(directory, 'manifest.sha256'), `${hash(manifest)}\n`, { flag: 'wx' });
   fs.writeFileSync(path.join(directory, 'trial-prompt.txt'), prompt, { flag: 'wx' });
@@ -221,12 +228,18 @@ export function collect(root, runId, receipt, { allowCommands = false } = {}) {
   }
   const launchFile = path.join(directory, 'launch.json');
   if (fs.existsSync(launchFile)) ensure(canonical(receipt) === canonical(readJSON(launchFile).receipt), 'receipt does not match the recorded launch');
-  ensure(!manifest.case.value.checks.some(c => c.type === 'command') || allowCommands,
+  ensure(!manifest.case.value.checks.some(c => ['command', 'evaluator'].includes(c.type)) || allowCommands,
     'command checks execute trusted catalog code; inspect them and pass --allow-commands explicitly');
   snapshot(manifest.workspace);
   const checks = manifest.case.value.checks.map(check => {
-    if (check.type === 'command') {
-      const result = spawnSync(check.argv[0], check.argv.slice(1), {
+    if (['command', 'evaluator'].includes(check.type)) {
+      const evaluator = path.join(directory, 'evaluators', `${check.id}.mjs`);
+      if (check.type === 'evaluator') {
+        ensure(!fs.lstatSync(evaluator).isSymbolicLink() && hash(fs.readFileSync(evaluator)) === check.script.sha256,
+          `frozen evaluator integrity failure: ${check.id}`);
+      }
+      const argv = check.type === 'evaluator' ? [process.execPath, evaluator, manifest.workspace] : check.argv;
+      const result = spawnSync(argv[0], argv.slice(1), {
         cwd: manifest.workspace, timeout: check.timeoutMs, maxBuffer: MAX_FILE_BYTES, encoding: 'utf8',
       });
       return { id: check.id, type: check.type, passed: !result.error && result.status === 0,
@@ -371,12 +384,14 @@ export function report(root, caseId) {
     }
     runs.push({ runId, case: manifest.case.value.id, version: manifest.case.value.version, variant: manifest.variant,
       status: result ? 'graded' : evidence ? 'collected' : fs.existsSync(path.join(directory, 'launch.json')) ? 'launched' : 'prepared',
-      score: result?.score ?? null, maxScore: result?.maxScore ?? null, passed: result?.passed ?? null });
+      score: result?.score ?? null, maxScore: result?.maxScore ?? null, passed: result?.passed ?? null,
+      metrics: evidence?.receipt.metrics ?? null });
     if (!evidence) continue;
     const context = { caseSha256: manifest.case.sha256, rubricSha256: manifest.rubric.sha256, variant: manifest.variant,
       components: manifest.components.map(c => c.sha256), runner: evidence.receipt.runner,
       model: evidence.receipt.model, actualModel: evidence.receipt.actualModel, environment: evidence.receipt.environment,
-      configurationAudit: evidence.receipt.configurationAudit, permissions: evidence.receipt.permissions };
+      configurationAudit: evidence.receipt.configurationAudit, permissions: evidence.receipt.permissions,
+      policySha256: manifest.policy?.sha256 ?? null };
     const key = canonical(context);
     const group = groups.get(key) ?? { ...context, collected: 0, graded: 0, passed: 0, totalScore: 0 };
     group.collected++;
