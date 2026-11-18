@@ -7,11 +7,11 @@
     "openai_news_rss": "https://openai.com/news/rss.xml"
   },
   "counts": {
-    "discovered_pages": 2834,
+    "discovered_pages": 2833,
     "read_pages": 97,
     "inaccessible_pages": 0,
     "excluded_unique_links": 26,
-    "pending_pages": 2611,
+    "pending_pages": 2606,
     "index_records": 15,
     "index_failures": [
       {
@@ -33,7 +33,7 @@
     "openai_sitemap_subindexes": 44,
     "technical_sitemap_families_opened": 5,
     "other_openai_sitemap_families_not_included": 39,
-    "read_partial_pages": 126
+    "read_partial_pages": 130
   },
   "field_notes": {
     "review_status": "read = source page opened and reviewed; read_partial = source page opened but only partly reviewed; indexed = discovered in an official index/sitemap/feed but not opened; inaccessible = attempted primary source failed.",
@@ -11121,16 +11121,18 @@
       "source_type": "Developer learning resource",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "tools and MCP"
+        "documentation MCP",
+        "read-only tools",
+        "context retrieval"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/learn/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/learn/docs-mcp"
     },
     {
       "canonical_url": "https://developers.openai.com/plugins/build/app-quickstart",
@@ -11378,16 +11380,19 @@
       "source_type": "Apps SDK / plugins documentation",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "tools and MCP"
+        "MCP",
+        "plugin review",
+        "organization verification",
+        "submission permissions"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/plugins/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/plugins/deploy/app-review"
     },
     {
       "canonical_url": "https://developers.openai.com/plugins/deploy/connect-chatgpt",
@@ -20398,22 +20403,25 @@
       "accessed_url": null
     },
     {
-      "canonical_url": "https://openai.com/index/agentic-ai-foundation",
+      "canonical_url": "https://openai.com/index/agentic-ai-foundation/",
       "title": "OpenAI co-founds Agentic AI Foundation, donates AGENTS.md",
       "source_type": "OpenAI news article",
       "published_or_updated_date": "2025-12-09",
       "date_basis": "publication date",
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "agent runtime",
-        "instructions and skills"
+        "open standards",
+        "AGENTS.md",
+        "Agentic AI Foundation",
+        "MCP"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://openai.com/news/rss.xml"
       ],
-      "accessed_url": null
+      "accessed_url": "https://openai.com/index/agentic-ai-foundation/",
+      "accessed_from_url": "https://openai.com/index/agentic-ai-foundation"
     },
     {
       "canonical_url": "https://openai.com/index/ai-agent-link-safety",
@@ -30693,27 +30701,9 @@
       "accessed_url": null
     },
     {
-      "canonical_url": "https://openai.com/index/harness-engineering",
-      "title": "Harness engineering: leveraging Codex in an agent-first world",
-      "source_type": "OpenAI news article",
-      "published_or_updated_date": "2026-02-11",
-      "date_basis": "publication date",
-      "accessed_date": null,
-      "review_status": "indexed",
-      "topics": [
-        "agent runtime",
-        "coding agents"
-      ],
-      "synthesis_location": null,
-      "discovered_from": [
-        "https://openai.com/news/rss.xml"
-      ],
-      "accessed_url": null
-    },
-    {
       "canonical_url": "https://openai.com/index/harness-engineering/",
       "title": "Harness engineering: leveraging Codex in an agent-first world",
-      "source_type": "OpenAI article (sitemap-indexed)",
+      "source_type": "OpenAI news article",
       "published_or_updated_date": "2026-02-11",
       "date_basis": "publication date",
       "accessed_date": "2026-11-18",
@@ -30723,6 +30713,7 @@
       ],
       "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
+        "https://openai.com/news/rss.xml",
         "https://openai.com/sitemap.xml/engineering/"
       ],
       "accessed_url": "https://openai.com/index/harness-engineering/"
@@ -32425,21 +32416,25 @@
       "accessed_url": null
     },
     {
-      "canonical_url": "https://openai.com/index/introducing-apps-in-chatgpt",
+      "canonical_url": "https://openai.com/index/introducing-apps-in-chatgpt/",
       "title": "Introducing apps in ChatGPT and the new Apps SDK",
       "source_type": "OpenAI news article",
       "published_or_updated_date": "2025-10-06",
       "date_basis": "publication date",
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "API and SDK"
+        "ChatGPT apps",
+        "Apps SDK",
+        "MCP",
+        "app permissions"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://openai.com/news/rss.xml"
       ],
-      "accessed_url": null
+      "accessed_url": "https://openai.com/index/introducing-apps-in-chatgpt/",
+      "accessed_from_url": "https://openai.com/index/introducing-apps-in-chatgpt"
     },
     {
       "canonical_url": "https://openai.com/index/introducing-b2b-signals",
