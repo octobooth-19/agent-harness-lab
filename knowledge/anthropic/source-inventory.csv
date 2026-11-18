@@ -77,14 +77,14 @@ https://platform.claude.com/docs/en/build-with-claude/preserved-thinking/change-
 https://platform.claude.com/docs/en/build-with-claude/preserved-thinking/fix-bound-to-a-different-conversation,Fix the 400 error,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview,Overview,platform_documentation,,,2026-11-18,read_partial,agents;tools,synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/how-tool-use-works,How tool use works,platform_documentation,,,2026-11-18,read,agents;tools;context and memory,knowledge/anthropic/synthesis.md
-https://platform.claude.com/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent,Tutorial: Build a tool-using agent,platform_documentation,,,2026-11-18,indexed_only,agents;tools,
+https://platform.claude.com/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent,Tutorial: Build a tool-using agent,platform_documentation,,,2026-11-18,read_partial,agents;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools,Define tools,platform_documentation,,,2026-11-18,read_partial,tool schemas;tool descriptions;tool design;context,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls,Handle tool calls,platform_documentation,,,2026-11-18,read,agents;tools;context and memory,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/parallel-tool-use,Parallel tool use,platform_documentation,,,2026-11-18,read_partial,tool orchestration;parallel calls;message history,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-runner,Tool runner (SDK),platform_documentation,,,2026-11-18,read_partial,agents;tools;context and memory,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/strict-tool-use,Strict tool use,platform_documentation,,,2026-11-18,read_partial,agents;tools;context and memory,knowledge/anthropic/synthesis.md
-https://platform.claude.com/docs/en/agents-and-tools/tool-use/server-tools,Server tools,platform_documentation,,,2026-11-18,indexed_only,agents;tools,
-https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool,Web search tool,platform_documentation,,,2026-11-18,indexed_only,agents;tools,
+https://platform.claude.com/docs/en/agents-and-tools/tool-use/server-tools,Server tools,platform_documentation,,,2026-11-18,read,agents;tools,knowledge/anthropic/synthesis.md
+https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool,Web search tool,platform_documentation,,,2026-11-18,read,agents;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-fetch-tool,Web fetch tool,platform_documentation,,,2026-11-18,indexed_only,agents;tools,
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool,Code execution tool,platform_documentation,,,2026-11-18,indexed_only,agents;tools,
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/advisor-tool,Advisor tool,platform_documentation,,,2026-11-18,read_partial,agents;tools,knowledge/anthropic/synthesis.md
@@ -99,12 +99,12 @@ https://platform.claude.com/docs/en/agents-and-tools/tool-use/troubleshooting-to
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-reference,Tool reference,platform_documentation,,,2026-11-18,indexed_only,agents;tools,
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/manage-tool-context,Manage tool context,platform_documentation,,,2026-11-18,read,agents;tools;context,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-combinations,Tool combinations,platform_documentation,,,2026-11-18,read,agents;tools,knowledge/anthropic/synthesis.md
-https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-use-with-prompt-caching,Tool use with prompt caching,platform_documentation,,,2026-11-18,indexed_only,agents;tools;prompting,
+https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-use-with-prompt-caching,Tool use with prompt caching,platform_documentation,,,2026-11-18,read,agents;tools;prompting,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/programmatic-tool-calling,Programmatic tool calling,platform_documentation,,,2026-11-18,read_partial,agents;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/tool-use/fine-grained-tool-streaming,Fine-grained tool streaming,platform_documentation,,,2026-11-18,indexed_only,agents;tools,
 https://platform.claude.com/docs/en/build-with-claude/context-windows,Context windows,platform_documentation,,,2026-11-18,read_partial,context,synthesis.md
 https://platform.claude.com/docs/en/build-with-claude/context-editing,Context editing,platform_documentation,,,2026-11-18,read_partial,context,synthesis.md
-https://platform.claude.com/docs/en/build-with-claude/prompt-caching,Prompt caching,platform_documentation,,,2026-11-18,indexed_only,prompting,
+https://platform.claude.com/docs/en/build-with-claude/prompt-caching,Prompt caching,platform_documentation,,,2026-11-18,read_partial,prompting,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/build-with-claude/message-threads,Message threads,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages,Mid-conversation messages,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/build-with-claude/mid-conversation-effort-example,Build an orchestration mode,platform_documentation,,,2026-11-18,indexed_only,general,
@@ -123,9 +123,9 @@ https://platform.claude.com/docs/en/build-with-claude/vision-coordinates,Coordin
 https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview,Overview,platform_documentation,,,2026-11-18,read_partial,agents;tools;skills,synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart,Quickstart,platform_documentation,,,2026-11-18,indexed_only,agents;tools;skills,
 https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices,Best practices,platform_documentation,,,2026-11-18,read_partial,agents;tools;skills,knowledge/anthropic/synthesis.md
-https://platform.claude.com/docs/en/agents-and-tools/agent-skills/enterprise,Skills for enterprise,platform_documentation,,,2026-11-18,indexed_only,agents;tools;skills,
+https://platform.claude.com/docs/en/agents-and-tools/agent-skills/enterprise,Skills for enterprise,platform_documentation,,,2026-11-18,read,agents;tools;skills,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/build-with-claude/skills-guide,Skills in the API,platform_documentation,,,2026-11-18,indexed_only,skills;api,
-https://platform.claude.com/docs/en/agents-and-tools/remote-mcp-servers,Remote MCP servers,platform_documentation,,,2026-11-18,indexed_only,agents;mcp;tools,
+https://platform.claude.com/docs/en/agents-and-tools/remote-mcp-servers,Remote MCP servers,platform_documentation,,,2026-11-18,read,agents;mcp;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/mcp-connector,MCP connector,platform_documentation,,,2026-11-18,read_partial,agents;mcp;tools,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/overview,Overview,platform_documentation,,,2026-11-18,indexed_only,agents;mcp;tools,
 https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/concepts,Architecture and components,platform_documentation,,,2026-11-18,indexed_only,agents;mcp;tools,
@@ -133,7 +133,7 @@ https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/quickstart,Quic
 https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/console,Manage in the Console,platform_documentation,,,2026-11-18,indexed_only,agents;mcp;tools,
 https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/deploy-helm,Deploy with Helm,platform_documentation,,,2026-11-18,indexed_only,agents;mcp;tools,
 https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/deploy-compose,Deploy with Docker Compose,platform_documentation,,,2026-11-18,indexed_only,agents;mcp;tools,
-https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/security,Security,platform_documentation,,,2026-11-18,indexed_only,agents;mcp;tools;security,
+https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/security,MCP tunnels security,platform_documentation,,,2026-11-18,read,agents;mcp;tools;security,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/troubleshooting,Troubleshooting,platform_documentation,,,2026-11-18,indexed_only,agents;mcp;tools,
 https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/reference,Reference,platform_documentation,,,2026-11-18,indexed_only,agents;mcp;tools,
 https://platform.claude.com/docs/en/build-with-claude/claude-in-amazon-bedrock,Amazon Bedrock (mantle),platform_documentation,,,2026-11-18,indexed_only,general,
@@ -7316,7 +7316,7 @@ https://www.anthropic.com/news/claude-4,,anthropic_news,2026-11-12,sitemap_lastm
 https://www.anthropic.com/news/claude-and-alexa-plus,,anthropic_news,2026-10-06,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/claude-brazil,,anthropic_news,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/claude-code-on-team-and-enterprise,Claude Code on Team and Enterprise,anthropic_news,2026-10-06,sitemap_lastmod,2026-11-18,read,claude-code;orchestration,knowledge/anthropic/synthesis.md
-https://www.anthropic.com/news/claude-code-security,,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,indexed_only,claude-code;security,
+https://www.anthropic.com/news/claude-code-security,Claude Code Security,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,read,claude-code;security,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/news/claude-corps,,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/claude-design-anthropic-labs,,anthropic_news,2026-10-15,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/claude-europe,,anthropic_news,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
@@ -7332,7 +7332,7 @@ https://www.anthropic.com/news/claude-gov-models-for-u-s-national-security-custo
 https://www.anthropic.com/news/claude-haiku-4-5,,anthropic_news,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/claude-in-amazon-bedrock-fedramp-high,,anthropic_news,2026-10-15,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/claude-in-microsoft-foundry,,anthropic_news,2026-09-29,sitemap_lastmod,2026-11-18,indexed_only,general,
-https://www.anthropic.com/news/claude-in-xcode,,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,indexed_only,general,
+https://www.anthropic.com/news/claude-in-xcode,Claude in Xcode,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,read,general,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/news/claude-is-a-space-to-think,,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/claude-new-constitution,,anthropic_news,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/claude-opus-4-1,,anthropic_news,2026-10-15,sitemap_lastmod,2026-11-18,indexed_only,general,
@@ -7526,7 +7526,7 @@ https://www.anthropic.com/research/advanced-tool-use,Introducing advanced tool u
 https://www.anthropic.com/research/agentic-misalignment,,anthropic_research,2026-10-08,sitemap_lastmod,2026-11-18,indexed_only,agents,
 https://www.anthropic.com/research/agents-in-biology,,anthropic_research,2026-10-09,sitemap_lastmod,2026-11-18,indexed_only,agents,
 https://www.anthropic.com/research/agents-judgment-calls,Agents' judgment calls,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,read,agents,knowledge/anthropic/synthesis.md
-https://www.anthropic.com/research/AI-assistance-coding-skills,,anthropic_research,2026-10-20,sitemap_lastmod,2026-11-18,indexed_only,skills,
+https://www.anthropic.com/research/AI-assistance-coding-skills,AI assistance and coding skills,anthropic_research,2026-10-20,sitemap_lastmod,2026-11-18,read,skills,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/ai-expectations-gap,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/AI-resistant-technical-evaluations,,anthropic_research,2026-10-18,sitemap_lastmod,2026-11-18,indexed_only,evaluations,
 https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,security,
@@ -7551,7 +7551,7 @@ https://www.anthropic.com/research/bloom,,anthropic_research,2026-10-09,sitemap_
 https://www.anthropic.com/research/building-ai-cyber-defenders,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/building-c-compiler,,anthropic_research,2026-10-18,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/building-effective-agents,Building effective agents,anthropic_research,2026-10-09,sitemap_lastmod,2026-11-18,read_partial,agents,synthesis.md
-https://www.anthropic.com/research/building-strong-safety-evaluations,,anthropic_research,2026-11-17,sitemap_lastmod,2026-11-18,indexed_only,evaluations,
+https://www.anthropic.com/research/building-strong-safety-evaluations,Building strong safety evaluations,anthropic_research,2026-11-17,sitemap_lastmod,2026-11-18,read,evaluations,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/circuits-updates-april-2024,,anthropic_research,2026-10-20,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/circuits-updates-august-2024,,anthropic_research,2026-10-20,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/circuits-updates-july-2024,,anthropic_research,2026-10-20,sitemap_lastmod,2026-11-18,indexed_only,general,
@@ -7576,13 +7576,13 @@ https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling,,anthrop
 https://www.anthropic.com/research/claude-values-models-languages,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,models,
 https://www.anthropic.com/research/clio,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/code-execution-with-mcp,Code execution with MCP: building more efficient AI agents,anthropic_research,2026-10-18,sitemap_lastmod,2026-11-18,read_partial,agents;mcp,synthesis.md
-https://www.anthropic.com/research/coding-agents-social-sciences,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,agents,
+https://www.anthropic.com/research/coding-agents-social-sciences,Coding agents in the social sciences,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,read,agents,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/collective-constitutional-ai-aligning-a-language-model-with-public-input,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,models,
 https://www.anthropic.com/research/components-of-agent-memory,,anthropic_research,2026-11-06,sitemap_lastmod,2026-11-18,read_partial,agents;memory;tools;context and memory,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/confidential-inference-trusted-vms,,anthropic_research,2026-10-09,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback,,anthropic_research,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/constitutional-classifiers,,anthropic_research,2026-10-09,sitemap_lastmod,2026-11-18,indexed_only,general,
-https://www.anthropic.com/research/contextual-retrieval,,anthropic_research,2026-10-18,sitemap_lastmod,2026-11-18,indexed_only,context;evaluations,
+https://www.anthropic.com/research/contextual-retrieval,Contextual Retrieval,anthropic_research,2026-10-18,sitemap_lastmod,2026-11-18,read,context;evaluations,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/coordinated-vulnerability-disclosure-timelines,,anthropic_research,2026-11-16,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/critical-infrastructure-defense,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/crosscoder-model-diffing,,anthropic_research,2026-10-13,sitemap_lastmod,2026-11-18,indexed_only,models,
