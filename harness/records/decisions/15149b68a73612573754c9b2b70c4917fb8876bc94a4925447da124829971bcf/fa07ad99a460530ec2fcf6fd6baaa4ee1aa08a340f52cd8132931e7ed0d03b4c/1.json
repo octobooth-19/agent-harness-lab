@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "15149b68a73612573754c9b2b70c4917fb8876bc94a4925447da124829971bcf",
+  "scanRevision": 1,
+  "path": "skills/writing-skills/SKILL.md",
+  "revision": 1,
+  "decision": "reference-only",
+  "reason": "Linked playbooks are not yet fully inspected, and authoring new skills is outside the initial delivery treatment.",
+  "source": {
+    "repo": "obra/superpowers",
+    "commit": "22f0b463e7a5e579904dd6211a520321035526f7"
+  },
+  "scanSha256": "2786ddfff1e9b5f885007211343360fd75737c0f3c5d157e6e5c1e76147154f9",
+  "sourceSha256": "8cb3ac68c6d8c4bb46886b998b09af7989643cab8bd0e46ee86dd62e64546bbe",
+  "license": {
+    "status": "permissive",
+    "expression": "MIT",
+    "attribution": "Preserve the root LICENSE copyright and permission notice when redistributing adapted material.",
+    "evidence": [
+      "LICENSE"
+    ]
+  }
+}

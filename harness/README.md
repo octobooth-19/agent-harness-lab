@@ -99,6 +99,16 @@ agent attestations, not an automatic license determination. Keep unclear
 materials reference-only; check effective license obligations, permissions and
 configuration before approval.
 
+The [initial seven-source review](records/initial-top-seven-selection.md)
+produced the app treatment `initial-top-seven@1`. It enables a compact
+software-delivery instruction adapted from Ponytail and a targeted
+test-isolation skill adapted from DeepSeek Harness, with verified MIT notices.
+All seven source checkpoints were reviewed before the freeze; ECC, DeepSeek,
+and Superpowers still had partial repository coverage. Unreviewed integrations,
+host-specific code, and overlapping instructions were not installed. The
+treatment changes workspace guidance, not the model or permissions. A new
+treatment version is required for subsequent curation changes.
+
 For approval and activation, create a named profile revision:
 
 ```json
