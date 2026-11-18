@@ -11,7 +11,7 @@
     "read_pages": 88,
     "inaccessible_pages": 0,
     "excluded_unique_links": 26,
-    "pending_pages": 2693,
+    "pending_pages": 2689,
     "index_records": 15,
     "index_failures": [
       {
@@ -33,7 +33,7 @@
     "openai_sitemap_subindexes": 44,
     "technical_sitemap_families_opened": 5,
     "other_openai_sitemap_families_not_included": 39,
-    "read_partial_pages": 55
+    "read_partial_pages": 59
   },
   "field_notes": {
     "review_status": "read = source page opened and reviewed; read_partial = source page opened but only partly reviewed; indexed = discovered in an official index/sitemap/feed but not opened; inaccessible = attempted primary source failed.",
@@ -4237,13 +4237,13 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
         "API and SDK",
         "tools and MCP"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
@@ -4255,13 +4255,13 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
         "API and SDK",
         "tools and MCP"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
@@ -4292,13 +4292,13 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
         "API and SDK",
         "tools and MCP"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
@@ -27110,13 +27110,13 @@
       "source_type": "OpenAI news article",
       "published_or_updated_date": "2019-09-17",
       "date_basis": "publication date",
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
         "agent runtime",
         "tools and MCP"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://openai.com/news/rss.xml"
       ],
