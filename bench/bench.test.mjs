@@ -7,6 +7,7 @@ import { randomUUID } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { Catalog, readJSON, hash, writeJSON } from './store.mjs';
+import { inspectAppEvents } from './observations.mjs';
 import { validate } from './schema.mjs';
 import { prepare, collect, judgePacket, grade, report, executeHeadless, executeJudgeHeadless, archive, publicTranscript } from './lifecycle.mjs';
 
@@ -440,6 +441,29 @@ test('observable receipt metrics survive reporting without fabricated token defa
   collect(root, trial.runId, metadata);
   assert.deepEqual(report(root).runs[0].metrics, metadata.metrics);
   assert.equal(report(root).runs[0].passed, null);
+});
+
+test('app telemetry validates exact cwd/prompt and reports observable model, token counters and elapsed time', () => {
+  const metadata = { sessionId: 'fresh-fixture', workspace: '/fixture/subject', prompt: 'frozen task' };
+  const events = [
+    { type: 'session.start', timestamp: '2026-01-01T00:00:00Z', data: {
+      sessionId: metadata.sessionId, context: { cwd: metadata.workspace }, selectedModel: 'auto', copilotVersion: 'fixture' } },
+    { type: 'user.message', data: { content: metadata.prompt } },
+    { type: 'session.auto_mode_resolved', data: { chosenModel: 'fixture-model' } },
+    { type: 'assistant.turn_end', timestamp: '2026-01-01T00:00:05Z' },
+    { type: 'session.usage_checkpoint', data: { providerModelMetrics: [
+      { metrics: { usage: { inputTokens: 100, outputTokens: 12 } } },
+    ] } },
+    { type: 'session.shutdown', timestamp: '2026-01-01T00:30:00Z' },
+  ];
+  const result = inspectAppEvents(events, metadata);
+  assert.equal(result.metrics.wallMs, 5000);
+  assert.equal(result.metrics.totalTokens, 112);
+  assert.equal(result.actualModel, 'fixture-model');
+  assert.equal(inspectAppEvents(events.filter(event => event.type !== 'session.usage_checkpoint'), metadata).metrics.totalTokens, null);
+  assert.throws(() => inspectAppEvents(events, { ...metadata, workspace: '/wrong' }), /working directory/);
+  assert.throws(() => inspectAppEvents(events, { ...metadata, prompt: 'changed' }), /kickoff/);
+  assert.throws(() => inspectAppEvents([...events, { type: 'user.message', data: { content: 'extra instructions' } }], metadata), /extra or changed/);
 });
 
 test('CLI validates catalog, surfaces errors, and drives the lifecycle without dependencies', t => {
