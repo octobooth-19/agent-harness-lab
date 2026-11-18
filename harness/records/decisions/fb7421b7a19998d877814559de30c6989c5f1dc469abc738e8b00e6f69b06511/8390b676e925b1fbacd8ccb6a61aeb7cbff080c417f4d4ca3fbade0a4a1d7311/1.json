@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "fb7421b7a19998d877814559de30c6989c5f1dc469abc738e8b00e6f69b06511",
+  "scanRevision": 2,
+  "path": "agent/memory_provider.py",
+  "revision": 1,
+  "decision": "reference-only",
+  "reason": "The provider is coupled to Hermes lifecycle and storage. This first treatment needs neither persistent user data nor runtime integration.",
+  "source": {
+    "repo": "nousresearch/hermes-agent",
+    "commit": "5d88f6eaad65f8916600d569b6f2df335dd51eab"
+  },
+  "scanSha256": "26768b49e1197fe7d3b42aa47bba27f76568135318d87800ce7b4fd0970d11d0",
+  "sourceSha256": "46f7073c312fcfdbc9538bdc280b7b180410755a7b0de896d7c2f83410850f05",
+  "license": {
+    "status": "permissive",
+    "expression": "MIT",
+    "attribution": "Preserve the Nous Research copyright and MIT license notice when copying substantial portions; external services and dependencies retain their own terms.",
+    "evidence": [
+      "LICENSE"
+    ]
+  }
+}
