@@ -9,8 +9,8 @@ recording, before de-duplication and eligibility screening.
 | --- | ---: |
 | `"coding agent" archived:false stars:>1000` | 304 |
 | `"agent skills" archived:false stars:>1000` | 227 |
-| `topic:ai-agents archived:false stars:>10000` | 58 |
-| `"agent harness" archived:false stars:>1000` | 150 |
+| `topic:ai-agents archived:false stars:>10000` | 150 |
+| `"agent harness" archived:false stars:>1000` | 58 |
 
 Eligible sources contain reusable general-purpose agent harness implementation
 or software-delivery workflows/skills. Exclude forks, archived repositories,
