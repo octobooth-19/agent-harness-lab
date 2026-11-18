@@ -11,7 +11,7 @@
     "read_pages": 97,
     "inaccessible_pages": 0,
     "excluded_unique_links": 26,
-    "pending_pages": 2625,
+    "pending_pages": 2621,
     "index_records": 15,
     "index_failures": [
       {
@@ -33,7 +33,7 @@
     "openai_sitemap_subindexes": 44,
     "technical_sitemap_families_opened": 5,
     "other_openai_sitemap_families_not_included": 39,
-    "read_partial_pages": 114
+    "read_partial_pages": 118
   },
   "field_notes": {
     "review_status": "read = source page opened and reviewed; read_partial = source page opened but only partly reviewed; indexed = discovered in an official index/sitemap/feed but not opened; inaccessible = attempted primary source failed.",
@@ -9639,13 +9639,16 @@
       "source_type": "OpenAI Cookbook",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "agent runtime",
-        "models"
+        "workspace agents",
+        "skills",
+        "connected apps",
+        "scheduled workflows",
+        "approvals"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/cookbook/llms.txt"
       ],
@@ -9864,12 +9867,15 @@
       "source_type": "OpenAI Cookbook",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "agent runtime"
+        "agent evaluations",
+        "cost-quality tradeoffs",
+        "model routing",
+        "prompt caching"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/cookbook/llms.txt"
       ],
@@ -9881,13 +9887,15 @@
       "source_type": "OpenAI Cookbook",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "API and SDK",
-        "agent runtime"
+        "Agents API",
+        "read-only SQL",
+        "application-owned memory",
+        "context retrieval"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/cookbook/llms.txt"
       ],
@@ -9899,13 +9907,16 @@
       "source_type": "OpenAI Cookbook",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
-        "API and SDK",
-        "agent runtime"
+        "incident response",
+        "Agents API",
+        "persistent sessions",
+        "approval gates",
+        "credential isolation"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/cookbook/llms.txt"
       ],
