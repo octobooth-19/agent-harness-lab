@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "aa0f2bad76590c10f961b0b84c0eabddd85ef92e48af0e945e7fb4b4304eba42",
+  "scanRevision": 5,
+  "path": "skills/xlsx/SKILL.md",
+  "revision": 1,
+  "decision": "reference-only",
+  "reason": "The skill text has an inspected Apache-2.0 entrypoint license, but that license is explicitly scoped to the skill entrypoint and does not clear helper code or dependencies; the license file also contains an unfilled appendix copyright example. The XLSX helper can write recalculated cached values back into workbooks, and its LibreOffice wrapper has platform-dependent native setup. Do not copy or execute either helper. The abstract QA principle overlaps the benchmark's separate command/check evidence, runner status, and rubric assessment; no distinct component is justified. Retain the pattern as reference only, with no inference about helper/runtime licenses.",
+  "source": {
+    "repo": "anthropics/skills",
+    "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba"
+  },
+  "scanSha256": "8e8a4292ef9330884cce5f86f482d0e5bc9e4aedb5074acf0285146a07b326a0",
+  "sourceSha256": "f32b1c2b5d5d31e02964df110d6489613d9345f86830c118cfe24159d8448ce6",
+  "license": {
+    "status": "permissive",
+    "expression": "Apache-2.0",
+    "attribution": "Skill entrypoint only: its frontmatter refers to the inspected skill LICENSE.txt, which contains Apache-2.0 and an unfilled appendix copyright example. Preserve applicable notices, include the license, and mark modifications. This says nothing about third-party runtimes, packages, or assets.",
+    "evidence": [
+      "skills/xlsx/LICENSE.txt"
+    ]
+  }
+}
