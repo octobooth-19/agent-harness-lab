@@ -632,7 +632,7 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "index_read",
     "topics": [
       "skills and customization"
     ],
@@ -689,12 +689,12 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
       "MCP and tools",
       "skills and customization"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -747,12 +747,12 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
       "CLI",
       "skills and customization"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -849,11 +849,11 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "permissions and security"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -863,11 +863,11 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "models"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -909,11 +909,11 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
       "skills and customization"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -937,7 +937,7 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "index_read",
     "topics": [
       "models"
     ],
@@ -979,11 +979,11 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "models"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -993,11 +993,11 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
       "models"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -1007,11 +1007,11 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
       "models"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -6041,11 +6041,11 @@
     "published_date": null,
     "updated_date": null,
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "models"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "GitHub Docs source repository recursive git tree; title metadata from source front matter"
   },
   {
@@ -21300,11 +21300,11 @@
     "published_date": "2026-09-14",
     "updated_date": "2026-09-15",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
       "models"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Changelog Copilot-label REST index, paginated"
   },
   {
