@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Session dashboard</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="top">
+        <div class="title-row">
+            <h1>Sessions</h1>
+            <span class="readonly" title="This dashboard cannot launch, cancel, approve, or merge anything.">Read-only</span>
+            <span id="connection" class="conn" role="status">Connecting…</span>
+        </div>
+        <div class="controls">
+            <div class="segmented" role="radiogroup" aria-label="Scope">
+                <button type="button" role="radio" data-scope="project" aria-checked="true">This Project</button>
+                <button type="button" role="radio" data-scope="all" aria-checked="false">All visible</button>
+            </div>
+            <input id="search" type="search" placeholder="Filter by name, id, branch…" aria-label="Filter sessions" />
+            <div class="chips" id="activity-filter" aria-label="Activity filter"></div>
+            <button type="button" id="refresh" class="ghost" title="Re-check opted-in live peers (read-only)">Refresh peers</button>
+        </div>
+    </header>
+
+    <section aria-labelledby="sources-h" class="sources-wrap">
+        <h2 id="sources-h">Data sources</h2>
+        <ul id="sources" class="sources"></ul>
+    </section>
+
+    <main>
+        <div id="notice" class="notice" hidden></div>
+        <table class="sessions" aria-describedby="legend">
+            <thead>
+                <tr>
+                    <th scope="col">Session</th>
+                    <th scope="col">Activity</th>
+                    <th scope="col">Data freshness</th>
+                    <th scope="col">Source</th>
+                    <th scope="col">Links</th>
+                </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+        </table>
+        <p id="empty" class="empty" hidden></p>
+    </main>
+
+    <footer id="legend" class="legend">
+        <strong>Activity</strong> is what a session was doing when observed; <strong>freshness</strong> is how
+        recent that observation is. <em>Idle</em> means waiting for input, not that the task is complete.
+        Stale and unavailable data is never shown as current.
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>

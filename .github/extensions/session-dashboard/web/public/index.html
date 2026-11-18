@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fbfaf7">
+    <title>Agent timeline</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header class="top">
+        <div class="title">
+            <h1>Agent timeline</h1>
+            <p class="summary" id="summary" aria-live="polite">Connecting…</p>
+        </div>
+        <div class="sources">
+            <span class="pill" id="local-pill" title="Local sessions: events.jsonl tailed every second, streamed over SSE"><i></i><span>Local</span></span>
+            <span class="pill" id="cloud-pill" title="Cloud & other hosts: gh agent-task list (preview), polled"><i></i><span>Cloud</span></span>
+        </div>
+    </header>
+
+    <nav class="bar" aria-label="View">
+        <div class="seg" role="group" aria-label="Which sessions" id="scope">
+            <button type="button" data-scope="online" aria-pressed="true" title="Local: live process. Cloud: GitHub task not finished">Online</button>
+            <button type="button" data-scope="recent" aria-pressed="false">Last 24h</button>
+            <button type="button" data-scope="all" aria-pressed="false">All</button>
+        </div>
+        <div class="seg" role="group" aria-label="Time window" id="window">
+            <button type="button" data-min="30" aria-pressed="false">30m</button>
+            <button type="button" data-min="120" aria-pressed="true">2h</button>
+            <button type="button" data-min="480" aria-pressed="false">8h</button>
+            <button type="button" data-min="1440" aria-pressed="false">24h</button>
+        </div>
+        <input type="search" id="search" placeholder="Find an agent" aria-label="Find an agent">
+    </nav>
+
+    <main class="stage">
+        <section class="timeline" id="timeline" aria-label="Timeline, one lane per agent">
+            <div class="axis" id="axis"></div>
+            <div class="rows" id="rows">
+                <div class="labels" id="labels"></div>
+                <div class="tracks" id="tracks"><svg id="svg" role="img" aria-label="Agent activity lanes"></svg></div>
+            </div>
+            <p class="empty" id="empty" hidden>No agents in this view.</p>
+        </section>
+        <aside class="detail" id="detail" aria-live="polite">
+            <p class="hint">Select an agent to see what it's doing.</p>
+        </aside>
+    </main>
+
+    <footer class="legend" id="legend"></footer>
+    <div class="tip" id="tip" role="tooltip" hidden></div>
+    <script src="/app.js" type="module"></script>
+</body>
+</html>
