@@ -4966,7 +4966,7 @@ https://code.claude.com/docs/en/auto-mode-classifier-billing,Auto mode classifie
 https://code.claude.com/docs/en/auto-mode-config,Configure auto mode,claude_code_documentation,2026-11-18,sitemap_lastmod,2026-11-18,read_partial,general,synthesis.md
 https://code.claude.com/docs/en/best-practices,Best practices for Claude Code,claude_code_documentation,2026-11-17,sitemap_lastmod,2026-11-18,read_partial,general,synthesis.md
 https://code.claude.com/docs/en/champion-kit,Champion kit,claude_code_documentation,2026-11-12,sitemap_lastmod,2026-11-18,indexed_only,general,
-https://code.claude.com/docs/en/changelog,Claude Code changelog,claude_code_documentation,2026-11-17,sitemap_lastmod,2026-11-18,indexed_only,release-notes,
+https://code.claude.com/docs/en/changelog,Claude Code changelog,claude_code_documentation,2026-11-17,sitemap_lastmod,2026-11-18,read_partial,release-notes,knowledge/anthropic/synthesis.md
 https://code.claude.com/docs/en/channels,Push events into a running session with channels,claude_code_documentation,2026-11-18,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://code.claude.com/docs/en/channels-reference,Channels reference,claude_code_documentation,2026-11-12,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://code.claude.com/docs/en/checkpointing,Checkpointing,claude_code_documentation,2026-11-14,sitemap_lastmod,2026-11-18,indexed_only,general,
@@ -5028,8 +5028,8 @@ https://code.claude.com/docs/en/google-vertex-ai,Claude Code on Google Cloud's A
 https://code.claude.com/docs/en/headless,Run Claude Code programmatically,claude_code_documentation,2026-11-17,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://code.claude.com/docs/en/hipaa-setup,Set up Claude Code (local mode) for a HIPAA-ready organization,claude_code_documentation,2026-11-12,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://code.claude.com/docs/en/hooks,Hooks reference,claude_code_documentation,2026-11-17,sitemap_lastmod,2026-11-18,read_partial,hooks,synthesis.md
-https://code.claude.com/docs/en/hooks-guide,Automate actions with hooks,claude_code_documentation,2026-11-16,sitemap_lastmod,2026-11-18,indexed_only,hooks,
-https://code.claude.com/docs/en/how-claude-code-works,How Claude Code works,claude_code_documentation,2026-11-16,sitemap_lastmod,2026-11-18,indexed_only,claude-code,
+https://code.claude.com/docs/en/hooks-guide,Automate actions with hooks,claude_code_documentation,2026-11-16,sitemap_lastmod,2026-11-18,read_partial,hooks,knowledge/anthropic/synthesis.md
+https://code.claude.com/docs/en/how-claude-code-works,How Claude Code works,claude_code_documentation,2026-11-16,sitemap_lastmod,2026-11-18,read,claude-code,knowledge/anthropic/synthesis.md
 https://code.claude.com/docs/en/interactive-mode,Interactive mode,claude_code_documentation,2026-11-16,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://code.claude.com/docs/en/jetbrains,JetBrains IDEs,claude_code_documentation,2026-11-12,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://code.claude.com/docs/en/keybindings,Customize keyboard shortcuts,claude_code_documentation,2026-11-17,sitemap_lastmod,2026-11-18,indexed_only,general,
@@ -5091,7 +5091,7 @@ https://code.claude.com/docs/en/quickstart,Quickstart,claude_code_documentation,
 https://code.claude.com/docs/en/remote-control,Continue local sessions from any device with Remote Control,claude_code_documentation,2026-11-14,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://code.claude.com/docs/en/routines,Automate work with scheduled tasks,claude_code_documentation,2026-11-12,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://code.claude.com/docs/en/sandbox-environments,Choose a sandbox environment,claude_code_documentation,2026-11-14,sitemap_lastmod,2026-11-18,indexed_only,general,
-https://code.claude.com/docs/en/sandboxing,Configure the sandboxed Bash tool,claude_code_documentation,2026-11-14,sitemap_lastmod,2026-11-18,indexed_only,tools,
+https://code.claude.com/docs/en/sandboxing,Configure the sandboxed Bash tool,claude_code_documentation,2026-11-14,sitemap_lastmod,2026-11-18,read_partial,tools,knowledge/anthropic/synthesis.md
 https://code.claude.com/docs/en/scheduled-tasks,Run prompts on a schedule,claude_code_documentation,2026-11-16,sitemap_lastmod,2026-11-18,indexed_only,prompting,
 https://code.claude.com/docs/en/security,Security,claude_code_documentation,2026-11-14,sitemap_lastmod,2026-11-18,read_partial,security,synthesis.md
 https://code.claude.com/docs/en/security-guidance,Catch security issues as Claude writes code,claude_code_documentation,2026-11-12,sitemap_lastmod,2026-11-18,indexed_only,security,
@@ -7254,7 +7254,7 @@ https://www.anthropic.com/news/announcements,,anthropic_news,,,2026-11-18,indexe
 https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy,,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/anthropic-accenture-partnership,,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/anthropic-achieves-iso-42001-certification-for-responsible-ai,,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,indexed_only,general,
-https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone,,anthropic_news,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,claude-code,
+https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone,Anthropic acquires Bun as Claude Code reaches $1B milestone,anthropic_news,2026-09-28,sitemap_lastmod,2026-11-18,read,claude-code,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/news/anthropic-acquires-stainless,,anthropic_news,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/anthropic-amazon,,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/anthropic-amazon-compute,,anthropic_news,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,general,
@@ -7292,7 +7292,7 @@ https://www.anthropic.com/news/anthropic-signs-cms-health-tech-ecosystem-pledge-
 https://www.anthropic.com/news/anthropic-signs-pledge-to-americas-youth-investing-in-ai-education,,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/anthropic-teach-for-all,,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/anthropics-responsible-scaling-policy,,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,indexed_only,general,
-https://www.anthropic.com/news/apple-xcode-claude-agent-sdk,,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,indexed_only,agent-sdk;agents,
+https://www.anthropic.com/news/apple-xcode-claude-agent-sdk,Claude Agent SDK in Apple Xcode,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,read,agent-sdk;agents,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/news/australia-MOU,,anthropic_news,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/barclays-scales-claude,,anthropic_news,2026-11-16,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/ben-bernanke,,anthropic_news,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,general,
@@ -7315,7 +7315,7 @@ https://www.anthropic.com/news/claude-3-haiku,,anthropic_news,2026-10-15,sitemap
 https://www.anthropic.com/news/claude-4,,anthropic_news,2026-11-12,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/claude-and-alexa-plus,,anthropic_news,2026-10-06,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/claude-brazil,,anthropic_news,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
-https://www.anthropic.com/news/claude-code-on-team-and-enterprise,,anthropic_news,2026-10-06,sitemap_lastmod,2026-11-18,indexed_only,claude-code;orchestration,
+https://www.anthropic.com/news/claude-code-on-team-and-enterprise,Claude Code on Team and Enterprise,anthropic_news,2026-10-06,sitemap_lastmod,2026-11-18,read,claude-code;orchestration,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/news/claude-code-security,,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,indexed_only,claude-code;security,
 https://www.anthropic.com/news/claude-corps,,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/claude-design-anthropic-labs,,anthropic_news,2026-10-15,sitemap_lastmod,2026-11-18,indexed_only,general,
@@ -7375,7 +7375,7 @@ https://www.anthropic.com/news/economic-futures-research-fund-agenda,,anthropic_
 https://www.anthropic.com/news/economic-futures-uk-europe,,anthropic_news,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/election-safeguards-update,,anthropic_news,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/elections-ai-2024,,anthropic_news,2026-10-06,sitemap_lastmod,2026-11-18,indexed_only,general,
-https://www.anthropic.com/news/enabling-claude-code-to-work-more-autonomously,,anthropic_news,2026-10-15,sitemap_lastmod,2026-11-18,indexed_only,claude-code,
+https://www.anthropic.com/news/enabling-claude-code-to-work-more-autonomously,Enabling Claude Code to work more autonomously,anthropic_news,2026-10-15,sitemap_lastmod,2026-11-18,read,claude-code,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/news/enterprise-ai-services-company,,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/enterprise-frontier-safeguards,,anthropic_news,2026-10-21,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/eu-code-practice,,anthropic_news,2026-10-06,sitemap_lastmod,2026-11-18,indexed_only,general,
@@ -7444,7 +7444,7 @@ https://www.anthropic.com/news/offering-expanded-claude-access-across-all-three-
 https://www.anthropic.com/news/open-call-guest-investigators-life-sciences,,anthropic_news,2026-11-06,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/opening-our-tokyo-office,,anthropic_news,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/our-approach-to-understanding-and-addressing-ai-harms,,anthropic_news,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
-https://www.anthropic.com/news/our-framework-for-developing-safe-and-trustworthy-agents,,anthropic_news,2026-10-06,sitemap_lastmod,2026-11-18,indexed_only,agents,
+https://www.anthropic.com/news/our-framework-for-developing-safe-and-trustworthy-agents,Our framework for developing safe and trustworthy agents,anthropic_news,2026-10-06,sitemap_lastmod,2026-11-18,read,agents,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/news/paris-ai-summit,,anthropic_news,2026-10-06,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/partnering-with-scale,,anthropic_news,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/partnerships,,anthropic_news,,,2026-11-18,indexed_only,general,
@@ -7525,7 +7525,7 @@ https://www.anthropic.com/research/accelerating-scientific-research,,anthropic_r
 https://www.anthropic.com/research/advanced-tool-use,Introducing advanced tool use on the Claude Developer Platform,anthropic_research,2026-10-18,sitemap_lastmod,2026-11-18,read_partial,tools,synthesis.md
 https://www.anthropic.com/research/agentic-misalignment,,anthropic_research,2026-10-08,sitemap_lastmod,2026-11-18,indexed_only,agents,
 https://www.anthropic.com/research/agents-in-biology,,anthropic_research,2026-10-09,sitemap_lastmod,2026-11-18,indexed_only,agents,
-https://www.anthropic.com/research/agents-judgment-calls,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,agents,
+https://www.anthropic.com/research/agents-judgment-calls,Agents' judgment calls,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,read,agents,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/AI-assistance-coding-skills,,anthropic_research,2026-10-20,sitemap_lastmod,2026-11-18,indexed_only,skills,
 https://www.anthropic.com/research/ai-expectations-gap,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/AI-resistant-technical-evaluations,,anthropic_research,2026-10-18,sitemap_lastmod,2026-11-18,indexed_only,evaluations,
@@ -7561,17 +7561,17 @@ https://www.anthropic.com/research/circuits-updates-sept-2024,,anthropic_researc
 https://www.anthropic.com/research/claude-4-cyber,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/Claude-accelerates-protein-design,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/claude-character,,anthropic_research,2026-10-09,sitemap_lastmod,2026-11-18,indexed_only,general,
-https://www.anthropic.com/research/claude-code-auto-mode,Claude Code auto mode,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,read_partial,claude-code,synthesis.md
+https://www.anthropic.com/research/claude-code-auto-mode,Claude Code auto mode,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,read,claude-code,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/claude-code-best-practices,Claude Code best practices,anthropic_research,2026-10-29,sitemap_lastmod,2026-11-18,read_partial,claude-code,synthesis.md
-https://www.anthropic.com/research/claude-code-expertise,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,claude-code,
-https://www.anthropic.com/research/claude-code-sandboxing,,anthropic_research,2026-10-18,sitemap_lastmod,2026-11-18,indexed_only,claude-code,
+https://www.anthropic.com/research/claude-code-expertise,Claude Code expertise,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,read,claude-code,knowledge/anthropic/synthesis.md
+https://www.anthropic.com/research/claude-code-sandboxing,Claude Code sandboxing,anthropic_research,2026-10-18,sitemap_lastmod,2026-11-18,read,claude-code,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/claude-discovers-novel-enzyme-system,,anthropic_research,2026-10-28,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/claude-electronics-design,,anthropic_research,2026-11-09,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/claude-personal-guidance,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/claude-plays-robotics,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/claude-scorpion-toxin-binder-design,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/claude-shaped-science,,anthropic_research,2026-11-02,sitemap_lastmod,2026-11-18,indexed_only,general,
-https://www.anthropic.com/research/claude-think-tool,,anthropic_research,2026-10-13,sitemap_lastmod,2026-11-18,indexed_only,tools,
+https://www.anthropic.com/research/claude-think-tool,The think tool,anthropic_research,2026-10-13,sitemap_lastmod,2026-11-18,read,tools,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,models,
 https://www.anthropic.com/research/claude-values-models-languages,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,models,
 https://www.anthropic.com/research/clio,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,general,
@@ -7609,7 +7609,7 @@ https://www.anthropic.com/research/economic-index-primitives,,anthropic_research
 https://www.anthropic.com/research/economic-index-survey-announcement,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/economic-policy-responses,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/effective-context-engineering-for-ai-agents,Effective context engineering for AI agents,anthropic_research,2026-10-18,sitemap_lastmod,2026-11-18,read_partial,agents;context,synthesis.md
-https://www.anthropic.com/research/effective-harnesses-for-long-running-agents,Effective harnesses for long-running agents,anthropic_research,2026-10-18,sitemap_lastmod,2026-11-18,read_partial,agents,synthesis.md
+https://www.anthropic.com/research/effective-harnesses-for-long-running-agents,Effective harnesses for long-running agents,anthropic_research,2026-10-18,sitemap_lastmod,2026-11-18,read,agents,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/emergent-misalignment-reward-hacking,,anthropic_research,2026-10-08,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/emotion-concepts-function,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/employment-at-anthropic,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,general,
@@ -7657,15 +7657,15 @@ https://www.anthropic.com/research/language-models-mostly-know-what-they-know,,a
 https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/long-running-claude,,anthropic_research,2026-10-09,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/making-claude-a-chemist,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
-https://www.anthropic.com/research/managed-agents,,anthropic_research,2026-10-30,sitemap_lastmod,2026-11-18,indexed_only,managed-agents;agents,
+https://www.anthropic.com/research/managed-agents,Managed agents,anthropic_research,2026-10-30,sitemap_lastmod,2026-11-18,read,managed-agents;agents,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/many-shot-jailbreaking,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/mapping-mind-language-model,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,models,
-https://www.anthropic.com/research/measuring-agent-autonomy,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,agents,
+https://www.anthropic.com/research/measuring-agent-autonomy,Measuring agent autonomy,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,read,agents,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/measuring-faithfulness-in-chain-of-thought-reasoning,,anthropic_research,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/measuring-model-persuasiveness,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,models,
 https://www.anthropic.com/research/measuring-progress-on-scalable-oversight-for-large-language-models,,anthropic_research,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,models,
 https://www.anthropic.com/research/multi-agent-research-system,How we built our multi-agent research system,anthropic_research,2026-10-09,sitemap_lastmod,2026-11-18,read_partial,agents;orchestration,synthesis.md
-https://www.anthropic.com/research/multiagent-systems,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,agents,
+https://www.anthropic.com/research/multiagent-systems,Multi-agent systems,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,read,agents,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/mythos-preview,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/n-days,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/natural-language-autoencoders,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
@@ -7728,11 +7728,11 @@ https://www.anthropic.com/research/toy-models-of-superposition,,anthropic_resear
 https://www.anthropic.com/research/tracing-thoughts-language-model,,anthropic_research,2026-10-20,sitemap_lastmod,2026-11-18,indexed_only,models,
 https://www.anthropic.com/research/training-a-helpful-and-harmless-assistant-with-reinforcement-learning-from-human-feedback,,anthropic_research,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/transformer-circuits,,anthropic_research,2026-10-20,sitemap_lastmod,2026-11-18,indexed_only,general,
-https://www.anthropic.com/research/trustworthy-agents,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,agents,
+https://www.anthropic.com/research/trustworthy-agents,Trustworthy agents,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,read,agents,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/values-wild,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/vibe-physics,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/what-work-can-robots-do,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
-https://www.anthropic.com/research/writing-tools-for-agents,,anthropic_research,2026-10-13,sitemap_lastmod,2026-11-18,indexed_only,agents;tools,
+https://www.anthropic.com/research/writing-tools-for-agents,Writing tools for agents,anthropic_research,2026-10-13,sitemap_lastmod,2026-11-18,read,agents;tools,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/yes-claude-can-do-nine-loops,,anthropic_research,2026-10-21,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/your-thoughts-on-ai,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/zero-days,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,general,
