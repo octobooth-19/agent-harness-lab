@@ -8,10 +8,10 @@
   },
   "counts": {
     "discovered_pages": 2836,
-    "read_pages": 87,
+    "read_pages": 88,
     "inaccessible_pages": 0,
     "excluded_unique_links": 26,
-    "pending_pages": 2701,
+    "pending_pages": 2697,
     "index_records": 15,
     "index_failures": [
       {
@@ -33,7 +33,7 @@
     "openai_sitemap_subindexes": 44,
     "technical_sitemap_families_opened": 5,
     "other_openai_sitemap_families_not_included": 39,
-    "read_partial_pages": 48
+    "read_partial_pages": 51
   },
   "field_notes": {
     "review_status": "read = source page opened and reviewed; read_partial = source page opened but only partly reviewed; indexed = discovered in an official index/sitemap/feed but not opened; inaccessible = attempted primary source failed.",
@@ -9959,15 +9959,15 @@
       "source_type": "OpenAI Cookbook",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
         "API and SDK",
         "agent runtime",
         "permissions and security",
         "tools and MCP"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/cookbook/llms.txt"
       ],
@@ -9979,14 +9979,14 @@
       "source_type": "OpenAI Cookbook",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
         "API and SDK",
         "agent runtime",
         "context and memory"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/cookbook/llms.txt"
       ],
@@ -10899,14 +10899,14 @@
       "source_type": "OpenAI Cookbook",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
         "API and SDK",
         "agent runtime",
         "tools and MCP"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/learn/llms.txt"
       ],
@@ -16015,13 +16015,13 @@
       "source_type": "Codex / ChatGPT product documentation",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
         "coding agents",
         "tools and MCP"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/codex/llms.txt",
         "https://learn.chatgpt.com/llms.txt"
