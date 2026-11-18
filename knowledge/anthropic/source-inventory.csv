@@ -7237,7 +7237,7 @@ https://www.anthropic.com/news/2026-us-midterms,,anthropic_news,2026-11-13,sitem
 https://www.anthropic.com/news/2026-usage-policy-update,,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/2028-ai-leadership,,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/3-5-models-and-computer-use,,anthropic_news,2026-10-13,sitemap_lastmod,2026-11-18,indexed_only,models,
-https://www.anthropic.com/news/a-new-initiative-for-developing-third-party-model-evaluations,,anthropic_news,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,evaluations;models,
+https://www.anthropic.com/news/a-new-initiative-for-developing-third-party-model-evaluations,,anthropic_news,2026-11-13,sitemap_lastmod,2026-11-18,read_partial,evaluation;third-party assessment;capabilities;safety,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/news/accenture-aws-anthropic,,anthropic_news,2026-10-14,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/news/accenture-embedded-evaluation,,anthropic_news,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,evaluations,
 https://www.anthropic.com/news/acquires-vercept,,anthropic_news,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,general,
@@ -7619,13 +7619,13 @@ https://www.anthropic.com/research/engineering-challenges-interpretability,,anth
 https://www.anthropic.com/research/equipping-agents-for-the-real-world-with-agent-skills,Equipping agents for the real world with Agent Skills,anthropic_research,2026-10-18,sitemap_lastmod,2026-11-18,read_partial,agents;skills,synthesis.md
 https://www.anthropic.com/research/estimating-productivity-gains,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/eval-awareness-browsecomp,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,read_partial,evaluations,knowledge/anthropic/synthesis.md
-https://www.anthropic.com/research/evaluating-ai-systems,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,evaluations,
+https://www.anthropic.com/research/evaluating-ai-systems,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,read_partial,evaluation;benchmark methodology;measurement,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/evaluating-and-mitigating-discrimination-in-language-model-decisions,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,evaluations;models,
 https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench,,anthropic_research,2026-10-09,sitemap_lastmod,2026-11-18,indexed_only,evaluations,
 https://www.anthropic.com/research/evaluating-feature-steering,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,evaluations,
 https://www.anthropic.com/research/expectations-for-the-future,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/exploit,,anthropic_research,2026-10-23,sitemap_lastmod,2026-11-18,indexed_only,general,
-https://www.anthropic.com/research/exploit-evals,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,evaluations,
+https://www.anthropic.com/research/exploit-evals,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,read_partial,evaluation;cyber capability;controlled testing,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/exploring-model-welfare,,anthropic_research,2026-10-22,sitemap_lastmod,2026-11-18,indexed_only,models,
 https://www.anthropic.com/research/features-as-classifiers,,anthropic_research,2026-10-13,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/forecasting-rare-behaviors,,anthropic_research,2026-10-08,sitemap_lastmod,2026-11-18,indexed_only,general,
@@ -7650,7 +7650,7 @@ https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-c
 https://www.anthropic.com/research/interpretability-dreams,,anthropic_research,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/introducing-anthropic-science,,anthropic_research,2026-10-09,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/introspection,,anthropic_research,2026-10-09,sitemap_lastmod,2026-11-18,indexed_only,general,
-https://www.anthropic.com/research/investigating-unintended-model-actions,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,models,
+https://www.anthropic.com/research/investigating-unintended-model-actions,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,read_partial,evaluation;agent behavior;monitoring;safety,knowledge/anthropic/synthesis.md
 https://www.anthropic.com/research/investigating-vault-particles-with-claude,,anthropic_research,2026-11-06,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/labor-market-impacts,,anthropic_research,2026-11-13,sitemap_lastmod,2026-11-18,indexed_only,general,
 https://www.anthropic.com/research/language-models-mostly-know-what-they-know,,anthropic_research,2026-09-28,sitemap_lastmod,2026-11-18,indexed_only,models,

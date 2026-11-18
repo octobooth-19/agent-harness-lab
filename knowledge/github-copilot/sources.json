@@ -8385,12 +8385,12 @@
     "published_date": "2026-02-13",
     "updated_date": "2026-02-12",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "coding agents",
       "orchestration and automation"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Blog category REST index (GitHub Copilot category, paginated)"
   },
   {
@@ -21788,12 +21788,12 @@
     "published_date": "2026-10-07",
     "updated_date": "2026-10-07",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read",
     "topics": [
       "CLI",
       "models"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Changelog Copilot-label REST index, paginated"
   },
   {
@@ -22714,11 +22714,11 @@
     "published_date": "2026-11-16",
     "updated_date": "2026-11-16",
     "accessed_date": "2026-11-18",
-    "review_status": "indexed_only",
+    "review_status": "read_partial",
     "topics": [
       "evaluation and benchmarks"
     ],
-    "synthesis_location": null,
+    "synthesis_location": "knowledge/github-copilot/synthesis.md",
     "discovery_method": "Official GitHub Changelog Copilot-label REST index, paginated"
   },
   {
