@@ -105,6 +105,20 @@ routing can confound the system comparison. Soft wall budgets are coordinator
 observations, not a hard runtime token cap. An overrun, blocker, or failed process
 remains part of the results rather than being rerun until successful.
 
+For app event logs made available by the coordinator, the optional provenance
+capture verifies session ID, exact actual cwd and unchanged kickoff before
+retaining only public events and observed metadata:
+
+```sh
+node bench/campaigns/sdlc-20261118/capture-app.mjs RUN --events ABS_EVENTS_JSONL --receipt ABS_RECEIPT
+```
+
+Use the returned `receipt-observed.json` for collection. Capture occurs before
+collection and refuses extra/changed user messages rather than treating a
+steered session as fresh. Observed last-checkpoint input/output counters retain
+their documented accounting caveat; missing counters stay null. Completion
+timestamps are not success evidence, and later app shutdown time is excluded.
+
 Collect with `node bench/cli.mjs collect RUN --receipt ABS --allow-commands` only
 after inspecting the frozen evaluators and subject completion. Held-out evaluator
 code is stored outside the subject and verified by hash before execution. It
