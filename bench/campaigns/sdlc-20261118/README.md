@@ -192,6 +192,15 @@ matched-arm averages.
 
 ## Limits
 
+App provenance capture requires exactly **one `session.start`** and exactly
+**one `user.message`** containing the unchanged generated kickoff text. Logs
+with repeated starts (including restart/resume logs that emit another start)
+or extra user messages are rejected, even if those events occur after task
+completion. A later `session.shutdown` does not extend measured wall time.
+No broader post-task lifecycle exception has been implemented. Report a
+rejection explicitly; do not strip conflicting events to manufacture an
+accepted fresh-session trace.
+
 The suite is small and deliberately representative, not exhaustive. A structural
 check is not a semantic grade. The real issue's held-out behaviors are a focused
 regression set, not the full upstream compatibility suite. Subject-authored tests
