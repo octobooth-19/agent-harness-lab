@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceKey": "aa0f2bad76590c10f961b0b84c0eabddd85ef92e48af0e945e7fb4b4304eba42",
+  "scanRevision": 3,
+  "path": "skills/skill-creator/SKILL.md",
+  "revision": 3,
+  "decision": "reference-only",
+  "reason": "The per-skill Apache-2.0 notice does not clear the viewer or packaging dependencies. Keep reference-only until the Python graph and external asset notices are verified.",
+  "source": {
+    "repo": "anthropics/skills",
+    "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba"
+  },
+  "scanSha256": "c77b39cf13d8e9dd29841b5b7d3a51bdb8ceb4d75ae544732d651571bc9a7a7d",
+  "sourceSha256": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf",
+  "license": {
+    "status": "permissive",
+    "expression": "Apache-2.0",
+    "attribution": "Include the applicable LICENSE.txt and preserve copyright/attribution notices; mark modified files, and carry forward applicable NOTICE attributions.",
+    "evidence": [
+      "skills/skill-creator/LICENSE.txt"
+    ]
+  }
+}
