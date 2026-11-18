@@ -1499,7 +1499,7 @@ https://platform.claude.com/docs/en/cli-sdks-libraries/cli/authentication,Authen
 https://platform.claude.com/docs/en/cli-sdks-libraries/cli/using,Using the CLI,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/cli-sdks-libraries/cli/scripting,Scripting and automation,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/cli-sdks-libraries/cli/apply,Manage resources as code,platform_documentation,,,2026-11-18,indexed_only,general,
-https://platform.claude.com/docs/en/cli-sdks-libraries/cli/sessions-connect,Connect to a Managed Agents session,platform_documentation,,,2026-11-18,indexed_only,agents,
+https://platform.claude.com/docs/en/cli-sdks-libraries/cli/sessions-connect,Connect to a Managed Agents session,platform_documentation,,,2026-11-18,read_partial,managed-agents;CLI;session-events;approvals,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/cli-sdks-libraries/middleware,Middleware,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/python,Python,platform_documentation,,,2026-11-18,indexed_only,general,
 https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/typescript,TypeScript,platform_documentation,,,2026-11-18,indexed_only,general,
@@ -4131,7 +4131,7 @@ https://platform.claude.com/docs/en/api/organization/rbac_groups/members/remove,
 https://platform.claude.com/docs/en/api/organization/rbac_roles,RBAC Roles,platform_documentation,,,2026-11-18,indexed_only,api,
 https://platform.claude.com/docs/en/api/organization/rbac_roles/list,List RBAC Roles,platform_documentation,,,2026-11-18,indexed_only,api,
 https://platform.claude.com/docs/en/api/organization/rbac_roles/retrieve,Get RBAC Role,platform_documentation,,,2026-11-18,indexed_only,api,
-https://platform.claude.com/docs/en/api/organization/rbac_roles/permissions,Permissions,platform_documentation,,,2026-11-18,indexed_only,permissions;api,
+https://platform.claude.com/docs/en/api/organization/rbac_roles/permissions,Permissions,platform_documentation,,,2026-11-18,read_partial,organization;RBAC;authorization;permissions,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/api/organization/rbac_roles/permissions/list,List RBAC Role Permissions,platform_documentation,,,2026-11-18,indexed_only,permissions;api,
 https://platform.claude.com/docs/en/api/beta,Beta (Beta),platform_documentation,,,2026-11-18,indexed_only,api,
 https://platform.claude.com/docs/en/api/beta/models,Models (Beta),platform_documentation,,,2026-11-18,indexed_only,models;api,
@@ -4171,12 +4171,12 @@ https://platform.claude.com/docs/en/api/beta/environments/work/stop,Stop Work (B
 https://platform.claude.com/docs/en/api/beta/environments/work/list,List Work Items (Beta),platform_documentation,,,2026-11-18,indexed_only,api,
 https://platform.claude.com/docs/en/api/beta/environments/work/update,Update Work Item (Beta),platform_documentation,,,2026-11-18,indexed_only,api,
 https://platform.claude.com/docs/en/api/beta/environments/work/stats,Get Queue Statistics (Beta),platform_documentation,,,2026-11-18,indexed_only,api,
-https://platform.claude.com/docs/en/api/beta/sessions,Sessions (Beta),platform_documentation,,,2026-11-18,indexed_only,api,
-https://platform.claude.com/docs/en/api/beta/sessions/create,Create Session (Beta),platform_documentation,,,2026-11-18,indexed_only,api,
+https://platform.claude.com/docs/en/api/beta/sessions,Sessions (Beta),platform_documentation,,,2026-11-18,read_partial,managed-agents;API;session-lifecycle;beta,knowledge/anthropic/synthesis.md
+https://platform.claude.com/docs/en/api/beta/sessions/create,Create Session (Beta),platform_documentation,,,2026-11-18,read_partial,managed-agents;API;session-creation;beta,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/api/beta/sessions/list,List Sessions (Beta),platform_documentation,,,2026-11-18,indexed_only,api,
 https://platform.claude.com/docs/en/api/beta/sessions/retrieve,Get Session (Beta),platform_documentation,,,2026-11-18,indexed_only,api,
-https://platform.claude.com/docs/en/api/beta/sessions/update,Update Session (Beta),platform_documentation,,,2026-11-18,indexed_only,api,
-https://platform.claude.com/docs/en/api/beta/sessions/delete,Delete Session (Beta),platform_documentation,,,2026-11-18,indexed_only,api,
+https://platform.claude.com/docs/en/api/beta/sessions/update,Update Session (Beta),platform_documentation,,,2026-11-18,read_partial,managed-agents;API;session-configuration;beta,knowledge/anthropic/synthesis.md
+https://platform.claude.com/docs/en/api/beta/sessions/delete,Delete Session (Beta),platform_documentation,,,2026-11-18,read_partial,managed-agents;API;deletion;retention;beta,knowledge/anthropic/synthesis.md
 https://platform.claude.com/docs/en/api/beta/sessions/archive,Archive Session (Beta),platform_documentation,,,2026-11-18,indexed_only,api,
 https://platform.claude.com/docs/en/api/beta/sessions/events,Events (Beta),platform_documentation,,,2026-11-18,indexed_only,api,
 https://platform.claude.com/docs/en/api/beta/sessions/events/list,List Events (Beta),platform_documentation,,,2026-11-18,indexed_only,api,
