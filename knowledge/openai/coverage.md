@@ -10,12 +10,13 @@ Counts below describe unique canonical URL rows in `source-inventory.json`. A pa
 | Measure | Count | Meaning |
 |---|---:|---|
 | Discovered pages | 2,836 | Distinct page URLs cataloged from official documentation indexes, selected sitemaps, the OpenAI News RSS feed, and official Codex release records. |
-| Read pages | 47 | The page itself was opened and reviewed for this synthesis. |
+| Read pages | 63 | The page itself was opened and reviewed sufficiently for synthesis. |
+| Partially read pages | 4 | The page was opened, but only part could be reviewed; these are counted separately from full reads. |
 | Inaccessible pages | 0 | No inventoried content page remained inaccessible after resolving the Codex changelog's HTML route. |
-| Pending pages | 2,789 | Discovered but not read. This includes most indexed API references, Codex/ChatGPT product docs, Cookbook entries, blog/news articles, and learning resources. |
+| Pending pages | 2,769 | Discovered but not read. This includes most indexed API references, Codex/ChatGPT product docs, Cookbook entries, blog/news articles, and learning resources. |
 | Excluded unique links | 26 | Non-primary-domain links or full-export/text resources omitted from the source-page inventory. |
 
-The page-status arithmetic is consistent: 47 read + 0 inaccessible + 2,789 pending = 2,836 discovered. `source-inventory.json` includes the required per-source fields and records whether a date comes from publication metadata or sitemap `lastmod`.
+The page-status arithmetic is consistent: 63 read + 4 partial + 0 inaccessible + 2,769 pending = 2,836 discovered. `source-inventory.json` includes the required per-source fields and records whether a date comes from publication metadata or sitemap `lastmod`.
 
 ## Discovery methods and corpus boundaries
 
@@ -29,15 +30,15 @@ The inventory contains **2,836** page rows after canonical URL deduplication acr
 
 ## Read coverage and source status
 
-The 47 read pages are the sources marked `review_status: "read"` in the JSON inventory. They cover:
+The 63 fully reviewed pages are marked `review_status: "read"` and four partial reads are marked `read_partial`. They cover:
 
 - Codex instruction discovery, skills, memories, MCP, subagents, permissions, sandboxing, and approvals.
 - Agents API and Agents SDK architecture, sessions, events, recovery, environments, tools, MCP, multi-agent flows, and human review.
 - Agent Builder's typed-node workflow and its safety recommendations, including the dated shutdown notice.
 - Responses API function calling, tools, compaction, model selection, evaluation guides, changelog, and deprecations.
-- Six OpenAI developer-blog posts, three OpenAI engineering/product articles, the current ChatGPT & Codex changelog, and the official Codex GitHub release listing.
+- Twelve OpenAI developer-blog posts, three OpenAI engineering/product articles, the current ChatGPT & Codex changelog, and the official Codex GitHub release listing.
 
-Read status means the page was opened and its relevant content reviewed; it does not mean every code sample or every section was exhaustively audited. Long pages returned truncated excerpts in some fetches, so the synthesis deliberately stays at the documented themes and links to the primary page for exact implementation details.
+Read status means the page was opened and its relevant content reviewed; it does not mean every code sample or every section was exhaustively audited. `read_partial` records a page whose fetched content was incomplete. Long pages returned truncated excerpts in some fetches, so the synthesis deliberately stays at the documented themes and links to the primary page for exact implementation details.
 
 ## Inaccessible, excluded, and pending areas
 
@@ -45,7 +46,7 @@ Read status means the page was opened and its relevant content reviewed; it does
 - **Sitemap coverage not included:** Thirty-nine of the 44 OpenAI sitemap families were not part of this technical-source inventory. An initial fetch of all category endpoints found 36 returned 403; three additional reachable business/plugin families were left out as outside the coding-agent/API/research scope. Their pages are not counted as reviewed or as individual inaccessible pages.
 - **Full-document exports:** `llms-full.txt` exports were identified from indexes but not downloaded or counted as individual reads. They are bulk copies, not substitutes for reviewing source pages.
 - **Unverified titles:** Sitemap entries do not provide page titles. For sitemap-only items without a matching RSS title, the inventory leaves `title` null rather than deriving or inventing one from the URL slug.
-- **Backlog:** The inventory has 2,789 pending URLs, including most API endpoint reference entries, the larger Codex/ChatGPT docs corpus, Cookbook examples, developer-blog posts, OpenAI News items, and learning/showcase pages. The 1,405 RSS items have dates/titles but should be individually opened before making claims about their content.
+- **Backlog:** The inventory has 2,769 pending URLs, including most API endpoint reference entries, the larger Codex/ChatGPT docs corpus, Cookbook examples, developer-blog posts, OpenAI News items, and learning/showcase pages. The 1,405 RSS items have dates/titles but should be individually opened before making claims about their content.
 - **Dates:** Source dates vary. Where available, the inventory records the RSS publication date or sitemap `lastmod`; sitemap timestamps are explicitly labeled as `sitemap lastmod`, not publication dates. Documentation pages without an authoritative date leave it null. The snapshot date remains 2026-11-18.
 
 ## Interpretation cautions

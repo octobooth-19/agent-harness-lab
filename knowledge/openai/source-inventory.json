@@ -8,10 +8,10 @@
   },
   "counts": {
     "discovered_pages": 2836,
-    "read_pages": 47,
+    "read_pages": 63,
     "inaccessible_pages": 0,
     "excluded_unique_links": 26,
-    "pending_pages": 2789,
+    "pending_pages": 2769,
     "index_records": 15,
     "index_failures": [
       {
@@ -32,10 +32,11 @@
     "root_developer_index_sets": 12,
     "openai_sitemap_subindexes": 44,
     "technical_sitemap_families_opened": 5,
-    "other_openai_sitemap_families_not_included": 39
+    "other_openai_sitemap_families_not_included": 39,
+    "read_partial_pages": 4
   },
   "field_notes": {
-    "review_status": "read = source page itself reviewed; indexed = discovered in an official index/sitemap/feed but not opened; inaccessible = attempted primary source failed.",
+    "review_status": "read = source page opened and reviewed; read_partial = source page opened but only partly reviewed; indexed = discovered in an official index/sitemap/feed but not opened; inaccessible = attempted primary source failed.",
     "published_or_updated_date": "RSS publication date where available; OpenAI editorial sitemap lastmod is recorded only as sitemap lastmod; otherwise null.",
     "canonical_url": "Markdown twins normalized to canonical web page path; query strings/fragments removed to deduplicate surface variants.",
     "topics": "Keyword-derived discovery tags, not an assertion that the full page was read.",
@@ -1018,17 +1019,19 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
         "API and SDK",
-        "agent runtime"
+        "agent runtime",
+        "coding agents",
+        "tools and recovery"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/api/docs/guides/agents-api/environments/files"
     },
     {
       "canonical_url": "https://developers.openai.com/api/docs/guides/agents-api/environments/lifecycle",
@@ -1036,18 +1039,20 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
         "API and SDK",
         "agent runtime",
-        "permissions and security"
+        "coding agents",
+        "permissions and security",
+        "tools and recovery"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/api/docs/guides/agents-api/environments/lifecycle"
     },
     {
       "canonical_url": "https://developers.openai.com/api/docs/guides/agents-api/environments/openai-hosted",
@@ -1293,18 +1298,20 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
         "API and SDK",
         "agent runtime",
-        "permissions and security"
+        "coding agents",
+        "permissions and security",
+        "tools and recovery"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/api/docs/guides/agents-api/environments/self-hosted"
     },
     {
       "canonical_url": "https://developers.openai.com/api/docs/guides/agents-api/errors",
@@ -1312,17 +1319,19 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
         "API and SDK",
-        "agent runtime"
+        "agent runtime",
+        "coding agents",
+        "tools and recovery"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/api/docs/guides/agents-api/errors"
     },
     {
       "canonical_url": "https://developers.openai.com/api/docs/guides/agents-api/multi-agent",
@@ -1348,17 +1357,19 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
         "API and SDK",
-        "agent runtime"
+        "agent runtime",
+        "coding agents",
+        "tools and recovery"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/api/docs/guides/agents-api/observability"
     },
     {
       "canonical_url": "https://developers.openai.com/api/docs/guides/agents-api/overview",
@@ -1402,17 +1413,19 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
         "API and SDK",
-        "agent runtime"
+        "agent runtime",
+        "coding agents",
+        "tools and recovery"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/api/docs/guides/agents-api/sessions"
     },
     {
       "canonical_url": "https://developers.openai.com/api/docs/guides/agents-api/sessions/approvals",
@@ -1439,17 +1452,19 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
         "API and SDK",
-        "agent runtime"
+        "agent runtime",
+        "coding agents",
+        "tools and recovery"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/api/docs/guides/agents-api/sessions/automations"
     },
     {
       "canonical_url": "https://developers.openai.com/api/docs/guides/agents-api/sessions/events",
@@ -1475,17 +1490,19 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
         "API and SDK",
-        "agent runtime"
+        "agent runtime",
+        "coding agents",
+        "tools and recovery"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/api/docs/guides/agents-api/sessions/manage"
     },
     {
       "canonical_url": "https://developers.openai.com/api/docs/guides/agents-api/sessions/webhooks",
@@ -1511,18 +1528,20 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
         "API and SDK",
         "agent runtime",
-        "tools and MCP"
+        "coding agents",
+        "tools and MCP",
+        "tools and recovery"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use"
     },
     {
       "canonical_url": "https://developers.openai.com/api/docs/guides/agents-api/tools/functions",
@@ -1530,18 +1549,20 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
         "API and SDK",
         "agent runtime",
-        "tools and MCP"
+        "coding agents",
+        "tools and MCP",
+        "tools and recovery"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/api/docs/guides/agents-api/tools/functions"
     },
     {
       "canonical_url": "https://developers.openai.com/api/docs/guides/agents-api/tools/mcp",
@@ -1587,18 +1608,20 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
         "API and SDK",
         "agent runtime",
-        "tools and MCP"
+        "coding agents",
+        "tools and MCP",
+        "tools and recovery"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/api/docs/guides/agents-api/tools/vaults"
     },
     {
       "canonical_url": "https://developers.openai.com/api/docs/guides/agents-api/tools/web-search",
@@ -1625,17 +1648,19 @@
       "source_type": "API guide",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
         "API and SDK",
-        "agent runtime"
+        "agent runtime",
+        "coding agents",
+        "tools and recovery"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/api/docs/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/api/docs/guides/agents-api/tracing"
     },
     {
       "canonical_url": "https://developers.openai.com/api/docs/guides/agents/define-agents",
@@ -8609,16 +8634,18 @@
       "source_type": "OpenAI developer blog",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
-        "coding agents"
+        "agent runtime",
+        "coding agents",
+        "tools and recovery"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/blog/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/blog/automating-repetitive-work-at-openai-with-codex"
     },
     {
       "canonical_url": "https://developers.openai.com/blog/bringing-my-led-display-to-life",
@@ -8713,16 +8740,18 @@
       "source_type": "OpenAI developer blog",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
-        "coding agents"
+        "agent runtime",
+        "coding agents",
+        "tools and recovery"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/blog/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/blog/codex-at-devday"
     },
     {
       "canonical_url": "https://developers.openai.com/blog/codex-for-documentation-dagster",
@@ -8730,16 +8759,18 @@
       "source_type": "OpenAI developer blog",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
-        "coding agents"
+        "agent runtime",
+        "coding agents",
+        "tools and recovery"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/blog/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/blog/codex-for-documentation-dagster"
     },
     {
       "canonical_url": "https://developers.openai.com/blog/connect-private-mcp-servers-to-openai-products",
@@ -8764,16 +8795,18 @@
       "source_type": "OpenAI developer blog",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
-        "coding agents"
+        "agent runtime",
+        "coding agents",
+        "tools and recovery"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/blog/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/blog/custom-code-review-rules-for-codex"
     },
     {
       "canonical_url": "https://developers.openai.com/blog/designing-delightful-frontends-with-gpt-5-4",
@@ -8885,16 +8918,18 @@
       "source_type": "OpenAI developer blog",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
-        "coding agents"
+        "agent runtime",
+        "coding agents",
+        "tools and recovery"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/blog/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/blog/mastering-codex-remote-for-engineering"
     },
     {
       "canonical_url": "https://developers.openai.com/blog/one-year-of-responses",
@@ -9006,17 +9041,20 @@
       "source_type": "OpenAI developer blog",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
+        "agent runtime",
+        "coding agents",
         "instructions and skills",
-        "models"
+        "models",
+        "tools and recovery"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/blog/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra"
     },
     {
       "canonical_url": "https://developers.openai.com/blog/rosalind-workbench",
@@ -9199,16 +9237,18 @@
       "source_type": "Codex documentation",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read",
       "topics": [
-        "coding agents"
+        "agent runtime",
+        "coding agents",
+        "tools and recovery"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://learn.chatgpt.com/docs/cli-customization"
     },
     {
       "canonical_url": "https://developers.openai.com/codex/config-file/config-reference",
@@ -9216,17 +9256,19 @@
       "source_type": "Codex documentation",
       "published_or_updated_date": null,
       "date_basis": null,
-      "accessed_date": null,
-      "review_status": "indexed",
+      "accessed_date": "2026-11-18",
+      "review_status": "read_partial",
       "topics": [
+        "agent runtime",
         "coding agents",
-        "instructions and skills"
+        "instructions and skills",
+        "tools and recovery"
       ],
-      "synthesis_location": null,
+      "synthesis_location": "knowledge/openai/synthesis.md",
       "discovered_from": [
         "https://developers.openai.com/llms.txt"
       ],
-      "accessed_url": null
+      "accessed_url": "https://learn.chatgpt.com/docs/config-file/config-reference"
     },
     {
       "canonical_url": "https://developers.openai.com/commerce",
