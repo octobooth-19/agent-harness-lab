@@ -134,6 +134,11 @@ prompt to a fresh independent app judge folder. Judges see task/rubric/artifacts
 and check observations, not the variant label, component manifest or expected
 winner. Never grade the tested agent using its own success statement.
 
+Large upstream files are not duplicated inline in the judge's packet JSON.
+They are inert numbered text artifacts with independently computed source
+diffs, retained inside the run directory as well. Judges inspect changed hunks
+and relevant source ranges instead of dumping the entire 545-KiB Lodash file.
+
 Import each validated judge verdict, grade, archive, then summarize:
 
 ```sh

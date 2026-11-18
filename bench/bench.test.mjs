@@ -480,6 +480,32 @@ test('registered app launches remain observable before collection and reject reu
   assert.equal(report(root).runs.find(run => run.runId === trial.runId).runnerSucceeded, false);
 });
 
+test('large-source judge packets stay bounded and expose inert source plus independent diffs', t => {
+  const { root, workspaceRoot, catalog } = fixture(t);
+  const original = catalog.read('cases', 'incident-summary');
+  const bigSource = Array.from({ length: 2000 }, (_, i) => `const item${i} = ${i};`).join('\n');
+  catalog.put('cases', { ...original, id: 'large-source', files: { ...original.files, 'large.mjs': bigSource } }, 'create');
+  const trial = prepare(root, 'large-source', { variant: 'baseline', workspaceRoot });
+  fs.writeFileSync(path.join(trial.workspace, 'large.mjs'), bigSource.replace('const item100 = 100;', 'const item100 = 101;'));
+  fs.writeFileSync(path.join(trial.workspace, 'answer.md'), '120 requests.');
+  collect(root, trial.runId, receipt());
+  const judge = judgePacket(root, trial.runId);
+  const packetPath = path.join(judge.workspace, 'packet.json');
+  assert.ok(fs.statSync(packetPath).size < 12000, 'do not embed the entire large upstream source in packet JSON');
+  const entry = readJSON(packetPath).files.find(file => file.path === 'workspace/large.mjs');
+  assert.equal(entry.contentBase64, undefined);
+  assert.match(fs.readFileSync(path.join(judge.workspace, entry.diffFile), 'utf8'), /-const item100 = 100;\n\+const item100 = 101;/);
+  assert.equal(fs.readFileSync(path.join(judge.workspace, entry.contentFile), 'utf8'), fs.readFileSync(path.join(trial.workspace, 'large.mjs'), 'utf8'));
+  const retained = path.join(root, 'bench/runs', trial.runId, 'judge-artifacts', path.basename(entry.diffFile));
+  assert.ok(fs.existsSync(retained));
+  assert.equal(fs.existsSync(path.join(judge.workspace, '.github')), false);
+  const verdict = readJSON(path.join(judge.workspace, 'verdict-template.json'));
+  verdict.judge = receipt();
+  verdict.scores = verdict.scores.map(score => ({ ...score, rationale: 'Synthetic verdict', evidence: ['workspace/large.mjs'] }));
+  fs.writeFileSync(path.join(judge.workspace, entry.diffFile), 'tampered');
+  assert.throws(() => grade(root, trial.runId, verdict), /judge artifact was modified/);
+});
+
 test('CLI validates catalog, surfaces errors, and drives the lifecycle without dependencies', t => {
   const { root, workspaceRoot } = fixture(t);
   const invoke = (...args) => spawnSync(process.execPath, [path.join(source, 'cli.mjs'), '--root', root, ...args], { encoding: 'utf8' });
